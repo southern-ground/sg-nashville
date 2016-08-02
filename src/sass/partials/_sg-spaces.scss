@@ -1,0 +1,28 @@
+.spaces{
+  margin: 56px 0 0 0;
+  padding: 0 0 94px 0;
+  text-align: center;
+  @include clearfix;
+  h2{
+    text-transform:uppercase;
+    margin: 0 0 25px 0;
+    font-family: $fell;
+    font-weight: normal;
+    letter-spacing:-1px;
+  }
+  .other-spaces{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    color: $purple;
+    li a{
+      color: inherit;
+    }
+    h3{
+      font-family: $fell;
+      text-transform: uppercase;
+    }
+  }
+}

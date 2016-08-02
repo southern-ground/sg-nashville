@@ -1,0 +1,20 @@
+@mixin mobile(){
+  @media only screen and (max-width: 640px){
+    @content;
+  }
+}
+
+@mixin center-both(){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

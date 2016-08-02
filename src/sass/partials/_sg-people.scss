@@ -1,0 +1,27 @@
+section.our-people{
+  padding: 60px 0 72px 0;
+  text-align: center;
+  @include clearfix;
+  h2{
+    text-transform:uppercase;
+    margin: 0 0 25px 0;
+    font-family: $fell;
+    font-weight: normal;
+    letter-spacing:-1px;
+  }
+  .people{
+    margin: 0;
+    padding: 0;
+    li a{
+      color: inherit;
+    }
+    h3{
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 15px 0 -2px 0;
+    }
+    .title{
+      font-size: 12px;
+    }
+  }
+}

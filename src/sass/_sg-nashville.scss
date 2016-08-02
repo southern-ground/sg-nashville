@@ -1,0 +1,11 @@
+
+.row.text-center > div {
+  display: inline-block;
+  float: none;
+}
+
+@import "sg-vars";
+@import "sg-mixins";
+@import "sg-header";
+@import "sg-body";
+@import "sg-footer";

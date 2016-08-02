@@ -1,0 +1,31 @@
+
+
+.spacer{
+  width: 100%;
+  position:relative;
+  display: flex;
+  margin-top: 45px;
+  .piece{
+    height:22px;
+    
+  }
+
+  .left, .right{
+    min-width:28px;
+    width: 100%;
+    background: url('../../img/spacer-left.png') left center no-repeat;
+  }
+
+  .right{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+  .middle{
+    float: left;
+  }
+  @include clearfix;
+}

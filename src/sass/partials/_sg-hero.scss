@@ -1,0 +1,18 @@
+.hero{
+  padding: 66px 0 0;
+  @include clearfix;
+  .image{
+    padding: 0 40px 0 0;
+  }
+  .copy{
+    font-family: $ubuntu;
+    font-weight: $ubuntu-light;
+    h1{
+      text-transform:uppercase;
+      margin-top: 0;
+      font-family: $fell;
+      font-weight: normal;
+      letter-spacing:-1px;
+    }
+  }
+}

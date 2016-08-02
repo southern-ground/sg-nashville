@@ -1,0 +1,419 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.row.text-center > div {
+  display: inline-block;
+  float: none; }
+
+header {
+  padding: 16px 0 20px;
+  background-color: #19111b;
+  height: 127px; }
+  header div.wrapper {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1052px; }
+    header div.wrapper .block {
+      display: block; }
+    header div.wrapper .logo {
+      display: inline; }
+    header div.wrapper .nav, header div.wrapper .social {
+      display: block;
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      color: #ccc1b6; }
+      header div.wrapper .nav li, header div.wrapper .social li {
+        padding: 35px 10px 0 10px;
+        display: block; }
+        header div.wrapper .nav li:first-child, header div.wrapper .social li:first-child {
+          padding-left: 0; }
+        header div.wrapper .nav li:last-child, header div.wrapper .social li:last-child {
+          padding-right: 0; }
+    header div.wrapper .nav {
+      font-family: "IM Fell English SC", serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin: 0 0 0 12px; }
+      header div.wrapper .nav li a {
+        text-decoration: none;
+        color: inherit; }
+    header div.wrapper .social a.social {
+      width: 27px;
+      height: 27px;
+      font-size: 0; }
+      header div.wrapper .social a.social.facebook {
+        background: url("../img/social-icons.png"); }
+      header div.wrapper .social a.social.twitter {
+        background: url("../img/social-icons.png") -27px 0; }
+      header div.wrapper .social a.social.instagram {
+        background: url("../img/social-icons.png") -54px 0; }
+      header div.wrapper .social a.social.youtube {
+        background: url("../img/social-icons.png") -81px 0; }
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300; }
+
+.parallax-window {
+  min-height: 460px;
+  background: transparent;
+  background-position: top; }
+
+.parallax {
+  height: 460px; }
+
+div.content-container._tan {
+  background: url("../img/backgrounds/pale-background.jpg");
+  color: #19111b; }
+
+div.content-container._rust {
+  background: url("../img/backgrounds/rust-background.jpg");
+  color: #ccc1b6;
+  font-family: "Ubuntu", sans-serif; }
+
+div.content-container .wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px; }
+
+.spacer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  margin-top: 45px; }
+  .spacer .piece {
+    height: 22px; }
+  .spacer .left, .spacer .right {
+    min-width: 28px;
+    width: 100%;
+    background: url("../../img/spacer-left.png") left center no-repeat; }
+  .spacer .right {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH"; }
+  .spacer .middle {
+    float: left; }
+  .spacer:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.hero {
+  padding: 66px 0 0; }
+  .hero:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .hero .image {
+    padding: 0 40px 0 0; }
+  .hero .copy {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300; }
+    .hero .copy h1 {
+      text-transform: uppercase;
+      margin-top: 0;
+      font-family: "IM Fell English SC", serif;
+      font-weight: normal;
+      letter-spacing: -1px; }
+
+.spaces {
+  margin: 56px 0 0 0;
+  padding: 0 0 94px 0;
+  text-align: center; }
+  .spaces:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .spaces h2 {
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    font-family: "IM Fell English SC", serif;
+    font-weight: normal;
+    letter-spacing: -1px; }
+  .spaces .other-spaces {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    color: #19111b; }
+    .spaces .other-spaces li a {
+      color: inherit; }
+    .spaces .other-spaces h3 {
+      font-family: "IM Fell English SC", serif;
+      text-transform: uppercase; }
+
+section.our-people {
+  padding: 60px 0 72px 0;
+  text-align: center; }
+  section.our-people:after {
+    content: "";
+    display: table;
+    clear: both; }
+  section.our-people h2 {
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    font-family: "IM Fell English SC", serif;
+    font-weight: normal;
+    letter-spacing: -1px; }
+  section.our-people .people {
+    margin: 0;
+    padding: 0; }
+    section.our-people .people li a {
+      color: inherit; }
+    section.our-people .people h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 15px 0 -2px 0; }
+    section.our-people .people .title {
+      font-size: 12px; }
+
+section.legacy {
+  padding: 60px 0 0;
+  text-align: center;
+  font-family: "IM Fell English SC", serif; }
+  section.legacy h2 {
+    text-transform: uppercase; }
+  section.legacy ul.legacy-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0;
+    padding: 0; }
+    section.legacy ul.legacy-items li.legacy-item a {
+      color: inherit; }
+    section.legacy ul.legacy-items li.legacy-item h3 {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 14px;
+      text-transform: uppercase; }
+
+section.artists {
+  padding: 60px 0 0;
+  text-align: center;
+  font-family: "IM Fell English SC", serif; }
+  section.artists h2 {
+    text-transform: uppercase; }
+  section.artists ul.artist-list {
+    margin: 0;
+    padding: 0; }
+    section.artists ul.artist-list li.legacy-item a {
+      color: inherit; }
+    section.artists ul.artist-list li.legacy-item h3 {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 14px;
+      text-transform: uppercase; }
+
+footer {
+  background: #ff00ff;
+  height: 100px;
+  width: 100%; }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }

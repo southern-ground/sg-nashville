@@ -1,0 +1,22 @@
+section.artists{
+  padding: 60px 0 0;
+  text-align: center;
+  font-family: $fell;
+  h2{
+    text-transform: uppercase;
+  }
+  ul.artist-list{
+    margin: 0;
+    padding: 0;
+    li.legacy-item{
+      a{
+        color: inherit;
+      }
+      h3{
+        font-family: $ubuntu;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
