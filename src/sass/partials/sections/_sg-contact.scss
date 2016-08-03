@@ -1,0 +1,61 @@
+section.contact{
+  padding: 40px 0;
+  @include clearfix;
+  font-family: $ubuntu;
+  .bookings-form, .contact-info{
+    @include clearfix;
+  }
+  h2{
+    font-family: $fell;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
+  .bookings-form{
+    .staff{
+
+    }
+    form{
+
+      @include extra-small{
+        margin: 0;
+      }
+      input,textarea{
+        margin-bottom: 10px;
+      }
+      input{
+        height: 2.1rem;
+      }
+      textarea{
+        height: 9rem;
+      }
+      .submit{
+        padding-left:0;
+        button{
+          background-color: $purple;
+          color: $tan;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 3px 20px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .contact-info{
+    h3{
+      text-transform: uppercase;
+      margin: 0 0 5px 0;
+      letter-spacing:2px;
+      font-size:16px;
+    }
+    h3,p{
+
+    }
+    .staff{
+      border-bottom: 1px solid $purple;
+      padding: 0 0 14px 0;
+      margin: 0 0 14px 0;
+    }
+  }
+}

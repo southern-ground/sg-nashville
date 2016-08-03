@@ -1,0 +1,17 @@
+section.studio-happenings{
+  padding: 85px 0 0 0;
+  font-family: $fell;
+  h2{
+    text-transform: uppercase;
+    margin: 0 0 42px 0;
+    padding: 0;
+    text-align:center;
+  }
+  .happening{
+    width: 150px;
+    height: 150px;
+    background-color: $brown;
+    margin: 0 auto 40px auto;
+    text-align: center;
+  }
+}

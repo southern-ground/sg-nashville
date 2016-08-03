@@ -1,5 +1,19 @@
-footer{
-  background: #ff00ff;
-  height: 100px;
-  width: 100%;
+footer {
+  background: $purple;
+  display: relative;
+  .wrapper{
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: center;
+    color: $tan;
+    height: 100px;
+    width: 100%;
+    font-size: 12px;
+    font-family: $ubuntu;
+    padding: 32px 0 0;
+    @include extra-small{
+      padding: 32px 20px 0;
+    }
+  }
 }
