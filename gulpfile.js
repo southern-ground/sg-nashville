@@ -94,8 +94,7 @@ gulp.task('copy', function(done){
             'copy:main.css',
             'copy:misc',
             'copy:bootstrap',
-            'copy:normalize'],
-        'updateBrowserSync', done);
+            'copy:normalize'], ['updateBrowserSync'], done);
 });
 
 gulp.task('copy:.htaccess', function () {
