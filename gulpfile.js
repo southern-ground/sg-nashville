@@ -14,6 +14,25 @@ var runSequence = require('run-sequence');
 var pkg = require('./package.json');
 var dirs = pkg['sg-nashville-configs'].directories;
 
+var sass = require('gulp-sass');
+
+// BrowserSync foolishness
+var browserSync = require('browser-sync').create();
+gulp.task('initBrowserSync', function (done) {
+    browserSync.init({
+        "server": {
+            "baseDir": "dist"
+        },
+        "ghostMode": false
+    });
+    done();
+});
+gulp.task('updateBrowserSync', function (done) {
+    browserSync.reload();
+    done();
+});
+// END BrowserSync foolishness
+
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
@@ -66,53 +85,55 @@ gulp.task('clean', function (done) {
     });
 });
 
-gulp.task('copy', [
-    'copy:.htaccess',
-    'copy:index.html',
-    'copy:jquery',
-    'copy:license',
-    'copy:main.css',
-    'copy:misc',
-    'copy:bootstrap',
-    'copy:normalize'
-]);
+gulp.task('copy', function(done){
+    runSequence([
+            'copy:.htaccess',
+            'copy:index.html',
+            'copy:jquery',
+            'copy:license',
+            'copy:main.css',
+            'copy:misc',
+            'copy:bootstrap',
+            'copy:normalize'],
+        'updateBrowserSync', done);
+});
 
 gulp.task('copy:.htaccess', function () {
     return gulp.src('node_modules/apache-server-configs/dist/.htaccess')
-               .pipe(plugins.replace(/# ErrorDocument/g, 'ErrorDocument'))
-               .pipe(gulp.dest(dirs.dist));
+        .pipe(plugins.replace(/# ErrorDocument/g, 'ErrorDocument'))
+        .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
-               .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-               .pipe(gulp.dest(dirs.dist));
+        .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
+        .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('copy:jquery', function () {
     return gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-               .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
-               .pipe(gulp.dest(dirs.dist + '/js/vendor'));
+        .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
+        .pipe(gulp.dest(dirs.dist + '/js/vendor'));
 });
 
 gulp.task('copy:license', function () {
     return gulp.src('LICENSE.txt')
-               .pipe(gulp.dest(dirs.dist));
+        .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('copy:main.css', function () {
 
     var banner = '/*! HTML5 Boilerplate v' + pkg.version +
-                    ' | ' + pkg.license.type + ' License' +
-                    ' | ' + pkg.homepage + ' */\n\n';
+        ' | ' + pkg.license.type + ' License' +
+        ' | ' + pkg.homepage + ' */\n\n';
 
     return gulp.src(dirs.src + '/css/main.css')
-               .pipe(plugins.header(banner))
-               .pipe(plugins.autoprefixer({
-                   browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
-                   cascade: false
-               }))
-               .pipe(gulp.dest(dirs.dist + '/css'));
+        .pipe(plugins.header(banner))
+        .pipe(plugins.autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
 gulp.task('copy:misc', function () {
@@ -151,14 +172,12 @@ gulp.task('lint:js', function () {
         dirs.src + '/js/*.js',
         dirs.test + '/*.js'
     ]).pipe(plugins.jscs())
-      .pipe(plugins.jshint())
-      .pipe(plugins.jshint.reporter('jshint-stylish'))
-      .pipe(plugins.jshint.reporter('fail'));
+        .pipe(plugins.jshint())
+        .pipe(plugins.jshint.reporter('jshint-stylish'))
+        .pipe(plugins.jshint.reporter('fail'));
 });
 
-var sass = require('gulp-sass');
-
-gulp.task('sass', function(){
+gulp.task('sass', function () {
     return gulp.src([dirs.src + '/sass/**/*.scss', '!' + dirs.src + '/sass/**/_*.scss'])
         .pipe(sass())
         .pipe(gulp.dest(dirs.src + '/css'))
@@ -180,14 +199,18 @@ gulp.task('build', function (done) {
     runSequence(
         ['clean', 'lint:js', 'sass'],
         'copy',
-    done);
+        done);
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', function () {
     gulp.watch([dirs.src + '/sass/**/*.scss',
-        dirs.src + '/**/*.html',
-        dirs.src + '/js/**/*.js'],
-        ['build']);
+            dirs.src + '/**/*.html',
+            dirs.src + '/js/**/*.js'],
+        ['build']
+    );
+
 });
 
-gulp.task('default', ['build','watch']);
+gulp.task('default', function(done){
+    runSequence(['build'], ['watch'], ['initBrowserSync'], done);
+});
