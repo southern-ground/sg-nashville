@@ -77,9 +77,9 @@ textarea {
   float: none; }
 
 header {
-  padding: 16px 0 20px;
+  padding: 16px 0 20px 0;
   background-color: #19111b;
-  height: 127px; }
+  min-height: 128px; }
   header div.wrapper {
     margin: 0 auto;
     display: flex;
@@ -88,28 +88,30 @@ header {
     width: 100%;
     max-width: 1052px; }
     header div.wrapper .block {
-      display: block; }
+      display: inline-block; }
     header div.wrapper .logo {
       display: inline; }
     header div.wrapper .nav, header div.wrapper .social {
       display: block;
       list-style: none;
       display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
       color: #ccc1b6; }
       header div.wrapper .nav li, header div.wrapper .social li {
-        padding: 35px 10px 0 10px;
         display: block; }
-        header div.wrapper .nav li:first-child, header div.wrapper .social li:first-child {
-          padding-left: 0; }
         header div.wrapper .nav li:last-child, header div.wrapper .social li:last-child {
           padding-right: 0; }
+    header div.wrapper .social li a {
+      margin: 0 10px 0 0; }
+    header div.wrapper .social li:last-child a {
+      margin-right: 0; }
     header div.wrapper .nav {
       font-family: "IM Fell English SC", serif;
       text-transform: uppercase;
-      font-size: 18px;
-      margin: 0 0 0 12px; }
+      font-size: 18px; }
       header div.wrapper .nav li a {
         text-decoration: none;
         color: inherit; }
@@ -118,13 +120,13 @@ header {
       height: 27px;
       font-size: 0; }
       header div.wrapper .social a.social.facebook {
-        background: url("../img/social-icons.png"); }
+        background: url("../../img/social-icons.png"); }
       header div.wrapper .social a.social.twitter {
-        background: url("../img/social-icons.png") -27px 0; }
+        background: url("../../img/social-icons.png") -27px 0; }
       header div.wrapper .social a.social.instagram {
-        background: url("../img/social-icons.png") -54px 0; }
+        background: url("../../img/social-icons.png") -54px 0; }
       header div.wrapper .social a.social.youtube {
-        background: url("../img/social-icons.png") -81px 0; }
+        background: url("../../img/social-icons.png") -81px 0; }
 
 .ubuntu {
   font-family: "Ubuntu", sans-serif;
@@ -139,11 +141,11 @@ header {
   height: 460px; }
 
 div.content-container._tan {
-  background: url("../img/backgrounds/pale-background.jpg");
+  background: url("../../img/backgrounds/pale-background.jpg");
   color: #19111b; }
 
 div.content-container._rust {
-  background: url("../img/backgrounds/rust-background.jpg");
+  background: url("../../img/backgrounds/rust-background.jpg");
   color: #ccc1b6;
   font-family: "Ubuntu", sans-serif; }
 
@@ -152,6 +154,41 @@ div.content-container .wrapper {
   width: 100%;
   max-width: 960px; }
 
+/*
+Extension for Bootstrap to be able to support five equal columns
+in a typical 12 col grid.
+*/
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.col-xs-5ths {
+  width: 20%;
+  float: left; }
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left; } }
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left; } }
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left; } }
+
+/*
+END Bootstrap Extension
+*/
 .spacer {
   width: 100%;
   position: relative;
@@ -162,7 +199,12 @@ div.content-container .wrapper {
   .spacer .left, .spacer .right {
     min-width: 28px;
     width: 100%;
-    background: url("../../img/spacer-left.png") left center no-repeat; }
+    background: url("../../../img/spacer-left.png") left center no-repeat; }
+  @media only screen and (max-width: 959px) {
+    .spacer .left {
+      margin-left: 10px; }
+    .spacer .right {
+      margin-right: 10px; } }
   .spacer .right {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -178,16 +220,28 @@ div.content-container .wrapper {
     clear: both; }
 
 .hero {
-  padding: 66px 0 0; }
+  padding: 66px 0 0;
+  position: relative; }
   .hero:after {
     content: "";
     display: table;
     clear: both; }
   .hero .image {
     padding: 0 40px 0 0; }
+    @media only screen and (max-width: 991px) {
+      .hero .image {
+        padding-right: 0; }
+        .hero .image img {
+          width: 100%;
+          max-width: 460px;
+          height: auto;
+          margin: 0 auto; } }
   .hero .copy {
     font-family: "Ubuntu", sans-serif;
     font-weight: 300; }
+    @media only screen and (max-width: 991px) {
+      .hero .copy {
+        margin-top: 40px; } }
     .hero .copy h1 {
       text-transform: uppercase;
       margin-top: 0;
@@ -210,17 +264,17 @@ div.content-container .wrapper {
     font-weight: normal;
     letter-spacing: -1px; }
   .spaces .other-spaces {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
     color: #19111b; }
-    .spaces .other-spaces li a {
+    .spaces .other-spaces li.space a {
       color: inherit; }
-    .spaces .other-spaces h3 {
+    .spaces .other-spaces li.space h3 {
       font-family: "IM Fell English SC", serif;
       text-transform: uppercase; }
+    @media (min-width: 1200px) {
+      .spaces .other-spaces li.space:not(:last-child) {
+        margin-right: 10px; } }
 
 section.our-people {
   padding: 60px 0 72px 0;

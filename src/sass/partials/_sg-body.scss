@@ -1,0 +1,83 @@
+.ubuntu{
+  font-family: $ubuntu;
+  font-weight: $ubuntu-light;
+}
+
+.parallax-window {
+  min-height: 460px;
+  background: transparent;
+  background-position: top;
+}
+
+.parallax{
+  height: 460px;
+}
+
+div.content-container{
+  &._tan{
+    background: url('../../img/backgrounds/pale-background.jpg');
+    color: $purple;
+  }
+  &._rust{
+    background: url('../../img/backgrounds/rust-background.jpg');
+    color: $tan;
+    font-family: $ubuntu;
+  }
+  .wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+  }
+}
+
+/*
+Extension for Bootstrap to be able to support five equal columns
+in a typical 12 col grid.
+*/
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+/*
+END Bootstrap Extension
+*/
+
+@import "sections/sg-spacer";
+@import 'sections/sg-hero';
+@import 'sections/sg-spaces';
+@import 'sections/sg-people';
+@import 'sections/sg-legacy';
+@import 'sections/sg-artists';

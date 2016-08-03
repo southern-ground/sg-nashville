@@ -1,12 +1,25 @@
 .hero{
   padding: 66px 0 0;
+  position: relative;
   @include clearfix;
   .image{
     padding: 0 40px 0 0;
+    @media only screen and (max-width: $medium - 1px){
+      padding-right: 0;
+      img{
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
   }
   .copy{
     font-family: $ubuntu;
     font-weight: $ubuntu-light;
+    @media only screen and (max-width: $medium - 1px){
+      margin-top: 40px;
+    }
     h1{
       text-transform:uppercase;
       margin-top: 0;

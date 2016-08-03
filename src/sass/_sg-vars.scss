@@ -1,6 +1,14 @@
 $max-width: 1024px;
 $font-size: 14px;
 
+$wrapper-width: 960;
+
+// Sizes from Bootstrap:
+$small: 768px;
+$extra-small: $small - 1px;
+$medium: 992px;
+$large: 1200px;
+
 // Colors
 $purple: #19111b;
 $tan: #ccc1b6;
@@ -9,3 +17,4 @@ $tan: #ccc1b6;
 $fell: 'IM Fell English SC', serif;
 $ubuntu: 'Ubuntu', sans-serif;
 $ubuntu-light: 300;
+
