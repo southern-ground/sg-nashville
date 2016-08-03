@@ -1,7 +1,8 @@
 section.artists{
-  padding: 60px 0 0;
+  padding: 60px 0 70px;
   text-align: center;
   font-family: $fell;
+  @include clearfix;
   h2{
     text-transform: uppercase;
   }
