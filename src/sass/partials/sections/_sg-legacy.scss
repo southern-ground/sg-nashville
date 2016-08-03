@@ -1,26 +1,38 @@
-section.legacy{
+section.legacy {
   padding: 60px 0 0;
   text-align: center;
   font-family: $fell;
-  h2{
+  h2 {
     text-transform: uppercase;
   }
-  ul.legacy-items{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    margin: 0;
-    padding: 0;
-    li.legacy-item{
-      a{
-        color: inherit;
-      }
-      h3{
-        font-family: $ubuntu;
-        font-size: 14px;
-        text-transform: uppercase;
-      }
+  .carousel-nav-column{
+    position: relative;
+    height: 170px;
+  }
+  .carousel-nav{
+    width: 20px;
+    height: 40px;
+    border: none;
+    background: url('../img/carousel-nav.png');
+    @include center-both;
+    &.right{
+      background-position: 0 -20px;
     }
+  }
+  .legacy-item {
+
+    img {
+      display: inline-block;
+    }
+
+    a {
+      color: inherit;
+    }
+    h3 {
+      font-family: $ubuntu;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
   }
 }
