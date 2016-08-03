@@ -1,5 +1,3 @@
-
-
 .spaces{
   margin: 56px 0 0 0;
   padding: 0 0 94px 0;
@@ -12,23 +10,27 @@
     font-weight: normal;
     letter-spacing:-1px;
   }
-  .other-spaces{
-    margin: 0;
-    padding: 0;
-    color: $purple;
-    li.space{
-      a{
-        color: inherit;
+  .space{
+    a{
+      color: inherit;
+    }
+    h3{
+      font-family: $fell;
+      text-transform: uppercase;
+    }
+
+
+    &:not(:last-child){
+      @include medium{
+        padding-bottom: 20px;
       }
-      h3{
-        font-family: $fell;
-        text-transform: uppercase;
+      @include small{
+        padding-bottom: 20px;
       }
-      &:not(:last-child){
-        @include large{
-          margin-right: 10px;
-        }
+      @include extra-small{
+        padding-bottom: 20px;
       }
     }
+
   }
 }

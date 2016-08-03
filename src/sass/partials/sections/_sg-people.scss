@@ -1,5 +1,5 @@
 section.our-people{
-  padding: 60px 0 72px 0;
+  padding: 60px 0 0 0;
   text-align: center;
   @include clearfix;
   h2{
@@ -9,19 +9,32 @@ section.our-people{
     font-weight: normal;
     letter-spacing:-1px;
   }
-  .people{
-    margin: 0;
-    padding: 0;
-    li a{
-      color: inherit;
-    }
+  .person, a{
+    color: inherit;
     h3{
       font-size: 14px;
       text-transform: uppercase;
       margin: 15px 0 -2px 0;
     }
-    .title{
-      font-size: 12px;
+
+    &:last-child{
+      padding-bottom: 72px;
     }
+
+    &:not(:last-child){
+      @include medium{
+        padding-bottom: 40px;
+      }
+      @include small{
+        padding-bottom: 40px;
+      }
+      @include extra-small{
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  .title{
+    font-size: 12px;
   }
 }

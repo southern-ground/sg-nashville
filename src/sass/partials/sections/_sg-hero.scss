@@ -11,6 +11,9 @@
         max-width: 460px;
         height: auto;
         margin: 0 auto;
+        @include center-horizontally;
+        @include clearfix;
+        position: relative;
       }
     }
   }
