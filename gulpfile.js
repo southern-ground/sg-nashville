@@ -159,12 +159,12 @@ gulp.task('copy:misc', function () {
 
 gulp.task('copy:normalize', function () {
     return gulp.src('node_modules/normalize.css/normalize.css')
-               .pipe(gulp.dest(dirs.dist + '/css'));
+        .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
 gulp.task('copy:bootstrap', function () {
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-               .pipe(gulp.dest(dirs.dist + '/css'));
+        .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
 gulp.task('lint:js', function () {
@@ -192,7 +192,7 @@ gulp.task('archive', function (done) {
         'build',
         'archive:create_archive_dir',
         'archive:zip',
-    done);
+        done);
 });
 
 gulp.task('build', function (done) {
