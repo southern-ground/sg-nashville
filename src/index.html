@@ -34,37 +34,70 @@
     -->
 
     <header>
-
         <div class="wrapper">
 
-            <img class="logo block" src="img/logo.png"/>
+            <img class="logo" src="img/logo.png"/>
 
-            <ul class="nav block">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Social</a></li>
-                <li><a href="#">Booking</a></li>
-            </ul>
+            <nav class="site-nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Studio</a>
+                <a href="#" class="nav-link">Clients</a>
+                <a href="#" class="nav-link">Social</a>
+                <a href="#" class="nav-link">Booking</a>
+            </nav>
 
-            <ul class="social block">
-                <li><a class="social facebook" href="#">Facebook</a></li>
-                <li><a class="social twitter" href="#">Twitter</a></li>
-                <li><a class="social instagram" href="#">Instagram</a></li>
-                <li><a class="social youtube" href="#">YouTube</a></li>
-            </ul>
+            <nav class="social-nav">
+                <a class="social facebook" href="#">Facebook</a>
+                <a class="social twitter" href="#">Twitter</a>
+                <a class="social instagram" href="#">Instagram</a>
+                <a class="social youtube" href="#">YouTube</a>
+            </nav>
+
+
+        </div>
+
+
+        <div class="wrapper row" style="display:none">
+
+                <div class="logo-and-nav col-xs-12 col-sm-10">
+                    <img class="logo" src="img/logo.png"/>
+                    <nav class="site-nav row">
+                        <a href="#" class="nav-link col-xs-6 col-md-2">Home</a>
+                        <a href="#" class="nav-link col-xs-6 col-md-2">About</a>
+                        <a href="#" class="nav-link col-xs-6 col-md-2">Studio</a>
+                        <a href="#" class="nav-link col-xs-6 col-md-2">Clients</a>
+                        <a href="#" class="nav-link col-xs-6 col-md-2">Social</a>
+                        <a href="#" class="nav-link col-xs-6 col-md-2">Booking</a>
+                    </nav>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <nav class="social-nav">
+
+                        <a class="social facebook" href="#">Facebook</a>
+
+                        <a class="social twitter" href="#">Twitter</a>
+
+                        <a class="social instagram" href="#">Instagram</a>
+
+                        <a class="social youtube" href="#">YouTube</a>
+
+                    </nav>
+                </div>
 
         </div>
 
     </header>
 
     <div id="Building" class="parallax">
-        <div class="parallax-window building"
+
+        <div class="parallax-window building hidden-xs"
              data-parallax="scroll"
              data-image-src="/img/backgrounds/building.jpg"
-             data-position-y="-200px"
-        ></div>
+             data-position-y="-200px"></div>
+
+        <div class="static-cover building hidden-xs-up"></div>
+
     </div>
 
     <div class="content-container _tan">
@@ -175,9 +208,13 @@
     </div>
 
     <div id="Musicians" class="parallax">
-        <div class="parallax-window musicians"
+
+        <div class="parallax-window musicians hidden-xs"
              data-parallax="scroll"
              data-image-src="/img/backgrounds/musicians.jpg"></div>
+
+        <div class="static-cover muscians hidden-xs-up"></div>
+
     </div>
 
     <div class="content-container _rust">
@@ -241,9 +278,11 @@
 
     <div id="Amplifier" class="parallax">
 
-        <div class="parallax-window musicians"
+        <div class="parallax-window musicians hidden-xs"
              data-parallax="scroll"
              data-image-src="/img/backgrounds/amplifier.jpg"></div>
+
+        <div class="static-cover amplifier hidden-xs-up"></div>
 
     </div>
 
@@ -366,11 +405,15 @@
 
     <div id="Studio" class="parallax">
 
-        <div class="parallax-window studio"
+        <div class="parallax-window studio hidden-xs"
              data-parallax="scroll"
              data-image-src="/img/backgrounds/studio.jpg"></div>
 
+        <div class="static-cover studio hidden-xs-up"></div>
+
     </div>
+
+
 
     <div class="content-container _tan">
 
@@ -439,9 +482,11 @@
 
     <div id="Engineering" class="parallax">
 
-        <div class="parallax-window studio"
+        <div class="parallax-window studio hidden-xs"
              data-parallax="scroll"
              data-image-src="/img/backgrounds/engineering.jpg"></div>
+
+        <div class="static-cover engineering hidden-xs-up"></div>
 
     </div>
 

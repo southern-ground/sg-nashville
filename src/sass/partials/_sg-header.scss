@@ -2,79 +2,110 @@ header {
   padding: 16px 0 20px 0;
   background-color: $purple;
   min-height: 128px;
-  div.wrapper {
 
+  div.wrapper {
     margin: 0 auto;
+    width: 100%;
+    max-width: $max-header-width;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1052px;
 
-    .block {
-      display: inline-block;
+    .logo-and-nav{
+      text-align: center;
+      .logo{
+        float:left;
+        @media only screen and (max-width: $extra-small){
+          float: none;
+        }
+      }
     }
 
-    .logo {
-      display: inline;
-    }
-
-    .nav, .social {
-      display: block;
-      list-style: none;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
+    .site-nav, .social-nav{
       color: $tan;
-      li {
-        display: block;
-        &:last-child{
-          padding-right: 0;
-        }
-      }
+      text-align: center;
+      display:flex;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
     }
-    .social{
-      li{
-        a{
-          margin: 0 10px 0 0;
-        }
-        &:last-child{
-          a{
-            margin-right: 0;
-          }
-        }
-      }
-    }
-    .nav {
+
+    .site-nav{
       font-family: $fell;
       text-transform: uppercase;
       font-size: 18px;
-
-      li a{
+      a.nav-link{
         text-decoration: none;
         color: inherit;
+        &:not(:last-child){
+          margin: 0 20px 0 0;
+        }
       }
     }
-    .social{
-      a.social{
+
+    .social-nav{
+      a.social {
         width: 27px;
         height: 27px;
         font-size: 0;
-        &.facebook{
-          background: url('../../img/social-icons.png');
+        display: inline-block;
+        &:not(:last-child){
+          margin: 0 10px 0 0;
         }
-        &.twitter{
+        background: url('../../img/social-icons.png');
+        &.twitter {
           background: url('../../img/social-icons.png') -27px 0;
         }
-        &.instagram{
+        &.instagram {
           background: url('../../img/social-icons.png') -54px 0;
         }
-        &.youtube{
+        &.youtube {
           background: url('../../img/social-icons.png') -81px 0;
         }
       }
     }
+
+    .nav-container{
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    @media only screen and (max-width:$max-header-width - 1px){
+      .logo, .social-nav{
+        margin: 0 20px;
+      }
+    }
+
+    @media only screen and (max-width:975px){
+      .site-nav{
+        flex-wrap: wrap;
+        justify-content:space-around;
+        a.nav-link{
+          margin: 0 10px 0 10px;
+          &:not(:last-child){
+            margin: 0 10px 0 10px;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width:650px){
+      flex-direction: column;
+      .site-nav{
+        margin: 20px 0 10px;
+        a.nav-link{
+          width: 50%;
+          height:40px;
+          margin: 0;
+          &:not(:last-child){
+            margin: 0;
+          }
+        }
+      }
+    }
+
   }
 }
