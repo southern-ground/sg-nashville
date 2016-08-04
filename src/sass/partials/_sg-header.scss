@@ -1,111 +1,194 @@
 header {
+
+  width: 100%;
   padding: 16px 0 20px 0;
   background-color: $purple;
   min-height: 128px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 
-  div.wrapper {
-    margin: 0 auto;
-    width: 100%;
-    max-width: $max-header-width;
+  &.min-header {
 
-    display: flex;
+    height: 80px;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
     align-items: center;
-    justify-content: space-between;
+    .wrapper {
+      height: 100%;
+    }
+    .logo {
+      width: auto;
+      height: 50px;
 
-    .logo-and-nav{
-      text-align: center;
-      .logo{
-        float:left;
-        @media only screen and (max-width: $extra-small){
-          float: none;
-        }
-      }
     }
 
-    .site-nav, .social-nav{
-      color: $tan;
-      text-align: center;
-      display:flex;
-      align-content: center;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-nav{
-      font-family: $fell;
-      text-transform: uppercase;
-      font-size: 18px;
-      a.nav-link{
-        text-decoration: none;
-        color: inherit;
-        &:not(:last-child){
-          margin: 0 20px 0 0;
-        }
-      }
-    }
-
-    .social-nav{
-      a.social {
-        width: 27px;
-        height: 27px;
-        font-size: 0;
-        display: inline-block;
-        &:not(:last-child){
-          margin: 0 10px 0 0;
-        }
-        background: url('../../img/social-icons.png');
-        &.twitter {
-          background: url('../../img/social-icons.png') -27px 0;
-        }
-        &.instagram {
-          background: url('../../img/social-icons.png') -54px 0;
-        }
-        &.youtube {
-          background: url('../../img/social-icons.png') -81px 0;
-        }
-      }
-    }
-
-    .nav-container{
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: space-around;
-    }
-
-    @media only screen and (max-width:$max-header-width - 1px){
-      .logo, .social-nav{
-        margin: 0 20px;
-      }
-    }
-
-    @media only screen and (max-width:975px){
-      .site-nav{
-        flex-wrap: wrap;
-        justify-content:space-around;
-        a.nav-link{
-          margin: 0 10px 0 10px;
-          &:not(:last-child){
-            margin: 0 10px 0 10px;
-          }
-        }
-      }
-    }
-
-    @media only screen and (max-width:650px){
+    @media only screen and (max-width: 650px) {
       flex-direction: column;
-      .site-nav{
+      .wrapper > .site-nav {
+        display: none;
         margin: 20px 0 10px;
-        a.nav-link{
+        a.nav-link {
           width: 50%;
-          height:40px;
+          height: 40px;
           margin: 0;
-          &:not(:last-child){
+          &:not(:last-child) {
             margin: 0;
           }
         }
       }
     }
 
+  }
+
+  .site-nav, .social-nav {
+    color: $tan;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-nav {
+    font-family: $fell;
+    text-transform: uppercase;
+    font-size: 18px;
+    a.nav-link {
+      text-decoration: none;
+      color: inherit;
+      &:not(:last-child) {
+        margin: 0 20px 0 0;
+      }
+    }
+  }
+
+  .social-nav {
+    a.social {
+      width: 27px;
+      height: 27px;
+      font-size: 0;
+      display: inline-block;
+      &:not(:last-child) {
+        margin: 0 10px 0 0;
+      }
+      background: url('../../img/social-icons.png');
+      &.twitter {
+        background: url('../../img/social-icons.png') -27px 0;
+      }
+      &.instagram {
+        background: url('../../img/social-icons.png') -54px 0;
+      }
+      &.youtube {
+        background: url('../../img/social-icons.png') -81px 0;
+      }
+    }
+  }
+
+  div.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max-header-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo-and-nav {
+      text-align: center;
+      .logo {
+        float: left;
+        @media only screen and (max-width: $extra-small) {
+          float: none;
+        }
+      }
+    }
+
+    .nav-container {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  .hamburger-button {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: url('../img/hamburger.png');
+    background-position: 40px 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    &.open {
+      background-position: 0;
+    }
+  }
+
+  .hamburger-menu {
+    background: $purple;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .site-nav {
+      flex-direction: column;
+      width: 100%;
+      .nav-link{
+        width: 100%;
+        border-bottom: 1px solid rgba($tan, 0.6);
+        padding: 10px 0;
+        &:not(:last-child){
+          margin: 0 0 0 0;
+        }
+      }
+    }
+    .social-nav{
+      margin: 20px 0;
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: $max-header-width - 1px) {
+
+    min-height: auto;
+
+    .logo {
+      width: auto;
+      height: 50px;
+    }
+
+    .logo, .social-nav {
+      margin: 0 20px;
+    }
+
+  }
+
+  @media only screen and (max-width: 975px) {
+    .wrapper > .nav.site-nav {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      a.nav-link {
+        margin: 0 10px 0 10px;
+        &:not(:last-child) {
+          margin: 0 10px 0 10px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $header-mobile-cutoff + "px") {
+    z-index:3;
+    .wrapper > nav.site-nav, .wrapper > nav.social-nav {
+      display: none;
+    }
+    .hamburger-button {
+      display: block;
+    }
   }
 }

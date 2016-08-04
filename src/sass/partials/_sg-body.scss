@@ -1,8 +1,3 @@
-.ubuntu{
-  font-family: $ubuntu;
-  font-weight: $ubuntu-light;
-}
-
 .parallax-window {
   min-height: 460px;
   background: transparent;
@@ -42,6 +37,7 @@
   display: inline-block;
   float: none;
 }
+
 .no-gutter > [class*='col-'] {
   padding-right:0;
   padding-left:0;

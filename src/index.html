@@ -20,31 +20,32 @@
 </head>
 <body>
 
-<div id="content">
+<div id="Content">
 
-    <!--
-    // '##::::'##:'########::::'###::::'########::'########:'########::
-    //  ##:::: ##: ##.....::::'## ##::: ##.... ##: ##.....:: ##.... ##:
-    //  ##:::: ##: ##::::::::'##:. ##:: ##:::: ##: ##::::::: ##:::: ##:
-    //  #########: ######:::'##:::. ##: ##:::: ##: ######::: ########::
-    //  ##.... ##: ##...:::: #########: ##:::: ##: ##...:::: ##.. ##:::
-    //  ##:::: ##: ##::::::: ##.... ##: ##:::: ##: ##::::::: ##::. ##::
-    //  ##:::: ##: ########: ##:::: ##: ########:: ########: ##:::. ##:
-    // ..:::::..::........::..:::::..::........:::........::..:::::..::
-    -->
+<!--
+// '##::::'##:'########::::'###::::'########::'########:'########::
+//  ##:::: ##: ##.....::::'## ##::: ##.... ##: ##.....:: ##.... ##:
+//  ##:::: ##: ##::::::::'##:. ##:: ##:::: ##: ##::::::: ##:::: ##:
+//  #########: ######:::'##:::. ##: ##:::: ##: ######::: ########::
+//  ##.... ##: ##...:::: #########: ##:::: ##: ##...:::: ##.. ##:::
+//  ##:::: ##: ##::::::: ##.... ##: ##:::: ##: ##::::::: ##::. ##::
+//  ##:::: ##: ########: ##:::: ##: ########:: ########: ##:::. ##:
+// ..:::::..::........::..:::::..::........:::........::..:::::..::
+-->
 
-    <header>
+    <header id="Home">
+
         <div class="wrapper">
 
             <img class="logo" src="img/logo.png"/>
 
             <nav class="site-nav">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Studio</a>
-                <a href="#" class="nav-link">Clients</a>
-                <a href="#" class="nav-link">Social</a>
-                <a href="#" class="nav-link">Booking</a>
+                <a href="#Home" class="nav-link">Home</a>
+                <a href="#About" class="nav-link">About</a>
+                <a href="#Studio" class="nav-link">Studio</a>
+                <a href="#Clients" class="nav-link">Clients</a>
+                <a href="#Social" class="nav-link">Social</a>
+                <a href="#Booking" class="nav-link">Booking</a>
             </nav>
 
             <nav class="social-nav">
@@ -54,40 +55,29 @@
                 <a class="social youtube" href="#">YouTube</a>
             </nav>
 
-
         </div>
 
+        <div class="hamburger-button" />
 
-        <div class="wrapper row" style="display:none">
-
-                <div class="logo-and-nav col-xs-12 col-sm-10">
-                    <img class="logo" src="img/logo.png"/>
-                    <nav class="site-nav row">
-                        <a href="#" class="nav-link col-xs-6 col-md-2">Home</a>
-                        <a href="#" class="nav-link col-xs-6 col-md-2">About</a>
-                        <a href="#" class="nav-link col-xs-6 col-md-2">Studio</a>
-                        <a href="#" class="nav-link col-xs-6 col-md-2">Clients</a>
-                        <a href="#" class="nav-link col-xs-6 col-md-2">Social</a>
-                        <a href="#" class="nav-link col-xs-6 col-md-2">Booking</a>
-                    </nav>
-                </div>
-                <div class="col-xs-12 col-sm-2">
-                    <nav class="social-nav">
-
-                        <a class="social facebook" href="#">Facebook</a>
-
-                        <a class="social twitter" href="#">Twitter</a>
-
-                        <a class="social instagram" href="#">Instagram</a>
-
-                        <a class="social youtube" href="#">YouTube</a>
-
-                    </nav>
-                </div>
-
+        <div class="hamburger-menu" style="display: none">
+            <nav class="site-nav">
+                <a href="#Home" class="nav-link">Home</a>
+                <a href="#About" class="nav-link">About</a>
+                <a href="#Studio" class="nav-link">Studio</a>
+                <a href="#Clients" class="nav-link">Clients</a>
+                <a href="#Social" class="nav-link">Social</a>
+                <a href="#Booking" class="nav-link">Booking</a>
+            </nav>
+            <nav class="social-nav">
+                <a class="social facebook" href="#">Facebook</a>
+                <a class="social twitter" href="#">Twitter</a>
+                <a class="social instagram" href="#">Instagram</a>
+                <a class="social youtube" href="#">YouTube</a>
+            </nav>
         </div>
 
     </header>
+
 
     <div id="Building" class="parallax">
 
@@ -102,7 +92,7 @@
 
     <div class="content-container _tan">
 
-        <div class="wrapper">
+        <div id="About" class="wrapper">
 
             <!--
             // '##::::'##:'########:'########:::'#######::
@@ -154,7 +144,7 @@
             // :......:::..:::::::::..:::::..:::......:::........:::......:::
             -->
 
-            <section class="spaces">
+            <section id="Studio" class="spaces">
 
                 <h2>Spaces</h2>
 
@@ -301,7 +291,7 @@
             // ........::........:::......::::..:::::..:::......::::::..:::::
             -->
 
-            <section class="legacy">
+            <section id="Clients" class="legacy">
 
                 <h2>Legacy</h2>
 
@@ -413,9 +403,7 @@
 
     </div>
 
-
-
-    <div class="content-container _tan">
+    <div id="Social" class="content-container _tan">
 
         <div class="wrapper">
 
@@ -490,9 +478,7 @@
 
     </div>
 
-
-
-    <div class="content-container _tan">
+    <div id="Booking" class="content-container _tan">
 
         <div class="wrapper">
 
@@ -513,10 +499,10 @@
                     <div class="bookings-form col-xs-12 col-sm-6">
                         <h2>Bookings</h2>
                         <form class="row-fluid">
-                            <input type="text" placeholder="Name" class="col-xs-8 col-s-8" />
-                            <input type="text" placeholder="Venue" class="col-xs-8 col-s-8" />
-                            <input type="text" placeholder="Email" class="col-xs-8 col-s-8" />
-                            <textarea class="col-xs-12" ></textarea>
+                            <input type="text" placeholder="Name" class="col-xs-8 col-s-8"/>
+                            <input type="text" placeholder="Venue" class="col-xs-8 col-s-8"/>
+                            <input type="text" placeholder="Email" class="col-xs-8 col-s-8"/>
+                            <textarea class="col-xs-12"></textarea>
                             <div class="submit col-xs-12">
                                 <button type="submit">
                                     Submit Request
@@ -530,7 +516,8 @@
                             Staff
                         </h3>
                         <div class="staff">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, quis
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua Ut enim ad minim veniam, quis
                         </div>
                         <h3>
                             Location
@@ -553,20 +540,21 @@
 
     </div>
 
-<!--
-// '########::'#######:::'#######::'########:'########:'########::
-//  ##.....::'##.... ##:'##.... ##:... ##..:: ##.....:: ##.... ##:
-//  ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##::::::: ##:::: ##:
-//  ######::: ##:::: ##: ##:::: ##:::: ##:::: ######::: ########::
-//  ##...:::: ##:::: ##: ##:::: ##:::: ##:::: ##...:::: ##.. ##:::
-//  ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##::::::: ##::. ##::
-//  ##:::::::. #######::. #######::::: ##:::: ########: ##:::. ##:
-// ..:::::::::.......::::.......::::::..:::::........::..:::::..::
--->
+    <!--
+        // '########::'#######:::'#######::'########:'########:'########::
+        //  ##.....::'##.... ##:'##.... ##:... ##..:: ##.....:: ##.... ##:
+        //  ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##::::::: ##:::: ##:
+        //  ######::: ##:::: ##: ##:::: ##:::: ##:::: ######::: ########::
+        //  ##...:::: ##:::: ##: ##:::: ##:::: ##:::: ##...:::: ##.. ##:::
+        //  ##::::::: ##:::: ##: ##:::: ##:::: ##:::: ##::::::: ##::. ##::
+        //  ##:::::::. #######::. #######::::: ##:::: ########: ##:::. ##:
+        // ..:::::::::.......::::.......::::::..:::::........::..:::::..::
+        -->
 
     <footer>
         <div class="wrapper">
-            Website designed and developed by Southern Ground Creative. All content &copy; 2016 Southern Ground Nashville.
+            Website designed and developed by Southern Ground Creative. All content &copy; 2016 Southern Ground
+            Nashville.
         </div>
     </footer>
 
