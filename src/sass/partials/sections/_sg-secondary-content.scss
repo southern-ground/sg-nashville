@@ -1,0 +1,30 @@
+.secondary-content{
+  display: none;
+  margin-top: 40px;
+  border:2px solid $purple;
+  padding: 20px;
+  position: relative;
+  .section-close{
+    width:18px;
+    height:18px;
+    background:url('../img/close-x.png');
+    border: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: $ubuntu;
+    h3{
+      font-family: $fell;
+    }
+  }
+  @include below-wrapper-min{
+    margin: 20px;
+  }
+}
+
+#SpaceSlider .space-description{
+  img{
+    width: 100%;
+    height: auto;
+  }
+}

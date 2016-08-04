@@ -18,7 +18,7 @@ sgn.initNav = function () {
     this.$header = $('header');
 
     this.$window.scroll(function () {
-        if(_this.mobileNavOpen){
+        if (_this.mobileNavOpen) {
             _this.closeMobileNav();
         }
         if (_this.$window.scrollTop() > $headerHalfHeight) {
@@ -28,10 +28,10 @@ sgn.initNav = function () {
         }
     });
 
-    this.$window.resize(function(){
-        (function(scope){
+    this.$window.resize(function () {
+        (function (scope) {
             clearTimeout(scope.resizeTimeout);
-            scope.resizeTimeout = setTimeout(function(){
+            scope.resizeTimeout = setTimeout(function () {
                 scope.resolveResize();
             }, 100);
         })(_this);
@@ -54,18 +54,75 @@ sgn.initNav = function () {
     return this;
 };
 
-sgn.resolveResize = function(){
-    if(!this.mobileNavOpen){
+sgn.sectionInit = function () {
+
+    console.log('sectionInit');
+
+    var getAttribute = function (target, attr) {
+        while (target) {
+            var attribute = target.attributes.getNamedItem(attr);
+            if (attribute) {
+                return target.getAttribute(attr);
+            } else {
+                target = target.parentNode;
+            }
+        }
+        return null;
+    };
+
+    (function (scope) {
+
+        $('.hero .read-more').click(function (e) {
+            scope.openSection($(e.target).data('target'));
+        });
+
+        $('section.story .section-close').click(function (e) {
+            scope.closeSection($(e.target).data('target'));
+        });
+
+        $('.space-link').click(function (e) {
+
+            e.stopPropagation();
+            e.preventDefault();
+
+            scope.openSection(getAttribute(e.target, 'data-target'));
+            scope.targetSlide = getAttribute(e.target, 'data-slide');
+
+        });
+
+        $('div.space-details .section-close').click(function (e) {
+            scope.closeSection(getAttribute(e.target, 'data-target'));
+        });
+
+    })(this);
+
+    return this;
+};
+
+sgn.openSection = function (which) {
+
+    $(which).slideDown('slow');
+
+};
+
+sgn.closeSection = function (which) {
+
+    $(which).slideUp('slow');
+
+};
+
+sgn.resolveResize = function () {
+    if (!this.mobileNavOpen) {
         return;
-    }else{
-        if(this.$window.width() > 899){
+    } else {
+        if (this.$window.width() > 899) {
             this.closeMobileNav();
         }
     }
 };
 
-sgn.initParallax = function () {
-    console.log('initParallax');
+sgn.initSliders = function () {
+    console.log('initSliders');
     $("#Legacy-Slider").slick({
         // normal options...
         infinite: true,
@@ -89,6 +146,18 @@ sgn.initParallax = function () {
             }
         }]
     });
+    $("#SpaceSlider").slick({
+        // normal options...
+
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true,
+        prevArrow: $('#SpacePrev'),
+        nextArrow: $('#SpaceNext')
+    });
     return this;
 };
 
@@ -103,10 +172,10 @@ sgn.hamburgerButtonClick = function () {
 
 sgn.openMobileNav = function () {
     console.log('openMobileNav');
-    (function(scope){
+    (function (scope) {
         scope.$mobileSiteNav.fadeIn('slow');
         scope.$mobileSocialNav.fadeIn('slow');
-        scope.$hamburgerMenu.slideDown('slow', function(){
+        scope.$hamburgerMenu.slideDown('slow', function () {
             scope.mobileNavOpen = true;
         });
 
@@ -115,10 +184,10 @@ sgn.openMobileNav = function () {
 
 sgn.closeMobileNav = function () {
     console.log('closeMobileNav');
-    (function(scope){
+    (function (scope) {
         scope.$mobileSiteNav.fadeOut('fast');
         scope.$mobileSocialNav.fadeOut('fast');
-        scope.$hamburgerMenu.slideUp('slow', function(){
+        scope.$hamburgerMenu.slideUp('slow', function () {
             scope.mobileNavOpen = false;
         });
     })(this);
@@ -129,7 +198,7 @@ sgn.navLinkClick = function (e) {
     e.preventDefault();
     e.stopPropagation();
 
-    if(this.mobileNavOpen){
+    if (this.mobileNavOpen) {
         this.closeMobileNav();
     }
 
@@ -137,7 +206,7 @@ sgn.navLinkClick = function (e) {
         newY = target === '#Home' ?
             0
             :
-            $(target).offset().top - 60;
+        $(target).offset().top - 60;
 
     $('html, body').animate({
         scrollTop: newY
@@ -149,7 +218,10 @@ sgn.init = function () {
 
     var _this = window.sgn;
 
-    _this.initNav().initParallax();
+    _this
+        .initNav()
+        .sectionInit()
+        .initSliders();
 
 };
 
