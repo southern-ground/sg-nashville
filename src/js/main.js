@@ -68,9 +68,26 @@ sgn.sectionInit = function () {
             }
         }
         return null;
-    };
+    },
+        shouldScroll = function(id, targetY){
+        // find the scroll relation to the target
+        // and sort whether you need to move or not.
+        var $window = $(window);
+        return Math.abs($window.scrollTop() - targetY) > $window.height() * 0.5;
+    },
+        killEvent = function(e){
+            e.stopPropagation();
+            e.preventDefault();
+        },
+        scrubAttributes = function(e,scope){
+            scope.targetSlide = getAttribute(e.target, 'data-target');
+            scope.targetIndex = parseFloat(getAttribute(e.target, 'data-slide-index'));
+        };
 
     (function (scope) {
+
+        var idSelector,
+            targetY;
 
         $('.hero .read-more').click(function (e) {
             scope.openSection($(e.target).data('target'));
@@ -82,11 +99,24 @@ sgn.sectionInit = function () {
 
         $('.space-link').click(function (e) {
 
-            e.stopPropagation();
-            e.preventDefault();
+            idSelector = '#SpaceDetails';
+            targetY = $(idSelector).offset().top;
 
-            scope.openSection(getAttribute(e.target, 'data-target'));
-            scope.targetSlide = getAttribute(e.target, 'data-slide');
+            killEvent(e);
+            scrubAttributes(e,scope);
+
+            if (shouldScroll('#SpaceDetails', targetY)) {
+                $('html, body').animate(
+                    {
+                        scrollTop: targetY - 80
+                    }, 750);
+            }
+
+            $('#SpaceSlider').on('afterChange', function () {
+                scope.openSection(scope.targetSlide);
+            });
+
+            $('#SpaceSlider').slick('slickGoTo', scope.targetIndex, true);
 
         });
 
@@ -94,20 +124,64 @@ sgn.sectionInit = function () {
             scope.closeSection(getAttribute(e.target, 'data-target'));
         });
 
+        $('.person-detail-link').click(function(e){
+
+            idSelector = '#PeopleDetails';
+            targetY = $(idSelector).offset().top;
+
+            killEvent(e);
+            scrubAttributes(e,scope);
+
+            if (shouldScroll(idSelector, targetY)) {
+                $('html, body').animate(
+                    {
+                        scrollTop: targetY - 80
+                    }, 750);
+            }
+
+            $('#PeopleSlider').on('afterChange', function () {
+                console.log('afterChange');
+                scope.openSection(scope.targetSlide);
+            });
+
+            $('#PeopleSlider').slick('slickGoTo', scope.targetIndex, true);
+
+            // find the bottom of the header:
+            $('.content-panel-container').css('top', $('header').height());
+            $('.content-panel').addClass('is-visible');
+        });
+
+        $('div.people-details .section-close').click(function (e) {
+            console.log('BOOM');
+            console.log(getAttribute(e.target,'data-target'));
+            scope.closeSection(getAttribute(e.target, 'data-target'));
+        });
+
+
     })(this);
 
     return this;
 };
 
-sgn.openSection = function (which) {
+sgn.openSection = function (which, callback) {
 
-    $(which).slideDown('slow');
+    callback = callback || function(){};
+
+    $(which).slideDown('slow', function(){
+        $(window).trigger('resize').trigger('scroll');
+        callback();
+    });
 
 };
 
-sgn.closeSection = function (which) {
+sgn.closeSection = function (which, callback) {
 
-    $(which).slideUp('slow');
+    callback = callback || function(){};
+
+    $(which).slideUp('slow', function(){
+        $(window).trigger('resize').trigger('scroll');
+        callback();
+    });
 
 };
 
@@ -124,14 +198,13 @@ sgn.resolveResize = function () {
 sgn.initSliders = function () {
     console.log('initSliders');
     $("#Legacy-Slider").slick({
-        // normal options...
         infinite: true,
+        speed: 300,
         slidesToShow: 3,
         slidesToScroll: 3,
         dots: false,
         prevArrow: $('#LegacyPrev'),
         nextArrow: $('#LegacyNext'),
-        // the magic
         responsive: [{
             breakpoint: 800,
             settings: {
@@ -148,14 +221,35 @@ sgn.initSliders = function () {
     });
 
     $("#SpaceSlider").slick({
-        // normal options...
-        dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
+        dots: false,
+        prevArrow: $('#SpaceSliderPrev'),
+        nextArrow: $('#SpaceSliderNext'),
+
         centerMode: true,
-        variableWidth: true
+        variableWidth: true,
+
+        lazyLoad: 'ondemand',
+        fadeIn: true
+    });
+
+    $("#PeopleSlider").slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        prevArrow: $('#PeoplePrev'),
+        nextArrow: $('#PeopleNext'),
+
+        centerMode: true,
+        variableWidth: true,
+
+        lazyLoad: 'ondemand',
+        fadeIn: true
     });
 
     return this;

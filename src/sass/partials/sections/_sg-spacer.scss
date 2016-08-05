@@ -2,10 +2,9 @@
   width: 100%;
   position:relative;
   display: flex;
-  margin-top: 45px;
+  align-items: center;
   .piece{
     height:22px;
-    
   }
 
   .left, .right{
