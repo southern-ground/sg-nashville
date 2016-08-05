@@ -146,18 +146,18 @@ sgn.initSliders = function () {
             }
         }]
     });
+
     $("#SpaceSlider").slick({
         // normal options...
-
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
+        slidesToScroll: 1,
         centerMode: true,
-        variableWidth: true,
-        prevArrow: $('#SpacePrev'),
-        nextArrow: $('#SpaceNext')
+        variableWidth: true
     });
+
     return this;
 };
 

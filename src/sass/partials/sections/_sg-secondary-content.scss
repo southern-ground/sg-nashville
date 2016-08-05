@@ -4,6 +4,7 @@
   border:2px solid $purple;
   padding: 20px;
   position: relative;
+
   .section-close{
     width:18px;
     height:18px;
@@ -20,11 +21,42 @@
   @include below-wrapper-min{
     margin: 20px;
   }
+
+  &.space-details{
+    position: relative;
+    .carousel-nav-column{
+      display: flex;
+      align-items: center;
+    }
+    .space-slide{
+      position: relative;
+      .space-slide-container{
+        font-family: $ubuntu;
+        text-align: left;
+        position: relative;
+
+        @include small{
+          width: 640px;
+        }
+        @include extra-small{
+          width: 70vw;
+        }
+        margin: 0 auto;
+        h3{
+          font-family: $fell;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        margin: 0 100px;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    }
+  }
+
 }
 
-#SpaceSlider .space-description{
-  img{
-    width: 100%;
-    height: auto;
-  }
-}
+
