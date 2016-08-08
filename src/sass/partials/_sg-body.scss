@@ -1,3 +1,21 @@
+.parallaxParent {
+  height: 460px;
+  overflow: hidden;
+  &#parallax1{
+    .parallax-image{
+      background-image: url(/img/backgrounds/building.jpg);
+      background-position: center 24%;
+    }
+  }
+}
+.parallaxParent > * {
+  height: 200%;
+  position: relative;
+  top: -100%;
+  background-size: cover;
+
+}
+
 .parallax-window {
   min-height: 460px;
   background: transparent;
@@ -6,6 +24,7 @@
 
 .parallax{
   height: 460px;
+  padding-bottom:50px;
   @include extra-small{
     height: 320px;
   }

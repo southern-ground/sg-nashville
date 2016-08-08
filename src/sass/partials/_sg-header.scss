@@ -192,3 +192,15 @@ header {
     }
   }
 }
+
+.header-spacer{
+  min-height: 128px;
+
+  &.min-header {
+    height: 80px;
+    min-height: auto;
+  }
+  @media only screen and (max-width: $max-header-width - 1px) {
+    min-height: auto;
+  }
+}
