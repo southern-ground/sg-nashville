@@ -153,6 +153,9 @@ sgn.resizeOverlay = function(){
 };
 
 sgn.resolveResize = function () {
+
+    console.log('resolveResize');
+
     if (!this.mobileNavOpen) {
         return;
     } else {
@@ -163,6 +166,7 @@ sgn.resolveResize = function () {
     if(this.overlayIsOpen){
         this.resizeOverlay();
     }
+
 };
 
 sgn.initSliders = function () {
@@ -278,14 +282,44 @@ sgn.navLinkClick = function (e) {
 
 };
 
+sgn.monitorTwitterLoad = function(){
+
+    /*
+    Since the Twitter timeline is an iframe
+    it's of an indeterminate length. It's loading
+    also cannot be monitored because of iframe.
+
+    This section of script waits for the iframe to appear
+    then removes itself and, after a half a second, trigger
+    a re-draw/resize/scroll event to keep the parallax
+    do-hingys happy.
+     */
+    (function(scope){
+        scope.twitterInterval = setInterval(function(){
+
+            var twitterFrame = 'iframe#twitter-widget-0',
+                $iframe = $(twitterFrame);
+
+            if($iframe.length > 0){
+                clearInterval(scope.twitterInterval);
+                setTimeout(function(){
+                    $(window).trigger('resize').trigger('scroll');
+                }, 500);
+
+            }
+        }, 0);
+    })(this);
+
+    return this;
+};
+
 sgn.init = function () {
-
     var _this = window.sgn;
-
     _this
         .initNav()
         .sectionInit()
-        .initSliders();
+        .initSliders()
+        .monitorTwitterLoad();
 
 };
 
