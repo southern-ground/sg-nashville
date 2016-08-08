@@ -3,8 +3,28 @@
   overflow: hidden;
   &#parallax1{
     .parallax-image{
-      background-image: url(/img/backgrounds/building.jpg);
+      background-image: url(../img/backgrounds/building.jpg);
       background-position: center 24%;
+    }
+  }
+  &#parallax2{
+    .parallax-image{
+      background-image: url(../img/backgrounds/musicians.jpg);
+    }
+  }
+  &#parallax3{
+    .parallax-image{
+      background-image: url(../img/backgrounds/amplifier.jpg);
+    }
+  }
+  &#parallax4{
+    .parallax-image{
+      background-image: url(../img/backgrounds/studio.jpg);
+    }
+  }
+  &#parallax5{
+    .parallax-image{
+      background-image: url(../img/backgrounds/engineering.jpg);
     }
   }
 }
