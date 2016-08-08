@@ -73,15 +73,15 @@ header {
       &:not(:last-child) {
         margin: 0 10px 0 0;
       }
-      background: url('../../img/social-icons.png');
+      background: url('../img/social-icons.png');
       &.twitter {
-        background: url('../../img/social-icons.png') -27px 0;
+        background: url('../img/social-icons.png') -27px 0;
       }
       &.instagram {
-        background: url('../../img/social-icons.png') -54px 0;
+        background: url('../img/social-icons.png') -54px 0;
       }
       &.youtube {
-        background: url('../../img/social-icons.png') -81px 0;
+        background: url('../img/social-icons.png') -81px 0;
       }
     }
   }

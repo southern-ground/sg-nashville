@@ -16,7 +16,7 @@
   .left, .right{
     min-width:28px;
     width: 100%;
-    background: url('../../../img/spacer-left.png') left center no-repeat;
+    background: url('../img/spacer-left.png') left center no-repeat;
   }
 
   @include below-wrapper-min{
