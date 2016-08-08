@@ -59,104 +59,65 @@ sgn.sectionInit = function () {
     console.log('sectionInit');
 
     var getAttribute = function (target, attr) {
-        while (target) {
-            var attribute = target.attributes.getNamedItem(attr);
-            if (attribute) {
-                return target.getAttribute(attr);
-            } else {
-                target = target.parentNode;
+            while (target) {
+                var attribute = target.attributes.getNamedItem(attr);
+                if (attribute) {
+                    return target.getAttribute(attr);
+                } else {
+                    target = target.parentNode;
+                }
             }
-        }
-        return null;
-    },
-        shouldScroll = function(id, targetY){
-        // find the scroll relation to the target
-        // and sort whether you need to move or not.
-        var $window = $(window);
-        return Math.abs($window.scrollTop() - targetY) > $window.height() * 0.5;
-    },
-        killEvent = function(e){
+            return null;
+        },
+        killEvent = function (e) {
             e.stopPropagation();
             e.preventDefault();
         },
-        scrubAttributes = function(e,scope){
-            scope.targetSlide = getAttribute(e.target, 'data-target');
+        scrubAttributes = function (e, scope) {
+            scope.target = getAttribute(e.target, 'data-target');
             scope.targetIndex = parseFloat(getAttribute(e.target, 'data-slide-index'));
         };
 
     (function (scope) {
 
-        var idSelector,
-            targetY;
-
-        $('.hero .read-more').click(function (e) {
-            scope.openSection($(e.target).data('target'));
+        // Bind up the close button:
+        $('.content-panel').on('click', function(event){
+            if( $(event.target).is('.content-panel') || $(event.target).is('.content-panel-close') ) {
+                scope.closeContentPanel();
+                event.preventDefault();
+            }
         });
 
-        $('section.story .section-close').click(function (e) {
-            scope.closeSection($(e.target).data('target'));
+        $('.hero .read-more').click(function (e) {
+            killEvent(e);
+            scope.openSection($(e.target).data('target'));
         });
 
         $('.space-link').click(function (e) {
 
-            idSelector = '#SpaceDetails';
-            targetY = $(idSelector).offset().top;
-
             killEvent(e);
-            scrubAttributes(e,scope);
-
-            if (shouldScroll('#SpaceDetails', targetY)) {
-                $('html, body').animate(
-                    {
-                        scrollTop: targetY - 80
-                    }, 750);
-            }
+            scrubAttributes(e, scope);
 
             $('#SpaceSlider').on('afterChange', function () {
-                scope.openSection(scope.targetSlide);
+                scope.openSection(scope.target);
             });
 
             $('#SpaceSlider').slick('slickGoTo', scope.targetIndex, true);
 
         });
 
-        $('div.space-details .section-close').click(function (e) {
-            scope.closeSection(getAttribute(e.target, 'data-target'));
-        });
-
-        $('.person-detail-link').click(function(e){
-
-            idSelector = '#PeopleDetails';
-            targetY = $(idSelector).offset().top;
+        $('.person-detail-link').click(function (e) {
 
             killEvent(e);
-            scrubAttributes(e,scope);
-
-            if (shouldScroll(idSelector, targetY)) {
-                $('html, body').animate(
-                    {
-                        scrollTop: targetY - 80
-                    }, 750);
-            }
+            scrubAttributes(e, scope);
 
             $('#PeopleSlider').on('afterChange', function () {
-                console.log('afterChange');
-                scope.openSection(scope.targetSlide);
+                scope.openSection(scope.target);
             });
 
             $('#PeopleSlider').slick('slickGoTo', scope.targetIndex, true);
 
-            // find the bottom of the header:
-            $('.content-panel-container').css('top', $('header').height());
-            $('.content-panel').addClass('is-visible');
         });
-
-        $('div.people-details .section-close').click(function (e) {
-            console.log('BOOM');
-            console.log(getAttribute(e.target,'data-target'));
-            scope.closeSection(getAttribute(e.target, 'data-target'));
-        });
-
 
     })(this);
 
@@ -165,24 +126,30 @@ sgn.sectionInit = function () {
 
 sgn.openSection = function (which, callback) {
 
-    callback = callback || function(){};
+    callback = callback || function () {};
 
-    $(which).slideDown('slow', function(){
-        $(window).trigger('resize').trigger('scroll');
-        callback();
-    });
+    this.resizeOverlay();
+
+    $('.content-panel').addClass('is-visible');
+
+    $(which).fadeIn();
+
+    $(window).trigger('resize').trigger('scroll');
+
+    callback();
+
+    this.overlayIsOpen = true;
 
 };
 
-sgn.closeSection = function (which, callback) {
+sgn.closeContentPanel = function(){
+    $('.additional-content').fadeOut();
+    $('.content-panel').removeClass('is-visible');
+    this.overlayIsOpen = false;
+};
 
-    callback = callback || function(){};
-
-    $(which).slideUp('slow', function(){
-        $(window).trigger('resize').trigger('scroll');
-        callback();
-    });
-
+sgn.resizeOverlay = function(){
+    $('.content-panel-container').css('top', $('header').innerHeight());
 };
 
 sgn.resolveResize = function () {
@@ -192,6 +159,9 @@ sgn.resolveResize = function () {
         if (this.$window.width() > 899) {
             this.closeMobileNav();
         }
+    }
+    if(this.overlayIsOpen){
+        this.resizeOverlay();
     }
 };
 

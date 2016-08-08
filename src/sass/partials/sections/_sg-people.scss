@@ -17,6 +17,19 @@ section.our-people{
       margin: 15px 0 -2px 0;
     }
 
+    .person-portrait{
+      position: relative;
+      width: 173px;
+      height: 173px;
+      overflow: hidden;
+      margin: 0 auto;
+      img{
+        position: absolute;
+        left: -25%;
+
+      }
+    }
+
     &:last-child{
       padding-bottom: 72px;
     }

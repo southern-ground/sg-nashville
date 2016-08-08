@@ -113,6 +113,11 @@ in a typical 12 col grid.
 END Bootstrap Extension
 */
 
+#About{
+  .spacer{
+    margin-top: 45px;
+  }
+}
 
 @import "sections/sg-content-panel";
 @import "sections/sg-spacer";
@@ -124,3 +129,4 @@ END Bootstrap Extension
 @import 'sections/sg-artists';
 @import 'sections/sg-studio-happenings';
 @import 'sections/sg-contact';
+

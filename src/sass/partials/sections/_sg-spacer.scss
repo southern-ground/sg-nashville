@@ -5,6 +5,12 @@
   align-items: center;
   .piece{
     height:22px;
+    &:before{
+      content: normal;
+    }
+    &:after{
+      content: normal;
+    }
   }
 
   .left, .right{
