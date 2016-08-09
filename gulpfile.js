@@ -36,7 +36,8 @@ var fs = require('fs'),
     },
     getData = function () {
         var json = JSON.parse(fs.readFileSync('./src/data/sg-nashville.json', 'utf8'));
-        json.data.sections.legacy.artists.sort(dynamicSortMultiple('lastName', 'firstName'));
+        /*json.data.sections.legacy.artists.sort(dynamicSortMultiple('lastName', 'firstName'));
+        json.data.sections.legacy.artists.sort(dynamicSortMultiple('group', 'lastName'));*/
         config = json;
         return config;
     },
