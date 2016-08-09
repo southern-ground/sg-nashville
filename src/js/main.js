@@ -140,16 +140,19 @@ sgn.openSection = function (which, callback) {
 
     this.overlayIsOpen = true;
 
+    $('html body').addClass('no-scroll');
+
 };
 
 sgn.closeContentPanel = function(){
     $('.additional-content').fadeOut();
     $('.content-panel').removeClass('is-visible');
     this.overlayIsOpen = false;
+    $('html body').removeClass('no-scroll');
 };
 
 sgn.resizeOverlay = function(){
-    $('.content-panel-container').css('top', $('header').innerHeight());
+    $('.content-panel-container').css('top', $('header').innerHeight() + 40);
 };
 
 sgn.resolveResize = function () {
@@ -287,6 +290,11 @@ sgn.init = function () {
         .sectionInit()
         .initSliders();
 
+    /*$('#FixedOverlay').on('touchmove scroll wheel', function(e){
+        console.log('scrolling me, bitches', e);
+        e.stopPropagation();
+        e.preventDefault();
+    });*/
 };
 
 $(sgn.init);
