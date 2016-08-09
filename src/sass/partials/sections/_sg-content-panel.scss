@@ -82,12 +82,14 @@ html, body {
 .cd-main-content {
   text-align: center;
 }
+
 .cd-main-content h1 {
   font-size: 20px;
   font-size: 1.25rem;
   color: #64788c;
   padding: 4em 0;
 }
+
 .cd-main-content .cd-btn {
   position: relative;
   display: inline-block;
@@ -103,6 +105,7 @@ html, body {
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
+
 .no-touch .cd-main-content .cd-btn:hover {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -118,6 +121,7 @@ html, body {
   -moz-transition: visibility 0s 0.6s;
   transition: visibility 0s 0.6s;
 }
+
 .content-panel::after {
   /* overlay layer */
   position: absolute;
@@ -131,12 +135,14 @@ html, body {
   -moz-transition: background 0.3s 0.3s;
   transition: background 0.3s 0.3s;
 }
+
 .content-panel.is-visible {
   visibility: visible;
   -webkit-transition: visibility 0s 0s;
   -moz-transition: visibility 0s 0s;
   transition: visibility 0s 0s;
 }
+
 .content-panel.is-visible::after {
   background: rgba(0, 0, 0, 0.6);
   -webkit-transition: background 0.3s 0s;
@@ -144,19 +150,17 @@ html, body {
   transition: background 0.3s 0s;
 }
 
-
 .content-panel-close {
   position: absolute;
   top: 60px;
   right: 60px;
   height: 18px;
   width: 18px;
-  z-index:10;
+  z-index: 10;
   border: none;
   background-color: transparent;
   background-image: url('../img/close-x.png');
 }
-
 
 .no-touch .content-panel-close:hover::before, .no-touch .content-panel-close:hover::after {
   background-color: #ffffff;
@@ -167,6 +171,7 @@ html, body {
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+
 .no-touch .content-panel-close:hover::before {
   -webkit-transform: rotate(220deg);
   -moz-transform: rotate(220deg);
@@ -174,6 +179,7 @@ html, body {
   -o-transform: rotate(220deg);
   transform: rotate(220deg);
 }
+
 .no-touch .content-panel-close:hover::after {
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -200,6 +206,7 @@ html, body {
   -moz-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
+
 .from-right .content-panel-container {
   right: 0;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -208,6 +215,7 @@ html, body {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
+
 .from-left .content-panel-container {
   left: 0;
   -webkit-transform: translate3d(-100%, 0, 0);
@@ -216,6 +224,7 @@ html, body {
   -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
 }
+
 .is-visible .content-panel-container {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -235,18 +244,69 @@ html, body {
   right: 40px;
   /* smooth scrolling on touch devices */
   -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
+  overflow: hidden;
 }
-#FixedOverlay{
-  .content-panel-container{
-    .content-wrapper{
-      section{
 
+#FixedOverlay {
+  .content-panel-container {
+    .content-wrapper {
+      section {
+        &.story{
+          position: fixed;
+          top:40px;
+          left:40px;
+          bottom:20px;
+          right:40px;
+          overflow-y: scroll;
+        }
+        &.spaces{
+
+        }
+        &.people{
+          position: fixed;
+          top:40px;
+          left:40px;
+          bottom:20px;
+          right:40px;
+
+          .slick-list{
+            height: 100%;
+          }
+          .slick-track{
+            height: 100%;
+          }
+          .slick-slider{
+            position: fixed;
+            top: 60px;
+            right: 40px;
+            bottom: 60px;
+            left: 40px;
+            overflow:hidden;
+          }
+          .scrollable-content{
+            overflow-y:scroll;
+            position: absolute;
+            top:270px;
+            right:0;
+            height: 480px;
+            left: 0;
+
+          }
+
+          *:before{
+            content: normal;
+          }
+
+          *:after{
+            content: normal;
+          }
+        }
       }
     }
 
   }
 }
-.no-scroll{
-  overflow:hidden;
+
+.no-scroll {
+  overflow: hidden;
 }

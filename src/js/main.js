@@ -159,7 +159,7 @@ sgn.closeContentPanel = function(){
 sgn.resizeOverlay = function(){
 
     $('.content-panel-container').css('top', $('header#Home').outerHeight());
-    
+
 };
 
 sgn.resolveResize = function () {

@@ -36,7 +36,7 @@
           {
             "name": "Studio B",
             "image": "img/spaces/studio-b.jpg",
-            "details":{
+            "details": {
               "image": "img/spaces/slides/studio-b.jpg",
               "description": "Studio B lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
             }
@@ -44,7 +44,7 @@
           {
             "name": "Studio C",
             "image": "img/spaces/studio-c.jpg",
-            "details":{
+            "details": {
               "image": "img/spaces/slides/studio-c.jpg",
               "description": "Studio C lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
             }
@@ -52,7 +52,7 @@
           {
             "name": "Leisure",
             "image": "img/spaces/leisure.jpg",
-            "details":{
+            "details": {
               "image": "img/spaces/slides/leisure.jpg",
               "description": "Leisure lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
             }
@@ -60,7 +60,7 @@
           {
             "name": "Tech Shop",
             "image": "img/spaces/tech-shop.jpg",
-            "details":{
+            "details": {
               "image": "img/spaces/slides/tech-shop.jpg",
               "description": "Tech Shop lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
             }
@@ -72,22 +72,214 @@
           {
             "name": "Matt Mangano",
             "title": "Studio Director",
-            "image": "img/people/matt-mangano.jpg"
+            "image": "img/people/matt-mangano.jpg",
+            "bio": {
+              "questions": [
+                {
+                  "question": "Position at Southern Ground Nashville",
+                  "answer": "Studio Director"
+                },
+                {
+                  "question": "Originally from",
+                  "answer": "Visalia, CA"
+                },
+                {
+                  "question": "How you got to Nashville",
+                  "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
+                },
+                {
+                  "question": "How you got to SGN",
+                  "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
+                },
+                {
+                  "question": "Favorite Studio Mama Creation",
+                  "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
+                },
+                {
+                  "question": "Like most about SGN",
+                  "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
+                },
+                {
+                  "question": "Best part of your job",
+                  "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
+                },
+                {
+                  "question": "Fave piece of gear/equipment",
+                  "answer": "Ampex ATR-102"
+                },
+                {
+                  "question": "Hidden Talents?",
+                  "answer": "I can juggle."
+                },
+                {
+                  "question": "Hobbies?",
+                  "answer": "Gardening and mindlessly reading Wikipedia entries"
+                },
+                {
+                  "question": "Best Dollar store purchase?",
+                  "answer": "Official Darth Vader Key Chain"
+                }
+              ]
+            }
           },
           {
             "name": "Brandon Bell",
             "title": "Studio Director/Chief Engineer",
-            "image": "img/people/brandon-bell.jpg"
+            "image": "img/people/brandon-bell.jpg",
+            "bio": {
+              "questions": [
+                {
+                  "question": "Position at Southern Ground Nashville",
+                  "answer": "Studio Director"
+                },
+                {
+                  "question": "Originally from",
+                  "answer": "Visalia, CA"
+                },
+                {
+                  "question": "How you got to Nashville",
+                  "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
+                },
+                {
+                  "question": "How you got to SGN",
+                  "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
+                },
+                {
+                  "question": "Favorite Studio Mama Creation",
+                  "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
+                },
+                {
+                  "question": "Like most about SGN",
+                  "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
+                },
+                {
+                  "question": "Best part of your job",
+                  "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
+                },
+                {
+                  "question": "Fave piece of gear/equipment",
+                  "answer": "Ampex ATR-102"
+                },
+                {
+                  "question": "Hidden Talents?",
+                  "answer": "I can juggle."
+                },
+                {
+                  "question": "Hobbies?",
+                  "answer": "Gardening and mindlessly reading Wikipedia entries"
+                },
+                {
+                  "question": "Best Dollar store purchase?",
+                  "answer": "Official Darth Vader Key Chain"
+                }
+              ]
+            }
           },
           {
             "name": "Rebecca Wood",
             "title": "Studio Mama",
-            "image": "img/people/rebecca-wood.jpg"
+            "image": "img/people/rebecca-wood.jpg",
+            "bio": {
+              "questions": [
+                {
+                  "question": "Position at Southern Ground Nashville",
+                  "answer": "Studio Director"
+                },
+                {
+                  "question": "Originally from",
+                  "answer": "Visalia, CA"
+                },
+                {
+                  "question": "How you got to Nashville",
+                  "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
+                },
+                {
+                  "question": "How you got to SGN",
+                  "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
+                },
+                {
+                  "question": "Favorite Studio Mama Creation",
+                  "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
+                },
+                {
+                  "question": "Like most about SGN",
+                  "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
+                },
+                {
+                  "question": "Best part of your job",
+                  "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
+                },
+                {
+                  "question": "Fave piece of gear/equipment",
+                  "answer": "Ampex ATR-102"
+                },
+                {
+                  "question": "Hidden Talents?",
+                  "answer": "I can juggle."
+                },
+                {
+                  "question": "Hobbies?",
+                  "answer": "Gardening and mindlessly reading Wikipedia entries"
+                },
+                {
+                  "question": "Best Dollar store purchase?",
+                  "answer": "Official Darth Vader Key Chain"
+                }
+              ]
+            }
           },
           {
             "name": "Chris Taylor",
             "title": "Engineer",
-            "image": "img/people/chris-taylor.jpg"
+            "image": "img/people/chris-taylor.jpg",
+            "bio": {
+              "questions": [
+                {
+                  "question": "Position at Southern Ground Nashville",
+                  "answer": "Studio Director"
+                },
+                {
+                  "question": "Originally from",
+                  "answer": "Visalia, CA"
+                },
+                {
+                  "question": "How you got to Nashville",
+                  "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
+                },
+                {
+                  "question": "How you got to SGN",
+                  "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
+                },
+                {
+                  "question": "Favorite Studio Mama Creation",
+                  "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
+                },
+                {
+                  "question": "Like most about SGN",
+                  "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
+                },
+                {
+                  "question": "Best part of your job",
+                  "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
+                },
+                {
+                  "question": "Fave piece of gear/equipment",
+                  "answer": "Ampex ATR-102"
+                },
+                {
+                  "question": "Hidden Talents?",
+                  "answer": "I can juggle."
+                },
+                {
+                  "question": "Hobbies?",
+                  "answer": "Gardening and mindlessly reading Wikipedia entries"
+                },
+                {
+                  "question": "Best Dollar store purchase?",
+                  "answer": "Official Darth Vader Key Chain"
+                }
+              ]
+            }
           }
         ]
       },
