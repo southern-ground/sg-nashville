@@ -157,7 +157,9 @@ sgn.closeContentPanel = function(){
 };
 
 sgn.resizeOverlay = function(){
-    $('.content-panel-container').css('top', $('header').innerHeight() + 40);
+
+    $('.content-panel-container').css('top', $('header#Home').outerHeight());
+    
 };
 
 sgn.resolveResize = function () {
@@ -352,7 +354,9 @@ sgn.parallaxInit = function(){
 };
 
 sgn.init = function () {
+
     var _this = window.sgn;
+
     _this
         .initNav()
         .sectionInit()
