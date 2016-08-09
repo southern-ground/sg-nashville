@@ -1,4 +1,6 @@
-var sgn = window.sgn || {};
+var sgn = window.sgn || {},
+    ScrollMagic = window.ScrollMagic || {},
+    Linear = window.Linear || {};
 
 sgn.initNav = function () {
 
@@ -15,7 +17,8 @@ sgn.initNav = function () {
     var $headerHalfHeight = 128 * 0.5;
 
     this.$window = $(window);
-    this.$header = $('header');
+    this.$header = $('header, div.header-spacer');
+    this.$headerSpacer = $('.header-spacer');
 
     this.$window.scroll(function () {
         if (_this.mobileNavOpen) {
@@ -23,8 +26,10 @@ sgn.initNav = function () {
         }
         if (_this.$window.scrollTop() > $headerHalfHeight) {
             _this.$header.addClass('min-header');
+            _this.$headerSpacer.addClass('min-header');
         } else {
             _this.$header.removeClass('min-header');
+            _this.$headerSpacer.removeClass('min-header');
         }
     });
 
@@ -316,13 +321,44 @@ sgn.monitorTwitterLoad = function(){
     return this;
 };
 
+sgn.parallaxInit = function(){
+
+    // init controller
+    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+    // build scenes
+    new ScrollMagic.Scene({triggerElement: "#parallax1"})
+        .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax2"})
+        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax3"})
+        .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax4"})
+        .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax5"})
+        .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+
+    return this;
+};
+
 sgn.init = function () {
     var _this = window.sgn;
     _this
         .initNav()
         .sectionInit()
         .initSliders()
-        .monitorTwitterLoad();
+        .monitorTwitterLoad()
+        .parallaxInit();
 
     /*$('#FixedOverlay').on('touchmove scroll wheel', function(e){
         console.log('scrolling me, bitches', e);
