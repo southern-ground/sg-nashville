@@ -1,80 +1,51 @@
-var fs = require('fs');
-var path = require('path');
-
-var gulp = require('gulp');
-
-// Load all gulp plugins automatically
-// and attach them to the `plugins` object
-var plugins = require('gulp-load-plugins')();
-
-// Temporary solution until gulp 4
-// https://github.com/gulpjs/gulp/issues/355
-var runSequence = require('run-sequence');
-
-var pkg = require('./package.json');
-var dirs = pkg['sg-nashville-configs'].directories;
-
-var sass = require('gulp-sass');
-
-// BrowserSync foolishness
-var browserSync = require('browser-sync').create();
-gulp.task('initBrowserSync', function (done) {
-    browserSync.init({
-        "server": {
-            "baseDir": "dist"
-        },
-        "ghostMode": false
-    });
-    done();
-});
-gulp.task('updateBrowserSync', function (done) {
-    browserSync.reload();
-    done();
-});
-// END BrowserSync foolishness
+var fs = require('fs'),
+    path = require('path'),
+    gulp = require('gulp'),
+    plugins = require('gulp-load-plugins')(),
+    runSequence = require('run-sequence'),
+    pkg = require('./package.json'),
+    dirs = pkg['sg-nashville-configs'].directories,
+    sass = require('gulp-sass'),
+    shell = require('gulp-shell'),
+    render = require('gulp-nunjucks-render'),
+    data = require('gulp-data'),
+    dynamicSort = function (property) {
+        return function (obj1, obj2) {
+            return obj1[property] > obj2[property] ? 1
+                : obj1[property] < obj2[property] ? -1 : 0;
+        }
+    },
+    dynamicSortMultiple = function () {
+        /*
+         * save the arguments object as it will be overwritten
+         * note that arguments object is an array-like object
+         * consisting of the names of the properties to sort by
+         */
+        var props = arguments;
+        return function (obj1, obj2) {
+            var i = 0, result = 0, numberOfProperties = props.length;
+            /* try getting a different result from 0 (equal)
+             * as long as we have extra properties to compare
+             */
+            while (result === 0 && i < numberOfProperties) {
+                result = dynamicSort(props[i])(obj1, obj2);
+                i++;
+            }
+            return result;
+        }
+    },
+    getData = function () {
+        var json = JSON.parse(fs.readFileSync('./src/data/sg-nashville.json', 'utf8'));
+        json.data.sections.legacy.artists.sort(dynamicSortMultiple('lastName', 'firstName'));
+        config = json;
+        return config;
+    },
+    config = getData(),
+    browserSync = require('browser-sync').create();
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
-
-gulp.task('archive:create_archive_dir', function () {
-    fs.mkdirSync(path.resolve(dirs.archive), '0755');
-});
-
-gulp.task('archive:zip', function (done) {
-
-    var archiveName = path.resolve(dirs.archive, pkg.name + '_v' + pkg.version + '.zip');
-    var archiver = require('archiver')('zip');
-    var files = require('glob').sync('**/*.*', {
-        'cwd': dirs.dist,
-        'dot': true // include hidden files
-    });
-    var output = fs.createWriteStream(archiveName);
-
-    archiver.on('error', function (error) {
-        done();
-        throw error;
-    });
-
-    output.on('close', done);
-
-    files.forEach(function (file) {
-
-        var filePath = path.resolve(dirs.dist, file);
-
-        // `archiver.bulk` does not maintain the file
-        // permissions, so we need to add files individually
-        archiver.append(fs.createReadStream(filePath), {
-            'name': file,
-            'mode': fs.statSync(filePath).mode
-        });
-
-    });
-
-    archiver.pipe(output);
-    archiver.finalize();
-
-});
 
 gulp.task('clean', function (done) {
     require('del')([
@@ -85,95 +56,66 @@ gulp.task('clean', function (done) {
     });
 });
 
-gulp.task('copy', function(done){
-    runSequence([
-            'copy:.htaccess',
-            'copy:index.html',
-            'copy:jquery',
-            'copy:license',
-            'copy:main.css',
-            'copy:misc',
-            'copy:bootstrap',
-            'copy:normalize'], ['updateBrowserSync'], done);
-});
-
-gulp.task('copy:.htaccess', function () {
-    return gulp.src('node_modules/apache-server-configs/dist/.htaccess')
-        .pipe(plugins.replace(/# ErrorDocument/g, 'ErrorDocument'))
-        .pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('copy:index.html', function () {
-    return gulp.src(dirs.src + '/index.html')
-        .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-        .pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('copy:jquery', function () {
-    return gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-        .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
-        .pipe(gulp.dest(dirs.dist + '/js/vendor'));
-});
-
-gulp.task('copy:license', function () {
-    return gulp.src('LICENSE.txt')
-        .pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('copy:main.css', function () {
-
-    var banner = '/*! HTML5 Boilerplate v' + pkg.version +
-        ' | ' + pkg.license.type + ' License' +
-        ' | ' + pkg.homepage + ' */\n\n';
-
-    return gulp.src(dirs.src + '/css/main.css')
-        .pipe(plugins.header(banner))
-        .pipe(plugins.autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 8', '> 1%'],
-            cascade: false
-        }))
-        .pipe(gulp.dest(dirs.dist + '/css'));
-});
-
-gulp.task('copy:misc', function () {
-    return gulp.src([
-
+gulp.task('copy', function () {
+    gulp.src([
         // Copy all files
         dirs.src + '/**/*',
-
-        // Exclude the following files
-        // (other tasks will handle the copying of these files)
-        '!' + dirs.src + '/css/main.css',
+        // Excluding:
         '!' + dirs.src + '/index.html',
-        '!' + dirs.src + '/sass/**',
-        '!' + dirs.src + '/sass/'
-
-    ], {
-
-        // Include hidden files by default
-        dot: true
-
-    }).pipe(gulp.dest(dirs.dist));
+        '!' + dirs.src + '/data',
+        '!' + dirs.src + '/data/**/*',
+        '!' + dirs.src + '/doc',
+        '!' + dirs.src + '/doc/**/*',
+        '!' + dirs.src + '/sass',
+        '!' + dirs.src + '/sass/**/*',
+        '!' + dirs.src + '/templates',
+        '!' + dirs.src + '/templates/**/*',
+        '!' + dirs.src + '/.editorconfig',
+        '!' + dirs.src + '/*git*.*',
+        '!' + dirs.src + '/rev.html',
+        '!' + dirs.src + '/browserconfig.xml',
+        '!' + dirs.src + '/crossdomain.xml'
+    ]).pipe(gulp.dest(dirs.dist))
 });
 
-gulp.task('copy:normalize', function () {
-    return gulp.src('node_modules/normalize.css/normalize.css')
-        .pipe(gulp.dest(dirs.dist + '/css'));
+gulp.task('copy-css', function () {
+    gulp.src([
+        // Copy all files
+        dirs.src + '/css/*'
+    ]).pipe(gulp.dest(dirs.dist + '/css/'))
 });
 
-gulp.task('copy:bootstrap', function () {
-    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(gulp.dest(dirs.dist + '/css'));
+gulp.task('copy-js', function () {
+    gulp.src([
+        // Copy all files
+        dirs.src + '/js/*'
+    ]).pipe(gulp.dest(dirs.dist + '/js/'))
 });
+
+gulp.task('git-revision', shell.task(config.data.gitRevision.commands));
 
 gulp.task('lint:js', function () {
     return gulp.src([
-        dirs.src + '/js/*.js',
-        dirs.test + '/*.js'
+        dirs.src + '/js/*.js'
     ]).pipe(plugins.jscs())
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('jshint-stylish'))
         .pipe(plugins.jshint.reporter('fail'));
+});
+
+gulp.task('render', function () {
+    // Sort stuff in the data object as desired:
+    render.nunjucks.configure(['./src']);
+    return gulp.src(
+        './src/index.html')
+        .pipe(data(getData))
+        .pipe(render({
+            path: ['.', './src/index.html', './src/templates/*.html'],
+            envOptions: {
+                watch: false
+            }
+        }))
+        .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('sass', function () {
@@ -182,34 +124,34 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(dirs.src + '/css'))
 });
 
-// ---------------------------------------------------------------------
-// | Main tasks                                                        |
-// ---------------------------------------------------------------------
-
-gulp.task('archive', function (done) {
-    runSequence(
-        'build',
-        'archive:create_archive_dir',
-        'archive:zip',
-        done);
-});
-
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'lint:js', 'sass'],
+        ['clean', 'lint:js', 'sass', 'git-revision'],
         'copy',
+        'render',
         done);
 });
 
-gulp.task('watch', function () {
-    gulp.watch([dirs.src + '/sass/**/*.scss',
-            dirs.src + '/**/*.html',
-            dirs.src + '/js/**/*.js'],
-        ['build']
-    );
-
+gulp.task('serve', function () {
+    browserSync.init({server: "./dist"});
+    gulp.watch([dirs.src + "/index.html", dirs.src + "/templates/*.html", dirs.src + "/data/**/*.json"], ['render']);
+    gulp.watch([dirs.src + "/sass/**/*.scss"], function(){
+        runSequence('sass', 'copy-css');
+    });
+    gulp.watch([dirs.src + "/js/**/*.js"], function(){
+        runSequence('lint:js', 'copy-js');
+    });
+    gulp.watch(["dist/*.html", dirs.src + "/css/**/*.css", dirs.src + '/js/*']).on('change', browserSync.reload);
 });
 
-gulp.task('default', function(done){
-    runSequence(['build'], ['watch'], ['initBrowserSync'], done);
+gulp.task('deploy', function (done) {
+    runSequence('git-revision', 'build', function () {
+        console.log('Deploy complete.');
+    });
+});
+
+gulp.task('default', function (done) {
+    runSequence('build', 'serve', function () {
+        console.log('Default task complete.');
+    });
 });

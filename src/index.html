@@ -4,14 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
+
+<!--
+Build:
+{% include './src/rev.html' %}
+-->
+
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/normalize.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <link href='https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu:300' rel='stylesheet' type='text/css'>
@@ -123,11 +130,7 @@
                 <div class="copy col-xs-12 col-md-6">
                     <h1>A Home in Music city</h1>
                     <div>
-                        In 1903, on the corner of 17th and McGavock, the Addison Ave. Cumberland Presbyterian Church
-                        built a beautiful brick sanctuary. In 1968, Fred Foster, founder of Monument Records, purchased
-                        the church and converted it into a recording studio. In 2012, Zac Brown bought the same building
-                        and transformed it into a first-class facility that inspires creation and satisfies the
-                        appetites of artists and musicians from around the world.
+                        {{data.sections.hero.copy}}
                     </div>
                     <button class="read-more" data-target="section.additional-content.story">Read More</button>
                 </div>
@@ -162,61 +165,19 @@
 
                 <div class="row">
 
-                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
+                    {% for space in data.sections.spaces.list %}
 
+                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
                         <a class="space-link"
                            data-target="section.additional-content.spaces"
-                           data-slide-index="0"
+                           data-slide-index="{{loop.index0}}"
                            href="#">
-                            <img src="img/spaces/studio-a.jpg"/>
-                            <h3>Studio A</h3>
+                            <img src="{{space.image}}"/>
+                            <h3>{{space.name}}</h3>
                         </a>
-
                     </div>
-                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
 
-                        <a class="space-link"
-                           data-target="section.additional-content.spaces"
-                           data-slide-index="1"
-                           href="#">
-                            <img src="img/spaces/studio-b.jpg"/>
-                            <h3>Studio B</h3>
-                        </a>
-
-                    </div>
-                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
-
-                        <a class="space-link"
-                           data-target="section.additional-content.spaces"
-                           data-slide-index="2"
-                           href="#">
-                            <img src="img/spaces/studio-c.jpg"/>
-                            <h3>Studio C</h3>
-                        </a>
-
-                    </div>
-                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
-
-                        <a class="space-link"
-                           data-target="section.additional-content.spaces"
-                           data-slide-index="3"
-                           href="#">
-                            <img src="img/spaces/leisure.jpg"/>
-                            <h3>Leisure</h3>
-                        </a>
-
-                    </div>
-                    <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
-
-                        <a class="space-link"
-                           data-target="section.additional-content.spaces"
-                           data-slide-index="4"
-                           href="#">
-                            <img src="img/spaces/tech-shop.jpg"/>
-                            <h3>Tech Shop</h3>
-                        </a>
-
-                    </div>
+                    {% endfor %}
 
                 </div>
 
@@ -252,66 +213,34 @@
             -->
 
             <section class="our-people">
+
                 <h2>Our People</h2>
+
                 <div class="row">
+
+                    {% for person in data.sections.people.list %}
+
                     <div class="person col-xs-12 col-sm-12 col-md-6 col-lg-3">
 
                         <a class="person-detail-link"
                            data-target="section.additional-content.people"
-                           data-slide-index="0"
+                           data-slide-index="{{loop.index0}}"
                            href="#">
                             <div class="person-portrait">
-                                <img src="img/people/matt-mangano.jpg"/>
+                                <img src="{{person.image}}"/>
                             </div>
-                            <h3>Matt Mangano</h3>
-                            <span class="title">Studio Director</span>
+                            <h3>{{person.name}}</h3>
+                            <span class="title">{{person.title}}</span>
                         </a>
 
                     </div>
-                    <div class="person col-xs-12 col-sm-12 col-md-6 col-lg-3">
 
-                        <a class="person-detail-link"
-                           data-target="section.additional-content.people"
-                           data-slide-index="1"
-                           href="#">
-                            <div class="person-portrait">
-                                <img src="img/people/brandon-bell.jpg"/>
-                            </div>
-                            <h3>Brandon Bell</h3>
-                            <span class="title">Studio Director/Chief Engineer</span>
-                        </a>
+                    {% endfor %}
 
-                    </div>
-                    <div class="person col-xs-12 col-sm-12 col-md-6 col-lg-3">
-
-                        <a class="person-detail-link"
-                           data-target="section.additional-content.people"
-                           data-slide-index="2"
-                           href="#">
-                            <div class="person-portrait">
-                                <img src="img/people/rebecca-wood.jpg"/>
-                            </div>
-                            <h3>Rebecca Wood</h3>
-                            <span class="title">Studio Mama</span>
-                        </a>
-
-                    </div>
-                    <div class="person col-xs-12 col-sm-12 col-md-6 col-lg-3">
-
-                        <a class="person-detail-link"
-                           data-target="section.additional-content.people"
-                           data-slide-index="3"
-                           href="#">
-                            <div class="person-portrait">
-                                <img src="img/people/chris-taylor.jpg"/>
-                            </div>
-                            <h3>Chris Taylor</h3>
-                            <span class="title">Engineer</span>
-                        </a>
-
-                    </div>
                 </div>
+
             </section>
+
         </div>
 
     </div>
@@ -351,42 +280,18 @@
                     </div>
 
                     <div id="Legacy-Slider" class="col-xs-8 col-sm-10">
+
+                        {% for item in data.sections.legacy.list %}
+
                         <div class="legacy-item">
 
-                            <img src="img/legacy/album-one.jpg"/>
-                            <h3>Album Name / Year</h3>
+                            <img src="{{item.image}}"/>
+                            <h3>{{item.name}} / {{item.year}}</h3>
 
                         </div>
-                        <div class="legacy-item">
 
-                            <img src="img/legacy/album-two.jpg"/>
-                            <h3>Album Name / Year</h3>
+                        {% endfor %}
 
-                        </div>
-                        <div class="legacy-item">
-
-                            <img src="img/legacy/album-three.jpg"/>
-                            <h3>Album Name / Year</h3>
-
-                        </div>
-                        <div class="legacy-item">
-
-                            <img src="img/legacy/album-one.jpg"/>
-                            <h3>Album Name / Year</h3>
-
-                        </div>
-                        <div class="legacy-item">
-
-                            <img src="img/legacy/album-two.jpg"/>
-                            <h3>Album Name / Year</h3>
-
-                        </div>
-                        <div class="legacy-item">
-
-                            <img src="img/legacy/album-three.jpg"/>
-                            <h3>Album Name / Year</h3>
-
-                        </div>
                     </div>
 
                     <div class="carousel-nav-column col-xs-2 col-sm-1">
@@ -422,21 +327,15 @@
 
             <section class="artists">
 
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
-                <div class="artist col-xs-12 col-sm-6 col-md-4">Artist Name</div>
+                {% for artist in data.sections.legacy.artists %}
+
+                <div class="artist col-xs-12 col-sm-6 col-md-4">
+
+                    {{artist.firstName}} {{artist.lastName}}
+
+                </div>
+
+                {% endfor %}
 
             </section>
 
@@ -471,45 +370,13 @@
             <section class="studio-happenings">
                 <h2>Studio Happenings</h2>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <div class="happening">
-                            Placeholder
-                        </div>
+                    <div class="col-xs-12">
+                        <a class="twitter-timeline"
+                           data-dnt="true"
+                           data-theme="dark"
+                           href="https://twitter.com/SG_Nashville">
+                            Tweets by SG_Nashville
+                        </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </section>
@@ -970,8 +837,8 @@
 </div> <!-- content-panel -->
 
 
-<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+<!-- <script src="js/vendor/jquery-3.1.0.min.js"></script> -->
+<script src="js/vendor/jquery.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/vendor/parallax.min.js"></script>
 <script src="js/vendor/slick.min.js"></script>
