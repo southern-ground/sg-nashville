@@ -610,441 +610,362 @@
 
 </div>
 
-
-<div class="content-panel from-right">
+<!--
+// :'######:::'#######::'##::: ##:'########:'########:'##::: ##:'########:
+// '##... ##:'##.... ##: ###:: ##:... ##..:: ##.....:: ###:: ##:... ##..::
+//  ##:::..:: ##:::: ##: ####: ##:::: ##:::: ##::::::: ####: ##:::: ##::::
+//  ##::::::: ##:::: ##: ## ## ##:::: ##:::: ######::: ## ## ##:::: ##::::
+//  ##::::::: ##:::: ##: ##. ####:::: ##:::: ##...:::: ##. ####:::: ##::::
+//  ##::: ##: ##:::: ##: ##:. ###:::: ##:::: ##::::::: ##:. ###:::: ##::::
+// . ######::. #######:: ##::. ##:::: ##:::: ########: ##::. ##:::: ##::::
+// :......::::.......:::..::::..:::::..:::::........::..::::..:::::..:::::
+// '########:::::'###::::'##::: ##:'########:'##:::::::
+//  ##.... ##:::'## ##::: ###:: ##: ##.....:: ##:::::::
+//  ##:::: ##::'##:. ##:: ####: ##: ##::::::: ##:::::::
+//  ########::'##:::. ##: ## ## ##: ######::: ##:::::::
+//  ##.....::: #########: ##. ####: ##...:::: ##:::::::
+//  ##:::::::: ##.... ##: ##:. ###: ##::::::: ##:::::::
+//  ##:::::::: ##:::: ##: ##::. ##: ########: ########:
+// ..:::::::::..:::::..::..::::..::........::........::
+-->
+<div id="FixedOverlay" class="content-panel from-right">
     <div class="content-panel-container">
         <div class="content-panel-content">
+            <div class="content-wrapper">
 
-            <div class="row">
+                    <section class="additional-content story _tan">
+                        <h2>{{data.sections.hero.readMore.title}}</h2>
+                        {% for paragraph in data.sections.hero.readMore.copy %}
+                        <p>{{paragraph}}</p>
+                        {% endfor %}
+                    </section>
 
-                <section class="additional-content story _tan">
-                    <h2>Making Music History, Where Music History was Made.</h2>
-                    <p>
-                        In 2012, Southern Ground was searching for a small studio space in Nashville to record and
-                        produce
-                        records for Southern Ground Artists. When we stumbled upon the site that would later become our
-                        home, we couldn't have fathomed the rich, musical history that had lived here for just over a
-                        century.
-                    </p>
-                    <p>
-                        Located at the foot of Nashville's music row, the building that houses Southern Ground Nashville
-                        was
-                        originally built between 1897 and 1903, and served as the Addison Avenue Cumberland Presbyterian
-                        Church until the mid-1950s.
-                    </p>
-                    <p>
-                        After a brief stint as a VFW Post, the facility was purchased by Fred Foster, owner of famed
-                        recording company Monument Records, and transformed into Monument Studio in 1968. Managed at the
-                        time by now-legendary engineers Mort Thomassen and Tommy Strong, many fabled country recordings
-                        were
-                        produced in this era, including Kris Kristofferson's first three albums. 
-                    </p>
-                    <p>
-                        In 1975, the studio was purchased by Chip Young, renamed Young'un Sound and permitted to
-                        continue
-                        its tradition of pumping out classic Nashville recordings well into the 1980s. Later, Al Jolson,
-                        Jr., son of the famous performer Al Jolson, purchased the studio and dubbed it with yet another
-                        new
-                        moniker: Masterlink Studio. It was during this era that the building transformed into a
-                        high-tech
-                        facility specializing in audio for video remixing, including mixes for TNN (Hee Haw, CMT, etc.) 
-                    </p>
-                    <p>
-                        In the 1990s and 2000s, the walls of Masterlink witnessed a number of celebrated recordings,
-                        including that of Neil Young's "Prairie Wind" album. But due to his ailing health, Jolson was
-                        forced
-                        to shut the studio down in 2010. It sat vacant for nearly two years, and, at one point, was in
-                        serious danger of becoming a Mexican restaurant.
-                    </p>
-                    <p>
-                        Here's where we come in. 
-                    </p>
-                    <p>
-                        When Southern Ground acquired the studio in 2012, we began by renovating the now 100-year-old
-                        building to restore much of its original character.  A Mix room was also added that includes an
-                        SSL
-                        4000G+ console ATC 300's and a small overdub space.
-                    </p>
-                    <p>
-                        We were also lucky enough to inherit some of the classic recording gear that Masterlink left
-                        behind,
-                        including a Neve V3, 48 tracks of 2" analog tape, Ampex ATR-102 master 2-track recorder and
-                        vintage
-                        Neumann U47/U48 microphones (perhaps better known as The Beatles microphone). 
-                    </p>
-                    <p>
-                        Thanks to our new location, incredible on-site talent and the impeccable taste in recording
-                        equipment of those who came before us, we now have the ability to efficiently produce albums
-                        from
-                        start to finish, using a hybrid of classic analog and modern digital technology, all under one
-                        roof.
-                    </p>
-                </section>
+                    <section class="additional-content spaces _tan">
 
-                <section class="additional-content spaces _tan">
+                        <!--
+                        // :'######::'########:::::'###:::::'######::'########:
+                        // '##... ##: ##.... ##:::'## ##:::'##... ##: ##.....::
+                        //  ##:::..:: ##:::: ##::'##:. ##:: ##:::..:: ##:::::::
+                        // . ######:: ########::'##:::. ##: ##::::::: ######:::
+                        // :..... ##: ##.....::: #########: ##::::::: ##...::::
+                        // '##::: ##: ##:::::::: ##.... ##: ##::: ##: ##:::::::
+                        // . ######:: ##:::::::: ##:::: ##:. ######:: ########:
+                        // :......:::..:::::::::..:::::..:::......:::........::
+                        // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
+                        // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
+                        //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
+                        //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
+                        //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
+                        //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
+                        // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
+                        // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
+                        -->
 
-                    <!--
-                    // :'######::'########:::::'###:::::'######::'########:
-                    // '##... ##: ##.... ##:::'## ##:::'##... ##: ##.....::
-                    //  ##:::..:: ##:::: ##::'##:. ##:: ##:::..:: ##:::::::
-                    // . ######:: ########::'##:::. ##: ##::::::: ######:::
-                    // :..... ##: ##.....::: #########: ##::::::: ##...::::
-                    // '##::: ##: ##:::::::: ##.... ##: ##::: ##: ##:::::::
-                    // . ######:: ##:::::::: ##:::: ##:. ######:: ########:
-                    // :......:::..:::::::::..:::::..:::......:::........::
-                    // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
-                    // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
-                    //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
-                    //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
-                    //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
-                    //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
-                    // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
-                    // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
-                    -->
+                        <div class="row">
 
-                    <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
 
-                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                                <div id="SpaceSlider">
 
-                            <div id="SpaceSlider">
-                                <div class="space-slide">
-                                    <div class="space-slide-container">
-                                        <h3>Studio A</h3>
-                                        <img data-lazy="img/spaces/slides/studio-a.jpg"/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                                            malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum.
-                                            In pellentesque.</p>
-                                    </div>
+                                    {% for space in data.sections.spaces.list %}
 
-                                </div>
-
-                                <div class="space-slide">
-                                    <div class="space-slide-container">
-                                        <h3>Studio B</h3>
-                                        <img data-lazy="img/spaces/slides/studio-b.jpg"/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                                            malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum.
-                                            In pellentesque.</p>
-                                    </div>
-                                </div>
-
-                                <div class="space-slide">
-                                    <div class="space-slide-container">
-                                        <h3>Studio C</h3>
-                                        <img data-lazy="img/spaces/slides/studio-c.jpg"/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                                            malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum.
-                                            In pellentesque.</p>
-                                    </div>
-                                </div>
-
-                                <div class="space-slide">
-                                    <div class="space-slide-container">
-                                        <h3>Leisure</h3>
-                                        <img data-lazy="img/spaces/slides/leisure.jpg"/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                                            malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum.
-                                            In pellentesque.</p>
-                                    </div>
-                                </div>
-
-                                <div class="space-slide">
-                                    <div class="space-slide-container">
-                                        <h3>Tech Shop</h3>
-                                        <img data-lazy="img/spaces/slides/tech-shop.jpg"/>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                                            malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum.
-                                            In pellentesque.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button id="SpaceSliderPrev" class="space-details-nav"></button>
-                            <button id="SpaceSliderNext" class="space-details-nav right"></button>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section class="additional-content people _tan">
-
-                    <!--
-                    // '########::'########::'#######::'########::'##:::::::'########:
-                    //  ##.... ##: ##.....::'##.... ##: ##.... ##: ##::::::: ##.....::
-                    //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##: ##::::::: ##:::::::
-                    //  ########:: ######::: ##:::: ##: ########:: ##::::::: ######:::
-                    //  ##.....::: ##...:::: ##:::: ##: ##.....::: ##::::::: ##...::::
-                    //  ##:::::::: ##::::::: ##:::: ##: ##:::::::: ##::::::: ##:::::::
-                    //  ##:::::::: ########:. #######:: ##:::::::: ########: ########:
-                    // ..:::::::::........:::.......:::..:::::::::........::........::
-                    // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
-                    // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
-                    //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
-                    //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
-                    //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
-                    //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
-                    // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
-                    // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
-                    -->
-
-                    <div class="row">
-
-                        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-
-                            <div id="PeopleSlider">
-
-                                <div class="people-slide">
-
-                                    <div class="people-slide-container">
-
-                                        <img class="portrait" data-lazy="img/people/matt-mangano.jpg"/>
-
-                                        <h3>Matt Mangano</h3>
-
-                                        <div class="spacer">
-
-                                            <div class="piece left"></div>
-
-                                            <div class="piece middle">
-                                                <img src="img/spacer-center.png"/>
-                                            </div>
-
-                                            <div class="piece right"></div>
-
-                                        </div>
-
-                                        <div class="row-fluid">
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">Position at Southern Ground Nashville:</span>
-                                                <br/>
-                                                Studio Director
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Originally from:
-                                        </span>
-                                                <br/>
-                                                Visalia, CA
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            How you got to Nashville:
-                                        </span>
-                                                <br/>
-                                                I came to Nashville to join a band. The band didn't work out,
-                                                but it
-                                                led to many other fantastic opportunities that made me decide to
-                                                stay.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            How you got to SGN:
-                                        </span>
-                                                <br/>
-                                                I was working for Zac's record label, making records in my
-                                                basement
-                                                studio. The time came for the operation to grow, and I helped
-                                                Zac
-                                                find the facility and open the studio.
-                                            </p>
-
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Favorite Studio Mama Creation:
-                                        </span>
-                                                <br/>
-                                                Levi Chicken followed by pound cake. Actually, forget the
-                                                chicken -
-                                                I'll just have the pound cake.
-                                            </p class="col-xs-12 col-sm-6">
-
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Like most about SGN:
-                                        </span>
-                                                <br/>
-                                                The studio is a home away from home. Every single bit of this
-                                                place
-                                                was made with love, especially the love for music, art, and the
-                                                preservation of their history.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Best part of your job:
-                                        </span>
-                                                <br/>
-                                                Working with my co-workers. Not only are they immensely talented
-                                                in
-                                                their craft, they are fiercely committed to doing whatever it
-                                                takes
-                                                to get the job done.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Fave piece of gear/equipment:
-                                        </span>
-                                                <br/>
-                                                Ampex ATR-102
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Hidden Talents?
-                                        </span>
-                                                <br/>
-                                                I can juggle.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Hobbies?
-                                        </span>
-                                                <br/>
-                                                Gardening and mindlessly reading Wikipedia entries
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                        <span class="label">
-                                            Best Dollar store purchase?
-                                        </span>
-                                                <br/>
-                                                Official Darth Vader Key Chain
-                                            </p>
+                                    <div class="space-slide">
+                                        <div class="space-slide-container">
+                                            <h3>{{space.name}}</h3>
+                                            <img data-lazy="{{space.details.image}}"/>
+                                            <p>{{space.details.description}}</p>
                                         </div>
 
                                     </div>
 
-                                </div>
-
-                                <div class="people-slide">
-
-                                    <div class="people-slide-container">
-
-                                        <img class="portrait" data-lazy="img/people/brandon-bell.jpg"/>
-
-                                        <h3>Branden Bell</h3>
-
-                                        <div class="spacer">
-
-                                            <div class="piece left"></div>
-
-                                            <div class="piece middle">
-                                                <img src="img/spacer-center.png"/>
-                                            </div>
-
-                                            <div class="piece right"></div>
-
-                                        </div>
-                                        <div class="row-fluid">
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">One:</span>
-                                                <br/>
-                                                Two
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">
-                                                    Three
-                                                </span>
-                                                <br/>
-                                                Four
-                                            </p>
-                                        </div>
-
-                                    </div>
+                                    {% endfor %}
 
                                 </div>
 
-                                <div class="people-slide">
-
-                                    <div class="people-slide-container">
-
-                                        <img class="portrait" data-lazy="img/people/rebecca-wood.jpg"/>
-
-                                        <h3>Rebecca Wood</h3>
-
-                                        <div class="spacer">
-
-                                            <div class="piece left"></div>
-
-                                            <div class="piece middle">
-                                                <img src="img/spacer-center.png"/>
-                                            </div>
-
-                                            <div class="piece right"></div>
-
-                                        </div>
-                                        <div class="row-fluid">
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">Placeholder:</span>
-                                                <br/>
-                                                Si.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">
-                                                    Placeholder Two:
-                                                </span>
-                                                <br/>
-                                                De nada.
-                                            </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="people-slide">
-
-                                    <div class="people-slide-container">
-
-                                        <img class="portrait" data-lazy="img/people/chris-taylor.jpg"/>
-
-                                        <h3>Chris Taylor</h3>
-
-                                        <div class="spacer">
-
-                                            <div class="piece left"></div>
-
-                                            <div class="piece middle">
-                                                <img src="img/spacer-center.png"/>
-                                            </div>
-
-                                            <div class="piece right"></div>
-
-                                        </div>
-                                        <div class="row-fluid">
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">Placeholder:</span>
-                                                <br/>
-                                                Si.
-                                            </p>
-                                            <p class="col-xs-12 col-sm-6">
-                                                <span class="label">
-                                                    Placeholder Two:
-                                                </span>
-                                                <br/>
-                                                De nada.
-                                            </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
+                                <button id="SpaceSliderPrev" class="space-details-nav"></button>
+                                <button id="SpaceSliderNext" class="space-details-nav right"></button>
 
                             </div>
 
-                            <button id="PeoplePrev" class="people-details-nav"></button>
-                            <button id="PeopleNext" class="people-details-nav right"></button>
+                        </div>
+
+                    </section>
+
+                    <section class="additional-content people _tan">
+
+                        <!--
+                        // '########::'########::'#######::'########::'##:::::::'########:
+                        //  ##.... ##: ##.....::'##.... ##: ##.... ##: ##::::::: ##.....::
+                        //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##: ##::::::: ##:::::::
+                        //  ########:: ######::: ##:::: ##: ########:: ##::::::: ######:::
+                        //  ##.....::: ##...:::: ##:::: ##: ##.....::: ##::::::: ##...::::
+                        //  ##:::::::: ##::::::: ##:::: ##: ##:::::::: ##::::::: ##:::::::
+                        //  ##:::::::: ########:. #######:: ##:::::::: ########: ########:
+                        // ..:::::::::........:::.......:::..:::::::::........::........::
+                        // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
+                        // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
+                        //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
+                        //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
+                        //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
+                        //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
+                        // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
+                        // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
+                        -->
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+
+                                <div id="PeopleSlider">
+
+                                    <div class="people-slide">
+
+                                        <div class="people-slide-container">
+
+                                            <img class="portrait" data-lazy="img/people/matt-mangano.jpg"/>
+
+                                            <h3>Matt Mangano</h3>
+
+                                            <div class="spacer">
+
+                                                <div class="piece left"></div>
+
+                                                <div class="piece middle">
+                                                    <img src="img/spacer-center.png"/>
+                                                </div>
+
+                                                <div class="piece right"></div>
+
+                                            </div>
+
+                                            <div class="row-fluid">
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">Position at Southern Ground Nashville:</span>
+                                                    <br/>
+                                                    Studio Director
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Originally from:
+                                            </span>
+                                                    <br/>
+                                                    Visalia, CA
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                How you got to Nashville:
+                                            </span>
+                                                    <br/>
+                                                    I came to Nashville to join a band. The band didn't work out,
+                                                    but it
+                                                    led to many other fantastic opportunities that made me decide to
+                                                    stay.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                How you got to SGN:
+                                            </span>
+                                                    <br/>
+                                                    I was working for Zac's record label, making records in my
+                                                    basement
+                                                    studio. The time came for the operation to grow, and I helped
+                                                    Zac
+                                                    find the facility and open the studio.
+                                                </p>
+
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Favorite Studio Mama Creation:
+                                            </span>
+                                                    <br/>
+                                                    Levi Chicken followed by pound cake. Actually, forget the
+                                                    chicken -
+                                                    I'll just have the pound cake.
+                                                </p class="col-xs-12 col-sm-6">
+
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Like most about SGN:
+                                            </span>
+                                                    <br/>
+                                                    The studio is a home away from home. Every single bit of this
+                                                    place
+                                                    was made with love, especially the love for music, art, and the
+                                                    preservation of their history.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Best part of your job:
+                                            </span>
+                                                    <br/>
+                                                    Working with my co-workers. Not only are they immensely talented
+                                                    in
+                                                    their craft, they are fiercely committed to doing whatever it
+                                                    takes
+                                                    to get the job done.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Fave piece of gear/equipment:
+                                            </span>
+                                                    <br/>
+                                                    Ampex ATR-102
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Hidden Talents?
+                                            </span>
+                                                    <br/>
+                                                    I can juggle.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Hobbies?
+                                            </span>
+                                                    <br/>
+                                                    Gardening and mindlessly reading Wikipedia entries
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                            <span class="label">
+                                                Best Dollar store purchase?
+                                            </span>
+                                                    <br/>
+                                                    Official Darth Vader Key Chain
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="people-slide">
+
+                                        <div class="people-slide-container">
+
+                                            <img class="portrait" data-lazy="img/people/brandon-bell.jpg"/>
+
+                                            <h3>Branden Bell</h3>
+
+                                            <div class="spacer">
+
+                                                <div class="piece left"></div>
+
+                                                <div class="piece middle">
+                                                    <img src="img/spacer-center.png"/>
+                                                </div>
+
+                                                <div class="piece right"></div>
+
+                                            </div>
+                                            <div class="row-fluid">
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">One:</span>
+                                                    <br/>
+                                                    Two
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">
+                                                        Three
+                                                    </span>
+                                                    <br/>
+                                                    Four
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="people-slide">
+
+                                        <div class="people-slide-container">
+
+                                            <img class="portrait" data-lazy="img/people/rebecca-wood.jpg"/>
+
+                                            <h3>Rebecca Wood</h3>
+
+                                            <div class="spacer">
+
+                                                <div class="piece left"></div>
+
+                                                <div class="piece middle">
+                                                    <img src="img/spacer-center.png"/>
+                                                </div>
+
+                                                <div class="piece right"></div>
+
+                                            </div>
+                                            <div class="row-fluid">
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">Placeholder:</span>
+                                                    <br/>
+                                                    Si.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">
+                                                        Placeholder Two:
+                                                    </span>
+                                                    <br/>
+                                                    De nada.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="people-slide">
+
+                                        <div class="people-slide-container">
+
+                                            <img class="portrait" data-lazy="img/people/chris-taylor.jpg"/>
+
+                                            <h3>Chris Taylor</h3>
+
+                                            <div class="spacer">
+
+                                                <div class="piece left"></div>
+
+                                                <div class="piece middle">
+                                                    <img src="img/spacer-center.png"/>
+                                                </div>
+
+                                                <div class="piece right"></div>
+
+                                            </div>
+                                            <div class="row-fluid">
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">Placeholder:</span>
+                                                    <br/>
+                                                    Si.
+                                                </p>
+                                                <p class="col-xs-12 col-sm-6">
+                                                    <span class="label">
+                                                        Placeholder Two:
+                                                    </span>
+                                                    <br/>
+                                                    De nada.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <button id="PeoplePrev" class="people-details-nav"></button>
+                                <button id="PeopleNext" class="people-details-nav right"></button>
+
+                            </div>
 
                         </div>
 
-                    </div>
-
-                </section>
+                    </section>
 
             </div>
-
-            <button class="content-panel-close"></button>
-
         </div> <!-- content-panel-content -->
+        <button class="content-panel-close"></button>
     </div> <!-- content-panel-container -->
 </div> <!-- content-panel -->
 
