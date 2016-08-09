@@ -25,10 +25,10 @@ Slide in Content Panel
 .content-panel-container {
   /*...*/
   position: fixed;
-  width: 99%;
-  height: 100%;
   top: 0;
+  left: 0;
   right: 0;
+  bottom: 0;
 
   transition-property: transform;
   transition-duration: 0.3s;
@@ -147,8 +147,8 @@ html, body {
 
 .content-panel-close {
   position: absolute;
-  top: 50px;
-  right: 35px;
+  top: 60px;
+  right: 60px;
   height: 18px;
   width: 18px;
   z-index:10;
@@ -184,9 +184,10 @@ html, body {
 
 .content-panel-container {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
+  right: 0;
+  botttom: 0;
+  left: 0;
   background: transparent;
   z-index: 1;
   -webkit-transition-property: -webkit-transform;
@@ -227,13 +228,25 @@ html, body {
 }
 
 .content-panel-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 40px;
-  overflow: auto;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  bottom: 40px;
+  right: 40px;
   /* smooth scrolling on touch devices */
   -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+#FixedOverlay{
+  .content-panel-container{
+    .content-wrapper{
+      section{
+
+      }
+    }
+
+  }
+}
+.no-scroll{
+  overflow:hidden;
 }
