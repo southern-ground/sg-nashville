@@ -2,6 +2,19 @@ var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
     Linear = window.Linear || {};
 
+sgn.initProps = function(){
+    
+    this.$window = $(window);
+    this.$hamburgerButton = $('.hamburger-button');
+    this.$hamburgerMenu = $('.hamburger-menu');
+    this.$mobileSiteNav = $('.hamburger-menu .site-nav');
+    this.$mobileSocialNav = $('.hamburger-menu .social-nav');
+
+    this.mobileNavOpen = false;
+    
+    return this;
+};
+
 sgn.initNav = function () {
 
     console.log('initNav');
@@ -12,27 +25,11 @@ sgn.initNav = function () {
         _this.navLinkClick(e);
     });
 
-    this.mobileNavOpen = false;
-
-    var $headerHalfHeight = 128 * 0.5;
-
-    this.$window = $(window);
-    this.$header = $('header, div.header-spacer');
-    this.$headerSpacer = $('.header-spacer');
-
     this.$window.scroll(function () {
         if (_this.mobileNavOpen) {
             _this.closeMobileNav();
         }
-        if (_this.$window.scrollTop() > $headerHalfHeight) {
-            _this.$header.addClass('min-header');
-            _this.$headerSpacer.addClass('min-header');
-        } else {
-            _this.$header.removeClass('min-header');
-            _this.$headerSpacer.removeClass('min-header');
-        }
     });
-
     this.$window.resize(function () {
         (function (scope) {
             clearTimeout(scope.resizeTimeout);
@@ -42,15 +39,8 @@ sgn.initNav = function () {
         })(_this);
     });
 
-    this.$hamburgerMenu = $('.hamburger-menu');
-
-    this.$mobileSiteNav = $('.hamburger-menu .site-nav');
-    this.$mobileSocialNav = $('.hamburger-menu .social-nav');
-
     this.$mobileSiteNav.fadeOut('fast');
     this.$mobileSocialNav.fadeOut('fast');
-
-    this.$hamburgerButton = $('.hamburger-button');
 
     this.$hamburgerButton.click(function (e) {
         _this.hamburgerButtonClick(e);
@@ -59,9 +49,9 @@ sgn.initNav = function () {
     return this;
 };
 
-sgn.sectionInit = function () {
+sgn.initSections = function () {
 
-    console.log('sectionInit');
+    console.log('initSections');
 
     var getAttribute = function (target, attr) {
             while (target) {
@@ -129,58 +119,10 @@ sgn.sectionInit = function () {
     return this;
 };
 
-sgn.openSection = function (which, callback) {
-
-    callback = callback || function () {};
-
-    this.resizeOverlay();
-
-    $('.content-panel').addClass('is-visible');
-
-    $(which).fadeIn();
-
-    $(window).trigger('resize').trigger('scroll');
-
-    callback();
-
-    this.overlayIsOpen = true;
-
-    $('html body').addClass('no-scroll');
-
-};
-
-sgn.closeContentPanel = function(){
-    $('.additional-content').fadeOut();
-    $('.content-panel').removeClass('is-visible');
-    this.overlayIsOpen = false;
-    $('html body').removeClass('no-scroll');
-};
-
-sgn.resizeOverlay = function(){
-
-    // $('.content-panel-container').css('top', $('header#Home').outerHeight());
-
-};
-
-sgn.resolveResize = function () {
-
-    console.log('resolveResize');
-
-    if (!this.mobileNavOpen) {
-        return;
-    } else {
-        if (this.$window.width() > 899) {
-            this.closeMobileNav();
-        }
-    }
-    if(this.overlayIsOpen){
-        this.resizeOverlay();
-    }
-
-};
-
 sgn.initSliders = function () {
+    
     console.log('initSliders');
+    
     $("#Legacy-Slider").slick({
         infinite: true,
         speed: 300,
@@ -239,6 +181,85 @@ sgn.initSliders = function () {
     return this;
 };
 
+sgn.initParallax = function(){
+
+    // init controller
+    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+    // build scenes
+    new ScrollMagic.Scene({triggerElement: "#parallax1"})
+        .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax2"})
+        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax3"})
+        .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax4"})
+        .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax5"})
+        .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    return this;
+};
+
+sgn.openSection = function (which, callback) {
+
+    callback = callback || function () {};
+
+    this.resizeOverlay();
+
+    $('.content-panel').addClass('is-visible');
+
+    $(which).fadeIn();
+
+    $(window).trigger('resize').trigger('scroll');
+
+    callback();
+
+    this.overlayIsOpen = true;
+
+    $('html body').addClass('no-scroll');
+
+};
+
+sgn.closeContentPanel = function(){
+    $('.additional-content').fadeOut();
+    $('.content-panel').removeClass('is-visible');
+    this.overlayIsOpen = false;
+    $('html body').removeClass('no-scroll');
+};
+
+sgn.resizeOverlay = function(){
+
+    // $('.content-panel-container').css('top', $('header#Home').outerHeight());
+
+};
+
+sgn.resolveResize = function () {
+
+    console.log('resolveResize');
+
+    if (!this.mobileNavOpen) {
+        return;
+    } else {
+        if (this.$window.width() > 899) {
+            this.closeMobileNav();
+        }
+    }
+    if(this.overlayIsOpen){
+        this.resizeOverlay();
+    }
+
+};
+
 sgn.hamburgerButtonClick = function () {
     this.mobileNavOpen = !this.mobileNavOpen;
     if (this.mobileNavOpen) {
@@ -292,83 +313,17 @@ sgn.navLinkClick = function (e) {
 
 };
 
-sgn.monitorTwitterLoad = function(){
-
-    /*
-    Since the Twitter timeline is an iframe
-    it's of an indeterminate length. It's loading
-    also cannot be monitored because of iframe.
-
-    This section of script waits for the iframe to appear
-    then removes itself and, after a half a second, trigger
-    a re-draw/resize/scroll event to keep the parallax
-    do-hingys happy.
-     */
-    (function(scope){
-        scope.twitterInterval = setInterval(function(){
-
-            var twitterFrame = 'iframe#twitter-widget-0',
-                $iframe = $(twitterFrame);
-
-            if($iframe.length > 0){
-                clearInterval(scope.twitterInterval);
-                setTimeout(function(){
-                    $(window).trigger('resize').trigger('scroll');
-                }, 500);
-
-            }
-        }, 0);
-    })(this);
-
-    return this;
-};
-
-sgn.parallaxInit = function(){
-
-    // init controller
-    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-    // build scenes
-    new ScrollMagic.Scene({triggerElement: "#parallax1"})
-        .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax2"})
-        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax3"})
-        .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax4"})
-        .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax5"})
-        .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-
-    return this;
-};
-
 sgn.init = function () {
 
     var _this = window.sgn;
 
     _this
+        .initProps()
         .initNav()
-        .sectionInit()
+        .initSections()
         .initSliders()
-        .monitorTwitterLoad()
-        .parallaxInit();
+        .initParallax();
 
-    /*$('#FixedOverlay').on('touchmove scroll wheel', function(e){
-        console.log('scrolling me, bitches', e);
-        e.stopPropagation();
-        e.preventDefault();
-    });*/
 };
 
 $(sgn.init);
