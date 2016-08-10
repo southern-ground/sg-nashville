@@ -35,13 +35,11 @@
   background-size: cover;
 
 }
-
 .parallax-window {
   min-height: 460px;
   background: transparent;
   background-position: top;
 }
-
 .parallax{
   height: 460px;
   padding-bottom:50px;
@@ -49,7 +47,6 @@
     height: 320px;
   }
 }
-
 .static-cover{
   background-size: cover;
   background-position: center;
@@ -158,14 +155,13 @@ END Bootstrap Extension
   }
 }
 
-@import "sections/sg-content-panel";
 @import "sections/sg-spacer";
 @import 'sections/sg-hero';
-@import 'sections/sg-secondary-content';
 @import 'sections/sg-spaces';
 @import 'sections/sg-people';
 @import 'sections/sg-legacy';
 @import 'sections/sg-artists';
 @import 'sections/sg-studio-happenings';
 @import 'sections/sg-contact';
+@import "sections/sg-content-panel";
 

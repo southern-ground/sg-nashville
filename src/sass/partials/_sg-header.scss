@@ -3,7 +3,6 @@ header {
   width: 100%;
   padding: 16px 0 20px 0;
   background-color: $purple;
-  min-height: 128px;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -148,8 +147,6 @@ header {
 
   @media only screen and (max-width: $max-header-width - 1px) {
 
-    min-height: auto;
-
     .logo {
       width: auto;
       height: 50px;
@@ -186,7 +183,7 @@ header {
 }
 
 .header-spacer {
-  min-height: 128px;
+  min-height: 100px;
 
   &.min-header {
     height: 80px;

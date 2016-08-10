@@ -19,7 +19,7 @@
   }
   .copy{
     font-family: $ubuntu;
-    font-weight: $ubuntu-light;
+    font-weight: $font-weight-light;
     @media only screen and (max-width: $medium - 1px){
       margin-top: 40px;
     }
