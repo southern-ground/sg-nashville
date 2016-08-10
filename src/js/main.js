@@ -114,6 +114,8 @@ sgn.initSections = function () {
 
         });
 
+        $('#FixedOverlay section').fadeOut();
+
     })(this);
 
     return this;
@@ -154,10 +156,8 @@ sgn.initSliders = function () {
         dots: false,
         prevArrow: $('#SpaceSliderPrev'),
         nextArrow: $('#SpaceSliderNext'),
-
         centerMode: true,
         variableWidth: true,
-
         lazyLoad: 'ondemand',
         fadeIn: true
     });
@@ -168,12 +168,11 @@ sgn.initSliders = function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        prevArrow: $('#PeoplePrev'),
-        nextArrow: $('#PeopleNext'),
-
+        prevArrow: $('#PeopleSliderPrev'),
+        nextArrow: $('#PeopleSliderNext'),
         centerMode: true,
         variableWidth: true,
-
+        adaptiveHeight: true,
         lazyLoad: 'ondemand',
         fadeIn: true
     });
@@ -214,19 +213,15 @@ sgn.openSection = function (which, callback) {
 
     callback = callback || function () {};
 
-    this.resizeOverlay();
+    this.overlayIsOpen = true;
+
+    $('html body').addClass('no-scroll');
 
     $('.content-panel').addClass('is-visible');
 
     $(which).fadeIn();
 
-    $(window).trigger('resize').trigger('scroll');
-
     callback();
-
-    this.overlayIsOpen = true;
-
-    $('html body').addClass('no-scroll');
 
 };
 
@@ -235,12 +230,6 @@ sgn.closeContentPanel = function(){
     $('.content-panel').removeClass('is-visible');
     this.overlayIsOpen = false;
     $('html body').removeClass('no-scroll');
-};
-
-sgn.resizeOverlay = function(){
-
-    // $('.content-panel-container').css('top', $('header#Home').outerHeight());
-
 };
 
 sgn.resolveResize = function () {
