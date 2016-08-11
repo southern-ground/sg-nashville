@@ -108,10 +108,10 @@ gulp.task('render', function () {
     // Sort stuff in the data object as desired:
     render.nunjucks.configure(['./src']);
     return gulp.src(
-        './src/index.html')
+        ['./src/index.html', './src/gear.html'])
         .pipe(data(getData))
         .pipe(render({
-            path: ['.', './src/index.html', './src/templates/*.html'],
+            path: ['.', './src/index.html', './src/gear.html', './src/templates/*.html'],
             envOptions: {
                 watch: false
             }
