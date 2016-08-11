@@ -398,6 +398,9 @@ sgn.validateBookingForm = function () {
                     $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code '+data.error+'.)');
                 }
             }
+        }).error(function(e){
+            console.warn("Form Error: " + e.status, e.statusText);
+            $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code '+e.status+'.)');
         });
     }
 
