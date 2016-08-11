@@ -2,8 +2,8 @@ var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
     Linear = window.Linear || {};
 
-sgn.initProps = function(){
-    
+sgn.initProps = function () {
+
     this.$window = $(window);
     this.$hamburgerButton = $('.hamburger-button');
     this.$hamburgerMenu = $('.hamburger-menu');
@@ -11,7 +11,7 @@ sgn.initProps = function(){
     this.$mobileSocialNav = $('.hamburger-menu .social-nav');
 
     this.mobileNavOpen = false;
-    
+
     return this;
 };
 
@@ -76,8 +76,8 @@ sgn.initSections = function () {
     (function (scope) {
 
         // Bind up the close button:
-        $('.content-panel').on('click', function(event){
-            if( $(event.target).is('.content-panel') || $(event.target).is('.content-panel-close') ) {
+        $('.content-panel').on('click', function (event) {
+            if ($(event.target).is('.content-panel') || $(event.target).is('.content-panel-close')) {
                 scope.closeContentPanel();
                 event.preventDefault();
             }
@@ -122,9 +122,9 @@ sgn.initSections = function () {
 };
 
 sgn.initSliders = function () {
-    
+
     console.log('initSliders');
-    
+
     $("#Legacy-Slider").slick({
         infinite: true,
         speed: 300,
@@ -180,7 +180,7 @@ sgn.initSliders = function () {
     return this;
 };
 
-sgn.initParallax = function(){
+sgn.initParallax = function () {
 
     // init controller
     var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
@@ -209,9 +209,18 @@ sgn.initParallax = function(){
     return this;
 };
 
+sgn.initBookingsForm = function () {
+
+    $('#BookingsForm').on('submit', this.validateBookingForm);
+
+    return this;
+};
+
 sgn.openSection = function (which, callback) {
 
-    callback = callback || function () {};
+    callback = callback || function () {
+            // Nothing
+        };
 
     this.overlayIsOpen = true;
 
@@ -225,7 +234,7 @@ sgn.openSection = function (which, callback) {
 
 };
 
-sgn.closeContentPanel = function(){
+sgn.closeContentPanel = function () {
     $('.additional-content').fadeOut();
     $('.content-panel').removeClass('is-visible');
     this.overlayIsOpen = false;
@@ -243,7 +252,7 @@ sgn.resolveResize = function () {
             this.closeMobileNav();
         }
     }
-    if(this.overlayIsOpen){
+    if (this.overlayIsOpen) {
         this.resizeOverlay();
     }
 
@@ -302,6 +311,110 @@ sgn.navLinkClick = function (e) {
 
 };
 
+sgn.validateBookingForm = function () {
+
+    var form = document.forms.Bookings;
+
+    var validateEmail = function (email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
+        sanitizeField = function (html) {
+
+            var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
+
+            var tagOrComment = new RegExp(
+                '<(?:' +
+                '!--(?:(?:-*[^->])*--+|-?)' +
+                '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*' +
+                '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*' +
+                '|/?[a-z]' +
+                tagBody +
+                ')>',
+                'gi');
+
+            var oldHtml;
+
+            do {
+                oldHtml = html;
+                html = html.replace(tagOrComment, '');
+            } while (html !== oldHtml);
+
+            return html.replace(/</g, '&lt;');
+        };
+
+    var formName = sanitizeField(form['bookings-name'].value).trim(),
+        formVenue = sanitizeField(form['bookings-venue'].value).trim(),
+        formEmail = sanitizeField(form['bookings-email'].value).trim(),
+        formText = sanitizeField(form['bookings-text'].value).trim();
+
+    var isError = false;
+
+    var showError = function (name) {
+        $('[name=' + name + ']').addClass('form-error');
+    };
+
+    // Clear any previous errors:
+    $('#BookingsForm').find('*').removeClass('form-error');
+    $('#BookingsForm').find('.error-text, .success-text').html('');
+
+    if (formName.length === 0) {
+        showError('bookings-name');
+        isError = true;
+    }
+
+    if (formVenue.length === 0) {
+        // Nothing; it's OK for this to be blank.
+    }
+
+    if (!validateEmail(formEmail)) {
+        showError('bookings-email');
+        isError = true;
+    }
+
+    if (formText.length === 0) {
+        showError('bookings-text');
+        isError = true;
+    }
+
+    if (isError) {
+        $('#BookingsForm').find('.error-text').html('Please address the above errors and try again.');
+    } else {
+        // Post!
+        console.log('Proceeding with:\n\rName: ' + formName + "\n\rVenue: " + formVenue + "\n\reMail: " + formEmail + "\n\rMessage: " + formText);
+
+        $.post("contact.php", {
+            name: formName,
+            venue: formVenue,
+            email: formEmail,
+            message: formText
+        }).done(function (data) {
+            if(data){
+                if(data.error === 0){
+                    console.warn("Form submitted successfully");
+                    $('#BookingsForm').find('.success-text').html('Form submitted successfully. Someone will be in touch soon!');
+                    $('#BookingsForm').find('input[type=text], textarea').val('');
+                }else{
+                    $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code '+data.error+'.)');
+                }
+            }
+        });
+    }
+
+    return false;
+
+};
+
+sgn.isEmpty = function (str) {
+    return this.removeTags(str).length > 0;
+};
+
+sgn.isValidEmail = function (str) {
+    str = this.removeTags(str);
+    console.log('isValidEmail', str);
+    return false;
+};
+
 sgn.init = function () {
 
     var _this = window.sgn;
@@ -311,7 +424,8 @@ sgn.init = function () {
         .initNav()
         .initSections()
         .initSliders()
-        .initParallax();
+        .initParallax()
+        .initBookingsForm();
 
 };
 

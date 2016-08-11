@@ -494,23 +494,34 @@
             // ........::::.......::::.......:::..::::..::....::..::::..:::......:::::......:::
             -->
 
-            <section class="contact">
+            <section class="contact container-fluid">
 
                 <div class="row-fluid">
+
                     <div class="bookings-form col-xs-12 col-sm-6">
+
                         <h2>Bookings</h2>
-                        <form class="row-fluid">
-                            <input type="text" placeholder="Name" class="col-xs-8 col-s-8"/>
-                            <input type="text" placeholder="Venue" class="col-xs-8 col-s-8"/>
-                            <input type="text" placeholder="Email" class="col-xs-8 col-s-8"/>
-                            <textarea class="col-xs-12"></textarea>
+
+                        <form id="BookingsForm"
+                              name="Bookings"
+                              class="row-fluid"
+                              action="http://localhost/contact.php"
+                              method="post">
+                            <input name="bookings-name" type="text" placeholder="Name" class="col-xs-8 col-s-8"/>
+                            <input name="bookings-venue" type="text" placeholder="Venue" class="col-xs-8 col-s-8"/>
+                            <input name="bookings-email" type="text" placeholder="Email" class="col-xs-8 col-s-8"/>
+                            <textarea name="bookings-text" class="col-xs-12"></textarea>
                             <div class="submit col-xs-12">
                                 <button type="submit">
                                     Submit Request
                                 </button>
                             </div>
+                            <div class="error-text col-xs-12"></div>
+                            <div class="success-text col-xs-12"></div>
                         </form>
+
                     </div>
+
                     <div class="contact-info col-xs-12 col-sm-6">
                         <h2>Contact</h2>
                         <h3>

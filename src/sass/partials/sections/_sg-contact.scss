@@ -10,6 +10,18 @@ section.contact{
     text-transform: uppercase;
     letter-spacing: -2px;
   }
+  .form-error{
+    border: 1px solid red;
+  }
+  .error-text{
+    text-align: center;
+    color: red;
+    margin: 10px 0;
+  }
+  .success-text{
+    color: $purple;
+    text-align: center;
+  }
   .bookings-form{
     .staff{
 
