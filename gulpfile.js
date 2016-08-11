@@ -134,15 +134,21 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('serve', function () {
+
     browserSync.init({server: "./dist"});
+
     gulp.watch([dirs.src + "/index.html", dirs.src + "/templates/*.html", dirs.src + "/data/**/*.json"], ['render']);
+
     gulp.watch([dirs.src + "/sass/**/*.scss"], function(){
         runSequence('sass', 'copy-css');
     });
+
     gulp.watch([dirs.src + "/js/**/*.js"], function(){
         runSequence('lint:js', 'copy-js');
     });
+
     gulp.watch(["dist/*.html", dirs.src + "/css/**/*.css", dirs.src + '/js/*']).on('change', browserSync.reload);
+
 });
 
 gulp.task('deploy', function (done) {
