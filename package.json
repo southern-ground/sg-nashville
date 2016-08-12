@@ -49,6 +49,7 @@
     "express": "^4.14.0",
     "gulp-data": "^1.2.1",
     "gulp-nunjucks-render": "^2.0.0",
+    "gulp-print": "^2.0.1",
     "gulp-sass": "^2.3.2",
     "gulp-shell": "^0.5.2",
     "slick-carousel": "^1.6.0"

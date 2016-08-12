@@ -1,0 +1,26 @@
+.gear-page {
+  .header-spacer {
+    height: 120px;
+    @media only screen and (max-width: $max-header-width) {
+      height: 86px;
+    }
+  }
+  .content-container {
+    padding: 10px 0 50px;
+    h1,h2,h3{
+      font-family: $fell;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+    h1,h2{
+      text-align: center;
+    }
+    section{
+      font-family:$ubuntu;
+      font-weight: $font-weight-light;
+      &:not(:last-child){
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

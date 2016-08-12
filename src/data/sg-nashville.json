@@ -389,7 +389,7 @@
               },
               {
                 "name": "A/D CONVERTER",
-                "eqipment": "APOGEE SYMPHONY (2) 48 I/O"
+                "equipment": ["APOGEE SYMPHONY (2) 48 I/O"]
               },
               {
                 "name": "SYNC",
@@ -657,7 +657,7 @@
               {
                 "name": "SNARES",
                 "equipment": [
-                  "SLINGERLAND 6 X14 WOOD (MATCHES KIT #1) ",
+                  "SLINGERLAND 6 X14 WOOD (MATCHES KIT&nbsp;#1) ",
                   "SLINGERLAND 5 1/2 X 14 METAL ",
                   "1967 LUDWIG 5 1/2 X 14 SENSAPHONIC ",
                   "NEW LUDWIG BLACK BEAUTY 5 1/2 X 14 ",
