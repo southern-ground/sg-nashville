@@ -155,6 +155,10 @@ END Bootstrap Extension
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @import "sections/sg-spacer";
 @import 'sections/sg-hero';
 @import 'sections/sg-spaces';
@@ -165,4 +169,3 @@ END Bootstrap Extension
 @import 'sections/sg-contact';
 @import "sections/sg-content-panel";
 @import "sections/sg-gear";
-
