@@ -226,19 +226,20 @@ sgn.openSection = function (which, callback) {
 
     $('html body').addClass('no-scroll');
 
-    $('.content-panel').addClass('is-visible');
+    $(which).fadeIn('fast');
 
-    $(which).fadeIn();
+    $('.content-panel').fadeIn();
 
     callback();
 
 };
 
 sgn.closeContentPanel = function () {
-    $('.additional-content').fadeOut();
-    $('.content-panel').removeClass('is-visible');
-    this.overlayIsOpen = false;
     $('html body').removeClass('no-scroll');
+    $('.content-panel, .additional-content').fadeOut('fast');
+    // $('.content-panel').removeClass('is-visible');
+    this.overlayIsOpen = false;
+    // $('.additional-content').fadeOut('fast');
 };
 
 sgn.resolveResize = function () {

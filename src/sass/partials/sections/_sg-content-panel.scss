@@ -3,52 +3,42 @@ Slide in Content Panel
 */
 
 .content-panel {
+
   /*...*/
-  visibility: hidden;
-  transition: visibility 0s 0.6s;
+
   background-color: rgba(25, 17, 27, 0.6);
-  z-index: 4;
-}
-
-.content-panel.is-visible {
-  visibility: visible;
-  transition: visibility 0s 0s;
-}
-
-.no-scroll {
-  overflow: hidden;
-}
-
-.content-panel{
+  z-index: 668;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  visibility: hidden;
-  transition: visibility 0s 0.6s;
-  background-color: rgba(25, 17, 27, 0.6);
+
   .content-panel-container{
     position: fixed;
     width: 90vw;
     height: 90vh;
+
     @include center-both;
+
     .content-panel-content{
       position: relative;
       width: 100%;
       height: 100%;
       padding: 20px;
+
       .content-panel-close{
         position: absolute;
         top: 40px;
         right: 40px;
         height: 18px;
         width: 18px;
-        z-index: 2;
+        z-index: 670;
         border: none;
         background-color: transparent;
         background-image: url('../img/close-x.png');
       }
+
       section{
         width: 100%;
         height: 100%;
@@ -57,6 +47,7 @@ Slide in Content Panel
         font-family: $ubuntu;
         font-weight: $font-weight-light;
         overflow-y: scroll;
+
         .carousel-nav {
           width: 20px;
           height: 40px;
@@ -66,21 +57,22 @@ Slide in Content Panel
             background-position: 0 -20px;
           }
         }
+
         h2,h3{
           font-family: $fell;
           text-transform: uppercase;
         }
+
         &.story{
           h2,h3,.scrollable-content{
             padding-right:20px;
           }
         }
+
         &.spaces{
           overflow-y: scroll;
           margin: 0;
           padding: 0;
-          align-content: center;
-          align-items: center;
           .vertical-align{
             display:flex;
             align-items: center;
@@ -95,7 +87,10 @@ Slide in Content Panel
               max-width: 640px;
               margin: 0 200px;
               @include extra-small{
-                width: 200px;
+                width: 60vw;
+              }
+              @include small{
+                width: 50vw;
               }
               img {
                 width: 100%;
@@ -107,6 +102,7 @@ Slide in Content Panel
             }
           }
         }
+
         &.people{
           overflow-y: scroll;
           margin: 0;
@@ -178,7 +174,10 @@ Slide in Content Panel
 
           }
         }
+
       }
+
     }
   }
+
 }
