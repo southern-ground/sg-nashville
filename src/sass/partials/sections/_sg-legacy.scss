@@ -1,5 +1,5 @@
 section.legacy {
-  padding: 60px 0 0;
+  padding: 60px 0;
   text-align: center;
   font-family: $fell;
   h2 {
@@ -23,6 +23,17 @@ section.legacy {
 
     img {
       display: inline-block;
+      width: 185px;
+      height: 185px;
+    }
+
+    &-title{
+      font-family: $ubuntu;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    &-year{
+      font-family: $ubuntu;
     }
 
     a {
