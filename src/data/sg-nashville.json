@@ -286,10 +286,94 @@
       "legacy": {
         "list": [
           {
+            "name": "Ron Block",
+            "title": "Hogan's House of Music",
+            "year": "2015",
+            "image": "img/legacy/Ron_Block-Hogans_House_of_Music-2015.jpg"
+          },
+          {
+            "name": "Brian Setzer",
+            "title": "Rockin' Rudolph",
+            "year": "2015",
+            "image": "img/legacy/Brian_Setzer-Rockin_Rudolph-2015.jpg"
+          },
+          {
             "name": "A Thousand Horses",
             "title": "Southernality",
             "year": "2015",
             "image": "img/legacy/A_Thousand_Horses-Southernality-2015.jpg"
+          },
+          {
+            "name": "The Wood Brothers",
+            "title": "Paradise",
+            "year": "2015",
+            "image": "img/legacy/The_Wood_Brothers-Paradise-2015.jpg"
+          },
+          {
+            "name": "Zac Brown Band",
+            "title": "Jekyll + Hyde",
+            "year": "2015",
+            "image": "img/legacy/Zac_Brown_Band-Jekyll_Hyde-2015.jpg"
+          },
+          {
+            "name": "Foo Fighters",
+            "title": "Sonic Highway",
+            "year": "2014",
+            "image": "img/legacy/Foo_Fighters-Sonic_Highways-2014.jpg"
+          },
+          {
+            "name": "Blake Shelton",
+            "title": "Bringing Back the Sunshine",
+            "year": "2014",
+            "image": "img/legacy/Blake_Shelton-Bringing_Back_The_Sunshine-2014.jpg"
+          },
+          {
+            "name": "Levi Lowrey",
+            "title": "Levi Lowrey",
+            "year": "2013",
+            "image": "img/legacy/Levi_Lowrey-Levi_Lowrey-2013.jpg"
+          },
+          {
+            "name": "The Wood Brothers",
+            "title": "The Muse",
+            "year": "2013",
+            "image": "img/legacy/The_Wood_Brothers-The_Muse-2013.jpg"
+          },
+          {
+            "name": "Zac_Brown_Band",
+            "title": "Grohl Sessions",
+            "year": "2013",
+            "image": "img/legacy/Zac_Brown_Band-Grohl_Sessions-2013.jpg"
+          },
+          {
+            "name": "Indigo Girls",
+            "title": "Holly Happy Days",
+            "year": "2010",
+            "image": "img/legacy/Indigo_Girls-Holly_Happy_Days-2010.jpg"
+          },
+          {
+            "name": "Jamie Oldaker",
+            "title": "Mad Dogs & Okies",
+            "year": "2005",
+            "image": "img/legacy/Jamie_Oldaker-Mad_Dogs_and_Okies-2005.jpg"
+          },
+          {
+            "name": "Neil Young",
+            "title": "Prairie Wind",
+            "year": "2005",
+            "image": "img/legacy/Neil_Young-Prairie_Wind-2005.jpg"
+          },
+          {
+            "name": "Victor Wooten",
+            "title": "Yin Yang",
+            "year": "1999",
+            "image": "img/legacy/Victor_Wooten-Yin_Yang-1999.jpg"
+          },
+          {
+            "name": "Jerry Douglass",
+            "title": "Restless on the Farm",
+            "year": "1998",
+            "image": "img/legacy/Jerry_Douglass-Restless_on_the_Farm-1998.jpg"
           },
           {
             "name": "Allman Brothers",
@@ -304,70 +388,10 @@
             "image": "img/legacy/Allman_Brothers-Reach_for_the_Sky-1980.jpg"
           },
           {
-            "name": "Blake Shelton",
-            "title": "Bringing Back the Sunshine",
-            "year": "2014",
-            "image": "img/legacy/Blake_Shelton-Bringing_Back_The_Sunshine-2014.jpg"
-          },
-          {
-            "name": "Brian Setzer",
-            "title": "Rockin' Rudolph",
-            "year": "2015",
-            "image": "img/legacy/Brian_Setzer-Rockin_Rudolph-2015.jpg"
-          },
-          {
-            "name": "Foo Fighters",
-            "title": "Sonic Highway",
-            "year": "2014",
-            "image": "img/legacy/Foo_Fighters-Sonic_Highways-2014.jpg"
-          },
-          {
-            "name": "Indigo Girls",
-            "title": "Holly Happy Days",
-            "year": "2010",
-            "image": "img/legacy/Indigo_Girls-Holly_Happy_Days-2010.jpg"
-          },
-          {
-            "name": "Jamie Oldaker",
-            "title": "Mad Dogs & Okies",
-            "year": "205",
-            "image": "img/legacy/Jamie_Oldaker-Mad_Dogs_and_Okies-2005.jpg"
-          },
-          {
-            "name": "Jerry Douglass",
-            "title": "Restless on the Farm",
-            "year": "1998",
-            "image": "img/legacy/Jerry_Douglass-Restless_on_the_Farm-1998.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Border Lord",
-            "year": "1971",
-            "image": "img/legacy/Kris_Kristofferson-Border_Lord-1971.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Jesus Was a Capricorn",
-            "year": "1972",
-            "image": "img/legacy/Kris_Kristofferson-Jesus_Was_a_Capricorn-1972.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Kristofferson",
-            "year": "1969",
-            "image": "img/legacy/Kris_Kristofferson-Kristofferson-1969.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "The Silver Tongued Devil and I",
-            "year": "1971",
-            "image": "img/legacy/Kris_Kristofferson-The_Silver_Tongued_Devil_and_I-1971.jpg"
-          },
-          {
             "name": "Larry Gatlin",
-            "title": "High Time",
-            "year": "1976",
-            "image": "img/legacy/Larry_Gatlin-High_Time-1976.jpg"
+            "title": "Oh Brother",
+            "year": "1978",
+            "image": "img/legacy/Larry_Gatlin-Oh_Brother-1978.jpg"
           },
           {
             "name": "Larry Gatlin",
@@ -377,15 +401,9 @@
           },
           {
             "name": "Larry Gatlin",
-            "title": "Oh Brother",
-            "year": "1978",
-            "image": "img/legacy/Larry_Gatlin-Oh_Brother-1978.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "Rain Rainbow",
-            "year": "1974",
-            "image": "img/legacy/Larry_Gatlin-Rain_Rainbow-1974.jpg"
+            "title": "High Time",
+            "year": "1976",
+            "image": "img/legacy/Larry_Gatlin-High_Time-1976.jpg"
           },
           {
             "name": "Larry Gatlin",
@@ -394,16 +412,34 @@
             "image": "img/legacy/Larry_Gatlin-The_Pilgrim-1974.jpg"
           },
           {
-            "name": "Levi Lowrey",
-            "title": "Levi Lowrey",
-            "year": "2013",
-            "image": "img/legacy/Levi_Lowrey-Levi_Lowrey-2013.jpg"
+            "name": "Larry Gatlin",
+            "title": "Rain Rainbow",
+            "year": "1974",
+            "image": "img/legacy/Larry_Gatlin-Rain_Rainbow-1974.jpg"
           },
           {
-            "name": "Neil Young",
-            "title": "Prairie Wind",
-            "year": "2005",
-            "image": "img/legacy/Neil_Young-Prairie_Wind-2005.jpg"
+            "name": "Kris Kristofferson",
+            "title": "Jesus Was a Capricorn",
+            "year": "1972",
+            "image": "img/legacy/Kris_Kristofferson-Jesus_Was_a_Capricorn-1972.jpg"
+          },
+          {
+            "name": "Kris Kristofferson",
+            "title": "Border Lord",
+            "year": "1971",
+            "image": "img/legacy/Kris_Kristofferson-Border_Lord-1971.jpg"
+          },
+          {
+            "name": "Kris Kristofferson",
+            "title": "The Silver Tongued Devil and I",
+            "year": "1971",
+            "image": "img/legacy/Kris_Kristofferson-The_Silver_Tongued_Devil_and_I-1971.jpg"
+          },
+          {
+            "name": "Kris Kristofferson",
+            "title": "Kristofferson",
+            "year": "1969",
+            "image": "img/legacy/Kris_Kristofferson-Kristofferson-1969.jpg"
           },
           {
             "name": "Roger Miller",
@@ -412,46 +448,10 @@
             "image": "img/legacy/Roger_Miller-Roger_Miller-1969.jpg"
           },
           {
-            "name": "Ron Block",
-            "title": "Hogan's House of Music",
-            "year": "2015",
-            "image": "img/legacy/Ron_Block-Hogans_House_of_Music-2015.jpg"
-          },
-          {
-            "name": "The Wood Brothers",
-            "title": "Paradise",
-            "year": "2015",
-            "image": "img/legacy/The_Wood_Brothers-Paradise-2015.jpg"
-          },
-          {
-            "name": "The Wood Brothers",
-            "title": "The Muse",
-            "year": "2013",
-            "image": "img/legacy/The_Wood_Brothers-The_Muse-2013.jpg"
-          },
-          {
             "name": "Tony Joe White",
             "title": "Continued",
             "year": "1969",
             "image": "img/legacy/Tony_Joe_White-Continued-1969.jpg"
-          },
-          {
-            "name": "Victor Wooten",
-            "title": "Yin Yang",
-            "year": "1999",
-            "image": "img/legacy/Victor_Wooten-Yin_Yang-1999.jpg"
-          },
-          {
-            "name": "Zac_Brown_Band",
-            "title": "Grohl Sessions",
-            "year": "2013",
-            "image": "img/legacy/Zac_Brown_Band-Grohl_Sessions-2013.jpg"
-          },
-          {
-            "name": "Zac Brown Band",
-            "title": "Jekyll + Hyde",
-            "year": "2015",
-            "image": "img/legacy/Zac_Brown_Band-Jekyll_Hyde-2015.jpg"
           }
         ],
         "artists": [
