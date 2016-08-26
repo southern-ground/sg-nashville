@@ -366,351 +366,371 @@
           {
             "name": "Tracking Room Equipment",
             "groups": [
-              {
-                "name": "CONSOLE",
-                "equipment": [
-                  "API LEGACY PLUS",
-                  "(48 CHANNELS WITH 500 SERIES OPTIONS BUCKET)",
-                  "VISION AUTOMATION"
-                ]
-              },
-              {
-                "name": "MULTI-TRACK RECORDERS",
-                "equipment": [
-                  "PROTOOLS HD 10 & 11 (HDX) - 48 I/O",
-                  "OTARI MTR-100A (2) – 24TK 2\" TAPE MACHINE"
-                ]
-              },
-              {
-                "name": "2 TRACK RECORDERS",
-                "equipment": [
-                  "ALESIS MASTERLINK"
-                ]
-              },
-              {
-                "name": "A/D CONVERTER",
-                "equipment": ["APOGEE SYMPHONY (2) 48 I/O"]
-              },
-              {
-                "name": "SYNC",
-                "equipment": [
-                  "HORITA BLACKBURST GENERATOR (NTSC/PAL)",
-                  "APOGEE BIG BEN",
-                  "DIGIDESIGN SYNC I/O",
-                  "BRAINSTORM SR15 DISTRYPALIZER",
-                  "OTARI EC-201 TIME CODE READER (6)"
-                ]
-              },
-              {
-                "name": "OTHER",
-                "equipment": [
-                  "CLASP SYSTEM – UP TO 48",
-                  "SIMULTANEOUS TRACKS"
-                ]
-              },
-              {
-                "name": "SPEAKERS",
-                "equipment": [
-                  "BAREFOOT SOUND MICROMAIN27",
-                  "TAD CUSTOM MAINS",
-                  "YAMAHA NS-10"
-                ]
-              },
-              {
-                "name": "MIC PREAMPS",
-                "equipment": [
-                  "BAE AVEDIS 312 (5)",
-                  "CHANDLER GERMANIUM (2)",
-                  "CHANDLER TG2 (2 CHANNELS)",
-                  "GML 8304 (4)",
-                  "HARDY M-1 (2)",
-                  "MASTERING LAB MIC PRES (2)",
-                  "QUAD EIGHT CUSTOM (3)",
-                  "TELEFUNKEN V76 (2)",
-                  "VINTECH VA-573 (2)"
-                ]
-              },
-              {
-                "name": "NEVE SIDECAR",
-                "equipment": [
-                  "NEVE 1066 (4)",
-                  "NEVE 1073 (4)",
-                  "NEVE 1081 (4)"
-                ]
-              },
-              {
-                "name": "EQ",
-                "equipment": [
-                  "API 550A (1-24, CONSOLE)",
-                  "API 550L (25-48, CONSOLE)",
-                  "API 215L (8) API 560 (2)",
-                  "MAAG EQ2 (2)",
-                  "AVEDIS E15 (4)",
-                  "AVEDIS E27 (2)",
-                  "HARRISON 32 (2)",
-                  "PULTEC EQP-1RS",
-                  "GML 8200",
-                  "SONTEC MEP-250C (2)",
-                  "SUMMIT EQP-200A"
-                ]
-              },
-              {
-                "name": "COMPRESSORS",
-                "equipment": [
-                  "API 225L (16, CONSOLE)",
-                  "API 2500 (CONSOLE)",
-                  "CRANE SONG STC-8",
-                  "DBX 160 (2)",
-                  "EMPIRICAL LABS DISTRESSORS (4)",
-                  "GML 8900",
-                  "NEVE 33609",
-                  "RETRO STA-LEVEL",
-                  "RETRO DOUBLEWIDE",
-                  "SSL LOGIC FX G384",
-                  "TELETRONIX LA-2A",
-                  "TELETRONIX LA-3A (2)",
-                  "TUBE TECH CL1B",
-                  "UREI 1178",
-                  "UREI 1176 “BLUESTRIPE”",
-                  "UREI 1176LN (2)",
-                  "CHANDLER TG1",
-                  "EVENTIDE OMNIPRESSOR",
-                  "STANDARD AUDIO LEVEL-OR"
-                ]
-              },
-              {
-                "name": "REVERB & EFFECTS",
-                "equipment": [
-                  "AKG BX5",
-                  "ELECTRIX FILTER FACTORY",
-                  "EMT 140 PLATE REVERB (3)",
-                  "LEXICON 480L",
-                  "LEXICON PCM 41",
-                  "LEXICON PCM 42",
-                  "MOOG ANALOG DELAY",
-                  "BRICASTI M7",
-                  "ROLAND SPACE ECHO 201 (FLOATS)",
-                  "TECH 21 SANSAMP"
-                ]
-              },
-              {
-                "name": "OTHER OUTBOARD",
-                "equipment": [
-                  "API 205L DI (2, CONSOLE)",
-                  "RADIAL ETC REAMP",
-                  "RADIAL PHAZE Q TOOL"
-                ]
-              }
+              [
+                {
+                  "name": "CONSOLE",
+                  "equipment": [
+                    "API LEGACY PLUS",
+                    "(48 CHANNELS WITH 500 SERIES OPTIONS BUCKET)",
+                    "VISION AUTOMATION"
+                  ]
+                },
+                {
+                  "name": "MULTI-TRACK RECORDERS",
+                  "equipment": [
+                    "PROTOOLS HD 10 & 11 (HDX) - 48 I/O",
+                    "OTARI MTR-100A (2) – 24TK 2\" TAPE MACHINE"
+                  ]
+                },
+                {
+                  "name": "2 TRACK RECORDERS",
+                  "equipment": [
+                    "ALESIS MASTERLINK"
+                  ]
+                },
+                {
+                  "name": "A/D CONVERTER",
+                  "equipment": [
+                    "APOGEE SYMPHONY (2) 48 I/O"
+                  ]
+                },
+                {
+                  "name": "SYNC",
+                  "equipment": [
+                    "HORITA BLACKBURST GENERATOR (NTSC/PAL)",
+                    "APOGEE BIG BEN",
+                    "DIGIDESIGN SYNC I/O",
+                    "BRAINSTORM SR15 DISTRYPALIZER",
+                    "OTARI EC-201 TIME CODE READER (6)"
+                  ]
+                },
+                {
+                  "name": "OTHER",
+                  "equipment": [
+                    "CLASP SYSTEM – UP TO 48",
+                    "SIMULTANEOUS TRACKS"
+                  ]
+                },
+                {
+                  "name": "SPEAKERS",
+                  "equipment": [
+                    "BAREFOOT SOUND MICROMAIN27",
+                    "TAD CUSTOM MAINS",
+                    "YAMAHA NS-10"
+                  ]
+                },
+                {
+                  "name": "MIC PREAMPS",
+                  "equipment": [
+                    "BAE AVEDIS 312 (5)",
+                    "CHANDLER GERMANIUM (2)",
+                    "CHANDLER TG2 (2 CHANNELS)",
+                    "GML 8304 (4)",
+                    "HARDY M-1 (2)",
+                    "MASTERING LAB MIC PRES (2)",
+                    "QUAD EIGHT CUSTOM (3)",
+                    "TELEFUNKEN V76 (2)",
+                    "VINTECH VA-573 (2)"
+                  ]
+                },
+                {
+                  "name": "NEVE SIDECAR",
+                  "equipment": [
+                    "NEVE 1066 (4)",
+                    "NEVE 1073 (4)",
+                    "NEVE 1081 (4)"
+                  ]
+                }
+              ],
+              [
+                {
+                  "name": "EQ",
+                  "equipment": [
+                    "API 550A (1-24, CONSOLE)",
+                    "API 550L (25-48, CONSOLE)",
+                    "API 215L (8) API 560 (2)",
+                    "MAAG EQ2 (2)",
+                    "AVEDIS E15 (4)",
+                    "AVEDIS E27 (2)",
+                    "HARRISON 32 (2)",
+                    "PULTEC EQP-1RS",
+                    "GML 8200",
+                    "SONTEC MEP-250C (2)",
+                    "SUMMIT EQP-200A"
+                  ]
+                },
+                {
+                  "name": "COMPRESSORS",
+                  "equipment": [
+                    "API 225L (16, CONSOLE)",
+                    "API 2500 (CONSOLE)",
+                    "CRANE SONG STC-8",
+                    "DBX 160 (2)",
+                    "EMPIRICAL LABS DISTRESSORS (4)",
+                    "GML 8900",
+                    "NEVE 33609",
+                    "RETRO STA-LEVEL",
+                    "RETRO DOUBLEWIDE",
+                    "SSL LOGIC FX G384",
+                    "TELETRONIX LA-2A",
+                    "TELETRONIX LA-3A (2)",
+                    "TUBE TECH CL1B",
+                    "UREI 1178",
+                    "UREI 1176 “BLUESTRIPE”",
+                    "UREI 1176LN (2)",
+                    "CHANDLER TG1",
+                    "EVENTIDE OMNIPRESSOR",
+                    "STANDARD AUDIO LEVEL-OR"
+                  ]
+                },
+                {
+                  "name": "REVERB & EFFECTS",
+                  "equipment": [
+                    "AKG BX5",
+                    "ELECTRIX FILTER FACTORY",
+                    "EMT 140 PLATE REVERB (3)",
+                    "LEXICON 480L",
+                    "LEXICON PCM 41",
+                    "LEXICON PCM 42",
+                    "MOOG ANALOG DELAY",
+                    "BRICASTI M7",
+                    "ROLAND SPACE ECHO 201 (FLOATS)",
+                    "TECH 21 SANSAMP"
+                  ]
+                },
+                {
+                  "name": "OTHER OUTBOARD",
+                  "equipment": [
+                    "API 205L DI (2, CONSOLE)",
+                    "RADIAL ETC REAMP",
+                    "RADIAL PHAZE Q TOOL"
+                  ]
+                }
+              ]
             ]
           },
           {
             "name": "Mix Room Equipment",
             "groups": [
-              {
-                "name": "CONSOLE",
-                "equipment": [
-                  "SSL 4000 G SERIES – 60 CHANNELS"
-                ]
-              },
-              {
-                "name": "MULTI-TRACK RECORDERS",
-                "equipment": [
-                  "PROTOOLS 10 HD – 24 IN/56 OUT"
-                ]
-              },
-              {
-                "name": "2 TRACK RECORDERS",
-                "equipment": [
-                  "AMPEX ATR-102 TAPE MACHINE "
-                ]
-              },
-              {
-                "name": "A/D CONVERTER",
-                "equipment": [
-                  "CRANE SONG HEDD",
-                  "DIGIDESIGN 192 BLUE FACE (4)"
-                ]
-              },
-              {
-                "name": "SYNC",
-                "equipment": [
-                  "APOGEE BIG BEN",
-                  "DIGIDESIGN SYNC I/O"
-                ]
-              },
-              {
-                "name": "SPEAKERS",
-                "equipment": [
-                  "ATC SCM300 MAINS",
-                  "AURATONE",
-                  "YAMAHA NS-10"
-                ]
-              },
-              {
-                "name": "EQ",
-                "equipment": [
-                  "API 550B (2)",
-                  "GML 8200",
-                  "MAAG EQ2 (2)",
-                  "RETRO 2A3"
-                ]
-              },
-              {
-                "name": "COMPRESSORS",
-                "equipment": [
-                  "API 2500",
-                  "BAE 10DC (2)",
-                  "DBX 160 (2)",
-                  "EMPIRICAL LABS FATSO JR.",
-                  "GML 8900",
-                  "RETRO STA-LEVEL",
-                  "SOUTHERN GROUND CUSTOM 1176",
-                  "SPL TRANSIENT DESIGNER",
-                  "TELETRONIX LA2A",
-                  "U.S. ARMY SIGNAL CORPS – FEDERAL",
-                  "UA 1176 (BLUE STRIPE)",
-                  "UA LA3A (2)"
-                ]
-              },
-              {
-                "name": "DYNAMIC EQ",
-                "equipment": [
-                  "BSS DPR-901 II",
-                  "VALLEY PEOPLE COMANDER (2)",
-                  "VALLEY GAIN BRAIN II (2)"
-                ]
-              }
+              [
+                {
+                  "name": "CONSOLE",
+                  "equipment": [
+                    "SSL 4000 G SERIES – 60 CHANNELS"
+                  ]
+                },
+                {
+                  "name": "MULTI-TRACK RECORDERS",
+                  "equipment": [
+                    "PROTOOLS 10 HD – 24 IN/56 OUT"
+                  ]
+                },
+                {
+                  "name": "2 TRACK RECORDERS",
+                  "equipment": [
+                    "AMPEX ATR-102 TAPE MACHINE "
+                  ]
+                },
+                {
+                  "name": "A/D CONVERTER",
+                  "equipment": [
+                    "CRANE SONG HEDD",
+                    "DIGIDESIGN 192 BLUE FACE (4)"
+                  ]
+                },
+                {
+                  "name": "SYNC",
+                  "equipment": [
+                    "APOGEE BIG BEN",
+                    "DIGIDESIGN SYNC I/O"
+                  ]
+                },
+                {
+                  "name": "SPEAKERS",
+                  "equipment": [
+                    "ATC SCM300 MAINS",
+                    "AURATONE",
+                    "YAMAHA NS-10"
+                  ]
+                }
+              ],
+              [
+                {
+                  "name": "EQ",
+                  "equipment": [
+                    "API 550B (2)",
+                    "GML 8200",
+                    "MAAG EQ2 (2)",
+                    "RETRO 2A3"
+                  ]
+                },
+                {
+                  "name": "COMPRESSORS",
+                  "equipment": [
+                    "API 2500",
+                    "BAE 10DC (2)",
+                    "DBX 160 (2)",
+                    "EMPIRICAL LABS FATSO JR.",
+                    "GML 8900",
+                    "RETRO STA-LEVEL",
+                    "SOUTHERN GROUND CUSTOM 1176",
+                    "SPL TRANSIENT DESIGNER",
+                    "TELETRONIX LA2A",
+                    "U.S. ARMY SIGNAL CORPS – FEDERAL",
+                    "UA 1176 (BLUE STRIPE)",
+                    "UA LA3A (2)"
+                  ]
+                },
+                {
+                  "name": "DYNAMIC EQ",
+                  "equipment": [
+                    "BSS DPR-901 II",
+                    "VALLEY PEOPLE COMANDER (2)",
+                    "VALLEY GAIN BRAIN II (2)"
+                  ]
+                }
+              ]
             ]
           },
           {
             "name": "Microphones",
             "groups": [
-              {
-                "equipment": [
-                  "AEA R88",
-                  "STEREO RIBBON AKG C414-EB (2)",
-                  "AKG C414 B-ULS (2)",
-                  "AKG C451E (4)",
-                  "AKG C452 EB AKG D112",
-                  "BEYERDYNAMIC M88 (4)",
-                  "BEYERDYNAMIC M160N (3)",
-                  "COLES 4038 (4)",
-                  "COUNTRYMAN EM-101 (3)",
-                  "CUSTOM BINAURAL HEAD MIC",
-                  "EV RE-15 (4)",
-                  "EV RE-16 (3)",
-                  "EV RE-20",
-                  "GEFELL UM70",
-                  "GEFELL M296 (2)",
-                  "JOSEPHSON E22 (3)",
-                  "MIKTEK CV-4 TUBE",
-                  "MICROTECH-GEFELL M-300 (2)",
-                  "NEUMANN KM54",
-                  "NEUMANN KM56",
-                  "NEUMANN KM184 (2)",
-                  "NEUMANN M582 W/M58 CAPSULE (2)",
-                  "NEUMANN M582 W/ M70 CAPSULE",
-                  "NEUMANN M269 ",
-                  "NEUMANN U47 ",
-                  "NEUMANN U47 ",
-                  "FET NEUMANN U48 ",
-                  "VF NEUMANN U48 ",
-                  "NV NEUMANN U67 ",
-                  "NEUMANN U87 (5) ",
-                  "RCA 77D ROYER 121 (2) ",
-                  "SENNHEISER 441 ",
-                  "SENNHEISER 421 (7) ",
-                  "SENNHEISER MKH-415T (2) ",
-                  "SHURE SM7 (4) ",
-                  "SHURE SM57 (9) ",
-                  "SOUNDELUX E47  ",
-                  "SONY C48 ",
-                  "YAMAHA NS10 WOOFER MOD ",
-                  "YAMAHA SUBKICK ",
-                  "MANY OTHER UNUSUAL MICROPHONES AVAILABLE BY REQUEST"
-                ]
-              }
+              [
+                {
+                  "equipment": [
+                    "AEA R88",
+                    "STEREO RIBBON AKG C414-EB (2)",
+                    "AKG C414 B-ULS (2)",
+                    "AKG C451E (4)",
+                    "AKG C452 EB AKG D112",
+                    "BEYERDYNAMIC M88 (4)",
+                    "BEYERDYNAMIC M160N (3)",
+                    "COLES 4038 (4)",
+                    "COUNTRYMAN EM-101 (3)",
+                    "CUSTOM BINAURAL HEAD MIC",
+                    "EV RE-15 (4)",
+                    "EV RE-16 (3)",
+                    "EV RE-20",
+                    "GEFELL UM70",
+                    "GEFELL M296 (2)",
+                    "JOSEPHSON E22 (3)",
+                    "MIKTEK CV-4 TUBE",
+                    "MICROTECH-GEFELL M-300 (2)",
+                    "NEUMANN KM54",
+                    "NEUMANN KM56",
+                    "NEUMANN KM184 (2)",
+                    "NEUMANN M582 W/M58 CAPSULE (2)",
+                    "NEUMANN M582 W/ M70 CAPSULE",
+                    "NEUMANN M269 ",
+                    "NEUMANN U47 ",
+                    "NEUMANN U47 ",
+                    "FET NEUMANN U48 ",
+                    "VF NEUMANN U48 ",
+                    "NV NEUMANN U67 ",
+                    "NEUMANN U87 (5) ",
+                    "RCA 77D ROYER 121 (2) ",
+                    "SENNHEISER 441 ",
+                    "SENNHEISER 421 (7) ",
+                    "SENNHEISER MKH-415T (2) ",
+                    "SHURE SM7 (4) ",
+                    "SHURE SM57 (9) ",
+                    "SOUNDELUX E47  ",
+                    "SONY C48 ",
+                    "YAMAHA NS10 WOOFER MOD ",
+                    "YAMAHA SUBKICK ",
+                    "MANY OTHER UNUSUAL MICROPHONES AVAILABLE BY REQUEST"
+                  ]
+                }
+              ]
             ]
           },
           {
             "name": "Drums",
             "groups": [
-              {
-                "name": "KIT #1 ",
-                "equipment": [
-                  "LATE SIXTIES WHITE OYSTER PEARL SLINGERLAND",
-                  "9 X 13 RACK ",
-                  "16 X 16 FLOOR (LEEDY)",
-                  "14 X 22 KICK"
-                ]
-              },
-              {
-                "name": "KIT #2 ",
-                "equipment": [
-                  "LATE SIXTIES BLACK OYSTER PEARL SLINGERLAND",
-                  "8 X 12 RACK",
-                  "9 X 13 RACK",
-                  "16 X16 FLOOR",
-                  "16 X 22 KICK"
-                ]
-              },
-              {
-                "name": "SNARES",
-                "equipment": [
-                  "SLINGERLAND 6 X14 WOOD (MATCHES KIT&nbsp;#1) ",
-                  "SLINGERLAND 5 1/2 X 14 METAL ",
-                  "1967 LUDWIG 5 1/2 X 14 SENSAPHONIC ",
-                  "NEW LUDWIG BLACK BEAUTY 5 1/2 X 14 ",
-                  "LEEDY 7 X 14 WOOD ",
-                  "LEEDY 7 X 15 WOOD ",
-                  "PEARL SENSITONE 6 X 14 BRASS ",
-                  "ROGERS 6 LUG 5 X14 WOOD ",
-                  "MAPEX 5 X10 POPCORN METAL"
-                ]
-              }
+              [
+                {
+                  "name": "KIT #1 ",
+                  "equipment": [
+                    "LATE SIXTIES WHITE OYSTER PEARL SLINGERLAND",
+                    "9 X 13 RACK ",
+                    "16 X 16 FLOOR (LEEDY)",
+                    "14 X 22 KICK"
+                  ]
+                },
+                {
+                  "name": "KIT #2 ",
+                  "equipment": [
+                    "LATE SIXTIES BLACK OYSTER PEARL SLINGERLAND",
+                    "8 X 12 RACK",
+                    "9 X 13 RACK",
+                    "16 X16 FLOOR",
+                    "16 X 22 KICK"
+                  ]
+                }
+              ],
+              [
+                {
+                  "name": "SNARES",
+                  "equipment": [
+                    "SLINGERLAND 6 X14 WOOD (MATCHES KIT&nbsp;#1) ",
+                    "SLINGERLAND 5 1/2 X 14 METAL ",
+                    "1967 LUDWIG 5 1/2 X 14 SENSAPHONIC ",
+                    "NEW LUDWIG BLACK BEAUTY 5 1/2 X 14 ",
+                    "LEEDY 7 X 14 WOOD ",
+                    "LEEDY 7 X 15 WOOD ",
+                    "PEARL SENSITONE 6 X 14 BRASS ",
+                    "ROGERS 6 LUG 5 X14 WOOD ",
+                    "MAPEX 5 X10 POPCORN METAL"
+                  ]
+                }
+              ]
             ]
           },
           {
             "name": "Amplifiers",
             "groups": [
-              {
-                "name": "BASS AMPS",
-                "equipment": [
-                  "PORTAFLEX B15 (3)",
-                  "ROCKET BASS B-100R",
-                  "SVTVR"
-                ]
-              },
-              {
-                "name": "GUITAR AMPS",
-                "equipment": [
-                  "65 LONDON (HEAD)",
-                  "AMPEG REVERBEROCKET. R-12-RB",
-                  "FENDER CHAMP. 5F1",
-                  "FENDER DELUXE REVERB",
-                  "FENDER TWIN",
-                  "GIBSON LES PAUL GA-40",
-                  "GOODSELL 33 CUSTOM MK2",
-                  "GRETSCH",
-                  "KAY 504",
-                  "SILVERTONE 1484",
-                  "TWIN TWELVE” HEAD",
-                  "TRACE ACOUSTIC TA200",
-                  "VINTAGE SOUNDAMPS VINTAGE 40",
-                  "VOX BRUNO TB35C2",
-                  "Z Z WRECK ZA-31"
-                ]
-              },
-              {
-                "name": "SPEAKER CABINETS",
-                "equipment": [
-                  "65 LONDON (CAB)",
-                  "FENDER VIBRATONE",
-                  "TED WEBER",
-                  "Z 2X12\"",
-                  "LESLIE 122"
-                ]
-              }
+              [
+                {
+                  "name": "BASS AMPS",
+                  "equipment": [
+                    "PORTAFLEX B15 (3)",
+                    "ROCKET BASS B-100R",
+                    "SVTVR"
+                  ]
+                },
+                {
+                  "name": "GUITAR AMPS",
+                  "equipment": [
+                    "65 LONDON (HEAD)",
+                    "AMPEG REVERBEROCKET. R-12-RB",
+                    "FENDER CHAMP. 5F1",
+                    "FENDER DELUXE REVERB",
+                    "FENDER TWIN",
+                    "GIBSON LES PAUL GA-40",
+                    "GOODSELL 33 CUSTOM MK2",
+                    "GRETSCH",
+                    "KAY 504",
+                    "SILVERTONE 1484",
+                    "TWIN TWELVE” HEAD",
+                    "TRACE ACOUSTIC TA200",
+                    "VINTAGE SOUNDAMPS VINTAGE 40",
+                    "VOX BRUNO TB35C2",
+                    "Z Z WRECK ZA-31"
+                  ]
+                }
+              ],
+              [
+                {
+                  "name": "SPEAKER CABINETS",
+                  "equipment": [
+                    "65 LONDON (CAB)",
+                    "FENDER VIBRATONE",
+                    "TED WEBER",
+                    "Z 2X12\"",
+                    "LESLIE 122"
+                  ]
+                }
+              ]
             ]
           }
         ]

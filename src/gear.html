@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <link href='https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu:300,400,700' rel='stylesheet'
+          type='text/css'>
 
     <script src="js/vendor/modernizr.custom.min.js"></script>
 </head>
@@ -41,7 +42,8 @@
 
         <div class="wrapper">
 
-            <a href="/index.html" title="Home"><img class="logo" src="img/logo.png" alt="Southern Ground Nashville"/></a>
+            <a href="/index.html" title="Home"><img class="logo" src="img/logo.png"
+                                                    alt="Southern Ground Nashville"/></a>
 
         </div>
 
@@ -83,35 +85,85 @@
             <h1>Gear</h1>
 
             {% for section in data.sections.gear.sections %}
+
             <section class="container-fluid">
 
                 <h2>{{section.name}}</h2>
 
-                {% for group in section.groups %}
+                {% if section.groups.length != 1 %}
+
                 <div class="row-fluid clearfix">
-                    <h3>{{group.name}}</h3>
-                    <ul class="equipmentList list-unstyled">
-                    {% for equipment in group.equipment %}
-                    <li class="col-xs-12 col-sm-6 col-md-4">{{equipment | safe}}</li>
+
+                    {% for column in section.groups %}
+
+                    <div class="col-xs-12 col-sm-6">
+
+                        {% if loop.first %}
+                        <!-- Left Column -->
+                        {% else %}
+                        <!-- Right Column -->
+                        {% endif %}
+
+                        {% for group in column %}
+
+                        <h3>{{group.name}}</h3>
+
+                        <ul class="equipmentList list-unstyled">
+
+                            {% for equipment in group.equipment %}
+
+                            <li>{{equipment | safe}}</li>
+
+                            {% endfor %}
+
+                        </ul>
+
+                        {% endfor %}
+
+                    </div>
+
                     {% endfor %}
+
+                {% else %}
+
+                    {% for group in section.groups[0] %}
+
+                    <ul class="equipmentList list-unstyled">
+                        {% for equipment in group.equipment %}
+                            {% if loop.last %}
+                                <li class="col-xs-12 centered" style="text-align:center;margin-top:10px;">
+                                    {{equipment | safe}}
+                                </li>
+                            {% else %}
+                                <li class="col-xs-12 col-sm-6 col-md-4">{{equipment | safe}}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
-                </div>
-                {% endfor %}
+
+                    {% endfor %}
+
+                {% endif %}
+
             </section>
+
             {% if not loop.last %}
-            <div class="spacer" >
 
-            <div class="piece left"></div>
+            <div class="spacer">
 
-            <div class="piece middle">
-                <img src="img/spacer-center.png"/>
+                <div class="piece left"></div>
+
+                <div class="piece middle">
+                    <img src="img/spacer-center.png"/>
+                </div>
+
+                <div class="piece right"></div>
+
             </div>
 
-            <div class="piece right"></div>
-
-        </div>
             {% endif %}
+
             {% endfor %}
+
         </div>
     </div>
 
