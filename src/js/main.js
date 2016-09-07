@@ -93,11 +93,17 @@ sgn.initSections = function () {
             killEvent(e);
             scrubAttributes(e, scope);
 
-            $('#SpaceSlider').on('afterChange', function () {
+            $('.spaceSlider_container').hide();
+
+            $('#Space_' + scope.targetIndex).show();
+
+            var $slider = $('#SpaceSlider_' + scope.targetIndex);
+
+            $slider.on('afterChange', function () {
                 scope.openSection(scope.target);
             });
 
-            $('#SpaceSlider').slick('slickGoTo', scope.targetIndex, true);
+            $slider.slick('slickGoTo', 0, true);
 
         });
 
@@ -148,7 +154,32 @@ sgn.initSliders = function () {
         }]
     });
 
-    $("#SpaceSlider").slick({
+    var counter = 0;
+
+    $('.spaceSlider').each(function(index,el){
+
+        console.log('HOT COCK');
+        console.log($('#SpaceSliderPrev_' + counter));
+
+        $(el).slick({
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            prevArrow: $('#SpaceSliderPrev_' + counter),
+            nextArrow: $('#SpaceSliderNext_' + counter),
+            variableWidth: true,
+            adaptiveHeight: true,
+            fadeIn: true,
+            centerMode: true,
+            centerPadding: '60px'
+        });
+
+        counter++;
+    });
+
+   /* $(".spaceSlider").slick({
         infinite: true,
         speed: 300,
         slidesToShow: 1,
@@ -160,7 +191,7 @@ sgn.initSliders = function () {
         variableWidth: true,
         lazyLoad: 'ondemand',
         fadeIn: true
-    });
+    });*/
 
     $("#PeopleSlider").slick({
         infinite: true,

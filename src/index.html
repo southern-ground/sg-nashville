@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <link href='https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu:300,400,700' rel='stylesheet'
+          type='text/css'>
 
     <script src="js/vendor/modernizr.custom.min.js"></script>
 </head>
@@ -455,7 +456,8 @@
                            data-border-color="#19111b"
                            href="https://twitter.com/SG_Nashville">
                             Tweets by SG_Nashville
-                        </a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                     </div>
                 </div>
@@ -607,155 +609,197 @@
     <div class="content-panel-container _tan">
         <div class="content-panel-content">
 
-                <!--
-                // '##::::'##:'########:'########:::'#######::
-                //  ##:::: ##: ##.....:: ##.... ##:'##.... ##:
-                //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##:
-                //  #########: ######::: ########:: ##:::: ##:
-                //  ##.... ##: ##...:::: ##.. ##::: ##:::: ##:
-                //  ##:::: ##: ##::::::: ##::. ##:: ##:::: ##:
-                //  ##:::: ##: ########: ##:::. ##:. #######::
-                // ..:::::..::........::..:::::..:::.......:::
-                -->
-                <section class="additional-content story _tan">
+            <!--
+            // '##::::'##:'########:'########:::'#######::
+            //  ##:::: ##: ##.....:: ##.... ##:'##.... ##:
+            //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##:
+            //  #########: ######::: ########:: ##:::: ##:
+            //  ##.... ##: ##...:::: ##.. ##::: ##:::: ##:
+            //  ##:::: ##: ##::::::: ##::. ##:: ##:::: ##:
+            //  ##:::: ##: ########: ##:::. ##:. #######::
+            // ..:::::..::........::..:::::..:::.......:::
+            -->
+            <section class="additional-content story _tan">
 
-                    <h2>{{data.sections.hero.readMore.title}}</h2>
+                <h2>{{data.sections.hero.readMore.title}}</h2>
 
-                    <div class="scrollable-content">
+                <div class="scrollable-content">
 
-                        {% for paragraph in data.sections.hero.readMore.copy %}
-                        <p>{{paragraph}}</p>
-                        {% endfor %}
+                    {% for paragraph in data.sections.hero.readMore.copy %}
+                    <p>{{paragraph}}</p>
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+            <!--
+            // :'######::'########:::::'###:::::'######::'########:
+            // '##... ##: ##.... ##:::'## ##:::'##... ##: ##.....::
+            //  ##:::..:: ##:::: ##::'##:. ##:: ##:::..:: ##:::::::
+            // . ######:: ########::'##:::. ##: ##::::::: ######:::
+            // :..... ##: ##.....::: #########: ##::::::: ##...::::
+            // '##::: ##: ##:::::::: ##.... ##: ##::: ##: ##:::::::
+            // . ######:: ##:::::::: ##:::: ##:. ######:: ########:
+            // :......:::..:::::::::..:::::..:::......:::........::
+            // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
+            // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
+            //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
+            //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
+            //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
+            //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
+            // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
+            // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
+            -->
+            <section class="additional-content spaces _tan">
+
+                {% for space in data.sections.spaces.list %}
+
+                <div class="vertical-align spaceSlider_container" id="Space_{{loop.index0}}">
+
+                    <div id="SpaceSliderPrev_{{loop.index0}}" class="carousel-nav"></div>
+
+                    <div class="spaceCarousel">
+
+                        <h3>{{space.name}}</h3>
+
+                        <div id="SpaceSlider_{{loop.index0}}" class="spaceSlider">
+
+                            {% for image in space.images %}
+
+                            <div class="spaceSlider-slide">
+
+                                <img src="{{image}}"/>
+
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <p>{{space.details.description}}</p>
 
                     </div>
 
-                </section>
+                    <div id="SpaceSliderNext_{{loop.index0}}" class="carousel-nav right"></div>
 
-                <!--
-                // :'######::'########:::::'###:::::'######::'########:
-                // '##... ##: ##.... ##:::'## ##:::'##... ##: ##.....::
-                //  ##:::..:: ##:::: ##::'##:. ##:: ##:::..:: ##:::::::
-                // . ######:: ########::'##:::. ##: ##::::::: ######:::
-                // :..... ##: ##.....::: #########: ##::::::: ##...::::
-                // '##::: ##: ##:::::::: ##.... ##: ##::: ##: ##:::::::
-                // . ######:: ##:::::::: ##:::: ##:. ######:: ########:
-                // :......:::..:::::::::..:::::..:::......:::........::
-                // :'######:::::'###::::'########:::'#######::'##::::'##::'######::'########:'##:::::::
-                // '##... ##:::'## ##::: ##.... ##:'##.... ##: ##:::: ##:'##... ##: ##.....:: ##:::::::
-                //  ##:::..:::'##:. ##:: ##:::: ##: ##:::: ##: ##:::: ##: ##:::..:: ##::::::: ##:::::::
-                //  ##:::::::'##:::. ##: ########:: ##:::: ##: ##:::: ##:. ######:: ######::: ##:::::::
-                //  ##::::::: #########: ##.. ##::: ##:::: ##: ##:::: ##::..... ##: ##...:::: ##:::::::
-                //  ##::: ##: ##.... ##: ##::. ##:: ##:::: ##: ##:::: ##:'##::: ##: ##::::::: ##:::::::
-                // . ######:: ##:::: ##: ##:::. ##:. #######::. #######::. ######:: ########: ########:
-                // :......:::..:::::..::..:::::..:::.......::::.......::::......:::........::........::
-                -->
-                <section class="additional-content spaces _tan">
+                </div>
 
-                    <div class="container-fluid">
+                {% endfor %}
 
-                        <div class="row  vertical-align">
+            </section>
 
-                            <div class="hidden-xs col-sm-1 col-sm-offset-1">
-                                <div id="SpaceSliderPrev" class="carousel-nav"></div>
+            <!--<div class="container">
+
+                {% for space in data.sections.spaces.list %}
+
+                <div class="row vertical-align spaceSlider_container" id="Space_{{loop.index0}}">
+
+                    <div class="hidden-xs col-sm-1 col-sm-offset-1">
+                        <div id="SpaceSliderPrev_{{loop.index0}}" class="carousel-nav"></div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-8 spaceCarousel">
+
+                        <h3>{{space.name}}</h3>
+
+                        <div id="SpaceSlider_{{loop.index0}}" class="spaceSlider">
+
+                            {% for image in space.images %}
+
+                            <div class="spaceSlider-slide">
+
+                                <img src="{{image}}"/>
+
                             </div>
 
-                            <div class="col-xs-12 col-sm-8">
+                            {% endfor %}
 
-                                <div id="SpaceSlider">
+                        </div>
 
-                                    {% for space in data.sections.spaces.list %}
+                        <p>{{space.details.description}}</p>
 
-                                    <div class="spaceSlider-slide">
+                    </div>
 
-                                        <h3>{{space.name}}</h3>
-                                        <img src="{{space.details.image}}"/>
-                                        <p>{{space.details.description}}</p>
+                    <div class="hidden-xs col-sm-1">
+                        <div id="SpaceSliderNext_{{loop.index0}}" class="carousel-nav right"></div>
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>-->
+
+            <!--
+            // '########::'########::'#######::'########::'##:::::::'########:
+            //  ##.... ##: ##.....::'##.... ##: ##.... ##: ##::::::: ##.....::
+            //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##: ##::::::: ##:::::::
+            //  ########:: ######::: ##:::: ##: ########:: ##::::::: ######:::
+            //  ##.....::: ##...:::: ##:::: ##: ##.....::: ##::::::: ##...::::
+            //  ##:::::::: ##::::::: ##:::: ##: ##:::::::: ##::::::: ##:::::::
+            //  ##:::::::: ########:. #######:: ##:::::::: ########: ########:
+            // ..:::::::::........:::.......:::..:::::::::........::........::
+            -->
+
+            <section class="additional-content people _tan">
+
+                <div class="container-fluid">
+
+                    <div class="row vertical-align layer-two">
+                        <div class="hidden-xs col-sm-1 col-sm-offset-1">
+                            <div id="PeopleSliderPrev" class="carousel-nav"></div>
+                        </div>
+
+                        <div class="hidden-xs col-sm-1 col-sm-offset-8">
+                            <div id="PeopleSliderNext" class="carousel-nav right"></div>
+                        </div>
+                    </div>
+
+                    <div class="row vertical-align layer-one">
+
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+                            <div id="PeopleSlider">
+
+                                {% for person in data.sections.people.list %}
+
+                                <div class="people-slide">
+
+                                    <img class="portrait" data-lazy="{{person.image}}"/>
+
+                                    <h3>{{person.name}}</h3>
+
+                                    <div class="spacer">
+
+                                        <div class="piece left"></div>
+
+                                        <div class="piece middle">
+                                            <img src="img/spacer-center.png"/>
+                                        </div>
+
+                                        <div class="piece right"></div>
 
                                     </div>
 
-                                    {% endfor %}
+                                    <div class="q-and-a">
+                                        {% for point in person.bio.questions %}
 
-                                </div>
+                                        <p>
+                                            <span class="question">{{point.question}}</span>
+                                            <br/>
+                                            {{point.answer}}
+                                        </p>
 
-                            </div>
-
-                            <div class="hidden-xs col-sm-1">
-                                <div id="SpaceSliderNext" class="carousel-nav right"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-
-                <!--
-                // '########::'########::'#######::'########::'##:::::::'########:
-                //  ##.... ##: ##.....::'##.... ##: ##.... ##: ##::::::: ##.....::
-                //  ##:::: ##: ##::::::: ##:::: ##: ##:::: ##: ##::::::: ##:::::::
-                //  ########:: ######::: ##:::: ##: ########:: ##::::::: ######:::
-                //  ##.....::: ##...:::: ##:::: ##: ##.....::: ##::::::: ##...::::
-                //  ##:::::::: ##::::::: ##:::: ##: ##:::::::: ##::::::: ##:::::::
-                //  ##:::::::: ########:. #######:: ##:::::::: ########: ########:
-                // ..:::::::::........:::.......:::..:::::::::........::........::
-                -->
-
-                <section class="additional-content people _tan">
-
-                    <div class="container-fluid">
-
-                        <div class="row vertical-align layer-two">
-                            <div class="hidden-xs col-sm-1 col-sm-offset-1">
-                                <div id="PeopleSliderPrev" class="carousel-nav"></div>
-                            </div>
-
-                            <div class="hidden-xs col-sm-1 col-sm-offset-8">
-                                <div id="PeopleSliderNext" class="carousel-nav right"></div>
-                            </div>
-                        </div>
-
-                        <div class="row vertical-align layer-one">
-
-                            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-
-                                <div id="PeopleSlider">
-
-                                    {% for person in data.sections.people.list %}
-
-                                    <div class="people-slide">
-
-                                        <img class="portrait" data-lazy="{{person.image}}"/>
-
-                                        <h3>{{person.name}}</h3>
-
-                                        <div class="spacer">
-
-                                            <div class="piece left"></div>
-
-                                            <div class="piece middle">
-                                                <img src="img/spacer-center.png"/>
-                                            </div>
-
-                                            <div class="piece right"></div>
-
-                                        </div>
-
-                                        <div class="q-and-a">
-                                            {% for point in person.bio.questions %}
-
-                                                <p>
-                                                    <span class="question">{{point.question}}</span>
-                                                    <br />
-                                                    {{point.answer}}
-                                                </p>
-
-                                            {% endfor %}
-
-                                        </div>
+                                        {% endfor %}
 
                                     </div>
 
-                                    {% endfor %}
-
                                 </div>
+
+                                {% endfor %}
 
                             </div>
 
@@ -763,7 +807,9 @@
 
                     </div>
 
-                </section>
+                </div>
+
+            </section>
 
             <div class="content-panel-close"></div>
 

@@ -73,32 +73,60 @@ Slide in Content Panel
           overflow-y: scroll;
           margin: 0;
           padding: 0;
+          .full-height{
+            height: 100%;
+          }
           .vertical-align{
             display:flex;
             align-items: center;
           }
-          #SpaceSlider{
-            margin: 20px 10px 0 10px;
-            @include extra-small {
-              margin: 20px 0 0 0;
-            }
-            .spaceSlider-slide {
-              width: 60vw;
-              max-width: 640px;
-              margin: 0 200px;
-              @include extra-small{
-                width: 60vw;
-              }
-              @include small{
-                width: 50vw;
-              }
-              img {
-                width: 100%;
-                height: auto;
-              }
-            }
+          .vcenter {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+          }
+
+          .spaceSlider_container{
+            display: flex;
+            align-content:center;
+            justify-content:space-around;
+            height: 100%;
+            margin: 0;
             p{
-              text-align: left;
+              margin: 20px;
+            }
+            .spaceCarousel{
+
+              width: 80%;
+              height:80%;
+
+              .spaceSlider{
+                .spaceSlider-slide{
+                  img{
+                    width: auto;
+                    max-width:80vw;
+                    height: auto;
+                    max-height: 480px;
+                    margin: 0 80px;
+                    @include medium{
+                      margin: 0 200px;
+                    }
+                    @include large{
+                      margin: 0 400px;
+                    }
+                  }
+                }
+              }
+
+              p{
+                text-align:left;
+                padding: 0;
+                margin: 20px 0;
+                @include medium{
+                  text-align: center;
+                }
+              }
+
             }
           }
         }

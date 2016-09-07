@@ -28,6 +28,7 @@
           {
             "name": "Studio A",
             "image": "img/spaces/studio-a.jpg",
+            "images": ["img/spaces/studio-a/SR1_6342.jpg", "img/spaces/studio-a/SR1_6346.jpg", "img/spaces/studio-a/SR1_6347.jpg", "img/spaces/studio-a/SR2_1870.jpg", "img/spaces/studio-a/SR2_1875.jpg", "img/spaces/studio-a/SR2_1878.jpg", "img/spaces/studio-a/SR2_1879.jpg", "img/spaces/studio-a/SR2_1892.jpg", "img/spaces/studio-a/SR2_1894.jpg", "img/spaces/studio-a/SR2_1895.jpg", "img/spaces/studio-a/_KPS0244.jpg", "img/spaces/studio-a/_KPS0250.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-a.jpg",
               "description": "Studio A lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
@@ -36,6 +37,7 @@
           {
             "name": "Studio B",
             "image": "img/spaces/studio-b.jpg",
+            "images": ["img/spaces/studio-b/MixRoomConsole.jpg", "img/spaces/studio-b/MixRoomFronttoBack.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-b.jpg",
               "description": "Studio B lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
@@ -44,6 +46,7 @@
           {
             "name": "Studio C",
             "image": "img/spaces/studio-c.jpg",
+            "images": ["img/spaces/studio-c/SR2_4385.jpg", "img/spaces/studio-c/SR2_4386.jpg", "img/spaces/studio-c/SR2_4387.jpg", "img/spaces/studio-c/SR2_4388.jpg", "img/spaces/studio-c/SR2_4390.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-c.jpg",
               "description": "Studio C lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
@@ -52,6 +55,7 @@
           {
             "name": "Leisure",
             "image": "img/spaces/leisure.jpg",
+            "images": ["img/spaces/leisure/SR2_1885.jpg", "img/spaces/leisure/SR2_1887.jpg", "img/spaces/leisure/SR2_4393.jpg"],
             "details": {
               "image": "img/spaces/slides/leisure.jpg",
               "description": "Leisure lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
