@@ -105,6 +105,8 @@ sgn.initSections = function () {
 
             $slider.slick('slickGoTo', 0, true);
 
+
+
         });
 
         $('.person-detail-link').click(function (e) {
@@ -158,7 +160,6 @@ sgn.initSliders = function () {
 
     $('.spaceSlider').each(function(index,el){
 
-        console.log('HOT COCK');
         console.log($('#SpaceSliderPrev_' + counter));
 
         $(el).slick({
