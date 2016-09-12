@@ -64,7 +64,7 @@
           {
             "name": "Tech Shop",
             "image": "img/spaces/tech-shop.jpg",
-            "images": ["img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg", "img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg"],
+            "images": ["img/spaces/tech-shop/sgn-techshop.jpg", "img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg"],
             "details": {
               "image": "img/spaces/slides/tech-shop.jpg",
               "description": "Tech Shop lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
