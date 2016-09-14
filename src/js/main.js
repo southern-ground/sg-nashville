@@ -315,11 +315,11 @@ sgn.initSocial = function () {
         dataType: "json",
         url: "instagramfeed.php",
         success: function (e) {
-            // console.log('success');
+            console.warn('Successfully navigated Instagram; retrieving ' + e.data.length + ' posts.');
             scope.updateSocial(e.data);
         },
         error: function () {
-            // console.log('error');
+            console.warn('Error accessing Instagram; using fallback data');
             var data = [
                 {
                     attribution: null,
