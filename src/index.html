@@ -658,7 +658,16 @@
 
                         </div>
 
-                        <p>{{space.details.description}}</p>
+                        {{space.details.description | safe}}
+
+                        {% if space.details.specs %}
+                        <strong>Specs</strong>
+                        <ul class="list-unstyled">
+                            {% for spec in space.details.specs %}
+                            <li>{{spec}}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
 
                     </div>
 
