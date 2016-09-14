@@ -4,6 +4,9 @@ section.contact{
   font-family: $ubuntu;
   .bookings-form, .contact-info{
     @include clearfix;
+    @include extra-small{
+      margin: 0 10px;
+    }
   }
   h2{
     font-family: $fell;
