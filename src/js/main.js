@@ -257,24 +257,31 @@ sgn.instagramPostClick = function(e){
 
 sgn.updateSocial = function(data){
 
-    var NUM_POSTS = 5,
-        POST_TEMPLATE = '<div class="col-xs-12 col-sm-6" data-post-url="%%postLink%%">' +
-            '<div class="instagram-post ">' +
+    var NUM_POSTS = 8,
+        POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post" data-post-url="%%postLink%%">' +
             '<div class="instagram-post-details">' +
-            '<div class="instagram-post-date">%%postDate%%</div>' +
-            '<div class="instagram-post-likes">%%postLikeCount%% like%%pluralLikes%%</div>' +
+            '   <div class="instagram-post-date">%%postDate%%</div>' +
+            '   <div class="instagram-post-likes">%%postLikeCount%% like%%pluralLikes%%</div>' +
             '</div>' +
-            '<img class="instagram-post-image" src="%%postImageURL%%" />' +
-            '<div class="instagram-post-text">%%postText%%</div>' +
-            '</div>' +
+            '<img class="instagram-post-image" src="%%postImageURL%%" alt="%%shortCaption%%" />' +
             '</div>';
 
     var post, postDate, postDateString,
-        html = '<div class="row no-gutter">';
+        shortenCaption = function(str){
+            var MAX_LENGTH = 40,
+                abstract;
+
+            abstract = str.length > MAX_LENGTH ? str.substr(0, MAX_LENGTH - 3) + "..." : str;
+            return abstract;
+        },
+        html = ''; // '<div class="row no-gutter">';
 
     for (var i = 0; i < NUM_POSTS; i++) {
 
         post = data[i];
+
+        console.log(post);
+
         postDate = new Date(post.caption.created_time * 1000);
 
         postDateString = (postDate.getMonth() + 1 ) + "/" +
@@ -283,16 +290,19 @@ sgn.updateSocial = function(data){
 
         html += POST_TEMPLATE;
 
+        var shortCaption = shortenCaption(post.caption.text);
+
         html = html.replace('%%postLink%%', post.link)
             .replace('%%postDate%%', postDateString)
             .replace('%%postLikeCount%%', post.likes.count)
-            .replace('%%postImageURL%%', post.images.low_resolution.url)
-            .replace('%%postText%%', post.caption.text);
+            .replace('%%postImageURL%%', post.images.thumbnail.url)
+            .replace('%%postText%%', post.caption.text)
+            .replace('%%shortCaption%%', shortCaption);
 
         html = post.likes.count === 1 ? html.replace('%%pluralLikes%%', '') : html.replace('%%pluralLikes%%', 's');
 
         if(i%2){
-            html += '</div><div class="row no-gutter">';
+            // html += '</div><div class="row no-gutter">';
         }
 
     }
