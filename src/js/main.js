@@ -1,6 +1,7 @@
 var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
-    Linear = window.Linear || {};
+    Linear = window.Linear || {},
+    THREE = window.THREE;
 
 sgn.initProps = function () {
 
@@ -253,6 +254,191 @@ sgn.instagramPostClick = function(e){
         return getPostURL(el.parentNode);
     };
     window.open(getPostURL(e.target));
+};
+
+sgn.showPanorama = function (img){
+    console.log('showPanorama', img);
+
+    var camera, scene, renderer;
+
+    var isUserInteracting = false,
+        onMouseDownMouseX = 0, onMouseDownMouseY = 0,
+        lon = 0, onMouseDownLon = 0,
+        lat = 0, onMouseDownLat = 0,
+        phi = 0, theta = 0;
+
+    var init = function() {
+
+        var container = document.getElementById('panoramaDisplay'),
+            mesh;
+
+        $('#panoramaDisplay').empty();
+
+        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
+        camera.target = new THREE.Vector3( 0, 0, 0 );
+
+        scene = new THREE.Scene();
+
+        var geometry = new THREE.SphereGeometry( 500, 60, 40 );
+        geometry.scale( - 1, 1, 1 );
+
+        var material = new THREE.MeshBasicMaterial( {
+            map: new THREE.TextureLoader().load( img )
+        } );
+
+        mesh = new THREE.Mesh( geometry, material );
+
+        scene.add( mesh );
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        container.appendChild( renderer.domElement );
+
+        var onDocumentMouseDown = function( event ) {
+
+            event.preventDefault();
+
+            isUserInteracting = true;
+
+            onPointerDownPointerX = event.clientX;
+            onPointerDownPointerY = event.clientY;
+
+            onPointerDownLon = lon;
+            onPointerDownLat = lat;
+
+        };
+        var onDocumentMouseMove = function( event ) {
+
+            if ( isUserInteracting === true ) {
+
+                lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+                lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+
+            }
+
+        };
+        var onDocumentMouseUp = function() {
+
+            isUserInteracting = false;
+
+        };
+        var onDocumentMouseWheel = function( event ) {
+
+            camera.fov += event.deltaY * 0.05;
+            camera.updateProjectionMatrix();
+
+        };
+
+        document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+        document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+        document.addEventListener( 'wheel', onDocumentMouseWheel, false );
+
+        //
+
+        var onWindowResize = function() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+        };
+
+
+
+        document.addEventListener( 'dragover', function ( event ) {
+
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'copy';
+
+        }, false );
+
+        document.addEventListener( 'dragenter', function (  ) {
+
+            document.body.style.opacity = 0.5;
+
+        }, false );
+
+        document.addEventListener( 'dragleave', function (  ) {
+
+            document.body.style.opacity = 1;
+
+        }, false );
+
+        document.addEventListener( 'drop', function ( event ) {
+
+            event.preventDefault();
+
+            var reader = new FileReader();
+            reader.addEventListener( 'load', function ( event ) {
+
+                material.map.image.src = event.target.result;
+                material.map.needsUpdate = true;
+
+            }, false );
+            reader.readAsDataURL( event.dataTransfer.files[ 0 ] );
+
+            document.body.style.opacity = 1;
+
+        }, false );
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    };
+
+    var update = function() {
+
+        if ( isUserInteracting === false ) {
+
+            lon += 0.1;
+
+        }
+
+        lat = Math.max( - 85, Math.min( 85, lat ) );
+        phi = THREE.Math.degToRad( 90 - lat );
+        theta = THREE.Math.degToRad( lon );
+
+        camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+        camera.target.y = 500 * Math.cos( phi );
+        camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+        camera.lookAt( camera.target );
+
+        /*
+         // distortion
+         camera.position.copy( camera.target ).negate();
+         */
+
+        renderer.render( scene, camera );
+
+    };
+
+    var animate = function() {
+
+        requestAnimationFrame( animate );
+        update();
+
+    };
+
+    init();
+    animate();
+
+    this.openSection($('section.additional-content.panoramas'));
+};
+
+sgn.initPanoramas = function(){
+    (function(scope){
+        $('.panoramic-link').click(function(e){
+            e.preventDefault();
+            scope.showPanorama(e.target.getAttribute('href'));
+        });
+    })(this);
+
+    return this;
 };
 
 sgn.updateSocial = function(data){
@@ -1173,7 +1359,8 @@ sgn.init = function () {
         .initSliders()
         .initParallax()
         .initBookingsForm()
-        .initSocial();
+        .initSocial()
+        .initPanoramas();
 
 };
 

@@ -210,6 +210,28 @@
 
                 </div>
 
+                <h2>Panoramic Views</h2>
+
+                <p>Click to view panoramas of some of our spaces.</p>
+
+                <div class="row">
+
+                    {% for pano in data.sections.spaces.panaramas %}
+
+                    <div class="col-xs-12 col-sm-6 col-md-2 {% if loop.first %}col-md-offset-3{% endif %}">
+
+                    <h3>{{pano.name}}</h3>
+                    <ul class="list-unstyled">
+                    {% for image in pano.images %}
+                        <li><a href="{{image}}" class="panoramic-link">View</a></li>
+                    {% endfor %}
+                    </ul>
+
+                    </div>
+
+                    {% endfor %}
+                </div>
+
             </section>
 
         </div>
@@ -757,6 +779,12 @@
 
             </section>
 
+            <section class="additional-content panoramas _tan">
+
+                <div id="panoramaDisplay"></div>
+
+            </section>
+
             <div class="content-panel-close"></div>
 
         </div> <!-- content-panel-content -->
@@ -770,6 +798,7 @@
 <script src="js/vendor/scrollMagic/ScrollMagic.min.js"></script>
 <script src="js/vendor/scrollMagic/plugins/animation.gsap.min.js"></script>
 <script src="js/vendor/slick.min.js"></script>
+<script src="js/vendor/three.min.js"></script>
 <script src="js/main.js"></script>
 
 <script>
