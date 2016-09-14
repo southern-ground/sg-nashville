@@ -31,7 +31,8 @@
             "images": ["img/spaces/studio-a/SR1_6342.jpg", "img/spaces/studio-a/SR1_6346.jpg", "img/spaces/studio-a/SR1_6347.jpg", "img/spaces/studio-a/SR2_1870.jpg", "img/spaces/studio-a/SR2_1875.jpg", "img/spaces/studio-a/SR2_1878.jpg", "img/spaces/studio-a/SR2_1879.jpg", "img/spaces/studio-a/SR2_1892.jpg", "img/spaces/studio-a/SR2_1894.jpg", "img/spaces/studio-a/SR2_1895.jpg", "img/spaces/studio-a/_KPS0244.jpg", "img/spaces/studio-a/_KPS0250.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-a.jpg",
-              "description": "Studio A lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
+              "description": "<p>Studio A is our flagship studio, filled with the vibe and love synonymous with all things Southern Ground. Whether you’re looking to make a throwback retro album or a sleek modern one, we can help your imagination come to life in this one of a kind space.</p><p>We know your time at the studio is at a premium and we want to help you make the most it while you’re here. Studio A bookings include a house assistant to help maximize your studio time. Our knowledgeable assistants are fully trained in each room and ready to help your dreams become reality.</p><p>Our carefully curated collection of vintage and state-of-the-art equipment and instruments offer endless possibilities. The large tracking space offers high ceilings and the best live drum room in Nashville. With our 3 solo isolation booths and dedicated 2 guitar amp isolation booths, you can have as much isolation as you need or want. This room also includes 3 EMT 140 plates and 1 small echo chamber.</p><p>Studio A is much more than just a space to track and record music. Each booking includes 2 home cooked meals per day from our studio kitchen, made from scratch by our own Studio Mama. These meals offer a special opportunity to have home-cooked food while discussing, reflecting, and planning your time in our studio. Southern Ground offers a full-service experience you won’t forget.</p>",
+              "specs": ["API Legacy Plus 48ch with 500 Series Bucket", "48/48 PT HDX System", "2x Otari MTR 100 Tape Machines", "TAD Mains and Barefoot MicroMain 27 Nearfield Speakers"]
             }
           },
           {
@@ -40,7 +41,8 @@
             "images": ["img/spaces/studio-b/MixRoomConsole.jpg", "img/spaces/studio-b/MixRoomFronttoBack.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-b.jpg",
-              "description": "Studio B lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
+              "description": "<p>Studio B is the perfect place to mix for a week or simply finalize your mixes for the day.  Acoustically designed by Steve Durr and Associates, it is a fantastic sounding and very comfortable room with a healthy assortment of gear.  Last minute overdubs are also easy with the overdub room downstairs.</p>",
+              "specs": ["SSL 4000 G+", "24/56 PT Native System", "ATR 102 ½ inch Tape Machine", "ATC 300s Mains and Yamaha NS-10M Nearfields"]
             }
           },
           {
@@ -49,7 +51,8 @@
             "images": ["img/spaces/studio-c/SR2_4385.jpg", "img/spaces/studio-c/SR2_4386.jpg", "img/spaces/studio-c/SR2_4387.jpg", "img/spaces/studio-c/SR2_4388.jpg", "img/spaces/studio-c/SR2_4390.jpg"],
             "details": {
               "image": "img/spaces/slides/studio-c.jpg",
-              "description": "Studio C lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
+              "description": "<p>Studio C offers a very intimate feel perfect for writing, overdubs, post-production, and small tracking sessions. With 3 isolation booths, it is possible to track a band at once or setup for layering on a previous recording. It includes many instruments and amps as well as a private kitchenette.</p>",
+              "specs": ["Assortment of Outboard Gear", "32/32 PT HDX System", "Genelec 8340APM"]
             }
           },
           {
@@ -58,7 +61,8 @@
             "images": ["img/spaces/leisure/SR2_1885.jpg", "img/spaces/leisure/SR2_1887.jpg", "img/spaces/leisure/SR2_4393.jpg"],
             "details": {
               "image": "img/spaces/slides/leisure.jpg",
-              "description": "Leisure lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
+              "description": "<p>The Southern Ground Nashville kitchen is a place where artists and crew come together to share in a communal meal.  There’s something really special about breaking in the middle of a session and coming down to the kitchen after working hard and being teased with delicious smells throughout the day.  A nutrient-rich meal sourced from local, organic farms keeps artists alert and creative instead of getting tired or “sludgy” on fast food.  The aesthetic is warm and welcoming, too.  Just being in this space feels like a good respite!</p>",
+              "specs": ["Darts", "Thorens Record Player and Marantz Stereo", "Rebecca Wood, a freezer full of local goodness and cast iron!"]
             }
           },
           {
@@ -67,7 +71,7 @@
             "images": ["img/spaces/tech-shop/sgn-techshop.jpg", "img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg"],
             "details": {
               "image": "img/spaces/slides/tech-shop.jpg",
-              "description": "Tech Shop lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eu nunc ac laoreet. Donec sollicitudin tincidunt condimentum. In pellentesque."
+              "description": "<p class='centered'>Where the broken come back to life!</p>"
             }
           }
         ]
