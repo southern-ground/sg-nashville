@@ -14,4 +14,53 @@ section.studio-happenings{
     margin: 0 auto 40px auto;
     text-align: center;
   }
+  #instagram{
+    width: 100%;
+    max-width:700px;
+    .no-gutter{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    margin: 0 auto;
+    .instagram-post{
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      @include extra-small{
+        padding: 0 10px;
+      }
+      .instagram-post-details{
+        position: relative;
+        font-size: 0.875rem;
+        height: 40px;
+        line-height: 0.625rem;
+        .instagram-post-date, .instagram-post-likes{
+          position: absolute;
+        }
+        .instagram-post-date{
+          left: 0;
+          margin: 20px 0 0;
+        }
+      }
+
+      .instagram-post-likes{
+        right: 0;
+        margin: 20px 0 0;
+      }
+      .instagram-post-image, .instagram-post-text{
+        display: block;
+      }
+      .instagram-post-image{
+        margin: 5px auto 0 auto;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+      }
+      .instagram-post-text{
+        margin: 20px auto;
+
+      }
+    }
+  }
 }
