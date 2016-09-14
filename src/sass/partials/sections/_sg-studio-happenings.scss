@@ -27,7 +27,6 @@ section.studio-happenings{
     .instagram-post{
       padding-top: 10px;
       padding-bottom: 10px;
-      cursor: pointer;
       .instagram-post-details, .instagram-post-image, .instagram-post-text{
         width: 150px;
         display: block;
@@ -42,6 +41,9 @@ section.studio-happenings{
           display: inline;
           float: right;
         }
+      }
+      .instagram-post-image{
+        cursor: pointer;
       }
     }
 

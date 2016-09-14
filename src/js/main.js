@@ -312,7 +312,7 @@ sgn.updateSocial = function(data){
     $('#instagram').append(html);
 
     (function(scope){
-        $('.instagram-post').on('click', function(e){
+        $('.instagram-post-image').on('click', function(e){
             scope.instagramPostClick(e);
         });
     })(this);
