@@ -448,47 +448,31 @@ sgn.updateSocial = function(data){
 
     var NUM_POSTS = 8,
         POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post">' +
-            '   <a href="%%postLink%%" target="_blank">' +
-            '       <img class="instagram-post-image" src="%%postImageURL%%" alt="%%shortCaption%%" />' +
+            '   <a href="%%postLink%%" target="_blank" title="Instagram post from %%postDate%%">' +
+            '       <img class="instagram-post-image" src="%%postImageURL%%" alt="%%postCaption%%" />' +
             '       <span class="instagram-post-caption off-screen">%%postCaption%%</span>' +
             '   </a>' +
             '</div>';
 
     var post, postDate, postDateString,
-        shortenCaption = function(str){
-            var MAX_LENGTH = 40,
-                abstract;
-
-            abstract = str.length > MAX_LENGTH ? str.substr(0, MAX_LENGTH - 3) + "..." : str;
-            return abstract;
+        dateConverter = function(date){
+            var postDate = new Date(date * 1000);
+            return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
         },
-        html = ''; // '<div class="row no-gutter">';
+        html = '';
 
     for (var i = 0; i < NUM_POSTS; i++) {
 
         post = data[i];
 
-        postDate = new Date(post.caption.created_time * 1000);
-
-        postDateString = (postDate.getMonth() + 1 ) + "/" +
-            postDate.getDate() + "/" +
-            postDate.getFullYear();
+        postDate = dateConverter(post.caption.created_time);
 
         html += POST_TEMPLATE;
 
-        var shortCaption = shortenCaption(post.caption.text);
-
-        html = html.replace('%%postLink%%', post.link)
-            .replace('%%postCaption%%', post.caption.text)
-            .replace('%%postImageURL%%', post.images.thumbnail.url)
-            .replace('%%shortCaption%%', shortCaption);
-
-        html = post.likes.count === 1 ? html.replace('%%pluralLikes%%', '') : html.replace('%%pluralLikes%%', 's');
-
-        if(i%2){
-            // html += '</div><div class="row no-gutter">';
-        }
-
+        html = html.replace(/%%postLink%%/gi, post.link)
+            .replace(/%%postCaption%%/gi, post.caption.text.replace(/\"/gi, "'"))
+            .replace(/%%postImageURL%%/gi, post.images.thumbnail.url)
+            .replace(/%%postDate%%/gi, postDate);
     }
 
     html += '</div>';
