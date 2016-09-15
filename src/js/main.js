@@ -440,10 +440,6 @@ sgn.updateSocial = function(data){
 
     var NUM_POSTS = 8,
         POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post" data-post-url="%%postLink%%">' +
-            '<div class="instagram-post-details">' +
-            '   <div class="instagram-post-date">%%postDate%%</div>' +
-            '   <div class="instagram-post-likes">%%postLikeCount%% like%%pluralLikes%%</div>' +
-            '</div>' +
             '<img class="instagram-post-image" src="%%postImageURL%%" alt="%%shortCaption%%" />' +
             '</div>';
 
