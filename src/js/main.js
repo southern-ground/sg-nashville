@@ -248,8 +248,6 @@ sgn.initBookingsForm = function (){
 
 sgn.showPanorama = function (img){
 
-    console.log('showPanorama', img);
-
     // The SGN object should be exposed at the window level.
     // Not the BEST practice, but serviceable.
 
@@ -277,8 +275,19 @@ sgn.showPanorama = function (img){
     };
 
     var animate = function() {
-        requestAnimationFrame( animate );
         update();
+        sgn.pano.requestID = requestAnimationFrame( animate );
+    };
+
+    var onPanoramaWindowResize = function() {
+
+        updatePanoDimensions();
+
+        sgn.pano.camera.aspect = sgn.pano.width / sgn.pano.height;
+        sgn.pano.camera.updateProjectionMatrix();
+
+        sgn.pano.renderer.setSize( sgn.pano.width, sgn.pano.height );
+
     };
 
     // Remove any old Event Listeners HERE:
@@ -292,8 +301,33 @@ sgn.showPanorama = function (img){
         console.warn('Could not remove event listeners');
     }
 
+    // Remove any old Event Listeners HERE:
+    try{
+        console.warn('Resize event listener removed successfully');
+        window.removeEventListener( 'resize', onPanoramaWindowResize);
+    }catch(e){
+        console.warn('Could not remove resize listener');
+    }
+
+    if(this.pano.requestID){
+        console.warn('Clearing previous animation ID');
+        window.cancelAnimationFrame(this.pano.requestID);
+        this.pano.requestID = undefined;
+    }
+
     // Clean out the container:
     $(this.pano.container).empty();
+
+    // Reset:
+    this.pano.isUserInteracting = false;
+    this.pano.onMouseDownMouseX = 0;
+    this.pano.onMouseDownMouseY = 0;
+    this.pano.lon = 0;
+    this.pano.onMouseDownLon = 0;
+    this.pano.lat = 0;
+    this.pano.onMouseDownLat = 0;
+    this.pano.phi = 0;
+    this.pano.theta = 0;
 
     updatePanoDimensions(this);
 
@@ -358,23 +392,7 @@ sgn.showPanorama = function (img){
     document.addEventListener( 'mouseup', this.pano.onDocumentMouseUp, false );
     document.addEventListener( 'wheel', this.pano.onDocumentMouseWheel, false );
 
-    //
-
-    var onWindowResize = function() {
-
-        updatePanoDimensions();
-
-        sgn.pano.camera.aspect = sgn.pano.width / sgn.pano.height;
-        sgn.pano.camera.updateProjectionMatrix();
-
-        sgn.pano.renderer.setSize( sgn.pano.width, sgn.pano.height );
-
-    };
-
-    // Remove previous versions of listener:
-    window.removeEventListener( 'resize', onWindowResize, false );
-    // Add it.
-    window.addEventListener( 'resize', onWindowResize, false );
+    window.addEventListener( 'resize', onPanoramaWindowResize, false );
 
     animate();
 

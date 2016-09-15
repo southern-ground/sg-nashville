@@ -142,32 +142,13 @@
                             <img src="{{space.image}}"/>
                             <h3>{{space.name}}</h3>
                         </a>
+                        {% for pano in space.panoramicImages %}
+                        <a href="{{pano}}" class="panoramic-link">View Panoramic {{loop.index}}</a>
+                        {% endfor %}
                     </div>
 
                     {% endfor %}
 
-                </div>
-
-                <h2>Panoramic Views</h2>
-
-                <p>Click to view panoramas of some of our spaces.</p>
-
-                <div class="row">
-
-                    {% for pano in data.sections.spaces.panaramas %}
-
-                    <div class="col-xs-12 col-md-2 {% if loop.first %}col-md-offset-3{% endif %}">
-
-                    <h3>{{pano.name}}</h3>
-                    <ul class="list-unstyled">
-                    {% for image in pano.images %}
-                        <li><a href="{{image}}" class="panoramic-link">View</a></li>
-                    {% endfor %}
-                    </ul>
-
-                    </div>
-
-                    {% endfor %}
                 </div>
 
             </section>
