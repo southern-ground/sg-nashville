@@ -246,16 +246,6 @@ sgn.initBookingsForm = function (){
     return this;
 };
 
-sgn.instagramPostClick = function(e){
-    var getPostURL = function(el){
-        if(el.hasAttribute('data-post-url')){
-            return el.getAttribute('data-post-url');
-        }
-        return getPostURL(el.parentNode);
-    };
-    window.open(getPostURL(e.target));
-};
-
 sgn.showPanorama = function (img){
 
     console.log('showPanorama', img);
@@ -439,8 +429,11 @@ sgn.initPanoramas = function(){
 sgn.updateSocial = function(data){
 
     var NUM_POSTS = 8,
-        POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post" data-post-url="%%postLink%%">' +
-            '<img class="instagram-post-image" src="%%postImageURL%%" alt="%%shortCaption%%" />' +
+        POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post">' +
+            '   <a href="%%postLink%%" target="_blank">' +
+            '       <img class="instagram-post-image" src="%%postImageURL%%" alt="%%shortCaption%%" />' +
+            '       <span class="instagram-post-caption off-screen">%%postCaption%%</span>' +
+            '   </a>' +
             '</div>';
 
     var post, postDate, postDateString,
@@ -468,10 +461,8 @@ sgn.updateSocial = function(data){
         var shortCaption = shortenCaption(post.caption.text);
 
         html = html.replace('%%postLink%%', post.link)
-            .replace('%%postDate%%', postDateString)
-            .replace('%%postLikeCount%%', post.likes.count)
+            .replace('%%postCaption%%', post.caption.text)
             .replace('%%postImageURL%%', post.images.thumbnail.url)
-            .replace('%%postText%%', post.caption.text)
             .replace('%%shortCaption%%', shortCaption);
 
         html = post.likes.count === 1 ? html.replace('%%pluralLikes%%', '') : html.replace('%%pluralLikes%%', 's');
@@ -485,12 +476,6 @@ sgn.updateSocial = function(data){
     html += '</div>';
 
     $('#instagram').append(html);
-
-    (function(scope){
-        $('.instagram-post-image').on('click', function(e){
-            scope.instagramPostClick(e);
-        });
-    })(this);
 
 };
 

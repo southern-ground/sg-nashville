@@ -159,6 +159,15 @@ END Bootstrap Extension
   overflow: hidden;
 }
 
+.off-screen {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
 @import "sections/sg-spacer";
 @import 'sections/sg-hero';
 @import 'sections/sg-spaces';

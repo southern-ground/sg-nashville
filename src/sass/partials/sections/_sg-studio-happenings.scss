@@ -43,23 +43,10 @@ section.studio-happenings{
     .instagram-post{
       padding-top: 10px;
       padding-bottom: 10px;
-      .instagram-post-details, .instagram-post-image, .instagram-post-text{
+      .instagram-post-image{
         width: 150px;
         display: block;
         margin: 0 auto;
-      }
-      .instagram-post-details{
-        .instagram-post-date{
-          display: inline;
-          float: left;
-        }
-        .instagram-post-likes{
-          display: inline;
-          float: right;
-        }
-      }
-      .instagram-post-image{
-        cursor: pointer;
       }
     }
   }
