@@ -3,7 +3,7 @@
     // Enforcing options
     // http://www.jshint.com/docs/options/#enforcing-options
 
-    "bitwise": true,
+    "bitwise": false,
     "eqeqeq": true,
     "forin": true,
     "latedef": true,

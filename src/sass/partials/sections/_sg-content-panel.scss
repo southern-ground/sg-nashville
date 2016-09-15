@@ -204,6 +204,12 @@ Slide in Content Panel
           }
         }
 
+        &.panoramas{
+          display: flex;
+          align-items:center;
+          justify-content: center;
+
+        }
       }
 
     }

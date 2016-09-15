@@ -257,180 +257,175 @@ sgn.instagramPostClick = function(e){
 };
 
 sgn.showPanorama = function (img){
+
     console.log('showPanorama', img);
 
-    var camera, scene, renderer;
-
-    var isUserInteracting = false,
-        onMouseDownMouseX = 0, onMouseDownMouseY = 0,
-        lon = 0, onMouseDownLon = 0,
-        lat = 0, onMouseDownLat = 0,
-        phi = 0, theta = 0;
-
-    var init = function() {
-
-        var container = document.getElementById('panoramaDisplay'),
-            mesh;
-
-        $('#panoramaDisplay').empty();
-
-        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
-        camera.target = new THREE.Vector3( 0, 0, 0 );
-
-        scene = new THREE.Scene();
-
-        var geometry = new THREE.SphereGeometry( 500, 60, 40 );
-        geometry.scale( - 1, 1, 1 );
-
-        var material = new THREE.MeshBasicMaterial( {
-            map: new THREE.TextureLoader().load( img )
-        } );
-
-        mesh = new THREE.Mesh( geometry, material );
-
-        scene.add( mesh );
-
-        renderer = new THREE.WebGLRenderer();
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        container.appendChild( renderer.domElement );
-
-        var onDocumentMouseDown = function( event ) {
-
-            event.preventDefault();
-
-            isUserInteracting = true;
-
-            onPointerDownPointerX = event.clientX;
-            onPointerDownPointerY = event.clientY;
-
-            onPointerDownLon = lon;
-            onPointerDownLat = lat;
-
-        };
-        var onDocumentMouseMove = function( event ) {
-
-            if ( isUserInteracting === true ) {
-
-                lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
-                lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-
-            }
-
-        };
-        var onDocumentMouseUp = function() {
-
-            isUserInteracting = false;
-
-        };
-        var onDocumentMouseWheel = function( event ) {
-
-            camera.fov += event.deltaY * 0.05;
-            camera.updateProjectionMatrix();
-
-        };
-
-        document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-        document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-        document.addEventListener( 'wheel', onDocumentMouseWheel, false );
-
-        //
-
-        var onWindowResize = function() {
-
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-
-            renderer.setSize( window.innerWidth, window.innerHeight );
-
-        };
-
-
-
-        document.addEventListener( 'dragover', function ( event ) {
-
-            event.preventDefault();
-            event.dataTransfer.dropEffect = 'copy';
-
-        }, false );
-
-        document.addEventListener( 'dragenter', function (  ) {
-
-            document.body.style.opacity = 0.5;
-
-        }, false );
-
-        document.addEventListener( 'dragleave', function (  ) {
-
-            document.body.style.opacity = 1;
-
-        }, false );
-
-        document.addEventListener( 'drop', function ( event ) {
-
-            event.preventDefault();
-
-            var reader = new FileReader();
-            reader.addEventListener( 'load', function ( event ) {
-
-                material.map.image.src = event.target.result;
-                material.map.needsUpdate = true;
-
-            }, false );
-            reader.readAsDataURL( event.dataTransfer.files[ 0 ] );
-
-            document.body.style.opacity = 1;
-
-        }, false );
-
-        //
-
-        window.addEventListener( 'resize', onWindowResize, false );
-
-    };
+    // The SGN object should be exposed at the window level.
+    // Not the BEST practice, but serviceable.
 
     var update = function() {
 
-        if ( isUserInteracting === false ) {
-
-            lon += 0.1;
-
+        if ( sgn.pano.isUserInteracting === false ) {
+            sgn.pano.lon += 0.1;
         }
 
-        lat = Math.max( - 85, Math.min( 85, lat ) );
-        phi = THREE.Math.degToRad( 90 - lat );
-        theta = THREE.Math.degToRad( lon );
+        sgn.pano.lat = Math.max( - 85, Math.min( 85, sgn.pano.lat ) );
+        sgn.pano.phi = THREE.Math.degToRad( 90 - sgn.pano.lat );
+        sgn.pano.theta = THREE.Math.degToRad( sgn.pano.lon );
 
-        camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
-        camera.target.y = 500 * Math.cos( phi );
-        camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+        sgn.pano.camera.target.x = 500 * Math.sin( sgn.pano.phi ) * Math.cos( sgn.pano.theta );
+        sgn.pano.camera.target.y = 500 * Math.cos( sgn.pano.phi );
+        sgn.pano.camera.target.z = 500 * Math.sin( sgn.pano.phi ) * Math.sin( sgn.pano.theta );
 
-        camera.lookAt( camera.target );
+        sgn.pano.camera.lookAt( sgn.pano.camera.target );
 
-        /*
-         // distortion
-         camera.position.copy( camera.target ).negate();
-         */
+        // distortion
+        // sgn.pano.camera.position.copy( sgn.pano.camera.target ).negate();
 
-        renderer.render( scene, camera );
+        sgn.pano.renderer.render( sgn.pano.scene, sgn.pano.camera );
 
     };
 
     var animate = function() {
-
         requestAnimationFrame( animate );
         update();
+    };
+
+    // Remove any old Event Listeners HERE:
+    try{
+        console.warn('Event listeners removed successfully');
+        document.removeEventListener( 'mousedown', sgn.pano.onDocumentMouseDown);
+        document.removeEventListener( 'mousemove', sgn.pano.onDocumentMouseMove);
+        document.removeEventListener( 'mouseup', sgn.pano.onDocumentMouseUp);
+        document.removeEventListener( 'wheel', sgn.pano.onDocumentMouseWheel);
+    }catch(e){
+        console.warn('Could not remove event listeners');
+    }
+
+    // Clean out the container:
+    $(this.pano.container).empty();
+
+    updatePanoDimensions(this);
+
+    this.pano.camera = new THREE.PerspectiveCamera( 75, this.pano.width / this.pano.height, 1, 1100 );
+    this.pano.camera.target = new THREE.Vector3( 0, 0, 0 );
+
+    this.pano.scene = new THREE.Scene();
+
+    this.pano.geometry = new THREE.SphereGeometry( 500, 60, 40 );
+    this.pano.geometry.scale( - 1, 1, 1 );
+
+    this.pano.material = new THREE.MeshBasicMaterial( {
+        map: new THREE.TextureLoader().load( img )
+    } );
+
+    this.pano.mesh = new THREE.Mesh( this.pano.geometry, this.pano.material );
+
+    this.pano.scene.add( this.pano.mesh );
+
+    this.pano.renderer = new THREE.WebGLRenderer();
+    this.pano.renderer.setPixelRatio( window.devicePixelRatio );
+    this.pano.renderer.setSize( this.pano.width, this.pano.height );
+    this.pano.container.appendChild( this.pano.renderer.domElement );
+
+    this.pano.onDocumentMouseDown = function( event ) {
+
+        event.preventDefault();
+
+        sgn.pano.isUserInteracting = true;
+
+        sgn.pano.onPointerDownPointerX = event.clientX;
+        sgn.pano.onPointerDownPointerY = event.clientY;
+
+        sgn.pano.onPointerDownLon = sgn.pano.lon;
+        sgn.pano.onPointerDownLat = sgn.pano.lat;
+
+    };
+    this.pano.onDocumentMouseMove = function( event ) {
+
+        if ( sgn.pano.isUserInteracting === true ) {
+
+            sgn.pano.lon = ( sgn.pano.onPointerDownPointerX - event.clientX ) * 0.1 + sgn.pano.onPointerDownLon;
+            sgn.pano.lat = ( event.clientY - sgn.pano.onPointerDownPointerY ) * 0.1 + sgn.pano.onPointerDownLat;
+
+        }
+
+    };
+    this.pano.onDocumentMouseUp = function() {
+
+        sgn.pano.isUserInteracting = false;
+
+    };
+    this.pano.onDocumentMouseWheel = function( event ) {
+
+        sgn.pano.camera.fov += event.deltaY * 0.05;
+        sgn.pano.camera.updateProjectionMatrix();
 
     };
 
-    init();
+    document.addEventListener( 'mousedown', this.pano.onDocumentMouseDown, false );
+    document.addEventListener( 'mousemove', this.pano.onDocumentMouseMove, false );
+    document.addEventListener( 'mouseup', this.pano.onDocumentMouseUp, false );
+    document.addEventListener( 'wheel', this.pano.onDocumentMouseWheel, false );
+
+    //
+
+    var onWindowResize = function() {
+
+        updatePanoDimensions();
+
+        sgn.pano.camera.aspect = sgn.pano.width / sgn.pano.height;
+        sgn.pano.camera.updateProjectionMatrix();
+
+        sgn.pano.renderer.setSize( sgn.pano.width, sgn.pano.height );
+
+    };
+
+    // Remove previous versions of listener:
+    window.removeEventListener( 'resize', onWindowResize, false );
+    // Add it.
+    window.addEventListener( 'resize', onWindowResize, false );
+
     animate();
 
     this.openSection($('section.additional-content.panoramas'));
+
 };
 
 sgn.initPanoramas = function(){
+
+    this.pano = {
+        camera: null,
+        scene: null,
+        renderer: null,
+        isUserInteracting: false,
+        onMouseDownMouseX: 0,
+        onMouseDownMouseY: 0,
+        lon: 0,
+        onMouseDownLon: 0,
+        lat: 0,
+        onMouseDownLat: 0,
+        phi: 0,
+        theta: 0,
+        container: document.getElementById('panoramaDisplay'),
+        mesh: null
+    };
+
+    window.updatePanoDimensions = function(){
+
+        var availWidth = $('.content-panel-container').innerWidth() - 100;
+        var availHeight = $('.content-panel-container').innerHeight() - 80;
+
+        if( (availHeight / availWidth) < (9/16)){
+            sgn.pano.width = (availHeight * (16/9))|0;
+            sgn.pano.height = (sgn.pano.width * (9/16))|0;
+        }else{
+            sgn.pano.width = availWidth | 0;
+            sgn.pano.height = (sgn.pano.width * (9/16))|0;
+        }
+
+    };
+
     (function(scope){
         $('.panoramic-link').click(function(e){
             e.preventDefault();
@@ -465,8 +460,6 @@ sgn.updateSocial = function(data){
     for (var i = 0; i < NUM_POSTS; i++) {
 
         post = data[i];
-
-        console.log(post);
 
         postDate = new Date(post.caption.created_time * 1000);
 
