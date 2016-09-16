@@ -86,6 +86,14 @@ sgn.initSections = function () {
 
         $('.hero .read-more').click(function (e) {
             killEvent(e);
+
+            // Manually fire tracking:
+            ga('send', 'event', {
+                eventCategory: 'Hero Read More',
+                eventAction: 'click',
+                eventLabel: 'Open'
+            });
+
             scope.openSection($(e.target).data('target'));
         });
 
@@ -97,6 +105,13 @@ sgn.initSections = function () {
             $('.spaceSlider_container').hide();
 
             $('#Space_' + scope.targetIndex).show();
+
+            // Manually fire tracking:
+            ga('send', 'event', {
+                eventCategory: 'View Space',
+                eventAction: 'click',
+                eventLabel: scope.targetIndex
+            });
 
             var $slider = $('#SpaceSlider_' + scope.targetIndex);
 
@@ -113,6 +128,13 @@ sgn.initSections = function () {
 
             killEvent(e);
             scrubAttributes(e, scope);
+
+            // Manually fire tracking:
+            ga('send', 'event', {
+                eventCategory: 'View People',
+                eventAction: 'click',
+                eventLabel: scope.targetIndex
+            });
 
             $('#PeopleSlider').on('afterChange', function () {
                 scope.openSection(scope.target);
@@ -477,7 +499,13 @@ sgn.initPanoramas = function(){
     (function(scope){
         $('.panoramic-link').click(function(e){
             e.preventDefault();
-            scope.showPanorama(e.target.getAttribute('href'));
+            scope.openPanorama(e.target.getAttribute('data-panoramics'));
+            // Manually fire tracking:
+            ga('send', 'event', {
+                eventCategory: 'Open Panoramic',
+                eventAction: 'click',
+                eventLabel: e.target.getAttribute('data-space-name')
+            });
         });
     })(this);
 
@@ -1250,6 +1278,13 @@ sgn.navLinkClick = function (e) {
             :
         $(target).offset().top - 60;
 
+    // Manually fire tracking:
+    ga('send', 'event', {
+        eventCategory: 'Nav Link Click',
+        eventAction: 'click',
+        eventLabel: target
+    });
+
     $('html, body').animate({
         scrollTop: newY
     }, 750);
@@ -1323,10 +1358,25 @@ sgn.validateBookingForm = function () {
     }
 
     if (isError) {
+
+        // Manually fire tracking:
+        ga('send', 'event', {
+            eventCategory: 'Bookings Form Rejected',
+            eventAction: 'click',
+            eventLabel: 'Invalid form'
+        });
+
         $('#BookingsForm').find('.error-text').html('Please address the above errors and try again.');
     } else {
 
         // Post! console.log('Proceeding with:\n\rName: ' + formName + "\n\rVenue: " + formVenue + "\n\reMail: " + formEmail + "\n\rMessage: " + formText);
+
+        // Manually fire tracking:
+        ga('send', 'event', {
+            eventCategory: 'Bookings Form Submitted',
+            eventAction: 'click',
+            eventLabel: 'Success'
+        });
 
         $.post("contact.php", {
             name: formName,
