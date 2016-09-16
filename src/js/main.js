@@ -511,7 +511,7 @@ sgn.updateSocial = function(data){
 
         html = html.replace(/%%postLink%%/gi, post.link)
             .replace(/%%postCaption%%/gi, post.caption.text.replace(/\"/gi, "'"))
-            .replace(/%%postImageURL%%/gi, post.images.thumbnail.url)
+            .replace(/%%postImageURL%%/gi, post.images.low_resolution.url)
             .replace(/%%postDate%%/gi, postDate);
     }
 
