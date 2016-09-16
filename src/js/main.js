@@ -246,7 +246,47 @@ sgn.initBookingsForm = function (){
     return this;
 };
 
+sgn.openPanorama = function(imgs){
+
+    var panoramas = imgs.split('|');
+    var $el = $('#panoramaLinks');
+
+    $el.empty();
+
+    panoramas.map(function(img, index){
+        if(img){
+            $el.append('<a href="' + img + '" class="pano-link '+ ( index === 0 ? 'active' : '' ) +'">Panoramic ' + (index + 1) + '</a>');
+        }
+    });
+
+    (function(scope){
+        $('.pano-link').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            var $el = $(e.target);
+
+            if(!$el.hasClass('active')){
+                $('.pano-link').removeClass('active');
+                $el.addClass('active');
+                scope.showPanorama(this.getAttribute('href'));
+                // Manually fire tracking:
+                ga('send', 'event', {
+                    eventCategory: 'Panoramic Click',
+                    eventAction: 'click',
+                    eventLabel: e.target.href
+                });
+            }
+
+        });
+    })(this);
+
+    this.showPanorama(panoramas[0]);
+};
+
 sgn.showPanorama = function (img){
+
+    // console.log('showPanorama');
 
     // The SGN object should be exposed at the window level.
     // Not the BEST practice, but serviceable.
