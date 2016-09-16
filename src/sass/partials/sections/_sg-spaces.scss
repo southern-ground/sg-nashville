@@ -23,6 +23,7 @@
     h3{
       font-family: $fell;
       text-transform: uppercase;
+      margin: 20px 0 5px;
     }
 
 
@@ -40,12 +41,18 @@
 
   }
 
-  .panoramic-link{
-    display: block;
-    text-align: center;
-    margin: 0 0 10px;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: $ubuntu;
+  .panoramic-link-wrapper{
+    height: 20px;
+    line-height:20px;
+
+    .panoramic-link{
+      display: block;
+      text-align: center;
+      margin: 0 0 10px;
+      padding: 0;
+      text-transform: uppercase;
+      font-family: $ubuntu;
+    }
   }
+
 }

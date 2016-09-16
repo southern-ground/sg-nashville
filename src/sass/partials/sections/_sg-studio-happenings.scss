@@ -4,7 +4,7 @@ section.studio-happenings{
   text-align: center;
   h2{
     text-transform: uppercase;
-    margin: 0 0 42px 0;
+    margin: 0;
     padding: 0;
     text-align:center;
   }
@@ -25,26 +25,29 @@ section.studio-happenings{
     font-size: 11px;
     padding: 6px 16px 4px 16px;
     border: none;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
     &:hover{
       text-decoration: none;
     }
   }
   #instagram{
-    @include extra-small{
-      padding: 20px 0;
-    }
+
     @include small{
-      padding: 20px 0;
+      width: 400px;
+      margin: 0 auto;
     }
-    @include large{
-      padding: 40px 0;
+
+    @include medium{
+      width: 800px;
+      margin: 0 auto;
     }
+
     .instagram-post{
       padding-top: 10px;
       padding-bottom: 10px;
       .instagram-post-image{
-        width: 150px;
+        width: 177px;
+        height: auto;
         display: block;
         margin: 0 auto;
       }

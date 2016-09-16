@@ -205,13 +205,38 @@ Slide in Content Panel
         }
 
         &.panoramas{
+
           display: flex;
+          flex-wrap: wrap;
           align-items:center;
           justify-content: center;
+          position: relative;
 
+          #panoramaLinks{
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            bottom: 0px;
+            .pano-link{
+              text-transform: uppercase;
+              font-weight: bold;
+              text-decoration: underline;
+              color: $purple;
+              margin: 0 20px 5px 20px;
+              &:active{
+                color: $purple;
+              }
+              &.active{
+                text-decoration: none;
+                opacity: 0.5;
+                pointer-events:none;
+              }
+            }
+          }
         }
       }
-
     }
   }
 
