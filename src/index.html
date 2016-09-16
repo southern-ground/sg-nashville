@@ -135,6 +135,7 @@
                     {% for space in data.sections.spaces.list %}
 
                     <div class="space col-xs-12 col-sm-6 col-md-4 col-lg-5ths">
+
                         <a class="space-link"
                            data-target="section.additional-content.spaces"
                            data-slide-index="{{loop.index0}}"
@@ -142,9 +143,12 @@
                             <img src="{{space.image}}"/>
                             <h3>{{space.name}}</h3>
                         </a>
-                        {% for pano in space.panoramicImages %}
-                        <a href="{{pano}}" class="panoramic-link">Panoramic #{{loop.index}}</a>
-                        {% endfor %}
+
+                        <div class="panoramic-link-wrapper">
+                            {% if space.panoramicImages %}
+                            <a href="#" class="panoramic-link" data-space-name="{{space.name}}" data-panoramics="{% for pano in space.panoramicImages %}{{pano}}|{% endfor %}">Vew Panoramics</a>
+                            {% endif %}
+                        </div>
                     </div>
 
                     {% endfor %}
