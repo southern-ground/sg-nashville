@@ -218,13 +218,17 @@ Slide in Content Panel
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            bottom: 0px;
+            border: 1px solid $purple;
+            bottom: 10px;
+            @include extra-small{
+              left: 10px;
+              right: 10px;
+            }
             .pano-link{
               text-transform: uppercase;
               font-weight: bold;
-              text-decoration: underline;
               color: $purple;
-              margin: 0 20px 5px 20px;
+              margin: 0 20px;
               &:active{
                 color: $purple;
               }
