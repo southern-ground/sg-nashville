@@ -487,7 +487,7 @@ sgn.initPanoramas = function(){
     window.updatePanoDimensions = function(){
 
         var availWidth = $('.content-panel-container').innerWidth() - 100;
-        var availHeight = $('.content-panel-container').innerHeight() - 80;
+        var availHeight = $('.content-panel-container').innerHeight() - 100;
 
         if( (availHeight / availWidth) < (9/16)){
             sgn.pano.width = (availHeight * (16/9))|0;
