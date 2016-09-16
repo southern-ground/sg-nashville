@@ -1,7 +1,8 @@
 var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
     Linear = window.Linear || {},
-    THREE = window.THREE;
+    THREE = window.THREE,
+    ga = window.ga || function(){};
 
 sgn.initProps = function () {
 
@@ -515,7 +516,7 @@ sgn.initPanoramas = function(){
 sgn.updateSocial = function(data){
 
     var NUM_POSTS = 8,
-        POST_TEMPLATE = '<div class="col-xs-12 col-sm-3 col-lg-3 instagram-post">' +
+        POST_TEMPLATE = '<div class="col-xs-12 col-sm-6 col-md-3 instagram-post">' +
             '   <a href="%%postLink%%" target="_blank" title="Instagram post from %%postDate%%">' +
             '       <img class="instagram-post-image" src="%%postImageURL%%" alt="%%postCaption%%" />' +
             '       <span class="instagram-post-caption off-screen">%%postCaption%%</span>' +
@@ -528,6 +529,11 @@ sgn.updateSocial = function(data){
             return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
         },
         html = '';
+
+    /*
+    console.log('Sample Post:');
+    console.log(data[0]);
+    */
 
     for (var i = 0; i < NUM_POSTS; i++) {
 
