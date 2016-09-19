@@ -57,4 +57,20 @@
     }
   }
 
+  .tour-button{
+      display: inline-block;
+      background: $purple;
+      color: $tan;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: Ubuntu;
+      font-size: 11px;
+      padding: 6px 16px 4px 16px;
+      border: none;
+      margin: 36px auto 0 auto;
+      &:hover{
+        text-decoration: none;
+      }
+  }
+
 }
