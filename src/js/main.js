@@ -19,8 +19,6 @@ sgn.initProps = function () {
 
 sgn.initNav = function () {
 
-    // console.log('initNav');
-
     var _this = this;
 
     $('.site-nav .nav-link').click(function (e) {
@@ -52,8 +50,6 @@ sgn.initNav = function () {
 };
 
 sgn.initSections = function () {
-
-    // console.log('initSections');
 
     var getAttribute = function (target, attr) {
             while (target) {
@@ -156,8 +152,6 @@ sgn.initSections = function () {
 };
 
 sgn.initSliders = function () {
-
-    // console.log('initSliders');
 
     $("#Legacy-Slider").slick({
         infinite: true,
@@ -547,11 +541,6 @@ sgn.updateSocial = function(data){
             return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
         },
         html = '';
-
-    /*
-    console.log('Sample Post:');
-    console.log(data[0]);
-    */
 
     for (var i = 0; i < NUM_POSTS; i++) {
 
@@ -1240,8 +1229,6 @@ sgn.closeContentPanel = function () {
 
 sgn.resolveResize = function () {
 
-    // console.log('resolveResize');
-
     if (!this.mobileNavOpen) {
         return;
     } else {
@@ -1265,7 +1252,6 @@ sgn.hamburgerButtonClick = function () {
 };
 
 sgn.openMobileNav = function () {
-    // console.log('openMobileNav');
     (function (scope) {
         scope.$mobileSiteNav.fadeIn('slow');
         scope.$mobileSocialNav.fadeIn('slow');
@@ -1277,7 +1263,6 @@ sgn.openMobileNav = function () {
 };
 
 sgn.closeMobileNav = function () {
-    // console.log('closeMobileNav');
     (function (scope) {
         scope.$mobileSiteNav.fadeOut('fast');
         scope.$mobileSocialNav.fadeOut('fast');
@@ -1393,8 +1378,6 @@ sgn.validateBookingForm = function () {
         $('#BookingsForm').find('.error-text').html('Please address the above errors and try again.');
     } else {
 
-        // Post! console.log('Proceeding with:\n\rName: ' + formName + "\n\rVenue: " + formVenue + "\n\reMail: " + formEmail + "\n\rMessage: " + formText);
-
         // Manually fire tracking:
         ga('send', 'event', {
             eventCategory: 'Bookings Form Submitted',
@@ -1434,7 +1417,6 @@ sgn.isEmpty = function (str) {
 
 sgn.isValidEmail = function (str) {
     str = this.removeTags(str);
-    // console.log('isValidEmail', str);
     return false;
 };
 
