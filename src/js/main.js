@@ -269,17 +269,20 @@ sgn.initBookingsForm = function (){
     return this;
 };
 
-sgn.openPanorama = function(imgs){
+sgn.openPanorama = function(panoramas){
 
-    var panoramas = imgs.split('|').slice(0,-1),
-        $el = $('#panoramaLinks');
+    var $el = $('#panoramaLinks'),
+        panoURL;
 
     $el.empty();
 
     if(panoramas.length > 1){
         panoramas.map(function(img, index){
             if(img){
-                $el.append('<a href="' + img + '" class="pano-link '+ ( index === 0 ? 'active' : '' ) +'">Panoramic ' + (index + 1) + '</a>');
+                $el.append('<a href="' + img.url + '" class="pano-link '+ ( img.active === true ? 'active' : '' ) +'">' + img.name + '</a>');
+                if(img.active){
+                    panoURL = img.url;
+                }
             }
         });
 
@@ -306,12 +309,10 @@ sgn.openPanorama = function(imgs){
         })(this);
     }
 
-    this.showPanorama(panoramas[0]);
+    this.showPanorama(panoURL);
 };
 
 sgn.showPanorama = function (img){
-
-    // console.log('showPanorama');
 
     // The SGN object should be exposed at the window level.
     // Not the BEST practice, but serviceable.
@@ -502,7 +503,18 @@ sgn.initPanoramas = function(){
     (function(scope){
         $('.panoramic-link').click(function(e){
             e.preventDefault();
-            scope.openPanorama(e.target.getAttribute('data-panoramics'));
+            var $el, linksArray = [];
+            $('[data-space-name="'+e.target.getAttribute('data-space-name')+'"]').each(function(index,link){
+                $el = $(link);
+                linksArray.push({
+                    name: $el.html(),
+                    url: $(link).attr('href'),
+                    active: $(link).attr('href') === e.target.getAttribute('href')
+                });
+            });
+
+            scope.openPanorama(linksArray);
+
             // Manually fire tracking:
             ga('send', 'event', {
                 eventCategory: 'Open Panoramic',

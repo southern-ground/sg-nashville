@@ -144,12 +144,29 @@
                             <h3>{{space.name}}</h3>
                         </a>
 
-                        <div class="panoramic-link-wrapper">
-                            {% if space.panoramicImages %}
-                            <a href="#" class="panoramic-link" data-space-name="{{space.name}}" data-panoramics="{% for pano in space.panoramicImages %}{{pano}}|{% endfor %}">Vew Panoramics</a>
-                            {% endif %}
-                        </div>
                     </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <h2>360&deg; Tours</h2>
+
+                <div class="row">
+
+                    {% for space in data.sections.spaces.list %}
+
+                    {% if space.panoramicImages %}
+                    <div class="space col-xs-12 col-sm-4">
+                        <h3>{{space.name}}</h3>
+                        {% for pano in space.panoramicImages %}
+                        <div class="panoramic-link-wrapper">
+                            <a href="{{pano.src}}" class="panoramic-link" data-space-name="{{space.name}}">{{pano.name}}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    {% endif %}
 
                     {% endfor %}
 

@@ -42,7 +42,20 @@
               "img/spaces/studio-a/_KPS0244.jpg",
               "img/spaces/studio-a/_KPS0250.jpg"
             ],
-            "panoramicImages" : ["img/spaces/studio-a/panoramas/studio-a-control.jpg","img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg","img/spaces/studio-a/panoramas/studio-a-tracking-room.jpg"],
+            "panoramicImages": [
+              {
+                "name": "Studio A Control Room",
+                "src": "img/spaces/studio-a/panoramas/studio-a-control.jpg"
+              },
+              {
+                "name": "Studio A Tracking Room View 2",
+                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg"
+              },
+              {
+                "name": "Studio A Tracking Room",
+                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room.jpg"
+              }
+            ],
             "details": {
               "image": "img/spaces/slides/studio-a.jpg",
               "description": "<p>Studio A is our flagship studio, filled with the vibe and love synonymous with all things Southern Ground. Whether you’re looking to make a throwback retro album or a sleek modern one, we can help your imagination come to life in this one of a kind space.</p><p>We know your time at the studio is at a premium and we want to help you make the most it while you’re here. Studio A bookings include a house assistant to help maximize your studio time. Our knowledgeable assistants are fully trained in each room and ready to help your dreams become reality.</p><p>Our carefully curated collection of vintage and state-of-the-art equipment and instruments offer endless possibilities. The large tracking space offers high ceilings and the best live drum room in Nashville. With our 3 solo isolation booths and dedicated 2 guitar amp isolation booths, you can have as much isolation as you need or want. This room also includes 3 EMT 140 plates and 1 small echo chamber.</p><p>Studio A is much more than just a space to track and record music. Each booking includes 2 home cooked meals per day from our studio kitchen, made from scratch by our own Studio Mama. These meals offer a special opportunity to have home-cooked food while discussing, reflecting, and planning your time in our studio. Southern Ground offers a full-service experience you won’t forget.</p>",
@@ -61,7 +74,16 @@
               "img/spaces/studio-b/MixRoomConsole.jpg",
               "img/spaces/studio-b/MixRoomFronttoBack.jpg"
             ],
-            "panoramicImages": ["img/spaces/studio-b/panoramas/studio-b-mix-room.jpg","img/spaces/studio-b/panoramas/studio-b.jpg"],
+            "panoramicImages": [
+              {
+                "name": "Studio B Mix Room",
+                "src": "img/spaces/studio-b/panoramas/studio-b-mix-room.jpg"
+              },
+              {
+                "name": "Studio B Overdub",
+                "src": "img/spaces/studio-b/panoramas/studio-b.jpg"
+              }
+            ],
             "details": {
               "image": "img/spaces/slides/studio-b.jpg",
               "description": "<p>Studio B is the perfect place to mix for a week or simply finalize your mixes for the day.  Acoustically designed by Steve Durr and Associates, it is a fantastic sounding and very comfortable room with a healthy assortment of gear.  Last minute overdubs are also easy with the overdub room downstairs.</p>",
@@ -101,7 +123,20 @@
               "img/spaces/leisure/SR2_1887.jpg",
               "img/spaces/leisure/SR2_4393.jpg"
             ],
-            "panoramicImages": ["img/spaces/leisure/panoramas/leisure-kitchen.jpg","img/spaces/leisure/panoramas/leisure-library.jpg","img/spaces/leisure/panoramas/leisure-bathrooms.jpg"],
+            "panoramicImages": [
+              {
+                "name": "Kitchen",
+                "src": "img/spaces/leisure/panoramas/leisure-kitchen.jpg"
+              },
+              {
+                "name": "Library",
+                "src": "img/spaces/leisure/panoramas/leisure-library.jpg"
+              },
+              {
+                "name": "Bathrooms",
+                "src": "img/spaces/leisure/panoramas/leisure-bathrooms.jpg"
+              }
+            ],
             "details": {
               "image": "img/spaces/slides/leisure.jpg",
               "description": "<p>The Southern Ground Nashville kitchen is a place where artists and crew come together to share in a communal meal.  There’s something really special about breaking in the middle of a session and coming down to the kitchen after working hard and being teased with delicious smells throughout the day.  A nutrient-rich meal sourced from local, organic farms keeps artists alert and creative instead of getting tired or “sludgy” on fast food.  The aesthetic is warm and welcoming, too.  Just being in this space feels like a good respite!</p>",
