@@ -73,6 +73,7 @@ sgn.initSections = function () {
         scrubAttributes = function (e, scope) {
             scope.target = getAttribute(e.target, 'data-target');
             scope.targetIndex = parseFloat(getAttribute(e.target, 'data-slide-index'));
+            scope.targetTrackingLabel = getAttribute(e.target, 'data-tracking-label');
         };
 
     (function (scope) {
@@ -108,10 +109,11 @@ sgn.initSections = function () {
             $('#Space_' + scope.targetIndex).show();
 
             // Manually fire tracking:
+
             ga('send', 'event', {
                 eventCategory: 'View Space',
                 eventAction: 'click',
-                eventLabel: scope.targetIndex
+                eventLabel: scope.targetTrackingLabel
             });
 
             var $slider = $('#SpaceSlider_' + scope.targetIndex);
@@ -131,10 +133,11 @@ sgn.initSections = function () {
             scrubAttributes(e, scope);
 
             // Manually fire tracking:
+
             ga('send', 'event', {
                 eventCategory: 'View People',
                 eventAction: 'click',
-                eventLabel: scope.targetIndex
+                eventLabel: scope.targetTrackingLabel
             });
 
             $('#PeopleSlider').on('afterChange', function () {
@@ -279,7 +282,7 @@ sgn.openPanorama = function(panoramas){
     if(panoramas.length > 1){
         panoramas.map(function(img, index){
             if(img){
-                $el.append('<a href="' + img.url + '" class="pano-link '+ ( img.active === true ? 'active' : '' ) +'">' + img.name + '</a>');
+                $el.append('<a href="' + img.url + '" class="pano-link '+ ( img.active === true ? 'active' : '' ) +'" data-space-name="'+img.spaceName+'">' + img.name + '</a>');
                 if(img.active){
                     panoURL = img.url;
                 }
@@ -299,9 +302,9 @@ sgn.openPanorama = function(panoramas){
                     scope.showPanorama(this.getAttribute('href'));
                     // Manually fire tracking:
                     ga('send', 'event', {
-                        eventCategory: 'Panoramic Click',
+                        eventCategory: 'Panoramic Overlay Link Click',
                         eventAction: 'click',
-                        eventLabel: e.target.href
+                        eventLabel: e.target.getAttribute('data-space-name') + ": " + e.target.innerHTML
                     });
                 }
 
@@ -508,8 +511,9 @@ sgn.initPanoramas = function(){
                 $el = $(link);
                 linksArray.push({
                     name: $el.html(),
-                    url: $(link).attr('href'),
-                    active: $(link).attr('href') === e.target.getAttribute('href')
+                    url: $el.attr('href'),
+                    spaceName: $el.data('space-name'),
+                    active: $el.attr('href') === e.target.getAttribute('href')
                 });
             });
 
@@ -519,7 +523,7 @@ sgn.initPanoramas = function(){
             ga('send', 'event', {
                 eventCategory: 'Open Panoramic',
                 eventAction: 'click',
-                eventLabel: e.target.getAttribute('data-space-name')
+                eventLabel: e.target.getAttribute('data-space-name') + ": " + e.target.innerHTML
             });
         });
     })(this);
