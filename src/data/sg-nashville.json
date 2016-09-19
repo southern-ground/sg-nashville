@@ -48,12 +48,12 @@
                 "src": "img/spaces/studio-a/panoramas/studio-a-control.jpg"
               },
               {
-                "name": "Studio A Tracking Room View 2",
-                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg"
-              },
-              {
                 "name": "Studio A Tracking Room",
                 "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room.jpg"
+              },
+              {
+                "name": "Studio A Tracking Room View 2",
+                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg"
               }
             ],
             "details": {
@@ -125,16 +125,16 @@
             ],
             "panoramicImages": [
               {
+                "name": "Bathrooms",
+                "src": "img/spaces/leisure/panoramas/leisure-bathrooms.jpg"
+              },
+              {
                 "name": "Kitchen",
                 "src": "img/spaces/leisure/panoramas/leisure-kitchen.jpg"
               },
               {
                 "name": "Library",
                 "src": "img/spaces/leisure/panoramas/leisure-library.jpg"
-              },
-              {
-                "name": "Bathrooms",
-                "src": "img/spaces/leisure/panoramas/leisure-bathrooms.jpg"
               }
             ],
             "details": {

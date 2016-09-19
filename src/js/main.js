@@ -266,49 +266,6 @@ sgn.initBookingsForm = function (){
     return this;
 };
 
-sgn.openPanorama = function(panoramas){
-
-    var $el = $('#panoramaLinks'),
-        panoURL;
-
-    $el.empty();
-
-    if(panoramas.length > 1){
-        panoramas.map(function(img, index){
-            if(img){
-                $el.append('<a href="' + img.url + '" class="pano-link '+ ( img.active === true ? 'active' : '' ) +'" data-space-name="'+img.spaceName+'">' + img.name + '</a>');
-                if(img.active){
-                    panoURL = img.url;
-                }
-            }
-        });
-
-        (function(scope){
-            $('.pano-link').click(function(e){
-                e.preventDefault();
-                e.stopPropagation();
-
-                var $el = $(e.target);
-
-                if(!$el.hasClass('active')){
-                    $('.pano-link').removeClass('active');
-                    $el.addClass('active');
-                    scope.showPanorama(this.getAttribute('href'));
-                    // Manually fire tracking:
-                    ga('send', 'event', {
-                        eventCategory: 'Panoramic Overlay Link Click',
-                        eventAction: 'click',
-                        eventLabel: e.target.getAttribute('data-space-name') + ": " + e.target.innerHTML
-                    });
-                }
-
-            });
-        })(this);
-    }
-
-    this.showPanorama(panoURL);
-};
-
 sgn.showPanorama = function (img){
 
     // The SGN object should be exposed at the window level.
@@ -497,28 +454,45 @@ sgn.initPanoramas = function(){
 
     };
 
-    (function(scope){
-        $('.panoramic-link').click(function(e){
-            e.preventDefault();
-            var $el, linksArray = [];
-            $('[data-space-name="'+e.target.getAttribute('data-space-name')+'"]').each(function(index,link){
-                $el = $(link);
-                linksArray.push({
-                    name: $el.html(),
-                    url: $el.attr('href'),
-                    spaceName: $el.data('space-name'),
-                    active: $el.attr('href') === e.target.getAttribute('href')
-                });
-            });
+    var $firstPano = $('.pano-link').first();
+    $firstPano.addClass('active');
 
-            scope.openPanorama(linksArray);
+    $('#panoramaDisplay').data('panorama-url', $firstPano.attr('href'));
+    $('#panoramaDisplay').data('panorama-name', $firstPano.html());
+
+    (function(scope){
+        $('.tour-button').click(function(e){
+            e.preventDefault();
 
             // Manually fire tracking:
             ga('send', 'event', {
                 eventCategory: 'Open Panoramic',
                 eventAction: 'click',
-                eventLabel: e.target.getAttribute('data-space-name') + ": " + e.target.innerHTML
+                eventLabel: $('#panoramaDisplay').data('panorama-name')
             });
+
+            scope.showPanorama($('#panoramaDisplay').data('panorama-url'));
+
+        });
+        $('.pano-link').click(function(e){
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            var $el = $(e.target);
+
+            if(!$el.hasClass('active')){
+                $('.pano-link').removeClass('active');
+                $el.addClass('active');
+                scope.showPanorama(this.getAttribute('href'));
+                // Manually fire tracking:
+                ga('send', 'event', {
+                    eventCategory: 'Panoramic Overlay Link Click',
+                    eventAction: 'click',
+                    eventLabel: e.target.innerHTML
+                });
+            }
+
         });
     })(this);
 

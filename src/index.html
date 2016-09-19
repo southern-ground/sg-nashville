@@ -151,25 +151,26 @@
 
                 </div>
 
-                <h2 class="tours">360&deg; Tours</h2>
-
                 <div class="row">
 
-                    {% for space in data.sections.spaces.list %}
-
-                    {% if space.panoramicImages %}
-                    <div class="space col-xs-12 col-sm-4">
-                        <h3>{{space.name}}</h3>
+                    <script type="text/template" class="pano-group">
+                        {% for space in data.sections.spaces.list %}
+                        {% if space.panoramicImages %}
                         {% for pano in space.panoramicImages %}
-                        <div class="panoramic-link-wrapper">
-                            <a href="{{pano.src}}" class="panoramic-link" data-space-name="{{space.name}}">{{pano.name}}</a>
-                        </div>
+                        <span class="pano">
+                            <span class="name">
+                                {{pano.name}}
+                            </span>
+                            <span class="src">
+                                {{pano.src}}
+                            </span>
+                        </span>
                         {% endfor %}
-                    </div>
+                        {% endif %}
+                        c{% endfor %}
+                    </script>
 
-                    {% endif %}
-
-                    {% endfor %}
+                    <a href="#" class='tour-button'>Take a 360 Tour</a>
 
                 </div>
 
@@ -545,7 +546,15 @@
             <section class="additional-content panoramas _tan">
 
                 <div id="panoramaDisplay"></div>
-                <div id="panoramaLinks" class="_tan"></div>
+                <div id="panoramaLinks" class="_tan">
+                    {% for space in data.sections.spaces.list %}
+                    {% if space.panoramicImages %}
+                    {% for pano in space.panoramicImages %}
+                    <a href="{{pano.src}}" class="pano-link">{{pano.name}}</a>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
 
             </section>
 
