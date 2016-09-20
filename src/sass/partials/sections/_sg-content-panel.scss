@@ -214,12 +214,15 @@ Slide in Content Panel
 
           #panoramaLinks{
             position: absolute;
+            bottom: 10px;
+            min-height: 40px;
+            left: 20px;
+            right: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             border: 1px solid $purple;
-            bottom: 10px;
             @include extra-small{
               left: 10px;
               right: 10px;
