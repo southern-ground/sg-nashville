@@ -26,23 +26,25 @@ section.contact{
     text-align: center;
   }
   .bookings-form{
-    .staff{
 
-    }
     form{
 
       @include extra-small{
         margin: 0;
       }
+
       input,textarea{
         margin-bottom: 10px;
       }
+
       input{
         height: 2.1rem;
       }
+
       textarea{
         height: 9rem;
       }
+
       .submit{
         padding-left:0;
         button{
@@ -53,6 +55,13 @@ section.contact{
           padding: 3px 20px;
           font-size: 12px;
         }
+      }
+
+      span.tour-disclaimer{
+        padding-right: 0;
+        padding-left: 0;
+        font-size: 0.625rem;
+        margin: 10px 0;
       }
     }
   }
