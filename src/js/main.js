@@ -1307,7 +1307,7 @@ sgn.validateBookingForm = function () {
         };
 
     var formName = sanitizeField(form['bookings-name'].value).trim(),
-        formVenue = sanitizeField(form['bookings-venue'].value).trim(),
+        formCompany = sanitizeField(form['bookings-company'].value).trim(),
         formEmail = sanitizeField(form['bookings-email'].value).trim(),
         formText = sanitizeField(form['bookings-text'].value).trim();
 
@@ -1326,7 +1326,7 @@ sgn.validateBookingForm = function () {
         isError = true;
     }
 
-    if (formVenue.length === 0) {
+    if (formCompany.length === 0) {
         // Nothing; it's OK for this to be blank.
     }
 
@@ -1350,6 +1350,7 @@ sgn.validateBookingForm = function () {
         });
 
         $('#BookingsForm').find('.error-text').html('Please address the above errors and try again.');
+
     } else {
 
         // Manually fire tracking:
@@ -1361,7 +1362,7 @@ sgn.validateBookingForm = function () {
 
         $.post("contact.php", {
             name: formName,
-            venue: formVenue,
+            company: formCompany,
             email: formEmail,
             message: formText
         }).done(function (data) {
