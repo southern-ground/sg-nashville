@@ -2,7 +2,8 @@ var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
     Linear = window.Linear || {},
     THREE = window.THREE,
-    ga = window.ga || function(){};
+    ga = window.ga || function () {
+        };
 
 sgn.initProps = function () {
 
@@ -96,52 +97,21 @@ sgn.initSections = function () {
         });
 
         $('.space-link').click(function (e) {
-
-            killEvent(e);
             scrubAttributes(e, scope);
-
-            $('.spaceSlider_container').hide();
-
-            $('#Space_' + scope.targetIndex).show();
-
-            // Manually fire tracking:
-
             ga('send', 'event', {
                 eventCategory: 'View Space',
                 eventAction: 'click',
                 eventLabel: scope.targetTrackingLabel
             });
-
-            var $slider = $('#SpaceSlider_' + scope.targetIndex);
-
-            $slider.on('afterChange', function () {
-                scope.openSection(scope.target);
-            });
-
-            $slider.slick('slickGoTo', 0, true);
-
-
         });
 
         $('.person-detail-link').click(function (e) {
-
-            killEvent(e);
             scrubAttributes(e, scope);
-
-            // Manually fire tracking:
-
             ga('send', 'event', {
                 eventCategory: 'View People',
                 eventAction: 'click',
                 eventLabel: scope.targetTrackingLabel
             });
-
-            $('#PeopleSlider').on('afterChange', function () {
-                scope.openSection(scope.target);
-            });
-
-            $('#PeopleSlider').slick('slickGoTo', scope.targetIndex, true);
-
         });
 
         $('#FixedOverlay section').fadeOut();
@@ -149,6 +119,48 @@ sgn.initSections = function () {
     })(this);
 
     return this;
+};
+
+sgn.openPersonFromRoute = function (person) {
+    console.log('openPersonFromRoute', person);
+
+    $target = $('.person-detail-link[data-tracking-label="'+person+'"]');
+
+    sgn.target = $target.data('target');
+    sgn.targetIndex = $target.data('slide-index');
+
+    $('#PeopleSlider').on('afterChange', function () {
+        sgn.openSection(sgn.target);
+    });
+
+    $('#PeopleSlider').slick('slickGoTo', sgn.targetIndex, true);
+
+};
+
+sgn.openSpaceFromRoute = function (space) {
+
+    console.log('openSpaceFromRoute', space);
+
+    var $target, $slider;
+
+    $('.spaceSlider_container').hide();
+
+    $target = $(".space-link[data-tracking-label='" + space + "']");
+
+    sgn.target = $target.data('target');
+
+    sgn.targetIndex = $target.data('slide-index');
+
+    $('#Space_' + sgn.targetIndex).show();
+
+    $slider = $('#SpaceSlider_' + sgn.targetIndex);
+
+    $slider.on('afterChange', function () {
+        sgn.openSection(sgn.target);
+    });
+
+    $slider.slick('slickGoTo', 0, true);
+
 };
 
 sgn.initSliders = function () {
@@ -198,20 +210,6 @@ sgn.initSliders = function () {
         counter++;
     });
 
-    /* $(".spaceSlider").slick({
-     infinite: true,
-     speed: 300,
-     slidesToShow: 1,
-     slidesToScroll: 1,
-     dots: false,
-     prevArrow: $('#SpaceSliderPrev'),
-     nextArrow: $('#SpaceSliderNext'),
-     centerMode: true,
-     variableWidth: true,
-     lazyLoad: 'ondemand',
-     fadeIn: true
-     });*/
-
     $("#PeopleSlider").slick({
         infinite: true,
         speed: 300,
@@ -225,6 +223,16 @@ sgn.initSliders = function () {
         adaptiveHeight: true,
         lazyLoad: 'ondemand',
         fadeIn: true
+    });
+
+    $("#PeopleSlider").on('afterChange', function (e) {
+        // Update the route accordingly.
+        Router.pause(true);
+        Router.navigate(
+            $('.person-detail-link[data-slide-index="' + $("#PeopleSlider")
+                    .slick('slickCurrentSlide') + '"]')
+                .attr('href'));
+        Router.pause(false);
     });
 
     return this;
@@ -259,77 +267,77 @@ sgn.initParallax = function () {
     return this;
 };
 
-sgn.initBookingsForm = function (){
+sgn.initBookingsForm = function () {
 
     $('#BookingsForm').on('submit', this.validateBookingForm);
 
     return this;
 };
 
-sgn.showPanorama = function (img){
+sgn.showPanorama = function (img) {
 
     // The SGN object should be exposed at the window level.
     // Not the BEST practice, but serviceable.
 
-    var update = function() {
+    var update = function () {
 
-        if ( sgn.pano.isUserInteracting === false ) {
+        if (sgn.pano.isUserInteracting === false) {
             sgn.pano.lon += 0.1;
         }
 
-        sgn.pano.lat = Math.max( - 85, Math.min( 85, sgn.pano.lat ) );
-        sgn.pano.phi = THREE.Math.degToRad( 90 - sgn.pano.lat );
-        sgn.pano.theta = THREE.Math.degToRad( sgn.pano.lon );
+        sgn.pano.lat = Math.max(-85, Math.min(85, sgn.pano.lat));
+        sgn.pano.phi = THREE.Math.degToRad(90 - sgn.pano.lat);
+        sgn.pano.theta = THREE.Math.degToRad(sgn.pano.lon);
 
-        sgn.pano.camera.target.x = 500 * Math.sin( sgn.pano.phi ) * Math.cos( sgn.pano.theta );
-        sgn.pano.camera.target.y = 500 * Math.cos( sgn.pano.phi );
-        sgn.pano.camera.target.z = 500 * Math.sin( sgn.pano.phi ) * Math.sin( sgn.pano.theta );
+        sgn.pano.camera.target.x = 500 * Math.sin(sgn.pano.phi) * Math.cos(sgn.pano.theta);
+        sgn.pano.camera.target.y = 500 * Math.cos(sgn.pano.phi);
+        sgn.pano.camera.target.z = 500 * Math.sin(sgn.pano.phi) * Math.sin(sgn.pano.theta);
 
-        sgn.pano.camera.lookAt( sgn.pano.camera.target );
+        sgn.pano.camera.lookAt(sgn.pano.camera.target);
 
         // distortion
         // sgn.pano.camera.position.copy( sgn.pano.camera.target ).negate();
 
-        sgn.pano.renderer.render( sgn.pano.scene, sgn.pano.camera );
+        sgn.pano.renderer.render(sgn.pano.scene, sgn.pano.camera);
 
     };
 
-    var animate = function() {
+    var animate = function () {
         update();
-        sgn.pano.requestID = requestAnimationFrame( animate );
+        sgn.pano.requestID = requestAnimationFrame(animate);
     };
 
-    var onPanoramaWindowResize = function() {
+    var onPanoramaWindowResize = function () {
 
         updatePanoDimensions();
 
         sgn.pano.camera.aspect = sgn.pano.width / sgn.pano.height;
         sgn.pano.camera.updateProjectionMatrix();
 
-        sgn.pano.renderer.setSize( sgn.pano.width, sgn.pano.height );
+        sgn.pano.renderer.setSize(sgn.pano.width, sgn.pano.height);
 
     };
 
     // Remove any old Event Listeners HERE:
-    try{
+    try {
         console.warn('Event listeners removed successfully');
-        document.removeEventListener( 'mousedown', sgn.pano.onDocumentMouseDown);
-        document.removeEventListener( 'mousemove', sgn.pano.onDocumentMouseMove);
-        document.removeEventListener( 'mouseup', sgn.pano.onDocumentMouseUp);
-        document.removeEventListener( 'wheel', sgn.pano.onDocumentMouseWheel);
-    }catch(e){
+        document.removeEventListener('mousedown', sgn.pano.onDocumentMouseDown);
+        document.removeEventListener('mousemove', sgn.pano.onDocumentMouseMove);
+        document.removeEventListener('mouseup', sgn.pano.onDocumentMouseUp);
+        document.removeEventListener('wheel', sgn.pano.onDocumentMouseWheel);
+    } catch (e) {
         console.warn('Could not remove event listeners');
     }
 
     // Remove any old Event Listeners HERE:
-    try{
+    try {
         console.warn('Resize event listener removed successfully');
-        window.removeEventListener( 'resize', onPanoramaWindowResize);
-    }catch(e){
+        window.removeEventListener('resize', onPanoramaWindowResize);
+    } catch (e) {
         console.warn('Could not remove resize listener');
     }
 
-    if(this.pano.requestID){
+    if (this.pano.requestID) {
         console.warn('Clearing previous animation ID');
         window.cancelAnimationFrame(this.pano.requestID);
         this.pano.requestID = undefined;
@@ -351,28 +359,28 @@ sgn.showPanorama = function (img){
 
     updatePanoDimensions(this);
 
-    this.pano.camera = new THREE.PerspectiveCamera( 75, this.pano.width / this.pano.height, 1, 1100 );
-    this.pano.camera.target = new THREE.Vector3( 0, 0, 0 );
+    this.pano.camera = new THREE.PerspectiveCamera(75, this.pano.width / this.pano.height, 1, 1100);
+    this.pano.camera.target = new THREE.Vector3(0, 0, 0);
 
     this.pano.scene = new THREE.Scene();
 
-    this.pano.geometry = new THREE.SphereGeometry( 500, 60, 40 );
-    this.pano.geometry.scale( - 1, 1, 1 );
+    this.pano.geometry = new THREE.SphereGeometry(500, 60, 40);
+    this.pano.geometry.scale(-1, 1, 1);
 
-    this.pano.material = new THREE.MeshBasicMaterial( {
-        map: new THREE.TextureLoader().load( img )
-    } );
+    this.pano.material = new THREE.MeshBasicMaterial({
+        map: new THREE.TextureLoader().load(img)
+    });
 
-    this.pano.mesh = new THREE.Mesh( this.pano.geometry, this.pano.material );
+    this.pano.mesh = new THREE.Mesh(this.pano.geometry, this.pano.material);
 
-    this.pano.scene.add( this.pano.mesh );
+    this.pano.scene.add(this.pano.mesh);
 
     this.pano.renderer = new THREE.WebGLRenderer();
-    this.pano.renderer.setPixelRatio( window.devicePixelRatio );
-    this.pano.renderer.setSize( this.pano.width, this.pano.height );
-    this.pano.container.appendChild( this.pano.renderer.domElement );
+    this.pano.renderer.setPixelRatio(window.devicePixelRatio);
+    this.pano.renderer.setSize(this.pano.width, this.pano.height);
+    this.pano.container.appendChild(this.pano.renderer.domElement);
 
-    this.pano.onDocumentMouseDown = function( event ) {
+    this.pano.onDocumentMouseDown = function (event) {
 
         event.preventDefault();
 
@@ -385,9 +393,9 @@ sgn.showPanorama = function (img){
         sgn.pano.onPointerDownLat = sgn.pano.lat;
 
     };
-    this.pano.onDocumentMouseMove = function( event ) {
+    this.pano.onDocumentMouseMove = function (event) {
 
-        if ( sgn.pano.isUserInteracting === true ) {
+        if (sgn.pano.isUserInteracting === true) {
 
             sgn.pano.lon = ( sgn.pano.onPointerDownPointerX - event.clientX ) * 0.1 + sgn.pano.onPointerDownLon;
             sgn.pano.lat = ( event.clientY - sgn.pano.onPointerDownPointerY ) * 0.1 + sgn.pano.onPointerDownLat;
@@ -395,24 +403,24 @@ sgn.showPanorama = function (img){
         }
 
     };
-    this.pano.onDocumentMouseUp = function() {
+    this.pano.onDocumentMouseUp = function () {
 
         sgn.pano.isUserInteracting = false;
 
     };
-    this.pano.onDocumentMouseWheel = function( event ) {
+    this.pano.onDocumentMouseWheel = function (event) {
 
         sgn.pano.camera.fov += event.deltaY * 0.05;
         sgn.pano.camera.updateProjectionMatrix();
 
     };
 
-    document.addEventListener( 'mousedown', this.pano.onDocumentMouseDown, false );
-    document.addEventListener( 'mousemove', this.pano.onDocumentMouseMove, false );
-    document.addEventListener( 'mouseup', this.pano.onDocumentMouseUp, false );
-    document.addEventListener( 'wheel', this.pano.onDocumentMouseWheel, false );
+    document.addEventListener('mousedown', this.pano.onDocumentMouseDown, false);
+    document.addEventListener('mousemove', this.pano.onDocumentMouseMove, false);
+    document.addEventListener('mouseup', this.pano.onDocumentMouseUp, false);
+    document.addEventListener('wheel', this.pano.onDocumentMouseWheel, false);
 
-    window.addEventListener( 'resize', onPanoramaWindowResize, false );
+    window.addEventListener('resize', onPanoramaWindowResize, false);
 
     animate();
 
@@ -420,7 +428,7 @@ sgn.showPanorama = function (img){
 
 };
 
-sgn.initPanoramas = function(){
+sgn.initPanoramas = function () {
 
     this.pano = {
         camera: null,
@@ -439,17 +447,17 @@ sgn.initPanoramas = function(){
         mesh: null
     };
 
-    window.updatePanoDimensions = function(){
+    window.updatePanoDimensions = function () {
 
         var availWidth = $('.content-panel-container').innerWidth() - 100;
         var availHeight = $('.content-panel-container').innerHeight() - 100;
 
-        if( (availHeight / availWidth) < (9/16)){
-            sgn.pano.width = (availHeight * (16/9))|0;
-            sgn.pano.height = (sgn.pano.width * (9/16))|0;
-        }else{
+        if ((availHeight / availWidth) < (9 / 16)) {
+            sgn.pano.width = (availHeight * (16 / 9)) | 0;
+            sgn.pano.height = (sgn.pano.width * (9 / 16)) | 0;
+        } else {
             sgn.pano.width = availWidth | 0;
-            sgn.pano.height = (sgn.pano.width * (9/16))|0;
+            sgn.pano.height = (sgn.pano.width * (9 / 16)) | 0;
         }
 
     };
@@ -460,8 +468,8 @@ sgn.initPanoramas = function(){
     $('#panoramaDisplay').data('panorama-url', $firstPano.attr('href'));
     $('#panoramaDisplay').data('panorama-name', $firstPano.html());
 
-    (function(scope){
-        $('.tour-button').click(function(e){
+    (function (scope) {
+        $('.tour-button').click(function (e) {
             e.preventDefault();
 
             // Manually fire tracking:
@@ -474,14 +482,14 @@ sgn.initPanoramas = function(){
             scope.showPanorama($('#panoramaDisplay').data('panorama-url'));
 
         });
-        $('.pano-link').click(function(e){
+        $('.pano-link').click(function (e) {
 
             e.preventDefault();
             e.stopPropagation();
 
             var $el = $(e.target);
 
-            if(!$el.hasClass('active')){
+            if (!$el.hasClass('active')) {
                 $('.pano-link').removeClass('active');
                 $el.addClass('active');
                 scope.showPanorama(this.getAttribute('href'));
@@ -499,7 +507,7 @@ sgn.initPanoramas = function(){
     return this;
 };
 
-sgn.updateSocial = function(data){
+sgn.updateSocial = function (data) {
 
     var NUM_POSTS = 8,
         POST_TEMPLATE = '<div class="col-xs-12 col-sm-6 col-md-3 instagram-post">' +
@@ -510,7 +518,7 @@ sgn.updateSocial = function(data){
             '</div>';
 
     var post, postDate, postDateString,
-        dateConverter = function(date){
+        dateConverter = function (date) {
             var postDate = new Date(date * 1000);
             return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
         },
@@ -593,7 +601,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1470171914",
                         text: "2 dozen ears of #peachesandcreamcorn 20 lbs red and green #okra bound for #StudioMama 's freezer! Then there's all the other bits that go in #balljars !! #summertime #inseason #getitwhilethegettinsgood #stockpile @yeti",
@@ -650,7 +658,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1469804658",
                         text: "Super excited about our new house wines!! @zalexanderbrown #southernground #keepingitinthezamily #TGIF #isittooearlyforwine",
@@ -714,7 +722,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1468182089",
                         text: "What's in YOUR #toybox ? #puzzles #Legos #tractorlights #sonichighways #8 @foofighters @oaknashville",
@@ -772,7 +780,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1467755078",
                         text: "When the fridge isn't big enough to hold the corn, @yeti saves the day! #StudioMama #summertime #stickitinthefridge #corn #localproduce @freshlocalnashville",
@@ -832,7 +840,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1467747365",
                         text: "Dangerously close to running out of the good stuff. @helpgoodspread #itsreallyverygood #goinggoinggone",
@@ -855,7 +863,7 @@ sgn.initSocial = function () {
                 },
                 {
                     attribution: null,
-                    tags: [ ],
+                    tags: [],
                     type: "image",
                     location: {
                         latitude: 36.1525993,
@@ -889,7 +897,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1465575550",
                         text: "Takin shots and kicking ass @juicenashville @zacbrownband @garagecoffeeco",
@@ -946,7 +954,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1465226842",
                         text: "It's not even July yet! #merrychristmas #christmasinjuly #santaclaus #wearegettingsticksandcoal",
@@ -1009,7 +1017,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1464894052",
                         text: "If wishes were horses, we'd all ride. #wthdoesthatevenmean #jollybarmyardchicken #roastedchicken #makeawish #wishbone",
@@ -1147,7 +1155,7 @@ sgn.initSocial = function () {
                             height: 640
                         }
                     },
-                    users_in_photo: [ ],
+                    users_in_photo: [],
                     caption: {
                         created_time: "1464367816",
                         text: "#StudioMama is redeeming herself from this week's vegan, gluten-free mayhem. #allthedairy #butterplease #blueberrygalette with #lemonthyme #sourcream #glutenFUL #piecrust",
@@ -1195,6 +1203,7 @@ sgn.openSection = function (which, callback) {
 
 sgn.closeContentPanel = function () {
     $('html body').removeClass('no-scroll');
+    Router.navigate('');
     $('.content-panel, .additional-content').fadeOut('fast');
     // $('.content-panel').removeClass('is-visible');
     this.overlayIsOpen = false;
@@ -1409,7 +1418,147 @@ sgn.init = function () {
         .initSocial()
         .initPanoramas();
 
+    Router.on('/#!/spaces/studio-a', function () {
+        sgn.openSpaceFromRoute('Studio A');
+    })
+        .on('/#!/spaces/studio-b', function () {
+            sgn.openSpaceFromRoute('Studio B');
+        })
+        .on('/#!/spaces/studio-c', function () {
+            sgn.openSpaceFromRoute('Studio C');
+        })
+        .on('/#!/spaces/leisure', function () {
+            sgn.openSpaceFromRoute('Leisure');
+        })
+        .on('/#!/spaces/tech-shop', function () {
+            sgn.openSpaceFromRoute('Tech Shop');
+        })
+        .on('/#!/people/matt-mangano', function () {
+            sgn.openPersonFromRoute('Matt Mangano');
+        })
+        .on('/#!/people/brandon-bell', function () {
+            sgn.openPersonFromRoute('Brandon Bell');
+        })
+        .on('/#!/people/rebecca-wood', function () {
+            sgn.openPersonFromRoute('Rebecca Wood');
+        })
+        .on('/#!/people/chris-taylor', function () {
+            sgn.openPersonFromRoute('Chris Taylor');
+        }).resolve();
 };
 
 $(sgn.init);
 
+/*var Router = {
+ routes: [],
+ mode: null,
+ root: '/',
+ config: function(options) {
+ this.mode = options && options.mode && options.mode == 'history'
+ && !!(history.pushState) ? 'history' : 'hash';
+ this.root = options && options.root ? '/' + this.clearSlashes(options.root) + '/' : '/';
+ return this;
+ },
+ getFragment: function() {
+ var fragment = '';
+ if(this.mode === 'history') {
+ fragment = this.clearSlashes(decodeURI(location.pathname + location.search));
+ fragment = fragment.replace(/\?(.*)$/, '');
+ fragment = this.root != '/' ? fragment.replace(this.root, '') : fragment;
+ } else {
+ var match = window.location.href.match(/#(.*)$/);
+ fragment = match ? match[1] : '';
+ }
+ return this.clearSlashes(fragment);
+ },
+ clearSlashes: function(path) {
+ return path.toString().replace(/\/$/, '').replace(/^\//, '');
+ },
+ add: function(re, handler) {
+ if(typeof re == 'function') {
+ handler = re;
+ re = '';
+ }
+ this.routes.push({ re: re, handler: handler});
+ return this;
+ },
+ remove: function(param) {
+ for(var i=0, r; i<this.routes.length, r = this.routes[i]; i++) {
+ if(r.handler === param || r.re.toString() === param.toString()) {
+ this.routes.splice(i, 1);
+ return this;
+ }
+ }
+ return this;
+ },
+ flush: function() {
+ this.routes = [];
+ this.mode = null;
+ this.root = '/';
+ return this;
+ },
+ check: function(f) {
+ var fragment = f || this.getFragment();
+ for(var i=0; i<this.routes.length; i++) {
+ var match = fragment.match(this.routes[i].re);
+ if(match) {
+ match.shift();
+ this.routes[i].handler.apply({}, match);
+ return this;
+ }
+ }
+ return this;
+ },
+ listen: function() {
+ var self = this;
+ var current = self.getFragment();
+ var fn = function() {
+ if(current !== self.getFragment()) {
+ current = self.getFragment();
+ self.check(current);
+ }
+ }
+ clearInterval(this.interval);
+ this.interval = setInterval(fn, 50);
+ return this;
+ },
+ navigate: function(path) {
+ path = path ? path : '';
+ if(this.mode === 'history') {
+ history.pushState(null, null, this.root + this.clearSlashes(path));
+ } else {
+ window.location.href = window.location.href.replace(/#(.*)$/, '') + '#' + path;
+ }
+ return this;
+ }
+ };*/
+
+// adding routes
+/*
+ Router
+ .add(/spaces-studio-a/, function() {
+ console.log('spaces-studio-a');
+ $( ".space-link[data-tracking-label='Studio A']" ).trigger( "click" );
+ })
+ .add(/spaces-studio-b/, function() {
+ console.log('Spaces! Studio B');
+ $( ".space-link[data-tracking-label='Studio B']" ).trigger( "click" );
+ })
+ .add(/spaces-studio-c/, function() {
+ console.log('Spaces! Studio C');
+ $( ".space-link[data-tracking-label='Studio C']" ).trigger( "click" );
+ })
+ .add(/spaces-leisure/, function() {
+ console.log('Spaces! Leisure');
+ $( ".space-link[data-tracking-label='Leisure']" ).trigger( "click" );
+ })
+ .add(/spaces-tech-shop/, function() {
+ console.log('Spaces! Tech Shop');
+ $( ".space-link[data-tracking-label='Tech Shop']" ).trigger( "click" );
+ })
+ .add(function() {
+ console.log('Router default');
+ })
+ .listen().resolve() ;*/
+
+var Router = new Navigo();

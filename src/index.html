@@ -140,7 +140,9 @@
                            data-target="section.additional-content.spaces"
                            data-slide-index="{{loop.index0}}"
                            data-tracking-label="{{space.name}}"
-                           href="#">
+                           data-navigo
+                           href="{{space.route}}"
+                        >
                             <img src="{{space.image}}"/>
                             <h3>{{space.name}}</h3>
                         </a>
@@ -208,7 +210,8 @@
                            data-target="section.additional-content.people"
                            data-slide-index="{{loop.index0}}"
                            data-tracking-label="{{person.name}}"
-                           href="#">
+                           data-navigo
+                           href="{{person.route}}">
                             <div class="person-portrait">
                                 <img src="{{person.image}}"/>
                             </div>
@@ -576,6 +579,7 @@
 <script src="js/vendor/scrollMagic/plugins/animation.gsap.min.js"></script>
 <script src="js/vendor/slick.min.js"></script>
 <script src="js/vendor/three.min.js"></script>
+<script src="js/vendor/navigo.min.js"></script>
 <script src="js/main.js"></script>
 
 <script>

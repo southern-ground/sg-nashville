@@ -27,6 +27,7 @@
         "list": [
           {
             "name": "Studio A",
+            "route": "/#!/spaces/studio-a",
             "image": "img/spaces/studio-a.jpg",
             "images": [
               "img/spaces/studio-a/SR1_6342.jpg",
@@ -69,6 +70,7 @@
           },
           {
             "name": "Studio B",
+            "route": "/#!/spaces/studio-b",
             "image": "img/spaces/studio-b.jpg",
             "images": [
               "img/spaces/studio-b/MixRoomConsole.jpg",
@@ -97,6 +99,7 @@
           },
           {
             "name": "Studio C",
+            "route": "/#!/spaces/studio-c",
             "image": "img/spaces/studio-c.jpg",
             "images": [
               "img/spaces/studio-c/SR2_4385.jpg",
@@ -117,6 +120,7 @@
           },
           {
             "name": "Leisure",
+            "route": "/#!/spaces/leisure",
             "image": "img/spaces/leisure.jpg",
             "images": [
               "img/spaces/leisure/SR2_1885.jpg",
@@ -149,6 +153,7 @@
           },
           {
             "name": "Tech Shop",
+            "route": "/#!/spaces/tech-shop",
             "image": "img/spaces/tech-shop.jpg",
             "images": [
               "img/spaces/tech-shop/sgn-techshop.jpg",
@@ -165,6 +170,7 @@
         "list": [
           {
             "name": "Matt Mangano",
+            "route": "/#!/people/matt-mangano",
             "title": "Studio Director",
             "image": "img/people/matt-mangano.jpg",
             "bio": {
@@ -218,6 +224,7 @@
           },
           {
             "name": "Brandon Bell",
+            "route": "/#!/people/brandon-bell",
             "title": "Studio Director/Chief Engineer",
             "image": "img/people/brandon-bell.jpg",
             "bio": {
@@ -271,6 +278,7 @@
           },
           {
             "name": "Rebecca Wood",
+            "route": "/#!/people/rebecca-wood",
             "title": "Studio Mama",
             "image": "img/people/rebecca-wood.jpg",
             "bio": {
@@ -324,6 +332,7 @@
           },
           {
             "name": "Chris Taylor",
+            "route": "/#!/people/chris-taylor",
             "title": "Engineer",
             "image": "img/people/chris-taylor.jpg",
             "bio": {
