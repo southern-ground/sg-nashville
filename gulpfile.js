@@ -126,7 +126,7 @@ gulp.task('sass', function () {
 
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'lint:js', 'sass', 'git-revision'],
+        ['clean', 'sass', 'git-revision'],
         'copy',
         'render',
         done);
@@ -145,7 +145,7 @@ gulp.task('serve', function () {
     });
 
     gulp.watch([dirs.src + "/js/**/*.js"], function(){
-        runSequence('lint:js', 'copy-js');
+        runSequence('copy-js');
     });
 
     gulp.watch(["dist/*.html", dirs.src + "/css/**/*.css", dirs.src + '/js/*']).on('change', browserSync.reload);
