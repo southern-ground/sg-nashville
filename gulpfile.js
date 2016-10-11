@@ -58,6 +58,7 @@ gulp.task('copy', function () {
     gulp.src([
         // Copy all files
         dirs.src + '/**/*',
+        dirs.src + '.htaccess',
         // Excluding:
         '!' + dirs.src + '/{index,gear,rev}.html',
         '!' + dirs.src + '/data',
