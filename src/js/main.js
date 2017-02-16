@@ -1444,6 +1444,10 @@ sgn.init = function () {
         })
         .on('/#!/people/chris-taylor', function () {
             sgn.openPersonFromRoute('Chris Taylor');
+        })
+        .on('/#!/panoramas', function () {
+            sgn.showPanorama($('#panoramaDisplay').data('panorama-url'));
+
         }).resolve();
 };
 
