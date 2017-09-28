@@ -5,6 +5,7 @@
         "git rev-list HEAD --max-count=1 --format='%ci' > ./src/rev.html"
       ]
     },
+    "contactFormUrl": "./contact.php",
     "sections": {
       "hero": {
         "copy": "In 1903, on the corner of 17th and McGavock, the Addison Ave. Cumberland Presbyterian Church built a beautiful brick sanctuary. In 1968, Fred Foster, founder of Monument Records, purchased the church and converted it into a recording studio. In 2012, Zac Brown bought the same building and transformed it into a first-class facility that inspires creation and satisfies the appetites of artists and musicians from around the world.",
