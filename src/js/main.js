@@ -3,7 +3,7 @@ var sgn = window.sgn || {},
     Linear = window.Linear || {},
     THREE = window.THREE,
     ga = window.ga || function () {
-        };
+    };
 
 sgn.initProps = function () {
 
@@ -230,7 +230,7 @@ sgn.initSliders = function () {
         Router.pause(true);
         Router.navigate(
             $('.person-detail-link[data-slide-index="' + $("#PeopleSlider")
-                    .slick('slickCurrentSlide') + '"]')
+                .slick('slickCurrentSlide') + '"]')
                 .attr('href'));
         Router.pause(false);
     });
@@ -1186,8 +1186,8 @@ sgn.initSocial = function () {
 sgn.openSection = function (which, callback) {
 
     callback = callback || function () {
-            // Nothing
-        };
+        // Nothing
+    };
 
     this.overlayIsOpen = true;
 
