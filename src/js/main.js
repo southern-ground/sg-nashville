@@ -1376,7 +1376,7 @@ sgn.validateBookingForm = function () {
             message: formText
         }).done(function (data) {
             if (data) {
-                if (data.error === 0) {
+                if (data.error === "0") {
                     // console.warn("Form submitted successfully");
                     $('#BookingsForm').find('.success-text').html('Form submitted successfully. Someone will be in touch soon!');
                     $('#BookingsForm').find('input[type=text], textarea').val('');
