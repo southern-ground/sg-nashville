@@ -14,7 +14,7 @@ if(count($_POST) === 0){
         'Reply-To: ' . $data['email'] . "\r\n" .
         'BCC: info@southerngroundnashville.com, dev@southernground.com, ferris@southernground.com' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
-    $data["mail"] = mail ( "info@southerngroundartists.com", "SGN Contact Re: " . $data['venue'], $message, $headers );
+    $data["mail"] = mail ( "info@southerngroundartists.com", "SGN Contact Email", $message, $headers );
 }
 
 header('Content-type: application/json');
