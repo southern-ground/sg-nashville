@@ -2,7 +2,7 @@
   "data": {
     "gitRevision": {
       "commands": [
-        "git rev-list HEAD --max-count=1 --format='%ci' > ./src/rev.html"
+        "git rev-list HEAD --max-count=1 --format='%ci' --pretty=oneline > ./src/rev.html"
       ]
     },
     "contactFormUrl": "./contact.php",
