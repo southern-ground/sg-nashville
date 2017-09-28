@@ -20,19 +20,17 @@ if (count($_POST) === 0) {
 
     $headers = 'From: info@southerngroundartists.com' . "\r\n" .
         'Reply-To: ' . $data['email'] . "\r\n" .
+        'BCC: ferris@southernground.com,info@southerngroundnashville.com\r\n' .
         'X-Mailer: PHP/' . phpversion();
 
-    $data["headers"] = $headers;
-    $data["message"] = $message;
+    // $data["headers"] = $headers;
+    // $data["message"] = $message;
 
     // INI Settings for Liberty.
     ini_set('SMTP', SMTP_SERVER);
     ini_set('smtp_port', 25);
 
-    $data["mail"] = mail ( "info@southerngroundartists.com", "SGN Contact Email", $message, $headers );
-    $data["secondary"] = mail ( "ferris@southernground.com", "Backup SGN Contact Email", $message, $headers );
-
-    $data["error"] = ($data["mail"] == 1 && $data["secondary"] == 1) ? "0" : "1";
+    $data["error"] = mail("info@southerngroundartists.com", "SGN Contact Email", $message, $headers) ? "0" : "1";
 
 }
 
