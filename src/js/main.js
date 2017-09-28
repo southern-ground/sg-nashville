@@ -1373,7 +1373,9 @@ sgn.validateBookingForm = function () {
 
         $('#BookingsForm button').attr('disabled', 'disabled');
 
-        $.post("contact.php", {
+        window.open("mailto:info@southerngroundartists.com?subject=Contact Form&body=From: "+formName+" ("+formEmail+")\rCompany: " + formCompany + "\rMessage: " + formText);
+
+        /*$.post("contact.php", {
             name: formName,
             company: formCompany,
             email: formEmail,
@@ -1393,7 +1395,7 @@ sgn.validateBookingForm = function () {
         }).error(function (e) {
             console.warn("Form Error: " + e.status, e.statusText);
             $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code ' + e.status + '.)');
-        });
+        });*/
 
     }
 

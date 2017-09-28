@@ -57,12 +57,6 @@ section.contact{
         }
       }
 
-      span.tour-disclaimer{
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 0.625rem;
-        margin: 10px 0;
-      }
     }
   }
 
@@ -82,4 +76,11 @@ section.contact{
       margin: 0 0 14px 0;
     }
   }
+}
+
+.tour-disclaimer{
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 0.625rem;
+  margin: 10px 0;
 }
