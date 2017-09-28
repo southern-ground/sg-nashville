@@ -1369,6 +1369,10 @@ sgn.validateBookingForm = function () {
             eventLabel: 'Success'
         });
 
+        // Temporarily disble the button:
+
+        $('#BookingsForm button').attr('disabled', 'disabled');
+
         $.post("contact.php", {
             name: formName,
             company: formCompany,
@@ -1383,6 +1387,8 @@ sgn.validateBookingForm = function () {
                 } else {
                     $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code ' + data.error + '.)');
                 }
+                // Re-enable the button:
+                $('#BookingsForm button').removeAttr('disabled');
             }
         }).error(function (e) {
             console.warn("Form Error: " + e.status, e.statusText);
