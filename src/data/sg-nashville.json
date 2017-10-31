@@ -332,58 +332,9 @@
             }
           },
           {
-            "name": "Chris Taylor",
-            "route": "/#!/people/chris-taylor",
-            "title": "Engineer",
-            "image": "img/people/chris-taylor.jpg",
-            "bio": {
-              "questions": [
-                {
-                  "question": "Position at Southern Ground Nashville:",
-                  "answer": "Engineer"
-                },
-                {
-                  "question": "Originally from:",
-                  "answer": "Boulder, Colorado"
-                },
-                {
-                  "question": "How you got to Nashville:",
-                  "answer": "As far as cities go, Nashville is really laid back. Coming from a more rural upbringing larger music cities like New York or Los Angeles never seemed like a good fit for me. Also, the musical talent in this town is incredible. Most of the musicians I grew up idolizing worked here in Nashville."
-                },
-                {
-                  "question": "How you got to SGN:",
-                  "answer": "I stumbled onto a small information website related to Southern Ground Nashville while attending college in Boston. I immediatley recognized that it was special, and the only place I wanted to be. After leaving Boston I trusted that instict and was fortunate enough to be in the right place at the right time."
-                },
-                {
-                  "question": "Favorite Studio Mama Creation:",
-                  "answer": "Spaghetti & meatballs is my current favorite. Also, anytime she gets to baking, work in the studio comes to a screeching halt. It’s amazing."
-                },
-                {
-                  "question": "Like most about SGN:",
-                  "answer": "Southern Ground is a place people can feel comfortable and enjoy time spent working or hanging out. There’s a quality and an integrity that isn’t available just anywhere. The atmosphere, hospitality, not to mention anything you could possibly desire technologically speaking, make this studio second to none."
-                },
-                {
-                  "question": "Best part of your job:",
-                  "answer": "Nashville is one of the most musically brilliant communities in the world, and in moving here my mission statement was simple; find ways to get involved and contribute. Not everyone has the privelage of doing that. I’ve been blessed to work with so many immensley talented musicians, producers, and engineers. Being a part of the musical community here in Nashville has been surreal, and I have my friends at Southern Ground to thank for that opportunity."
-                },
-                {
-                  "question": "Fave piece of gear/equipment:",
-                  "answer": "All of our vintage Martin, Gibson, and Fender guitars."
-                },
-                {
-                  "question": "Hidden Talents?",
-                  "answer": "My yodeling melts faces."
-                },
-                {
-                  "question": "Hobbies?",
-                  "answer": "Snowboarding, hockey, turning Wrenches on old cars, and watching Tarantino flicks."
-                },
-                {
-                  "question": "Best Dollar store purchase?",
-                  "answer": "Whoopi Cushion."
-                }
-              ]
-            }
+            "name": "Dan Davis",
+            "title": "Studio Assistant",
+            "image": "img/people/dan-davis.jpg"
           }
         ]
       },
