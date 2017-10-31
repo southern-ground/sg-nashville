@@ -206,18 +206,20 @@
 
                     <div class="person col-xs-12 col-sm-12 col-md-6 col-lg-3">
 
+                        {%if person.route %}
                         <a class="person-detail-link"
                            data-target="section.additional-content.people"
                            data-slide-index="{{loop.index0}}"
                            data-tracking-label="{{person.name}}"
                            data-navigo
                            href="{{person.route}}">
+                        {% endif %}
                             <div class="person-portrait">
                                 <img src="{{person.image}}"/>
                             </div>
                             <h3>{{person.name}}</h3>
                             <span class="title">{{person.title}}</span>
-                        </a>
+                        {%if person.route %}</a>{% endif %}
 
                     </div>
 
