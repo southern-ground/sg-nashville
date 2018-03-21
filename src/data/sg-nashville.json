@@ -1,936 +1,1039 @@
 {
-  "data": {
-    "gitRevision": {
-      "commands": [
-        "git rev-list HEAD --max-count=1 --format='%ci' --pretty=oneline > ./src/rev.html"
-      ]
-    },
-    "contactFormUrl": "./contact.php",
-    "sections": {
-      "hero": {
-        "copy": "In 1903, on the corner of 17th and McGavock, the Addison Ave. Cumberland Presbyterian Church built a beautiful brick sanctuary. In 1968, Fred Foster, founder of Monument Records, purchased the church and converted it into a recording studio. In 2012, Zac Brown bought the same building and transformed it into a first-class facility that inspires creation and satisfies the appetites of artists and musicians from around the world.",
-        "readMore": {
-          "title": "Making Music History, Where Music History was Made.",
-          "copy": [
-            "In 2012, Southern Ground was searching for a small studio space in Nashville to record and produce records for Southern Ground Artists. When we stumbled upon the site that would later become our home, we couldn't have fathomed the rich, musical history that had lived here for just over a century.",
-            "Located at the foot of Nashville's music row, the building that houses Southern Ground Nashville was originally built between 1897 and 1903, and served as the Addison Avenue Cumberland Presbyterian Church until the mid-1950s.",
-            "After a brief stint as a VFW Post, the facility was purchased by Fred Foster, owner of famed recording company Monument Records, and transformed into Monument Studio in 1968. Managed at the time by now-legendary engineers Mort Thomassen and Tommy Strong, many fabled country recordings were produced in this era, including Kris Kristofferson's first three albums.",
-            "In 1975, the studio was purchased by Chip Young, renamed Young'un Sound and permitted to continue its tradition of pumping out classic Nashville recordings well into the 1980s. Later, Al Jolson, Jr., son of the famous performer Al Jolson, purchased the studio and dubbed it with yet another new moniker: Masterlink Studio. It was during this era that the building transformed into a high-tech facility specializing in audio for video remixing, including mixes for TNN (Hee Haw, CMT, etc.)",
-            "In the 1990s and 2000s, the walls of Masterlink witnessed a number of celebrated recordings, including that of Neil Young's \"Prairie Wind\" album. But due to his ailing health, Jolson was forced to shut the studio down in 2010. It sat vacant for nearly two years, and, at one point, was in serious danger of becoming a Mexican restaurant.",
-            "Here's where we come in.",
-            "When Southern Ground acquired the studio in 2012, we began by renovating the now 100-year-old building to restore much of its original character.  A Mix room was also added that includes an SSL 4000G+ console ATC 300's and a small overdub space.",
-            "We were also lucky enough to inherit some of the classic recording gear that Masterlink left behind, including a Neve V3, 48 tracks of 2\" analog tape, Ampex ATR-102 master 2-track recorder and vintage Neumann U47/U48 microphones (perhaps better known as The Beatles microphone).",
-            "Thanks to our new location, incredible on-site talent and the impeccable taste in recording equipment of those who came before us, we now have the ability to efficiently produce albums from start to finish, using a hybrid of classic analog and modern digital technology, all under one roof."
-          ]
+    "data": {
+        "gitRevision": {
+            "commands": [
+                "git rev-list HEAD --max-count=1 --format='%ci' --pretty=oneline > ./src/rev.html"
+            ]
+        },
+        "contactFormUrl": "./contact.php",
+        "sections": {
+            "hero": {
+                "copy": "In 1903, on the corner of 17th and McGavock, the Addison Ave. Cumberland Presbyterian Church built a beautiful brick sanctuary. In 1968, Fred Foster, founder of Monument Records, purchased the church and converted it into a recording studio. In 2012, Zac Brown bought the same building and transformed it into a first-class facility that inspires creation and satisfies the appetites of artists and musicians from around the world.",
+                "readMore": {
+                    "title": "Making Music History, Where Music History was Made.",
+                    "copy": [
+                        "In 2012, Southern Ground was searching for a small studio space in Nashville to record and produce records for Southern Ground Artists. When we stumbled upon the site that would later become our home, we couldn't have fathomed the rich, musical history that had lived here for just over a century.",
+                        "Located at the foot of Nashville's music row, the building that houses Southern Ground Nashville was originally built between 1897 and 1903, and served as the Addison Avenue Cumberland Presbyterian Church until the mid-1950s.",
+                        "After a brief stint as a VFW Post, the facility was purchased by Fred Foster, owner of famed recording company Monument Records, and transformed into Monument Studio in 1968. Managed at the time by now-legendary engineers Mort Thomassen and Tommy Strong, many fabled country recordings were produced in this era, including Kris Kristofferson's first three albums.",
+                        "In 1975, the studio was purchased by Chip Young, renamed Young'un Sound and permitted to continue its tradition of pumping out classic Nashville recordings well into the 1980s. Later, Al Jolson, Jr., son of the famous performer Al Jolson, purchased the studio and dubbed it with yet another new moniker: Masterlink Studio. It was during this era that the building transformed into a high-tech facility specializing in audio for video remixing, including mixes for TNN (Hee Haw, CMT, etc.)",
+                        "In the 1990s and 2000s, the walls of Masterlink witnessed a number of celebrated recordings, including that of Neil Young's \"Prairie Wind\" album. But due to his ailing health, Jolson was forced to shut the studio down in 2010. It sat vacant for nearly two years, and, at one point, was in serious danger of becoming a Mexican restaurant.",
+                        "Here's where we come in.",
+                        "When Southern Ground acquired the studio in 2012, we began by renovating the now 100-year-old building to restore much of its original character.  A Mix room was also added that includes an SSL 4000G+ console ATC 300's and a small overdub space.",
+                        "We were also lucky enough to inherit some of the classic recording gear that Masterlink left behind, including a Neve V3, 48 tracks of 2\" analog tape, Ampex ATR-102 master 2-track recorder and vintage Neumann U47/U48 microphones (perhaps better known as The Beatles microphone).",
+                        "Thanks to our new location, incredible on-site talent and the impeccable taste in recording equipment of those who came before us, we now have the ability to efficiently produce albums from start to finish, using a hybrid of classic analog and modern digital technology, all under one roof."
+                    ]
+                }
+            },
+            "spaces": {
+                "list": [
+                    {
+                        "name": "Studio A",
+                        "route": "/#!/spaces/studio-a",
+                        "image": "img/spaces/studio-a.jpg",
+                        "images": [
+                            "img/spaces/studio-a/SR1_6342.jpg",
+                            "img/spaces/studio-a/SR1_6346.jpg",
+                            "img/spaces/studio-a/SR1_6347.jpg",
+                            "img/spaces/studio-a/SR2_1870.jpg",
+                            "img/spaces/studio-a/SR2_1875.jpg",
+                            "img/spaces/studio-a/SR2_1878.jpg",
+                            "img/spaces/studio-a/SR2_1879.jpg",
+                            "img/spaces/studio-a/SR2_1892.jpg",
+                            "img/spaces/studio-a/SR2_1894.jpg",
+                            "img/spaces/studio-a/SR2_1895.jpg",
+                            "img/spaces/studio-a/_KPS0244.jpg",
+                            "img/spaces/studio-a/_KPS0250.jpg"
+                        ],
+                        "panoramicImages": [
+                            {
+                                "name": "Studio A Control Room",
+                                "src": "img/spaces/studio-a/panoramas/studio-a-control.jpg"
+                            },
+                            {
+                                "name": "Studio A Tracking Room",
+                                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room.jpg"
+                            },
+                            {
+                                "name": "Studio A Tracking Room View 2",
+                                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg"
+                            }
+                        ],
+                        "details": {
+                            "image": "img/spaces/slides/studio-a.jpg",
+                            "description": "<p>Studio A is our flagship studio, filled with the vibe and love synonymous with all things Southern Ground. Whether you’re looking to make a throwback retro album or a sleek modern one, we can help your imagination come to life in this one of a kind space.</p><p>We know your time at the studio is at a premium and we want to help you make the most it while you’re here. Studio A bookings include a house assistant to help maximize your studio time. Our knowledgeable assistants are fully trained in each room and ready to help your dreams become reality.</p><p>Our carefully curated collection of vintage and state-of-the-art equipment and instruments offer endless possibilities. The large tracking space offers high ceilings and the best live drum room in Nashville. With our 3 solo isolation booths and dedicated 2 guitar amp isolation booths, you can have as much isolation as you need or want. This room also includes 3 EMT 140 plates and 1 small echo chamber.</p><p>Studio A is much more than just a space to track and record music. Each booking includes 2 home cooked meals per day from our studio kitchen, made from scratch by our own Studio Mama. These meals offer a special opportunity to have home-cooked food while discussing, reflecting, and planning your time in our studio. Southern Ground offers a full-service experience you won’t forget.</p>",
+                            "specs": [
+                                "API Legacy Plus 48ch with 500 Series Bucket",
+                                "48/48 PT HDX System",
+                                "2x Otari MTR 100 Tape Machines",
+                                "TAD Mains and Barefoot MicroMain 27 Nearfield Speakers"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Studio B",
+                        "route": "/#!/spaces/studio-b",
+                        "image": "img/spaces/studio-b.jpg",
+                        "images": [
+                            "img/spaces/studio-b/MixRoomConsole.jpg",
+                            "img/spaces/studio-b/MixRoomFronttoBack.jpg"
+                        ],
+                        "panoramicImages": [
+                            {
+                                "name": "Studio B Mix Room",
+                                "src": "img/spaces/studio-b/panoramas/studio-b-mix-room.jpg"
+                            },
+                            {
+                                "name": "Studio B Overdub",
+                                "src": "img/spaces/studio-b/panoramas/studio-b.jpg"
+                            }
+                        ],
+                        "details": {
+                            "image": "img/spaces/slides/studio-b.jpg",
+                            "description": "<p>Studio B is the perfect place to mix for a week or simply finalize your mixes for the day.  Acoustically designed by Steve Durr and Associates, it is a fantastic sounding and very comfortable room with a healthy assortment of gear.  Last minute overdubs are also easy with the overdub room downstairs.</p>",
+                            "specs": [
+                                "SSL 4000 G+",
+                                "24/56 PT Native System",
+                                "ATR 102 ½ inch Tape Machine",
+                                "ATC 300s Mains and Yamaha NS-10M Nearfields"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Studio C",
+                        "route": "/#!/spaces/studio-c",
+                        "image": "img/spaces/studio-c.jpg",
+                        "images": [
+                            "img/spaces/studio-c/SR2_4385.jpg",
+                            "img/spaces/studio-c/SR2_4386.jpg",
+                            "img/spaces/studio-c/SR2_4387.jpg",
+                            "img/spaces/studio-c/SR2_4388.jpg",
+                            "img/spaces/studio-c/SR2_4390.jpg"
+                        ],
+                        "details": {
+                            "image": "img/spaces/slides/studio-c.jpg",
+                            "description": "<p>Studio C offers a very intimate feel perfect for writing, overdubs, post-production, and small tracking sessions. With 3 isolation booths, it is possible to track a band at once or setup for layering on a previous recording. It includes many instruments and amps as well as a private kitchenette.</p>",
+                            "specs": [
+                                "Assortment of Outboard Gear",
+                                "32/32 PT HDX System",
+                                "Genelec 8340APM"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Leisure",
+                        "route": "/#!/spaces/leisure",
+                        "image": "img/spaces/leisure.jpg",
+                        "images": [
+                            "img/spaces/leisure/SR2_1885.jpg",
+                            "img/spaces/leisure/SR2_1887.jpg",
+                            "img/spaces/leisure/SR2_4393.jpg"
+                        ],
+                        "panoramicImages": [
+                            {
+                                "name": "Bathrooms",
+                                "src": "img/spaces/leisure/panoramas/leisure-bathrooms.jpg"
+                            },
+                            {
+                                "name": "Kitchen",
+                                "src": "img/spaces/leisure/panoramas/leisure-kitchen.jpg"
+                            },
+                            {
+                                "name": "Library",
+                                "src": "img/spaces/leisure/panoramas/leisure-library.jpg"
+                            }
+                        ],
+                        "details": {
+                            "image": "img/spaces/slides/leisure.jpg",
+                            "description": "<p>The Southern Ground Nashville kitchen is a place where artists and crew come together to share in a communal meal.  There’s something really special about breaking in the middle of a session and coming down to the kitchen after working hard and being teased with delicious smells throughout the day.  A nutrient-rich meal sourced from local, organic farms keeps artists alert and creative instead of getting tired or “sludgy” on fast food.  The aesthetic is warm and welcoming, too.  Just being in this space feels like a good respite!</p>",
+                            "specs": [
+                                "Darts",
+                                "Thorens Record Player and Marantz Stereo",
+                                "Rebecca Wood, a freezer full of local goodness and cast iron!"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Tech Shop",
+                        "route": "/#!/spaces/tech-shop",
+                        "image": "img/spaces/tech-shop.jpg",
+                        "images": [
+                            "img/spaces/tech-shop/sgn-techshop.jpg",
+                            "img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg"
+                        ],
+                        "details": {
+                            "image": "img/spaces/slides/tech-shop.jpg",
+                            "description": "<p class='centered'>Where the broken come back to life!</p>"
+                        }
+                    }
+                ]
+            },
+            "people": {
+                "list": [
+                    {
+                        "name": "Matt Mangano",
+                        "route": "/#!/people/matt-mangano",
+                        "title": "Studio Director",
+                        "image": "img/people/matt-mangano.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Position at Southern Ground Nashville:",
+                                    "answer": "Studio Director"
+                                },
+                                {
+                                    "question": "Originally from:",
+                                    "answer": "Visalia, California"
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
+                                },
+                                {
+                                    "question": "Favorite Studio Mama Creation:",
+                                    "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
+                                },
+                                {
+                                    "question": "Like most about SGN:",
+                                    "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
+                                },
+                                {
+                                    "question": "Fave piece of gear/equipment:",
+                                    "answer": "Ampex ATR-102."
+                                },
+                                {
+                                    "question": "Hidden Talents?",
+                                    "answer": "I can juggle."
+                                },
+                                {
+                                    "question": "Hobbies?",
+                                    "answer": "Gardening and mindlessly reading Wikipedia entries."
+                                },
+                                {
+                                    "question": "Best Dollar store purchase?",
+                                    "answer": "Official Darth Vader Key Chain."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Brandon Bell",
+                        "route": "/#!/people/brandon-bell",
+                        "title": "Studio Director/Chief Engineer",
+                        "image": "img/people/brandon-bell.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Position at Southern Ground Nashville:",
+                                    "answer": "Studio Director/Chief Engineer"
+                                },
+                                {
+                                    "question": "Originally from:",
+                                    "answer": "Heber Springs, Arkansas"
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "In 2001 I moved to Middle TN to go to school (and chase a girl.) I graduated MTSU, married that girl and landed a great gig."
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "Hard work, Matt Mangano and magic."
+                                },
+                                {
+                                    "question": "Favorite Studio Mama Creation:",
+                                    "answer": "Chocolate Chip Banana Bread!"
+                                },
+                                {
+                                    "question": "Like most about SGN:",
+                                    "answer": "Tight knit group of folks and an amazing space!"
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "The variety of tasks.  Engineering/Producing, building and fixing things, and Shakin and Howdyin!"
+                                },
+                                {
+                                    "question": "Fave piece of gear/equipment:",
+                                    "answer": "I really dig our API console."
+                                },
+                                {
+                                    "question": "Hidden Talents?",
+                                    "answer": "I'm a pretty mean finger knitter."
+                                },
+                                {
+                                    "question": "Hobbies?",
+                                    "answer": "Woodworking and running."
+                                },
+                                {
+                                    "question": "Best Dollar store purchase?",
+                                    "answer": "How can you compete with a $1 whoopie cushion?"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Rebecca Wood",
+                        "route": "/#!/people/rebecca-wood",
+                        "title": "Studio Mama",
+                        "image": "img/people/rebecca-wood.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Position at Southern Ground Nashville:",
+                                    "answer": "Studio Mama"
+                                },
+                                {
+                                    "question": "Originally from:",
+                                    "answer": "Columbus, Georgia"
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "In April of 2012, my family visited Nashville over Spring Break, while The Wood Brothers (my husband’s band) were working on a project.  We visited the studio at that time since the band was on the Southern Ground label at the time.  We all fell in love with the city.  Oliver and I went back to Atlanta after spending a week here and decided to consider moving.  We moved into a rental house sight-unseen that very July."
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "After the adventure of moving fairly suddenly, getting the kids registered for school, and unpacking our lives, I set to the adventure of finding work. I sent my resume to nearly every contact I had and did some cold-calling. One afternoon, I decided to send my resume to Zac, knowing that he’d have plenty of contacts in Nashville. He then forwarded it to Matt Mangano, the studio’s Director, since the studio was just getting ready for regular use. Matt hired me, neither of us knowing exactly what the job was going to be.  I’ve loved every day here since!!"
+                                },
+                                {
+                                    "question": "Favorite Studio Mama Creation:",
+                                    "answer": "Levi Lowry Chicken (chicken leg quarters marinated in a mix of soy sauce, orange marmalade, fresh ginger, and mustard powder) with brown rice and stir fry vegetables.  Poundcake or Blackberry Cobbler."
+                                },
+                                {
+                                    "question": "Like most about SGN:",
+                                    "answer": "The smell of wood and baked goods."
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "This job allows me to wear all my best hats. I equally enjoy the personal and professional relationships I build and the days I get to spend at my desk doing expense reports and booking."
+                                },
+                                {
+                                    "question": "Fave piece of gear/equipment:",
+                                    "answer": "CAST IRON SKILLETS!"
+                                },
+                                {
+                                    "question": "Hidden Talents?",
+                                    "answer": "Building crafty puppets, lanterns, and putting together crazy costumes for my Krewe of the Grateful Gluttons events in Atlanta."
+                                },
+                                {
+                                    "question": "Hobbies?",
+                                    "answer": "Cooking, baking, crafting, good whiskey."
+                                },
+                                {
+                                    "question": "Best Dollar store purchase?",
+                                    "answer": "Glowsticks, duh."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Dan Davis",
+                        "title": "Studio Assistant",
+                        "image": "img/people/dan-davis.jpg"
+                    }
+                ]
+            },
+            "legacy": {
+                "list": [
+
+                    {
+                        "name": "Carly Pearce",
+                        "title": "Every Little Thing",
+                        "year": "2017",
+                        "image": "img/legacy/Carly_Pearce-Every_Little_Thing_.png"
+                    },
+                    {
+                        "name": "CBDB",
+                        "title": "Unintentional Liar",
+                        "year": "2018",
+                        "image": "img/legacy/CBDB-Unintentional_Liar_.jpg"
+                    },
+                    {
+                        "name": "Old Dominion",
+                        "title": "Happy Endings",
+                        "year": "2017",
+                        "image": "img/legacy/Old_Dominion-Happy_Endings_.jpg"
+                    },
+                    {
+                        "name": "Megadeth",
+                        "title": "Dystopia",
+                        "year": "2016",
+                        "image": "img/legacy/Megadeth-Dystopia_.jpg"
+                    },
+                    {
+                        "name": "Radford Windham",
+                        "title": "Step Back Cadillac",
+                        "year": "2017",
+                        "image": "img/legacy/Radford_Windham-Step_Back_Cadillac_.jpg"
+                    },
+                    {
+                        "name": "Luke Bulla",
+                        "title": "Who Loves You Better",
+                        "year": "2016",
+                        "image": "img/legacy/Luke_Bulla-Who_Loves_You_Better_.jpg"
+                    },
+                    {
+                        "name": "Bryan Sutton",
+                        "title": "The More I Learn",
+                        "year": "2016",
+                        "image": "img/legacy/Bryan_Sutton-The_More_I_Learn_.png"
+                    },
+                    {
+                        "name": "Boots Randolph",
+                        "title": "Boots and Stockings",
+                        "year": "2014",
+                        "image": "img/legacy/Boots_Randolph-Boots_and_Stockings_.jpg"
+                    },
+                    {
+                        "name": "Kacey Musgraves",
+                        "title": "A Very Kacey Christmas",
+                        "year": "2016",
+                        "image": "img/legacy/Kacey_Musgraves-A_Very_Kacey_Christmas_.png"
+                    },
+                    {
+                        "name": "Indigo Girls",
+                        "title": "Holly Happy Days",
+                        "year": "2010",
+                        "image": "img/legacy/Indigo_Girls-Holly_Happy_Days_.jpg"
+                    },
+                    {
+                        "name": "Clay Cook",
+                        "title": "North Star",
+                        "year": "2013",
+                        "image": "img/legacy/Clay_Cook-North_Star_.jpg"
+                    },
+                    {
+                        "name": "Clay Cook",
+                        "title": "Unobstructed View",
+                        "year": "2017",
+                        "image": "img/legacy/Clay_Cook-Unobstructed_View_.jpg"
+                    },
+                    {
+                        "name": "Fernando Ortega",
+                        "title": "The Crucifixion of Jesus",
+                        "year": "2017",
+                        "image": "img/legacy/Fernando_Ortega-The_Crucifixion_Of_Jesus_.jpg"
+                    },
+                    {
+                        "name": "Darius Rucker",
+                        "title": "When Was The Last Time",
+                        "year": "2017",
+                        "image": "img/legacy/Darius_Rucker-When_Was_The_Last_Time_.jpg"
+                    },
+                    {
+                        "name": "Dwight Yoakam",
+                        "title": "Swimmin' Pools, Movie Stars...",
+                        "year": "2019",
+                        "image": "img/legacy/Dwight_Yoakam-Swimmin_Pools_Movie_Stars_.jpg"
+                    },
+                    {
+                        "name": "Charlie Worsham",
+                        "title": "Beginning of Things",
+                        "year": "2017",
+                        "image": "img/legacy/Charlie_Worsham-Beginning_Of_Things_.jpg"
+                    },
+                    {
+                        "name": "Martin Harley w/Daniel Kimbro",
+                        "title": "Live At Southern Ground",
+                        "year": "2015",
+                        "image": "img/legacy/Martin_Harley_and_Daniel_Kimbro-Live_At_Southern_Ground_.jpg"
+                    },
+                    {
+                        "name": "Ron Block",
+                        "title": "Hogan's House of Music",
+                        "year": "2015",
+                        "image": "img/legacy/Ron_Block-Hogans_House_of_Music-2015.jpg"
+                    },
+                    {
+                        "name": "Brian Setzer",
+                        "title": "Rockin' Rudolph",
+                        "year": "2015",
+                        "image": "img/legacy/Brian_Setzer-Rockin_Rudolph-2015.jpg"
+                    },
+                    {
+                        "name": "A Thousand Horses",
+                        "title": "Southernality",
+                        "year": "2015",
+                        "image": "img/legacy/A_Thousand_Horses-Southernality-2015.jpg"
+                    },
+                    {
+                        "name": "The Wood Brothers",
+                        "title": "Paradise",
+                        "year": "2015",
+                        "image": "img/legacy/The_Wood_Brothers-Paradise-2015.jpg"
+                    },
+                    {
+                        "name": "Zac Brown Band",
+                        "title": "Jekyll + Hyde",
+                        "year": "2015",
+                        "image": "img/legacy/Zac_Brown_Band-Jekyll_Hyde-2015.jpg"
+                    },
+                    {
+                        "name": "Foo Fighters",
+                        "title": "Sonic Highway",
+                        "year": "2014",
+                        "image": "img/legacy/Foo_Fighters-Sonic_Highways-2014.jpg"
+                    },
+                    {
+                        "name": "Blake Shelton",
+                        "title": "Bringing Back the Sunshine",
+                        "year": "2014",
+                        "image": "img/legacy/Blake_Shelton-Bringing_Back_The_Sunshine-2014.jpg"
+                    },
+                    {
+                        "name": "Levi Lowrey",
+                        "title": "Levi Lowrey",
+                        "year": "2013",
+                        "image": "img/legacy/Levi_Lowrey-Levi_Lowrey-2013.jpg"
+                    },
+                    {
+                        "name": "The Wood Brothers",
+                        "title": "The Muse",
+                        "year": "2013",
+                        "image": "img/legacy/The_Wood_Brothers-The_Muse-2013.jpg"
+                    },
+                    {
+                        "name": "Zac_Brown_Band",
+                        "title": "Grohl Sessions",
+                        "year": "2013",
+                        "image": "img/legacy/Zac_Brown_Band-Grohl_Sessions-2013.jpg"
+                    },
+                    {
+                        "name": "Indigo Girls",
+                        "title": "Holly Happy Days",
+                        "year": "2010",
+                        "image": "img/legacy/Indigo_Girls-Holly_Happy_Days-2010.jpg"
+                    },
+                    {
+                        "name": "Jamie Oldaker",
+                        "title": "Mad Dogs & Okies",
+                        "year": "2005",
+                        "image": "img/legacy/Jamie_Oldaker-Mad_Dogs_and_Okies-2005.jpg"
+                    },
+                    {
+                        "name": "Neil Young",
+                        "title": "Prairie Wind",
+                        "year": "2005",
+                        "image": "img/legacy/Neil_Young-Prairie_Wind-2005.jpg"
+                    },
+                    {
+                        "name": "Victor Wooten",
+                        "title": "Yin Yang",
+                        "year": "1999",
+                        "image": "img/legacy/Victor_Wooten-Yin_Yang-1999.jpg"
+                    },
+                    {
+                        "name": "Jerry Douglass",
+                        "title": "Restless on the Farm",
+                        "year": "1998",
+                        "image": "img/legacy/Jerry_Douglass-Restless_on_the_Farm-1998.jpg"
+                    },
+                    {
+                        "name": "Allman Brothers",
+                        "title": "Brothers of the Road",
+                        "year": "1981",
+                        "image": "img/legacy/Allman_Brothers-Brothers_of_the_Road-1981.jpg"
+                    },
+                    {
+                        "name": "Allman Brothers",
+                        "title": "Reach for te Sky",
+                        "year": "1980",
+                        "image": "img/legacy/Allman_Brothers-Reach_for_the_Sky-1980.jpg"
+                    },
+                    {
+                        "name": "Larry Gatlin",
+                        "title": "Oh Brother",
+                        "year": "1978",
+                        "image": "img/legacy/Larry_Gatlin-Oh_Brother-1978.jpg"
+                    },
+                    {
+                        "name": "Larry Gatlin",
+                        "title": "Love is a Game",
+                        "year": "1977",
+                        "image": "img/legacy/Larry_Gatlin-Love_is_a_Game-1977.jpg"
+                    },
+                    {
+                        "name": "Larry Gatlin",
+                        "title": "High Time",
+                        "year": "1976",
+                        "image": "img/legacy/Larry_Gatlin-High_Time-1976.jpg"
+                    },
+                    {
+                        "name": "Larry Gatlin",
+                        "title": "The Pilgrim",
+                        "year": "1974",
+                        "image": "img/legacy/Larry_Gatlin-The_Pilgrim-1974.jpg"
+                    },
+                    {
+                        "name": "Larry Gatlin",
+                        "title": "Rain Rainbow",
+                        "year": "1974",
+                        "image": "img/legacy/Larry_Gatlin-Rain_Rainbow-1974.jpg"
+                    },
+                    {
+                        "name": "Kris Kristofferson",
+                        "title": "Jesus Was a Capricorn",
+                        "year": "1972",
+                        "image": "img/legacy/Kris_Kristofferson-Jesus_Was_a_Capricorn-1972.jpg"
+                    },
+                    {
+                        "name": "Kris Kristofferson",
+                        "title": "Border Lord",
+                        "year": "1971",
+                        "image": "img/legacy/Kris_Kristofferson-Border_Lord-1971.jpg"
+                    },
+                    {
+                        "name": "Kris Kristofferson",
+                        "title": "The Silver Tongued Devil and I",
+                        "year": "1971",
+                        "image": "img/legacy/Kris_Kristofferson-The_Silver_Tongued_Devil_and_I-1971.jpg"
+                    },
+                    {
+                        "name": "Kris Kristofferson",
+                        "title": "Kristofferson",
+                        "year": "1969",
+                        "image": "img/legacy/Kris_Kristofferson-Kristofferson-1969.jpg"
+                    },
+                    {
+                        "name": "Roger Miller",
+                        "title": "Roger Miller",
+                        "year": "1969",
+                        "image": "img/legacy/Roger_Miller-Roger_Miller-1969.jpg"
+                    },
+                    {
+                        "name": "Tony Joe White",
+                        "title": "Continued",
+                        "year": "1969",
+                        "image": "img/legacy/Tony_Joe_White-Continued-1969.jpg"
+                    }
+                ],
+                "artists": [
+                    "A Thousand Horses",
+                    "Allman Brothers",
+                    "Ray Benson",
+                    "Ron Block",
+                    "Bonnie Bramlett",
+                    "Shirley Caesar",
+                    "Don Cherry",
+                    "Eric Clapton",
+                    "Jerry Douglas and Steve Earle",
+                    "Ronnie Dunn",
+                    "Joe Ely",
+                    "Foo Fighters",
+                    "Peter Frampton",
+                    "Emmylou Harris",
+                    "Faith Hill and Little Texas",
+                    "Gatlin Brothers",
+                    "Vince Gill",
+                    "Indigo Girls",
+                    "Grandpa Jones",
+                    "Kris Kristofferson",
+                    "Jerry Lee Lewis",
+                    "Levi Lowrey",
+                    "Taj Mahal",
+                    "Roger Miller",
+                    "Willie Nelson",
+                    "Ray Pennington",
+                    "Steve Pryor",
+                    "Boots Randolph",
+                    "Brian Setzer",
+                    "Blake Shelton",
+                    "Shel Silverstein",
+                    "Sammi Smith",
+                    "Ray Stevens",
+                    "Mel Tillis",
+                    "Keeley Valentino",
+                    "Dottie West",
+                    "Tony Joe White",
+                    "Hank Williams, Jr.",
+                    "The Wood Brothers",
+                    "Victor Wooten",
+                    "Neil Young",
+                    "Zac Brown Band"
+                ]
+            },
+            "gear": {
+                "sections": [
+                    {
+                        "name": "Tracking Room Equipment",
+                        "groups": [
+                            [
+                                {
+                                    "name": "CONSOLE",
+                                    "equipment": [
+                                        "API LEGACY PLUS",
+                                        "(48 CHANNELS WITH 500 SERIES OPTIONS BUCKET)",
+                                        "VISION AUTOMATION"
+                                    ]
+                                },
+                                {
+                                    "name": "MULTI-TRACK RECORDERS",
+                                    "equipment": [
+                                        "PROTOOLS HD 10 & 11 (HDX) - 48 I/O",
+                                        "OTARI MTR-100A (2) – 24TK 2\" TAPE MACHINE"
+                                    ]
+                                },
+                                {
+                                    "name": "2 TRACK RECORDERS",
+                                    "equipment": [
+                                        "ALESIS MASTERLINK"
+                                    ]
+                                },
+                                {
+                                    "name": "A/D CONVERTER",
+                                    "equipment": [
+                                        "APOGEE SYMPHONY (2) 48 I/O"
+                                    ]
+                                },
+                                {
+                                    "name": "SYNC",
+                                    "equipment": [
+                                        "HORITA BLACKBURST GENERATOR (NTSC/PAL)",
+                                        "APOGEE BIG BEN",
+                                        "DIGIDESIGN SYNC I/O",
+                                        "BRAINSTORM SR15 DISTRYPALIZER",
+                                        "OTARI EC-201 TIME CODE READER (6)"
+                                    ]
+                                },
+                                {
+                                    "name": "OTHER",
+                                    "equipment": [
+                                        "CLASP SYSTEM – UP TO 48",
+                                        "SIMULTANEOUS TRACKS"
+                                    ]
+                                },
+                                {
+                                    "name": "SPEAKERS",
+                                    "equipment": [
+                                        "BAREFOOT SOUND MICROMAIN27",
+                                        "TAD CUSTOM MAINS",
+                                        "YAMAHA NS-10"
+                                    ]
+                                },
+                                {
+                                    "name": "MIC PREAMPS",
+                                    "equipment": [
+                                        "BAE AVEDIS 312 (5)",
+                                        "CHANDLER GERMANIUM (2)",
+                                        "CHANDLER TG2 (2 CHANNELS)",
+                                        "GML 8304 (4)",
+                                        "HARDY M-1 (2)",
+                                        "MASTERING LAB MIC PRES (2)",
+                                        "QUAD EIGHT CUSTOM (3)",
+                                        "TELEFUNKEN V76 (2)",
+                                        "VINTECH VA-573 (2)"
+                                    ]
+                                },
+                                {
+                                    "name": "NEVE SIDECAR",
+                                    "equipment": [
+                                        "NEVE 1066 (4)",
+                                        "NEVE 1073 (4)",
+                                        "NEVE 1081 (4)"
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "name": "EQ",
+                                    "equipment": [
+                                        "API 550A (1-24, CONSOLE)",
+                                        "API 550L (25-48, CONSOLE)",
+                                        "API 215L (8) API 560 (2)",
+                                        "MAAG EQ2 (2)",
+                                        "AVEDIS E15 (4)",
+                                        "AVEDIS E27 (2)",
+                                        "HARRISON 32 (2)",
+                                        "PULTEC EQP-1RS",
+                                        "GML 8200",
+                                        "SONTEC MEP-250C (2)",
+                                        "SUMMIT EQP-200A"
+                                    ]
+                                },
+                                {
+                                    "name": "COMPRESSORS",
+                                    "equipment": [
+                                        "API 225L (16, CONSOLE)",
+                                        "API 2500 (CONSOLE)",
+                                        "CRANE SONG STC-8",
+                                        "DBX 160 (2)",
+                                        "EMPIRICAL LABS DISTRESSORS (4)",
+                                        "GML 8900",
+                                        "NEVE 33609",
+                                        "RETRO STA-LEVEL",
+                                        "RETRO DOUBLEWIDE",
+                                        "SSL LOGIC FX G384",
+                                        "TELETRONIX LA-2A",
+                                        "TELETRONIX LA-3A (2)",
+                                        "TUBE TECH CL1B",
+                                        "UREI 1178",
+                                        "UREI 1176 “BLUESTRIPE”",
+                                        "UREI 1176LN (2)",
+                                        "CHANDLER TG1",
+                                        "EVENTIDE OMNIPRESSOR",
+                                        "STANDARD AUDIO LEVEL-OR"
+                                    ]
+                                },
+                                {
+                                    "name": "REVERB & EFFECTS",
+                                    "equipment": [
+                                        "AKG BX5",
+                                        "ELECTRIX FILTER FACTORY",
+                                        "EMT 140 PLATE REVERB (3)",
+                                        "LEXICON 480L",
+                                        "LEXICON PCM 41",
+                                        "LEXICON PCM 42",
+                                        "MOOG ANALOG DELAY",
+                                        "BRICASTI M7",
+                                        "ROLAND SPACE ECHO 201 (FLOATS)",
+                                        "TECH 21 SANSAMP"
+                                    ]
+                                },
+                                {
+                                    "name": "OTHER OUTBOARD",
+                                    "equipment": [
+                                        "API 205L DI (2, CONSOLE)",
+                                        "RADIAL ETC REAMP",
+                                        "RADIAL PHAZE Q TOOL"
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        "name": "Mix Room Equipment",
+                        "groups": [
+                            [
+                                {
+                                    "name": "CONSOLE",
+                                    "equipment": [
+                                        "SSL 4000 G SERIES – 60 CHANNELS"
+                                    ]
+                                },
+                                {
+                                    "name": "MULTI-TRACK RECORDERS",
+                                    "equipment": [
+                                        "PROTOOLS 10 HD – 24 IN/56 OUT"
+                                    ]
+                                },
+                                {
+                                    "name": "2 TRACK RECORDERS",
+                                    "equipment": [
+                                        "AMPEX ATR-102 TAPE MACHINE "
+                                    ]
+                                },
+                                {
+                                    "name": "A/D CONVERTER",
+                                    "equipment": [
+                                        "CRANE SONG HEDD",
+                                        "DIGIDESIGN 192 BLUE FACE (4)"
+                                    ]
+                                },
+                                {
+                                    "name": "SYNC",
+                                    "equipment": [
+                                        "APOGEE BIG BEN",
+                                        "DIGIDESIGN SYNC I/O"
+                                    ]
+                                },
+                                {
+                                    "name": "SPEAKERS",
+                                    "equipment": [
+                                        "ATC SCM300 MAINS",
+                                        "AURATONE",
+                                        "YAMAHA NS-10"
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "name": "EQ",
+                                    "equipment": [
+                                        "API 550B (2)",
+                                        "GML 8200",
+                                        "MAAG EQ2 (2)",
+                                        "RETRO 2A3"
+                                    ]
+                                },
+                                {
+                                    "name": "COMPRESSORS",
+                                    "equipment": [
+                                        "API 2500",
+                                        "BAE 10DC (2)",
+                                        "DBX 160 (2)",
+                                        "EMPIRICAL LABS FATSO JR.",
+                                        "GML 8900",
+                                        "RETRO STA-LEVEL",
+                                        "SOUTHERN GROUND CUSTOM 1176",
+                                        "SPL TRANSIENT DESIGNER",
+                                        "TELETRONIX LA2A",
+                                        "U.S. ARMY SIGNAL CORPS – FEDERAL",
+                                        "UA 1176 (BLUE STRIPE)",
+                                        "UA LA3A (2)"
+                                    ]
+                                },
+                                {
+                                    "name": "DYNAMIC EQ",
+                                    "equipment": [
+                                        "BSS DPR-901 II",
+                                        "VALLEY PEOPLE COMANDER (2)",
+                                        "VALLEY GAIN BRAIN II (2)"
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        "name": "Microphones",
+                        "groups": [
+                            [
+                                {
+                                    "equipment": [
+                                        "AEA R88",
+                                        "STEREO RIBBON AKG C414-EB (2)",
+                                        "AKG C414 B-ULS (2)",
+                                        "AKG C451E (4)",
+                                        "AKG C452 EB AKG D112",
+                                        "BEYERDYNAMIC M88 (4)",
+                                        "BEYERDYNAMIC M160N (3)",
+                                        "COLES 4038 (4)",
+                                        "COUNTRYMAN EM-101 (3)",
+                                        "CUSTOM BINAURAL HEAD MIC",
+                                        "EV RE-15 (4)",
+                                        "EV RE-16 (3)",
+                                        "EV RE-20",
+                                        "GEFELL UM70",
+                                        "GEFELL M296 (2)",
+                                        "JOSEPHSON E22 (3)",
+                                        "MIKTEK CV-4 TUBE",
+                                        "MICROTECH-GEFELL M-300 (2)",
+                                        "NEUMANN KM54",
+                                        "NEUMANN KM56",
+                                        "NEUMANN KM184 (2)",
+                                        "NEUMANN M582 W/M58 CAPSULE (2)",
+                                        "NEUMANN M582 W/ M70 CAPSULE",
+                                        "NEUMANN M269 ",
+                                        "NEUMANN U47 ",
+                                        "NEUMANN U47 ",
+                                        "FET NEUMANN U48 ",
+                                        "VF NEUMANN U48 ",
+                                        "NV NEUMANN U67 ",
+                                        "NEUMANN U87 (5) ",
+                                        "RCA 77D ROYER 121 (2) ",
+                                        "SENNHEISER 441 ",
+                                        "SENNHEISER 421 (7) ",
+                                        "SENNHEISER MKH-415T (2) ",
+                                        "SHURE SM7 (4) ",
+                                        "SHURE SM57 (9) ",
+                                        "SOUNDELUX E47  ",
+                                        "SONY C48 ",
+                                        "YAMAHA NS10 WOOFER MOD ",
+                                        "YAMAHA SUBKICK ",
+                                        "MANY OTHER UNUSUAL MICROPHONES AVAILABLE BY REQUEST"
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        "name": "Drums",
+                        "groups": [
+                            [
+                                {
+                                    "name": "KIT #1 ",
+                                    "equipment": [
+                                        "LATE SIXTIES WHITE OYSTER PEARL SLINGERLAND",
+                                        "9 X 13 RACK ",
+                                        "16 X 16 FLOOR (LEEDY)",
+                                        "14 X 22 KICK"
+                                    ]
+                                },
+                                {
+                                    "name": "KIT #2 ",
+                                    "equipment": [
+                                        "LATE SIXTIES BLACK OYSTER PEARL SLINGERLAND",
+                                        "8 X 12 RACK",
+                                        "9 X 13 RACK",
+                                        "16 X16 FLOOR",
+                                        "16 X 22 KICK"
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "name": "SNARES",
+                                    "equipment": [
+                                        "SLINGERLAND 6 X14 WOOD (MATCHES KIT&nbsp;#1) ",
+                                        "SLINGERLAND 5 1/2 X 14 METAL ",
+                                        "1967 LUDWIG 5 1/2 X 14 SENSAPHONIC ",
+                                        "NEW LUDWIG BLACK BEAUTY 5 1/2 X 14 ",
+                                        "LEEDY 7 X 14 WOOD ",
+                                        "LEEDY 7 X 15 WOOD ",
+                                        "PEARL SENSITONE 6 X 14 BRASS ",
+                                        "ROGERS 6 LUG 5 X14 WOOD ",
+                                        "MAPEX 5 X10 POPCORN METAL"
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    {
+                        "name": "Amplifiers",
+                        "groups": [
+                            [
+                                {
+                                    "name": "BASS AMPS",
+                                    "equipment": [
+                                        "PORTAFLEX B15 (3)",
+                                        "ROCKET BASS B-100R",
+                                        "SVTVR"
+                                    ]
+                                },
+                                {
+                                    "name": "GUITAR AMPS",
+                                    "equipment": [
+                                        "65 LONDON (HEAD)",
+                                        "AMPEG REVERBEROCKET. R-12-RB",
+                                        "FENDER CHAMP. 5F1",
+                                        "FENDER DELUXE REVERB",
+                                        "FENDER TWIN",
+                                        "GIBSON LES PAUL GA-40",
+                                        "GOODSELL 33 CUSTOM MK2",
+                                        "GRETSCH",
+                                        "KAY 504",
+                                        "SILVERTONE 1484",
+                                        "TWIN TWELVE” HEAD",
+                                        "TRACE ACOUSTIC TA200",
+                                        "VINTAGE SOUNDAMPS VINTAGE 40",
+                                        "VOX BRUNO TB35C2",
+                                        "Z Z WRECK ZA-31"
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "name": "SPEAKER CABINETS",
+                                    "equipment": [
+                                        "65 LONDON (CAB)",
+                                        "FENDER VIBRATONE",
+                                        "TED WEBER",
+                                        "Z 2X12\"",
+                                        "LESLIE 122"
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "happenings": {
+                "instagramURL": "https://www.instagram.com/southerngroundnashville_/"
+            }
         }
-      },
-      "spaces": {
-        "list": [
-          {
-            "name": "Studio A",
-            "route": "/#!/spaces/studio-a",
-            "image": "img/spaces/studio-a.jpg",
-            "images": [
-              "img/spaces/studio-a/SR1_6342.jpg",
-              "img/spaces/studio-a/SR1_6346.jpg",
-              "img/spaces/studio-a/SR1_6347.jpg",
-              "img/spaces/studio-a/SR2_1870.jpg",
-              "img/spaces/studio-a/SR2_1875.jpg",
-              "img/spaces/studio-a/SR2_1878.jpg",
-              "img/spaces/studio-a/SR2_1879.jpg",
-              "img/spaces/studio-a/SR2_1892.jpg",
-              "img/spaces/studio-a/SR2_1894.jpg",
-              "img/spaces/studio-a/SR2_1895.jpg",
-              "img/spaces/studio-a/_KPS0244.jpg",
-              "img/spaces/studio-a/_KPS0250.jpg"
-            ],
-            "panoramicImages": [
-              {
-                "name": "Studio A Control Room",
-                "src": "img/spaces/studio-a/panoramas/studio-a-control.jpg"
-              },
-              {
-                "name": "Studio A Tracking Room",
-                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room.jpg"
-              },
-              {
-                "name": "Studio A Tracking Room View 2",
-                "src": "img/spaces/studio-a/panoramas/studio-a-tracking-room-view-2.jpg"
-              }
-            ],
-            "details": {
-              "image": "img/spaces/slides/studio-a.jpg",
-              "description": "<p>Studio A is our flagship studio, filled with the vibe and love synonymous with all things Southern Ground. Whether you’re looking to make a throwback retro album or a sleek modern one, we can help your imagination come to life in this one of a kind space.</p><p>We know your time at the studio is at a premium and we want to help you make the most it while you’re here. Studio A bookings include a house assistant to help maximize your studio time. Our knowledgeable assistants are fully trained in each room and ready to help your dreams become reality.</p><p>Our carefully curated collection of vintage and state-of-the-art equipment and instruments offer endless possibilities. The large tracking space offers high ceilings and the best live drum room in Nashville. With our 3 solo isolation booths and dedicated 2 guitar amp isolation booths, you can have as much isolation as you need or want. This room also includes 3 EMT 140 plates and 1 small echo chamber.</p><p>Studio A is much more than just a space to track and record music. Each booking includes 2 home cooked meals per day from our studio kitchen, made from scratch by our own Studio Mama. These meals offer a special opportunity to have home-cooked food while discussing, reflecting, and planning your time in our studio. Southern Ground offers a full-service experience you won’t forget.</p>",
-              "specs": [
-                "API Legacy Plus 48ch with 500 Series Bucket",
-                "48/48 PT HDX System",
-                "2x Otari MTR 100 Tape Machines",
-                "TAD Mains and Barefoot MicroMain 27 Nearfield Speakers"
-              ]
-            }
-          },
-          {
-            "name": "Studio B",
-            "route": "/#!/spaces/studio-b",
-            "image": "img/spaces/studio-b.jpg",
-            "images": [
-              "img/spaces/studio-b/MixRoomConsole.jpg",
-              "img/spaces/studio-b/MixRoomFronttoBack.jpg"
-            ],
-            "panoramicImages": [
-              {
-                "name": "Studio B Mix Room",
-                "src": "img/spaces/studio-b/panoramas/studio-b-mix-room.jpg"
-              },
-              {
-                "name": "Studio B Overdub",
-                "src": "img/spaces/studio-b/panoramas/studio-b.jpg"
-              }
-            ],
-            "details": {
-              "image": "img/spaces/slides/studio-b.jpg",
-              "description": "<p>Studio B is the perfect place to mix for a week or simply finalize your mixes for the day.  Acoustically designed by Steve Durr and Associates, it is a fantastic sounding and very comfortable room with a healthy assortment of gear.  Last minute overdubs are also easy with the overdub room downstairs.</p>",
-              "specs": [
-                "SSL 4000 G+",
-                "24/56 PT Native System",
-                "ATR 102 ½ inch Tape Machine",
-                "ATC 300s Mains and Yamaha NS-10M Nearfields"
-              ]
-            }
-          },
-          {
-            "name": "Studio C",
-            "route": "/#!/spaces/studio-c",
-            "image": "img/spaces/studio-c.jpg",
-            "images": [
-              "img/spaces/studio-c/SR2_4385.jpg",
-              "img/spaces/studio-c/SR2_4386.jpg",
-              "img/spaces/studio-c/SR2_4387.jpg",
-              "img/spaces/studio-c/SR2_4388.jpg",
-              "img/spaces/studio-c/SR2_4390.jpg"
-            ],
-            "details": {
-              "image": "img/spaces/slides/studio-c.jpg",
-              "description": "<p>Studio C offers a very intimate feel perfect for writing, overdubs, post-production, and small tracking sessions. With 3 isolation booths, it is possible to track a band at once or setup for layering on a previous recording. It includes many instruments and amps as well as a private kitchenette.</p>",
-              "specs": [
-                "Assortment of Outboard Gear",
-                "32/32 PT HDX System",
-                "Genelec 8340APM"
-              ]
-            }
-          },
-          {
-            "name": "Leisure",
-            "route": "/#!/spaces/leisure",
-            "image": "img/spaces/leisure.jpg",
-            "images": [
-              "img/spaces/leisure/SR2_1885.jpg",
-              "img/spaces/leisure/SR2_1887.jpg",
-              "img/spaces/leisure/SR2_4393.jpg"
-            ],
-            "panoramicImages": [
-              {
-                "name": "Bathrooms",
-                "src": "img/spaces/leisure/panoramas/leisure-bathrooms.jpg"
-              },
-              {
-                "name": "Kitchen",
-                "src": "img/spaces/leisure/panoramas/leisure-kitchen.jpg"
-              },
-              {
-                "name": "Library",
-                "src": "img/spaces/leisure/panoramas/leisure-library.jpg"
-              }
-            ],
-            "details": {
-              "image": "img/spaces/slides/leisure.jpg",
-              "description": "<p>The Southern Ground Nashville kitchen is a place where artists and crew come together to share in a communal meal.  There’s something really special about breaking in the middle of a session and coming down to the kitchen after working hard and being teased with delicious smells throughout the day.  A nutrient-rich meal sourced from local, organic farms keeps artists alert and creative instead of getting tired or “sludgy” on fast food.  The aesthetic is warm and welcoming, too.  Just being in this space feels like a good respite!</p>",
-              "specs": [
-                "Darts",
-                "Thorens Record Player and Marantz Stereo",
-                "Rebecca Wood, a freezer full of local goodness and cast iron!"
-              ]
-            }
-          },
-          {
-            "name": "Tech Shop",
-            "route": "/#!/spaces/tech-shop",
-            "image": "img/spaces/tech-shop.jpg",
-            "images": [
-              "img/spaces/tech-shop/sgn-techshop.jpg",
-              "img/spaces/tech-shop/SGN-Shop-3D-Planet.jpg"
-            ],
-            "details": {
-              "image": "img/spaces/slides/tech-shop.jpg",
-              "description": "<p class='centered'>Where the broken come back to life!</p>"
-            }
-          }
-        ]
-      },
-      "people": {
-        "list": [
-          {
-            "name": "Matt Mangano",
-            "route": "/#!/people/matt-mangano",
-            "title": "Studio Director",
-            "image": "img/people/matt-mangano.jpg",
-            "bio": {
-              "questions": [
-                {
-                  "question": "Position at Southern Ground Nashville:",
-                  "answer": "Studio Director"
-                },
-                {
-                  "question": "Originally from:",
-                  "answer": "Visalia, California"
-                },
-                {
-                  "question": "How you got to Nashville:",
-                  "answer": "I came to Nashville to join a band. The band didn't work out, but it led to many other fantastic opportunities that made me decide to stay."
-                },
-                {
-                  "question": "How you got to SGN:",
-                  "answer": "I was working for Zac's record label, making records in my basement studio. The time came for the operation to grow, and I helped Zac find the facility and open the studio."
-                },
-                {
-                  "question": "Favorite Studio Mama Creation:",
-                  "answer": "Levi Chicken followed by pound cake. Actually, forget the chicken - I'll just have the pound cake."
-                },
-                {
-                  "question": "Like most about SGN:",
-                  "answer": "The studio is a home away from home. Every single bit of this place was made with love, especially the love for music, art, and the preservation of their history."
-                },
-                {
-                  "question": "Best part of your job:",
-                  "answer": "Working with my co-workers. Not only are they immensely talented in their craft, they are fiercely committed to doing whatever it takes to get the job done."
-                },
-                {
-                  "question": "Fave piece of gear/equipment:",
-                  "answer": "Ampex ATR-102."
-                },
-                {
-                  "question": "Hidden Talents?",
-                  "answer": "I can juggle."
-                },
-                {
-                  "question": "Hobbies?",
-                  "answer": "Gardening and mindlessly reading Wikipedia entries."
-                },
-                {
-                  "question": "Best Dollar store purchase?",
-                  "answer": "Official Darth Vader Key Chain."
-                }
-              ]
-            }
-          },
-          {
-            "name": "Brandon Bell",
-            "route": "/#!/people/brandon-bell",
-            "title": "Studio Director/Chief Engineer",
-            "image": "img/people/brandon-bell.jpg",
-            "bio": {
-              "questions": [
-                {
-                  "question": "Position at Southern Ground Nashville:",
-                  "answer": "Studio Director/Chief Engineer"
-                },
-                {
-                  "question": "Originally from:",
-                  "answer": "Heber Springs, Arkansas"
-                },
-                {
-                  "question": "How you got to Nashville:",
-                  "answer": "In 2001 I moved to Middle TN to go to school (and chase a girl.) I graduated MTSU, married that girl and landed a great gig."
-                },
-                {
-                  "question": "How you got to SGN:",
-                  "answer": "Hard work, Matt Mangano and magic."
-                },
-                {
-                  "question": "Favorite Studio Mama Creation:",
-                  "answer": "Chocolate Chip Banana Bread!"
-                },
-                {
-                  "question": "Like most about SGN:",
-                  "answer": "Tight knit group of folks and an amazing space!"
-                },
-                {
-                  "question": "Best part of your job:",
-                  "answer": "The variety of tasks.  Engineering/Producing, building and fixing things, and Shakin and Howdyin!"
-                },
-                {
-                  "question": "Fave piece of gear/equipment:",
-                  "answer": "I really dig our API console."
-                },
-                {
-                  "question": "Hidden Talents?",
-                  "answer": "I'm a pretty mean finger knitter."
-                },
-                {
-                  "question": "Hobbies?",
-                  "answer": "Woodworking and running."
-                },
-                {
-                  "question": "Best Dollar store purchase?",
-                  "answer": "How can you compete with a $1 whoopie cushion?"
-                }
-              ]
-            }
-          },
-          {
-            "name": "Rebecca Wood",
-            "route": "/#!/people/rebecca-wood",
-            "title": "Studio Mama",
-            "image": "img/people/rebecca-wood.jpg",
-            "bio": {
-              "questions": [
-                {
-                  "question": "Position at Southern Ground Nashville:",
-                  "answer": "Studio Mama"
-                },
-                {
-                  "question": "Originally from:",
-                  "answer": "Columbus, Georgia"
-                },
-                {
-                  "question": "How you got to Nashville:",
-                  "answer": "In April of 2012, my family visited Nashville over Spring Break, while The Wood Brothers (my husband’s band) were working on a project.  We visited the studio at that time since the band was on the Southern Ground label at the time.  We all fell in love with the city.  Oliver and I went back to Atlanta after spending a week here and decided to consider moving.  We moved into a rental house sight-unseen that very July."
-                },
-                {
-                  "question": "How you got to SGN:",
-                  "answer": "After the adventure of moving fairly suddenly, getting the kids registered for school, and unpacking our lives, I set to the adventure of finding work. I sent my resume to nearly every contact I had and did some cold-calling. One afternoon, I decided to send my resume to Zac, knowing that he’d have plenty of contacts in Nashville. He then forwarded it to Matt Mangano, the studio’s Director, since the studio was just getting ready for regular use. Matt hired me, neither of us knowing exactly what the job was going to be.  I’ve loved every day here since!!"
-                },
-                {
-                  "question": "Favorite Studio Mama Creation:",
-                  "answer": "Levi Lowry Chicken (chicken leg quarters marinated in a mix of soy sauce, orange marmalade, fresh ginger, and mustard powder) with brown rice and stir fry vegetables.  Poundcake or Blackberry Cobbler."
-                },
-                {
-                  "question": "Like most about SGN:",
-                  "answer": "The smell of wood and baked goods."
-                },
-                {
-                  "question": "Best part of your job:",
-                  "answer": "This job allows me to wear all my best hats. I equally enjoy the personal and professional relationships I build and the days I get to spend at my desk doing expense reports and booking."
-                },
-                {
-                  "question": "Fave piece of gear/equipment:",
-                  "answer": "CAST IRON SKILLETS!"
-                },
-                {
-                  "question": "Hidden Talents?",
-                  "answer": "Building crafty puppets, lanterns, and putting together crazy costumes for my Krewe of the Grateful Gluttons events in Atlanta."
-                },
-                {
-                  "question": "Hobbies?",
-                  "answer": "Cooking, baking, crafting, good whiskey."
-                },
-                {
-                  "question": "Best Dollar store purchase?",
-                  "answer": "Glowsticks, duh."
-                }
-              ]
-            }
-          },
-          {
-            "name": "Dan Davis",
-            "title": "Studio Assistant",
-            "image": "img/people/dan-davis.jpg"
-          }
-        ]
-      },
-      "legacy": {
-        "list": [
-          {
-            "name": "Ron Block",
-            "title": "Hogan's House of Music",
-            "year": "2015",
-            "image": "img/legacy/Ron_Block-Hogans_House_of_Music-2015.jpg"
-          },
-          {
-            "name": "Brian Setzer",
-            "title": "Rockin' Rudolph",
-            "year": "2015",
-            "image": "img/legacy/Brian_Setzer-Rockin_Rudolph-2015.jpg"
-          },
-          {
-            "name": "A Thousand Horses",
-            "title": "Southernality",
-            "year": "2015",
-            "image": "img/legacy/A_Thousand_Horses-Southernality-2015.jpg"
-          },
-          {
-            "name": "The Wood Brothers",
-            "title": "Paradise",
-            "year": "2015",
-            "image": "img/legacy/The_Wood_Brothers-Paradise-2015.jpg"
-          },
-          {
-            "name": "Zac Brown Band",
-            "title": "Jekyll + Hyde",
-            "year": "2015",
-            "image": "img/legacy/Zac_Brown_Band-Jekyll_Hyde-2015.jpg"
-          },
-          {
-            "name": "Foo Fighters",
-            "title": "Sonic Highway",
-            "year": "2014",
-            "image": "img/legacy/Foo_Fighters-Sonic_Highways-2014.jpg"
-          },
-          {
-            "name": "Blake Shelton",
-            "title": "Bringing Back the Sunshine",
-            "year": "2014",
-            "image": "img/legacy/Blake_Shelton-Bringing_Back_The_Sunshine-2014.jpg"
-          },
-          {
-            "name": "Levi Lowrey",
-            "title": "Levi Lowrey",
-            "year": "2013",
-            "image": "img/legacy/Levi_Lowrey-Levi_Lowrey-2013.jpg"
-          },
-          {
-            "name": "The Wood Brothers",
-            "title": "The Muse",
-            "year": "2013",
-            "image": "img/legacy/The_Wood_Brothers-The_Muse-2013.jpg"
-          },
-          {
-            "name": "Zac_Brown_Band",
-            "title": "Grohl Sessions",
-            "year": "2013",
-            "image": "img/legacy/Zac_Brown_Band-Grohl_Sessions-2013.jpg"
-          },
-          {
-            "name": "Indigo Girls",
-            "title": "Holly Happy Days",
-            "year": "2010",
-            "image": "img/legacy/Indigo_Girls-Holly_Happy_Days-2010.jpg"
-          },
-          {
-            "name": "Jamie Oldaker",
-            "title": "Mad Dogs & Okies",
-            "year": "2005",
-            "image": "img/legacy/Jamie_Oldaker-Mad_Dogs_and_Okies-2005.jpg"
-          },
-          {
-            "name": "Neil Young",
-            "title": "Prairie Wind",
-            "year": "2005",
-            "image": "img/legacy/Neil_Young-Prairie_Wind-2005.jpg"
-          },
-          {
-            "name": "Victor Wooten",
-            "title": "Yin Yang",
-            "year": "1999",
-            "image": "img/legacy/Victor_Wooten-Yin_Yang-1999.jpg"
-          },
-          {
-            "name": "Jerry Douglass",
-            "title": "Restless on the Farm",
-            "year": "1998",
-            "image": "img/legacy/Jerry_Douglass-Restless_on_the_Farm-1998.jpg"
-          },
-          {
-            "name": "Allman Brothers",
-            "title": "Brothers of the Road",
-            "year": "1981",
-            "image": "img/legacy/Allman_Brothers-Brothers_of_the_Road-1981.jpg"
-          },
-          {
-            "name": "Allman Brothers",
-            "title": "Reach for te Sky",
-            "year": "1980",
-            "image": "img/legacy/Allman_Brothers-Reach_for_the_Sky-1980.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "Oh Brother",
-            "year": "1978",
-            "image": "img/legacy/Larry_Gatlin-Oh_Brother-1978.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "Love is a Game",
-            "year": "1977",
-            "image": "img/legacy/Larry_Gatlin-Love_is_a_Game-1977.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "High Time",
-            "year": "1976",
-            "image": "img/legacy/Larry_Gatlin-High_Time-1976.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "The Pilgrim",
-            "year": "1974",
-            "image": "img/legacy/Larry_Gatlin-The_Pilgrim-1974.jpg"
-          },
-          {
-            "name": "Larry Gatlin",
-            "title": "Rain Rainbow",
-            "year": "1974",
-            "image": "img/legacy/Larry_Gatlin-Rain_Rainbow-1974.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Jesus Was a Capricorn",
-            "year": "1972",
-            "image": "img/legacy/Kris_Kristofferson-Jesus_Was_a_Capricorn-1972.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Border Lord",
-            "year": "1971",
-            "image": "img/legacy/Kris_Kristofferson-Border_Lord-1971.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "The Silver Tongued Devil and I",
-            "year": "1971",
-            "image": "img/legacy/Kris_Kristofferson-The_Silver_Tongued_Devil_and_I-1971.jpg"
-          },
-          {
-            "name": "Kris Kristofferson",
-            "title": "Kristofferson",
-            "year": "1969",
-            "image": "img/legacy/Kris_Kristofferson-Kristofferson-1969.jpg"
-          },
-          {
-            "name": "Roger Miller",
-            "title": "Roger Miller",
-            "year": "1969",
-            "image": "img/legacy/Roger_Miller-Roger_Miller-1969.jpg"
-          },
-          {
-            "name": "Tony Joe White",
-            "title": "Continued",
-            "year": "1969",
-            "image": "img/legacy/Tony_Joe_White-Continued-1969.jpg"
-          }
-        ],
-        "artists": [
-          "A Thousand Horses",
-          "Allman Brothers",
-          "Ray Benson",
-          "Ron Block",
-          "Bonnie Bramlett",
-          "Shirley Caesar",
-          "Don Cherry",
-          "Eric Clapton",
-          "Jerry Douglas and Steve Earle",
-          "Ronnie Dunn",
-          "Joe Ely",
-          "Foo Fighters",
-          "Peter Frampton",
-          "Emmylou Harris",
-          "Faith Hill and Little Texas",
-          "Gatlin Brothers",
-          "Vince Gill",
-          "Indigo Girls",
-          "Grandpa Jones",
-          "Kris Kristofferson",
-          "Jerry Lee Lewis",
-          "Levi Lowrey",
-          "Taj Mahal",
-          "Roger Miller",
-          "Willie Nelson",
-          "Ray Pennington",
-          "Steve Pryor",
-          "Boots Randolph",
-          "Brian Setzer",
-          "Blake Shelton",
-          "Shel Silverstein",
-          "Sammi Smith",
-          "Ray Stevens",
-          "Mel Tillis",
-          "Keeley Valentino",
-          "Dottie West",
-          "Tony Joe White",
-          "Hank Williams, Jr.",
-          "The Wood Brothers",
-          "Victor Wooten",
-          "Neil Young",
-          "Zac Brown Band"
-        ]
-      },
-      "gear": {
-        "sections": [
-          {
-            "name": "Tracking Room Equipment",
-            "groups": [
-              [
-                {
-                  "name": "CONSOLE",
-                  "equipment": [
-                    "API LEGACY PLUS",
-                    "(48 CHANNELS WITH 500 SERIES OPTIONS BUCKET)",
-                    "VISION AUTOMATION"
-                  ]
-                },
-                {
-                  "name": "MULTI-TRACK RECORDERS",
-                  "equipment": [
-                    "PROTOOLS HD 10 & 11 (HDX) - 48 I/O",
-                    "OTARI MTR-100A (2) – 24TK 2\" TAPE MACHINE"
-                  ]
-                },
-                {
-                  "name": "2 TRACK RECORDERS",
-                  "equipment": [
-                    "ALESIS MASTERLINK"
-                  ]
-                },
-                {
-                  "name": "A/D CONVERTER",
-                  "equipment": [
-                    "APOGEE SYMPHONY (2) 48 I/O"
-                  ]
-                },
-                {
-                  "name": "SYNC",
-                  "equipment": [
-                    "HORITA BLACKBURST GENERATOR (NTSC/PAL)",
-                    "APOGEE BIG BEN",
-                    "DIGIDESIGN SYNC I/O",
-                    "BRAINSTORM SR15 DISTRYPALIZER",
-                    "OTARI EC-201 TIME CODE READER (6)"
-                  ]
-                },
-                {
-                  "name": "OTHER",
-                  "equipment": [
-                    "CLASP SYSTEM – UP TO 48",
-                    "SIMULTANEOUS TRACKS"
-                  ]
-                },
-                {
-                  "name": "SPEAKERS",
-                  "equipment": [
-                    "BAREFOOT SOUND MICROMAIN27",
-                    "TAD CUSTOM MAINS",
-                    "YAMAHA NS-10"
-                  ]
-                },
-                {
-                  "name": "MIC PREAMPS",
-                  "equipment": [
-                    "BAE AVEDIS 312 (5)",
-                    "CHANDLER GERMANIUM (2)",
-                    "CHANDLER TG2 (2 CHANNELS)",
-                    "GML 8304 (4)",
-                    "HARDY M-1 (2)",
-                    "MASTERING LAB MIC PRES (2)",
-                    "QUAD EIGHT CUSTOM (3)",
-                    "TELEFUNKEN V76 (2)",
-                    "VINTECH VA-573 (2)"
-                  ]
-                },
-                {
-                  "name": "NEVE SIDECAR",
-                  "equipment": [
-                    "NEVE 1066 (4)",
-                    "NEVE 1073 (4)",
-                    "NEVE 1081 (4)"
-                  ]
-                }
-              ],
-              [
-                {
-                  "name": "EQ",
-                  "equipment": [
-                    "API 550A (1-24, CONSOLE)",
-                    "API 550L (25-48, CONSOLE)",
-                    "API 215L (8) API 560 (2)",
-                    "MAAG EQ2 (2)",
-                    "AVEDIS E15 (4)",
-                    "AVEDIS E27 (2)",
-                    "HARRISON 32 (2)",
-                    "PULTEC EQP-1RS",
-                    "GML 8200",
-                    "SONTEC MEP-250C (2)",
-                    "SUMMIT EQP-200A"
-                  ]
-                },
-                {
-                  "name": "COMPRESSORS",
-                  "equipment": [
-                    "API 225L (16, CONSOLE)",
-                    "API 2500 (CONSOLE)",
-                    "CRANE SONG STC-8",
-                    "DBX 160 (2)",
-                    "EMPIRICAL LABS DISTRESSORS (4)",
-                    "GML 8900",
-                    "NEVE 33609",
-                    "RETRO STA-LEVEL",
-                    "RETRO DOUBLEWIDE",
-                    "SSL LOGIC FX G384",
-                    "TELETRONIX LA-2A",
-                    "TELETRONIX LA-3A (2)",
-                    "TUBE TECH CL1B",
-                    "UREI 1178",
-                    "UREI 1176 “BLUESTRIPE”",
-                    "UREI 1176LN (2)",
-                    "CHANDLER TG1",
-                    "EVENTIDE OMNIPRESSOR",
-                    "STANDARD AUDIO LEVEL-OR"
-                  ]
-                },
-                {
-                  "name": "REVERB & EFFECTS",
-                  "equipment": [
-                    "AKG BX5",
-                    "ELECTRIX FILTER FACTORY",
-                    "EMT 140 PLATE REVERB (3)",
-                    "LEXICON 480L",
-                    "LEXICON PCM 41",
-                    "LEXICON PCM 42",
-                    "MOOG ANALOG DELAY",
-                    "BRICASTI M7",
-                    "ROLAND SPACE ECHO 201 (FLOATS)",
-                    "TECH 21 SANSAMP"
-                  ]
-                },
-                {
-                  "name": "OTHER OUTBOARD",
-                  "equipment": [
-                    "API 205L DI (2, CONSOLE)",
-                    "RADIAL ETC REAMP",
-                    "RADIAL PHAZE Q TOOL"
-                  ]
-                }
-              ]
-            ]
-          },
-          {
-            "name": "Mix Room Equipment",
-            "groups": [
-              [
-                {
-                  "name": "CONSOLE",
-                  "equipment": [
-                    "SSL 4000 G SERIES – 60 CHANNELS"
-                  ]
-                },
-                {
-                  "name": "MULTI-TRACK RECORDERS",
-                  "equipment": [
-                    "PROTOOLS 10 HD – 24 IN/56 OUT"
-                  ]
-                },
-                {
-                  "name": "2 TRACK RECORDERS",
-                  "equipment": [
-                    "AMPEX ATR-102 TAPE MACHINE "
-                  ]
-                },
-                {
-                  "name": "A/D CONVERTER",
-                  "equipment": [
-                    "CRANE SONG HEDD",
-                    "DIGIDESIGN 192 BLUE FACE (4)"
-                  ]
-                },
-                {
-                  "name": "SYNC",
-                  "equipment": [
-                    "APOGEE BIG BEN",
-                    "DIGIDESIGN SYNC I/O"
-                  ]
-                },
-                {
-                  "name": "SPEAKERS",
-                  "equipment": [
-                    "ATC SCM300 MAINS",
-                    "AURATONE",
-                    "YAMAHA NS-10"
-                  ]
-                }
-              ],
-              [
-                {
-                  "name": "EQ",
-                  "equipment": [
-                    "API 550B (2)",
-                    "GML 8200",
-                    "MAAG EQ2 (2)",
-                    "RETRO 2A3"
-                  ]
-                },
-                {
-                  "name": "COMPRESSORS",
-                  "equipment": [
-                    "API 2500",
-                    "BAE 10DC (2)",
-                    "DBX 160 (2)",
-                    "EMPIRICAL LABS FATSO JR.",
-                    "GML 8900",
-                    "RETRO STA-LEVEL",
-                    "SOUTHERN GROUND CUSTOM 1176",
-                    "SPL TRANSIENT DESIGNER",
-                    "TELETRONIX LA2A",
-                    "U.S. ARMY SIGNAL CORPS – FEDERAL",
-                    "UA 1176 (BLUE STRIPE)",
-                    "UA LA3A (2)"
-                  ]
-                },
-                {
-                  "name": "DYNAMIC EQ",
-                  "equipment": [
-                    "BSS DPR-901 II",
-                    "VALLEY PEOPLE COMANDER (2)",
-                    "VALLEY GAIN BRAIN II (2)"
-                  ]
-                }
-              ]
-            ]
-          },
-          {
-            "name": "Microphones",
-            "groups": [
-              [
-                {
-                  "equipment": [
-                    "AEA R88",
-                    "STEREO RIBBON AKG C414-EB (2)",
-                    "AKG C414 B-ULS (2)",
-                    "AKG C451E (4)",
-                    "AKG C452 EB AKG D112",
-                    "BEYERDYNAMIC M88 (4)",
-                    "BEYERDYNAMIC M160N (3)",
-                    "COLES 4038 (4)",
-                    "COUNTRYMAN EM-101 (3)",
-                    "CUSTOM BINAURAL HEAD MIC",
-                    "EV RE-15 (4)",
-                    "EV RE-16 (3)",
-                    "EV RE-20",
-                    "GEFELL UM70",
-                    "GEFELL M296 (2)",
-                    "JOSEPHSON E22 (3)",
-                    "MIKTEK CV-4 TUBE",
-                    "MICROTECH-GEFELL M-300 (2)",
-                    "NEUMANN KM54",
-                    "NEUMANN KM56",
-                    "NEUMANN KM184 (2)",
-                    "NEUMANN M582 W/M58 CAPSULE (2)",
-                    "NEUMANN M582 W/ M70 CAPSULE",
-                    "NEUMANN M269 ",
-                    "NEUMANN U47 ",
-                    "NEUMANN U47 ",
-                    "FET NEUMANN U48 ",
-                    "VF NEUMANN U48 ",
-                    "NV NEUMANN U67 ",
-                    "NEUMANN U87 (5) ",
-                    "RCA 77D ROYER 121 (2) ",
-                    "SENNHEISER 441 ",
-                    "SENNHEISER 421 (7) ",
-                    "SENNHEISER MKH-415T (2) ",
-                    "SHURE SM7 (4) ",
-                    "SHURE SM57 (9) ",
-                    "SOUNDELUX E47  ",
-                    "SONY C48 ",
-                    "YAMAHA NS10 WOOFER MOD ",
-                    "YAMAHA SUBKICK ",
-                    "MANY OTHER UNUSUAL MICROPHONES AVAILABLE BY REQUEST"
-                  ]
-                }
-              ]
-            ]
-          },
-          {
-            "name": "Drums",
-            "groups": [
-              [
-                {
-                  "name": "KIT #1 ",
-                  "equipment": [
-                    "LATE SIXTIES WHITE OYSTER PEARL SLINGERLAND",
-                    "9 X 13 RACK ",
-                    "16 X 16 FLOOR (LEEDY)",
-                    "14 X 22 KICK"
-                  ]
-                },
-                {
-                  "name": "KIT #2 ",
-                  "equipment": [
-                    "LATE SIXTIES BLACK OYSTER PEARL SLINGERLAND",
-                    "8 X 12 RACK",
-                    "9 X 13 RACK",
-                    "16 X16 FLOOR",
-                    "16 X 22 KICK"
-                  ]
-                }
-              ],
-              [
-                {
-                  "name": "SNARES",
-                  "equipment": [
-                    "SLINGERLAND 6 X14 WOOD (MATCHES KIT&nbsp;#1) ",
-                    "SLINGERLAND 5 1/2 X 14 METAL ",
-                    "1967 LUDWIG 5 1/2 X 14 SENSAPHONIC ",
-                    "NEW LUDWIG BLACK BEAUTY 5 1/2 X 14 ",
-                    "LEEDY 7 X 14 WOOD ",
-                    "LEEDY 7 X 15 WOOD ",
-                    "PEARL SENSITONE 6 X 14 BRASS ",
-                    "ROGERS 6 LUG 5 X14 WOOD ",
-                    "MAPEX 5 X10 POPCORN METAL"
-                  ]
-                }
-              ]
-            ]
-          },
-          {
-            "name": "Amplifiers",
-            "groups": [
-              [
-                {
-                  "name": "BASS AMPS",
-                  "equipment": [
-                    "PORTAFLEX B15 (3)",
-                    "ROCKET BASS B-100R",
-                    "SVTVR"
-                  ]
-                },
-                {
-                  "name": "GUITAR AMPS",
-                  "equipment": [
-                    "65 LONDON (HEAD)",
-                    "AMPEG REVERBEROCKET. R-12-RB",
-                    "FENDER CHAMP. 5F1",
-                    "FENDER DELUXE REVERB",
-                    "FENDER TWIN",
-                    "GIBSON LES PAUL GA-40",
-                    "GOODSELL 33 CUSTOM MK2",
-                    "GRETSCH",
-                    "KAY 504",
-                    "SILVERTONE 1484",
-                    "TWIN TWELVE” HEAD",
-                    "TRACE ACOUSTIC TA200",
-                    "VINTAGE SOUNDAMPS VINTAGE 40",
-                    "VOX BRUNO TB35C2",
-                    "Z Z WRECK ZA-31"
-                  ]
-                }
-              ],
-              [
-                {
-                  "name": "SPEAKER CABINETS",
-                  "equipment": [
-                    "65 LONDON (CAB)",
-                    "FENDER VIBRATONE",
-                    "TED WEBER",
-                    "Z 2X12\"",
-                    "LESLIE 122"
-                  ]
-                }
-              ]
-            ]
-          }
-        ]
-      },
-      "happenings": {
-        "instagramURL": "https://www.instagram.com/southerngroundnashville_/"
-      }
     }
-  }
 }
