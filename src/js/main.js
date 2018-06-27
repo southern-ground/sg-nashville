@@ -1453,6 +1453,15 @@ sgn.init = function () {
         .on('/#!/people/chris-taylor', function () {
             sgn.openPersonFromRoute('Chris Taylor');
         })
+        .on('/#!/people/dan-davis', function () {
+            sgn.openPersonFromRoute('Dan Davis');
+        })
+        .on('/#!/people/preston-white', function () {
+            sgn.openPersonFromRoute('Preston White');
+        })
+        .on('/#!/people/evan-wilber', function () {
+            sgn.openPersonFromRoute('Evan Wilber');
+        })
         .on('/#!/panoramas', function () {
             sgn.showPanorama($('#panoramaDisplay').data('panorama-url'));
 

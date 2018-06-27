@@ -1,3 +1,8 @@
+/*
+* Note to self: does not work under node 10. Try "nvm use 8.11.1" for teh success.
+* In other news: TODO: Get the site to build under 10.3.0
+*/
+
 var fs = require('fs'),
     path = require('path'),
     gulp = require('gulp'),

@@ -333,14 +333,158 @@
                     },
                     {
                         "name": "Dan Davis",
+                        "route": "/#!/people/dan-davis",
                         "title": "Studio Assistant",
-                        "image": "img/people/dan-davis.jpg"
+                        "image": "img/people/dan-davis.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Originally from:",
+                                    "answer": "My family is from Tuscaloosa, AL, but I grew up in Brookhaven, MS."
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "After a run in L.A. I converted a school bus into a tiny home, and moved here for school."
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "Upon graduating from the Blackbird Academy, I landed an internship that fortunately blossomed into what was supposed to be a part time opportunity. I've been coming back every day since, and wouldn't have it any other way."
+                                },
+                                {
+                                    "question": "Favorite Studio Mama Creation:",
+                                    "answer": "The succotash lights up my heart just by thinking about it; however, the my favorite creation of hers is the incredible energy that she works so hard to fill this place with."
+                                },
+                                {
+                                    "question": "Like Most About SGN:",
+                                    "answer": "The people... The vibe... Southern Ground feels like home, it feels like work, it feels like the magic store.  It's something different every day, but it's always something special."
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "Having the opportunity to watch some of the greatest players and minds in music get together and create, almost daily, is something I could never express enough gratitude for."
+                                },
+                                {
+                                    "question": "Favorite piece of Gear/equipment:",
+                                    "answer": "The API Legacy plus in Studio A holds a special place in my heart.  "
+                                },
+                                {
+                                    "question": "Hidden Talents:",
+                                    "answer": "I do accents fairly well."
+                                },
+                                {
+                                    "question": "Hobbies:",
+                                    "answer": "Yoga has become one of my favorite downtime activities. "
+                                },
+                                {
+                                    "question": "Best dollar store purchase:",
+                                    "answer": "The candy is always the winner at the dollar store.  Name brand candy for 1$ instead of the 4$ at the theater? I think so."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Evan Wilber",
+                        "route": "/#!/people/evan-wilber",
+                        "title": "",
+                        "image": "img/people/evan-wilber.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Originally from:",
+                                    "answer": "I grew up in Geneva, New York.  It’s a small town in a region of western NY called The Finger Lakes, east of Buffalo and just south of Lake Ontario."
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "I came to Nashville to attend The Blackbird Academy.  I’d been involved in music production and recording for years but I knew there was still so much to learn, and Blackbird seemed like a great place to start.  Before moving here, I was working as a recording engineer/music tech specialist for a university in Virginia.  It was a good job, but it offered little room for growth or upward mobility.  During my fourth year, I was told that a large pay cut was in my future if I continued to work there.  I decided enough was enough and set off for Nashville. "
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "My Blackbird class visited SGN for a tour during the end of our term.  I was so captivated by the space that I couldn’t help but ask, “who do I need to kill in order to work here?”  They subtly pointed out one of their newer interns, surely you can figure out what happened next…"
+                                },
+                                {
+                                    "question": "Favorite Studio Mama creation:",
+                                    "answer": "Her mashed sweet potatoes.  No question.  There’s some powerful magic at work there."
+                                },
+                                {
+                                    "question": "Like most about SGN:",
+                                    "answer": "Without a doubt, my coworkers and the attitude we collectively foster in the studio.  SGN is a place where incredible work is done in a manner that is professional, yet relaxed, and demanding, yet fun.  This would not be possible without the exceptional human beings that keep the gears turning.  Everyone is a team player, no task is too small, and we all genuinely care about each other.  I cannot begin to articulate how much of a difference this makes."
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "I get to work in a world class studio, one that is as unique as it is impressive.  The building itself has just as much character as the people in it.  I am constantly learning new things and meeting new people in this incredible space."
+                                },
+                                {
+                                    "question": "Favorite Piece of gear/equipment:",
+                                    "answer": "Our pair of custom Atomic Murderphonic mains in the Studio A control room.  I mean, come on."
+                                },
+                                {
+                                    "question": "Hidden Talents:",
+                                    "answer": "I’ll let you know when I find them."
+                                },
+                                {
+                                    "question": "Hobbies:",
+                                    "answer": "Photography, electronic music composition/sound design, hiking, biking, learning about military history, learning to play piano, drone stuff, watching Youtube videos about huge boats."
+                                },
+                                {
+                                    "question": "Best dollar store purchase:",
+                                    "answer": "It is hard to describe how many balloons you can buy at the dollar store for so very, very little."
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Preston White",
+                        "route": "/#!/people/preston-white",
+                        "title": "",
+                        "image": "img/people/preston-white.jpg",
+                        "bio": {
+                            "questions": [
+                                {
+                                    "question": "Originally From:",
+                                    "answer": "Decatur, AL."
+                                },
+                                {
+                                    "question": "How you got to Nashville:",
+                                    "answer": "I moved out to Bozeman, Montana from Alabama and went to college for chemical engineering. While I was there I joined a band and play all over the west and midwest. I started recording our music in my house because there weren’t many places to record in Bozeman. I  then built a studio and started recording local groups when I realized this was what I really wanted to do full time. I decided to move to Nashville because it would put me close to home and the music city."
+                                },
+                                {
+                                    "question": "How you got to SGN:",
+                                    "answer": "I meet Brandon a few times at audio events around town. I had heard that they maybe looking for someone that could do tech work and audio engineering too. I was working doing freelance tech work and recording so I thought this was a perfect fit so I gave him a ring. Glad I did!!"
+                                },
+                                {
+                                    "question": "Favorite Studio Mama Creation:",
+                                    "answer": "Wow that’s a hard one! I have a sweet-tooth so the lemon bars are amazing and of course Cornbread!"
+                                },
+                                {
+                                    "question": "Like Most About SGN:",
+                                    "answer": "The people I work with, like a family from day one."
+                                },
+                                {
+                                    "question": "Best part of your job:",
+                                    "answer": "Taking stuff a part and putting it back together. Also getting to hear music as it’s being created."
+                                },
+                                {
+                                    "question": "Favorite piece of Gear/equipment:",
+                                    "answer": "API is really great but I love studio A’s Live Room."
+                                },
+                                {
+                                    "question": "Hidden Talents:",
+                                    "answer": "If I reveal them they wouldn’t be hidden anymore."
+                                },
+                                {
+                                    "question": "Hobbies:",
+                                    "answer": "Riding my motorcycle, road trips, songwriting, playing frisbee with my dog Bosco Stubbs"
+                                },
+                                {
+                                    "question": "Best dollar store purchase:",
+                                    "answer": "Water Balloons"
+                                }
+                            ]
+                        }
                     }
                 ]
             },
             "legacy": {
                 "list": [
-
                     {
                         "name": "Carly Pearce",
                         "title": "Every Little Thing",
