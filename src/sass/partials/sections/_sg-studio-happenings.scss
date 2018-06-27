@@ -1,56 +1,59 @@
-section.studio-happenings{
-  padding: 85px 0 40px 0;
-  font-family: $fell;
-  text-align: center;
-  h2{
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-    text-align:center;
-  }
-  .happening{
-    width: 150px;
-    height: 150px;
-    background-color: $brown;
-    margin: 0 auto 40px auto;
+section.studio-happenings {
+    padding: 85px 0 40px 0;
+    font-family: $fell;
     text-align: center;
-  }
-  .read-more{
-    display: inline-block;
-    background: $purple;
-    color: $tan;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-family: Ubuntu;
-    font-size: 11px;
-    padding: 6px 16px 4px 16px;
-    border: none;
-    margin: 10px auto 0 auto;
-    &:hover{
-      text-decoration: none;
+    h2 {
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
-  }
-  #instagram{
+    .happening {
+        width: 150px;
+        height: 150px;
+        background-color: $brown;
+        margin: 0 auto 40px auto;
+        text-align: center;
+    }
+    .read-more {
+        display: inline-block;
+        background: $purple;
+        color: $tan;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: Ubuntu;
+        font-size: 11px;
+        padding: 6px 16px 4px 16px;
+        border: none;
+        margin: 10px auto 0 auto;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    #instagram {
 
-    @include small{
-      width: 400px;
-      margin: 0 auto;
-    }
+        @include small {
+            width: 400px;
+            margin: 0 auto;
+        }
 
-    @include medium{
-      width: 800px;
-      margin: 0 auto;
-    }
+        @include medium {
+            width: 800px;
+            margin: 0 auto;
+        }
 
-    .instagram-post{
-      padding-top: 10px;
-      padding-bottom: 10px;
-      .instagram-post-image{
-        width: 177px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
+        display: flex;
+        flex-wrap: wrap;
+
+        .instagram-post {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .instagram-post-image {
+                width: 177px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
     }
-  }
 }

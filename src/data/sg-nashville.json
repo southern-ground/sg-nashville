@@ -384,7 +384,7 @@
                     {
                         "name": "Evan Wilber",
                         "route": "/#!/people/evan-wilber",
-                        "title": "",
+                        "title": "Studio Assistant",
                         "image": "img/people/evan-wilber.jpg",
                         "bio": {
                             "questions": [
@@ -434,7 +434,7 @@
                     {
                         "name": "Preston White",
                         "route": "/#!/people/preston-white",
-                        "title": "",
+                        "title": "Studio Assistant/Tech",
                         "image": "img/people/preston-white.jpg",
                         "bio": {
                             "questions": [
