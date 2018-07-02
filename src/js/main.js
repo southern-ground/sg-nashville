@@ -397,8 +397,8 @@ sgn.showPanorama = function (img) {
 
         if (sgn.pano.isUserInteracting === true) {
 
-            sgn.pano.lon = ( sgn.pano.onPointerDownPointerX - event.clientX ) * 0.1 + sgn.pano.onPointerDownLon;
-            sgn.pano.lat = ( event.clientY - sgn.pano.onPointerDownPointerY ) * 0.1 + sgn.pano.onPointerDownLat;
+            sgn.pano.lon = (sgn.pano.onPointerDownPointerX - event.clientX) * 0.1 + sgn.pano.onPointerDownLon;
+            sgn.pano.lat = (event.clientY - sgn.pano.onPointerDownPointerY) * 0.1 + sgn.pano.onPointerDownLat;
 
         }
 
@@ -509,6 +509,8 @@ sgn.initPanoramas = function () {
 
 sgn.updateSocial = function (data) {
 
+    // console.group('sgn.updateSocial');
+
     var NUM_POSTS = 8,
         POST_TEMPLATE = '<div class="col-xs-12 col-sm-6 col-md-3 instagram-post">' +
             '   <a href="%%postLink%%" target="_blank" title="Instagram post from %%postDate%%">' +
@@ -519,26 +521,40 @@ sgn.updateSocial = function (data) {
 
     var post, postDate, postDateString,
         dateConverter = function (date) {
-            var postDate = new Date(date * 1000);
-            return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
+            if (date) {
+                var postDate = new Date(date * 1000);
+                return (postDate.getMonth() + 1) + "/" + (postDate.getDate()) + "/" + (postDate.getFullYear());
+            }
+            return '';
         },
+        caption = '',
         html = '';
 
     for (var i = 0; i < NUM_POSTS; i++) {
 
         post = data[i];
 
-        postDate = dateConverter(post.caption.created_time);
+        // console.log(post);
+
+        // console.log(post.caption ? 'Has caption' : 'Has no caption');
+
+        caption = post.caption ? post.caption.text.replace(/\"/gi) : '';
+
+        // console.log('Caption:',caption);
+
+        postDate = post.caption ? dateConverter(post.caption.created_time) : dateConverter(post.created_time);
 
         html += POST_TEMPLATE;
 
         html = html.replace(/%%postLink%%/gi, post.link)
-            .replace(/%%postCaption%%/gi, post.caption.text.replace(/\"/gi, "'"))
+            .replace(/%%postCaption%%/gi, caption)
             .replace(/%%postImageURL%%/gi, post.images.low_resolution.url)
             .replace(/%%postDate%%/gi, postDate);
     }
 
     html += '</div>';
+
+    // console.groupEnd();
 
     $('#instagram').append(html);
 
@@ -550,7 +566,7 @@ sgn.initSocial = function () {
         dataType: "json",
         url: "instagramfeed.php",
         success: function (e) {
-            console.warn('Successfully navigated Instagram; retrieving ' + e.data.length + ' posts.');
+            // console.warn('Successfully navigated Instagram; retrieving ' + e.data.length + ' posts.');
             scope.updateSocial(e.data);
         },
         error: function () {
@@ -1373,7 +1389,7 @@ sgn.validateBookingForm = function () {
 
         $('#BookingsForm button').attr('disabled', 'disabled');
 
-        window.open("mailto:info@southerngroundartists.com?subject=Contact Form&body=From: "+formName+" ("+formEmail+")\rCompany: " + formCompany + "\rMessage: " + formText);
+        window.open("mailto:info@southerngroundartists.com?subject=Contact Form&body=From: " + formName + " (" + formEmail + ")\rCompany: " + formCompany + "\rMessage: " + formText);
 
         /*$.post("contact.php", {
             name: formName,
