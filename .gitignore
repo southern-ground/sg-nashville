@@ -4,3 +4,4 @@ node_modules
 /dist/
 rev.html
 main.css
+generated-private-key.txt
