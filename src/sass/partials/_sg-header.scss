@@ -3,17 +3,11 @@ header {
   width: 100%;
   padding: 16px 0 20px 0;
   background-color: $purple;
-  min-height: 128px;
   position: fixed;
   top: 0;
   z-index: 2;
 
-  &.min-header {
-
-    height: 80px;
-    min-height: auto;
-    padding: 0;
-    margin: 0;
+  @media only screen and (max-width: 650px) {
     align-items: center;
     .wrapper {
       height: 100%;
@@ -23,19 +17,16 @@ header {
       height: 50px;
 
     }
-
-    @media only screen and (max-width: 650px) {
-      flex-direction: column;
-      .wrapper > .site-nav {
-        display: none;
-        margin: 20px 0 10px;
-        a.nav-link {
-          width: 50%;
-          height: 40px;
+    flex-direction: column;
+    .wrapper > .site-nav {
+      display: none;
+      margin: 20px 0 10px;
+      a.nav-link {
+        width: 50%;
+        height: 40px;
+        margin: 0;
+        &:not(:last-child) {
           margin: 0;
-          &:not(:last-child) {
-            margin: 0;
-          }
         }
       }
     }
@@ -139,24 +130,22 @@ header {
     .site-nav {
       flex-direction: column;
       width: 100%;
-      .nav-link{
+      .nav-link {
         width: 100%;
         border-bottom: 1px solid rgba($tan, 0.6);
         padding: 10px 0;
-        &:not(:last-child){
+        &:not(:last-child) {
           margin: 0 0 0 0;
         }
       }
     }
-    .social-nav{
+    .social-nav {
       margin: 20px 0;
       width: 50%;
     }
   }
 
   @media only screen and (max-width: $max-header-width - 1px) {
-
-    min-height: auto;
 
     .logo {
       width: auto;
@@ -183,7 +172,7 @@ header {
   }
 
   @media only screen and (max-width: $header-mobile-cutoff + "px") {
-    z-index:3;
+    z-index: 3;
     .wrapper > nav.site-nav, .wrapper > nav.social-nav {
       display: none;
     }
@@ -193,14 +182,9 @@ header {
   }
 }
 
-.header-spacer{
-  min-height: 128px;
-
-  &.min-header {
-    height: 80px;
-    min-height: auto;
-  }
-  @media only screen and (max-width: $max-header-width - 1px) {
-    min-height: auto;
+.header-spacer {
+  height: 120px;
+  @media only screen and (max-width: $max-header-width) {
+    height: 86px;
   }
 }

@@ -2,6 +2,19 @@ var sgn = window.sgn || {},
     ScrollMagic = window.ScrollMagic || {},
     Linear = window.Linear || {};
 
+sgn.initProps = function () {
+
+    this.$window = $(window);
+    this.$hamburgerButton = $('.hamburger-button');
+    this.$hamburgerMenu = $('.hamburger-menu');
+    this.$mobileSiteNav = $('.hamburger-menu .site-nav');
+    this.$mobileSocialNav = $('.hamburger-menu .social-nav');
+
+    this.mobileNavOpen = false;
+
+    return this;
+};
+
 sgn.initNav = function () {
 
     console.log('initNav');
@@ -12,27 +25,11 @@ sgn.initNav = function () {
         _this.navLinkClick(e);
     });
 
-    this.mobileNavOpen = false;
-
-    var $headerHalfHeight = 128 * 0.5;
-
-    this.$window = $(window);
-    this.$header = $('header, div.header-spacer');
-    this.$headerSpacer = $('.header-spacer');
-
     this.$window.scroll(function () {
         if (_this.mobileNavOpen) {
             _this.closeMobileNav();
         }
-        if (_this.$window.scrollTop() > $headerHalfHeight) {
-            _this.$header.addClass('min-header');
-            _this.$headerSpacer.addClass('min-header');
-        } else {
-            _this.$header.removeClass('min-header');
-            _this.$headerSpacer.removeClass('min-header');
-        }
     });
-
     this.$window.resize(function () {
         (function (scope) {
             clearTimeout(scope.resizeTimeout);
@@ -42,15 +39,8 @@ sgn.initNav = function () {
         })(_this);
     });
 
-    this.$hamburgerMenu = $('.hamburger-menu');
-
-    this.$mobileSiteNav = $('.hamburger-menu .site-nav');
-    this.$mobileSocialNav = $('.hamburger-menu .social-nav');
-
     this.$mobileSiteNav.fadeOut('fast');
     this.$mobileSocialNav.fadeOut('fast');
-
-    this.$hamburgerButton = $('.hamburger-button');
 
     this.$hamburgerButton.click(function (e) {
         _this.hamburgerButtonClick(e);
@@ -59,9 +49,9 @@ sgn.initNav = function () {
     return this;
 };
 
-sgn.sectionInit = function () {
+sgn.initSections = function () {
 
-    console.log('sectionInit');
+    console.log('initSections');
 
     var getAttribute = function (target, attr) {
             while (target) {
@@ -86,8 +76,8 @@ sgn.sectionInit = function () {
     (function (scope) {
 
         // Bind up the close button:
-        $('.content-panel').on('click', function(event){
-            if( $(event.target).is('.content-panel') || $(event.target).is('.content-panel-close') ) {
+        $('.content-panel').on('click', function (event) {
+            if ($(event.target).is('.content-panel') || $(event.target).is('.content-panel-close')) {
                 scope.closeContentPanel();
                 event.preventDefault();
             }
@@ -124,63 +114,17 @@ sgn.sectionInit = function () {
 
         });
 
+        $('#FixedOverlay section').fadeOut();
+
     })(this);
 
     return this;
 };
 
-sgn.openSection = function (which, callback) {
-
-    callback = callback || function () {};
-
-    this.resizeOverlay();
-
-    $('.content-panel').addClass('is-visible');
-
-    $(which).fadeIn();
-
-    $(window).trigger('resize').trigger('scroll');
-
-    callback();
-
-    this.overlayIsOpen = true;
-
-    $('html body').addClass('no-scroll');
-
-};
-
-sgn.closeContentPanel = function(){
-    $('.additional-content').fadeOut();
-    $('.content-panel').removeClass('is-visible');
-    this.overlayIsOpen = false;
-    $('html body').removeClass('no-scroll');
-};
-
-sgn.resizeOverlay = function(){
-
-    // $('.content-panel-container').css('top', $('header#Home').outerHeight());
-
-};
-
-sgn.resolveResize = function () {
-
-    console.log('resolveResize');
-
-    if (!this.mobileNavOpen) {
-        return;
-    } else {
-        if (this.$window.width() > 899) {
-            this.closeMobileNav();
-        }
-    }
-    if(this.overlayIsOpen){
-        this.resizeOverlay();
-    }
-
-};
-
 sgn.initSliders = function () {
+
     console.log('initSliders');
+
     $("#Legacy-Slider").slick({
         infinite: true,
         speed: 300,
@@ -212,10 +156,8 @@ sgn.initSliders = function () {
         dots: false,
         prevArrow: $('#SpaceSliderPrev'),
         nextArrow: $('#SpaceSliderNext'),
-
         centerMode: true,
         variableWidth: true,
-
         lazyLoad: 'ondemand',
         fadeIn: true
     });
@@ -226,17 +168,95 @@ sgn.initSliders = function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        prevArrow: $('#PeoplePrev'),
-        nextArrow: $('#PeopleNext'),
-
+        prevArrow: $('#PeopleSliderPrev'),
+        nextArrow: $('#PeopleSliderNext'),
         centerMode: true,
         variableWidth: true,
-
+        adaptiveHeight: true,
         lazyLoad: 'ondemand',
         fadeIn: true
     });
 
     return this;
+};
+
+sgn.initParallax = function () {
+
+    // init controller
+    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+    // build scenes
+    new ScrollMagic.Scene({triggerElement: "#parallax1"})
+        .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax2"})
+        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax3"})
+        .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax4"})
+        .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#parallax5"})
+        .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
+        .addTo(controller);
+
+    return this;
+};
+
+sgn.initBookingsForm = function () {
+
+    $('#BookingsForm').on('submit', this.validateBookingForm);
+
+    return this;
+};
+
+sgn.openSection = function (which, callback) {
+
+    callback = callback || function () {
+            // Nothing
+        };
+
+    this.overlayIsOpen = true;
+
+    $('html body').addClass('no-scroll');
+
+    $(which).fadeIn('fast');
+
+    $('.content-panel').fadeIn();
+
+    callback();
+
+};
+
+sgn.closeContentPanel = function () {
+    $('html body').removeClass('no-scroll');
+    $('.content-panel, .additional-content').fadeOut('fast');
+    // $('.content-panel').removeClass('is-visible');
+    this.overlayIsOpen = false;
+    // $('.additional-content').fadeOut('fast');
+};
+
+sgn.resolveResize = function () {
+
+    console.log('resolveResize');
+
+    if (!this.mobileNavOpen) {
+        return;
+    } else {
+        if (this.$window.width() > 899) {
+            this.closeMobileNav();
+        }
+    }
+    if (this.overlayIsOpen) {
+        this.resizeOverlay();
+    }
+
 };
 
 sgn.hamburgerButtonClick = function () {
@@ -292,65 +312,111 @@ sgn.navLinkClick = function (e) {
 
 };
 
-sgn.monitorTwitterLoad = function(){
+sgn.validateBookingForm = function () {
 
-    /*
-    Since the Twitter timeline is an iframe
-    it's of an indeterminate length. It's loading
-    also cannot be monitored because of iframe.
+    var form = document.forms.Bookings;
 
-    This section of script waits for the iframe to appear
-    then removes itself and, after a half a second, trigger
-    a re-draw/resize/scroll event to keep the parallax
-    do-hingys happy.
-     */
-    (function(scope){
-        scope.twitterInterval = setInterval(function(){
+    var validateEmail = function (email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
+        sanitizeField = function (html) {
 
-            var twitterFrame = 'iframe#twitter-widget-0',
-                $iframe = $(twitterFrame);
+            var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
 
-            if($iframe.length > 0){
-                clearInterval(scope.twitterInterval);
-                setTimeout(function(){
-                    $(window).trigger('resize').trigger('scroll');
-                }, 500);
+            var tagOrComment = new RegExp(
+                '<(?:' +
+                '!--(?:(?:-*[^->])*--+|-?)' +
+                '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*' +
+                '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*' +
+                '|/?[a-z]' +
+                tagBody +
+                ')>',
+                'gi');
 
+            var oldHtml;
+
+            do {
+                oldHtml = html;
+                html = html.replace(tagOrComment, '');
+            } while (html !== oldHtml);
+
+            return html.replace(/</g, '&lt;');
+        };
+
+    var formName = sanitizeField(form['bookings-name'].value).trim(),
+        formVenue = sanitizeField(form['bookings-venue'].value).trim(),
+        formEmail = sanitizeField(form['bookings-email'].value).trim(),
+        formText = sanitizeField(form['bookings-text'].value).trim();
+
+    var isError = false;
+
+    var showError = function (name) {
+        $('[name=' + name + ']').addClass('form-error');
+    };
+
+    // Clear any previous errors:
+    $('#BookingsForm').find('*').removeClass('form-error');
+    $('#BookingsForm').find('.error-text, .success-text').html('');
+
+    if (formName.length === 0) {
+        showError('bookings-name');
+        isError = true;
+    }
+
+    if (formVenue.length === 0) {
+        // Nothing; it's OK for this to be blank.
+    }
+
+    if (!validateEmail(formEmail)) {
+        showError('bookings-email');
+        isError = true;
+    }
+
+    if (formText.length === 0) {
+        showError('bookings-text');
+        isError = true;
+    }
+
+    if (isError) {
+        $('#BookingsForm').find('.error-text').html('Please address the above errors and try again.');
+    } else {
+        // Post!
+        console.log('Proceeding with:\n\rName: ' + formName + "\n\rVenue: " + formVenue + "\n\reMail: " + formEmail + "\n\rMessage: " + formText);
+
+        $.post("contact.php", {
+            name: formName,
+            venue: formVenue,
+            email: formEmail,
+            message: formText
+        }).done(function (data) {
+            if(data){
+                if(data.error === 0){
+                    console.warn("Form submitted successfully");
+                    $('#BookingsForm').find('.success-text').html('Form submitted successfully. Someone will be in touch soon!');
+                    $('#BookingsForm').find('input[type=text], textarea').val('');
+                }else{
+                    $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code '+data.error+'.)');
+                }
             }
-        }, 0);
-    })(this);
+        }).error(function(e){
+            console.warn("Form Error: " + e.status, e.statusText);
+            $('#BookingsForm').find('.error-text').html('Something went wrong. Please try again. (Error code '+e.status+'.)');
+        });
+    }
 
-    return this;
+    return false;
+
 };
 
-sgn.parallaxInit = function(){
+sgn.isEmpty = function (str) {
+    return this.removeTags(str).length > 0;
+};
 
-    // init controller
-    var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-    // build scenes
-    new ScrollMagic.Scene({triggerElement: "#parallax1"})
-        .setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax2"})
-        .setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax3"})
-        .setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax4"})
-        .setTween("#parallax4 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-    new ScrollMagic.Scene({triggerElement: "#parallax5"})
-        .setTween("#parallax5 > div", {y: "80%", ease: Linear.easeNone})
-        .addTo(controller);
-
-
-    return this;
+sgn.isValidEmail = function (str) {
+    str = this.removeTags(str);
+    console.log('isValidEmail', str);
+    return false;
 };
 
 sgn.init = function () {
@@ -358,17 +424,13 @@ sgn.init = function () {
     var _this = window.sgn;
 
     _this
+        .initProps()
         .initNav()
-        .sectionInit()
+        .initSections()
         .initSliders()
-        .monitorTwitterLoad()
-        .parallaxInit();
+        .initParallax()
+        .initBookingsForm();
 
-    /*$('#FixedOverlay').on('touchmove scroll wheel', function(e){
-        console.log('scrolling me, bitches', e);
-        e.stopPropagation();
-        e.preventDefault();
-    });*/
 };
 
 $(sgn.init);
