@@ -22,7 +22,7 @@ sgn.initNav = function () {
 
     var _this = this;
 
-    $('.site-nav .nav-link').click(function (e) {
+    $('.site-nav .nav-link.anchored').click(function (e) {
         _this.navLinkClick(e);
     });
 
@@ -1284,7 +1284,7 @@ sgn.navLinkClick = function (e) {
         newY = target === '#Home' ?
             0
             :
-            $(target).offset().top - 60;
+            $(target).offset().top - ($('header').height());
 
     // Manually fire tracking:
     ga('send', 'event', {
