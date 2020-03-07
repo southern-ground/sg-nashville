@@ -74,8 +74,8 @@
                         "route": "/#!/spaces/studio-b",
                         "image": "img/spaces/studio-b.jpg",
                         "images": [
-                            "img/spaces/studio-b/MixRoomConsole.jpg",
-                            "img/spaces/studio-b/MixRoomFronttoBack.jpg"
+                            "img/spaces/studio-b/cw1912201-2015.jpg",
+                            "img/spaces/studio-b/cw1912201-2017.jpg"
                         ],
                         "panoramicImages": [
                             {
@@ -103,11 +103,12 @@
                         "route": "/#!/spaces/studio-c",
                         "image": "img/spaces/studio-c.jpg",
                         "images": [
-                            "img/spaces/studio-c/SR2_4385.jpg",
-                            "img/spaces/studio-c/SR2_4386.jpg",
-                            "img/spaces/studio-c/SR2_4387.jpg",
-                            "img/spaces/studio-c/SR2_4388.jpg",
-                            "img/spaces/studio-c/SR2_4390.jpg"
+                            "img/spaces/studio-c/cw1912201-2001.jpg",
+                            "img/spaces/studio-c/cw1912201-2005.jpg",
+                            "img/spaces/studio-c/cw1912201-2009.jpg",
+                            "img/spaces/studio-c/cw1912201-2010.jpg",
+                            "img/spaces/studio-c/cw1912201-2011.jpg",
+                            "img/spaces/studio-c/cw1912201-2012.jpg"
                         ],
                         "details": {
                             "image": "img/spaces/slides/studio-c.jpg",
